@@ -10,7 +10,7 @@ header > h1{
 }
 
 .article-container{
-  padding: 30px 100px;
+  padding: 30px 100px 100px 100px;
 }
 .article-container > article{
   background-color: var(--article-card-color);
