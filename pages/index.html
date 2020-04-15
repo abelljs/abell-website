@@ -4,14 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/index.css">
 
-  <title>Abell Starter Minima</title>
+  <title>Abell Minima</title>
 </head>
 <body>
-  <header></header>
+  <nav>
+    <span class="brand">Abell Minima</span>
+  </nav>
+  <header>
+    <h1>Minima</h1>
+    Hi, I am Saurabh. Welcome to the starter blog of AbellJS! This can be a good starting point for creating your blog.
+  </header>
   <main>
-    {% articlesList %}
+    <div class="article-container">
+      <h2>Articles</h2>
+      {% articlesList %}
+    </div>
   </main>
   <footer></footer>
 </body>

@@ -6,13 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "abell build",
-    "dev": "serve dist"
+    "dev": "npm run build && abell serve"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "abell": "0.0.1"
+    "abell": "^0.1.0"
   }
 }
