@@ -1,0 +1,8 @@
+html,body{
+  margin: 0px;
+  padding: 0px;
+}
+
+article#blog-container{
+  padding: 30px 100px;
+}
