@@ -1,7 +1,6 @@
 :root{
   --background-primary: #fff;
-  --font-color-primary: #222;
-  --header-background: #f7f7f7;
+  --font-color-primary: #333;
   --font-family-primary: 'Noto Sans KR', sans-serif;
 }
 html, body{
@@ -9,7 +8,9 @@ html, body{
   padding: 0px;
   width: 100%;
   overflow-x: hidden;
-  font-family: var(--font-family-primary)
+  background-color: var(--background-primary);
+  font-family: var(--font-family-primary);
+  color: var(--font-color-primary);
 }
 h1, h2, h3, h4, h5, h6{
   font-family: var(--font-family-primary);
@@ -20,8 +21,12 @@ h1, h2, h3, h4, h5, h6{
 }
 a{
   text-decoration: none;
-  color: var(--font-color-primary);
+  color: #09f;
 }
 .shadow{
   box-shadow: 0 5px 16px -4px #0005;
+}
+
+footer{
+  padding: 20px 30px;
 }

@@ -11,19 +11,23 @@
   <title>Abell Minima</title>
 </head>
 <body>
-  <nav>
-    <span class="brand">Abell Minima</span>
-  </nav>
   <header>
-    <h1>Minima</h1>
-    Hi, I am Saurabh. Welcome to the starter blog of AbellJS! This can be a good starting point for creating your blog.
+    <h1>Abell Minima</h1>
+    <div class="header-bio">
+      Abell Minima is a starter blog for AbellJS. <br/>This template is designed by <b>Saurabh Daware</b> you can follow him on <a href="https://twitter.com/saurabhcodes">Twitter @saurabhcodes</a>.
+    </div>
   </header>
   <main>
     <div class="article-container">
-      <h2>Articles</h2>
       {% articlesList %}
     </div>
   </main>
-  <footer></footer>
+  <footer>
+    <div style="text-align: right;">© <span id="footer-year"></span>, Built with <a href="https://github.com/abelljs/abell">Abell</a></div>
+  </footer>
+  
+  <script>
+    document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
+  </script>
 </body>
 </html>

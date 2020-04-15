@@ -1,36 +1,22 @@
 /* CSS Variables defined in ./global.css */
 
-nav{
-  color: #333;
-  padding: 23px 30px;
-  position: relative;
-  width: 100%;
-  z-index: 999;
-  background-color: var(--header-background);
-}
-
-nav > .brand{
-  font-size: 14pt;
-  font-weight: bold;
-  display: inline-block;
-  border-bottom: 1px solid #ddd;
-}
-
 header{
   width: 100%;
-  padding: 50px 100px;
-  background-color: var(--header-background);
+  padding: 80px 100px;
 }
 header > h1{
   margin: 10px 0px;
+  font-size: 50pt;
 }
-
 
 .article-container{
   padding: 30px 100px;
 }
 .article-container > article{
-  padding: 10px 10px;
+  padding: 30px;
+  box-shadow: 0 5px 14px -4px #0005;
+  margin-bottom: 30px;
+
 }
 .article-container > article h2{
   margin: 9px 0px;
