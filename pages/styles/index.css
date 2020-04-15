@@ -13,6 +13,7 @@ header > h1{
   padding: 30px 100px;
 }
 .article-container > article{
+  background-color: var(--article-card-color);
   padding: 30px;
   box-shadow: 0 5px 14px -4px #0005;
   margin-bottom: 30px;

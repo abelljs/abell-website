@@ -1,6 +1,7 @@
 :root{
-  --background-primary: #fff;
-  --font-color-primary: #333;
+  --background-primary: #fff; /* #222 */
+  --font-color-primary: #333; /* #ccc */
+  --article-card-color: #fff; /* #1b1b1b */
   --font-family-primary: 'Noto Sans KR', sans-serif;
 }
 html, body{
