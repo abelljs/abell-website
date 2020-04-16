@@ -2,6 +2,7 @@
   --background-primary: #fff; /* #222 */
   --font-color-primary: #333; /* #ccc */
   --article-card-color: #fff; /* #1b1b1b */
+  --code-background: #f7f7f7;
   --font-family-primary: 'Noto Sans KR', sans-serif;
 }
 html, body{
@@ -12,6 +13,11 @@ html, body{
   background-color: var(--background-primary);
   font-family: var(--font-family-primary);
   color: var(--font-color-primary);
+}
+code{
+  background-color: var(--code-background);
+  padding: 3px 8px;
+  border-radius: 4px;
 }
 h1, h2, h3, h4, h5, h6{
   font-family: var(--font-family-primary);
