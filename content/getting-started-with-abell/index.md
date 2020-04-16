@@ -10,7 +10,7 @@ Abell can be customized without any knowledge of JavaScript frameworks. You just
 <br/><br/>
 
 <iframe
-     src="https://codesandbox.io/embed/github/abelljs/abell-starter-minima/tree/master/?fontsize=14&hidenavigation=1&theme=dark"
+     src="https://codesandbox.io/embed/github/abelljs/abell-starter-minima/tree/master/?fontsize=14&hidenavigation=1&initialpath=%2Fhello-world&module=%2Fcontent%2Fhello-world%2Findex.md&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="abell-starter-minima"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr"
