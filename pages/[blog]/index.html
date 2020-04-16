@@ -9,6 +9,7 @@
   <meta name="og:description" content="{% description %}"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles/global.css" />
   <link rel="stylesheet" href="../styles/blog.css" />
@@ -18,6 +19,23 @@
 <body>
   <main id="blog-container">
     {% blogContent %}
+    <hr/>
+    <br/><br/>
+    <a target="_blank" rel="noopener noreferer" class="twitter-share-button blog shadow" href="https://twitter.com/intent/tweet?text=" data-size="large">
+      <img width="20" style="position: relative;top:4px;" src="../images/twitter.svg"> &nbsp;Share on Twitter
+    </a>
   </main>
+
+  <footer>
+    <div style="text-align: right;">© <span id="footer-year"></span>, Built with <a href="https://github.com/abelljs/abell">Abell</a></div>
+  </footer>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script>
+    document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
+    hljs.initHighlightingOnLoad();
+    document.querySelectorAll('.twitter-share-button.blog')
+      .forEach(shareEl => shareEl.href += location.href);
+  </script>
 </body>
 </html>

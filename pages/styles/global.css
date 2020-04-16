@@ -14,11 +14,7 @@ html, body{
   font-family: var(--font-family-primary);
   color: var(--font-color-primary);
 }
-code{
-  background-color: var(--code-background);
-  padding: 3px 8px;
-  border-radius: 4px;
-}
+
 h1, h2, h3, h4, h5, h6{
   font-family: var(--font-family-primary);
   color: var(--font-color-primary);
@@ -36,4 +32,8 @@ a{
 
 footer{
   padding: 20px 30px;
+}
+.twitter-share-button{
+  padding: 10px 20px;
+  border-radius: 10px;
 }

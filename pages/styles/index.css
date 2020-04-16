@@ -25,3 +25,12 @@ header > h1{
 .article-container .article-description{
   margin: 3px;
 }
+
+@media (max-width: 768px) {
+  header{
+    padding: 30px 20px 100px 20px;
+  }
+  .article-container{
+    padding: 20px 20px 20px 20px;
+  }
+}

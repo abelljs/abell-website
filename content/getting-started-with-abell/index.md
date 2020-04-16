@@ -4,12 +4,29 @@ Abell is a static site generator that lets you create blog in just few clicks wi
 
 Abell can be customized without any knowledge of JavaScript frameworks. You just have to edit HTML, CSS, and JavaScript to make changes in the blog.
 
+## Create your blog
+
+[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/abelljs/abell-starter-minima)  [![Deploy with Zeit Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/abelljs/abell-starter-minima) 
+<br/><br/>
+
+<iframe
+     src="https://codesandbox.io/embed/github/abelljs/abell-starter-minima/tree/master/?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="abell-starter-minima"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+     loading="lazy"
+   ></iframe>
+
 <br/>
 
-## How to use?
+## Writing blog
 
-- Click [Create Abell Blog](https://github.com/abelljs/abell-starter-minima/generate) to generate your AbellJS blog.
-- `git clone <your-new-repository>`
-- `cd <name-of-repository>`
-- `npm install` to install dependencies
-- `npm run dev` to run dev server and `npm run build` to build
+After deployment, a repository will be created on your GitHub account. You can edit files in `content` directory to create blog.
+
+<br/>
+
+## GitHub
+Source code of this template is available at [GitHub](https://github.com/abelljs/abell-starter-minima)
+
+<br/><br/>
