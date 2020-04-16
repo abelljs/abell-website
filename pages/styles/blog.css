@@ -1,8 +1,7 @@
-html,body{
-  margin: 0px;
-  padding: 0px;
+main#blog-container{
+  padding: 30px 100px;
 }
 
-article#blog-container{
-  padding: 30px 100px;
+main#blog-container > h1{
+  font-size: 50pt;
 }
