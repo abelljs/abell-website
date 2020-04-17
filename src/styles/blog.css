@@ -4,6 +4,9 @@ main{
 p{
   margin: 0px;
 }
+div.blog-container{
+  padding-top: 30px;
+}
 div.blog-container > h1{
   font-size: 30pt;
   font-weight: bold;
@@ -44,6 +47,6 @@ hr{
 
 @media (max-width: 768px) {
   main{
-    padding: 20px 20px;
+    padding: 40px 20px;
   }
 }

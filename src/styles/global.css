@@ -47,6 +47,7 @@ footer{
 .twitter-share-button{
   padding: 10px 20px;
   border-radius: 10px;
+  background-color: var(--article-card-color);
 }
 
 
