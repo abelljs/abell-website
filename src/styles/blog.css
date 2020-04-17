@@ -1,22 +1,22 @@
-main#blog-container{
+main{
   padding: 100px 200px;
 }
 p{
   margin: 0px;
 }
-main#blog-container > h1{
+div.blog-container > h1{
   font-size: 30pt;
   font-weight: bold;
 }
 
-main#blog-container h2{
+div.blog-container h2{
   font-size: 23pt;
   font-weight: bold;
   margin-bottom: 14px;
 }
 
 
-main#blog-container h3{
+div.blog-container h3{
   font-size: 16pt;
   font-weight: bold;
   margin-bottom: 14px;
@@ -43,7 +43,7 @@ hr{
 }
 
 @media (max-width: 768px) {
-  main#blog-container{
+  main{
     padding: 20px 20px;
   }
 }
