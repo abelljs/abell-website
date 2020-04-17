@@ -1,15 +1,26 @@
-:root{
+body{
   --background-primary: #fff; /* #222 */
   --font-color-primary: #333; /* #ccc */
   --article-card-color: #fff; /* #1b1b1b */
   --code-background: #f7f7f7;
   --font-family-primary: 'Noto Sans KR', sans-serif;
 }
+
+body.dark-mode{
+  --background-primary: #121212;
+  --font-color-primary: #ccc; 
+  --article-card-color: #1D1D1D;
+  --code-background: #222;
+}
+
 html, body{
   margin: 0px;
   padding: 0px;
   width: 100%;
   overflow-x: hidden;
+}
+
+body{
   background-color: var(--background-primary);
   font-family: var(--font-family-primary);
   color: var(--font-color-primary);
@@ -36,4 +47,59 @@ footer{
 .twitter-share-button{
   padding: 10px 20px;
   border-radius: 10px;
+}
+
+
+
+/* DARK MODE SWITCH */
+.switch-toggle {
+  position: relative;
+  float: right;
+  right: 0px;
+  display: block;
+  cursor: pointer;
+	width: 60px;
+	height: 28px;
+	border-radius: 25px;
+	background-color: var(--code-background);
+}
+
+.switch-toggle input {
+	display: none;
+}
+
+.switch-toggle div {
+	position: absolute;
+	border-radius: 50%;
+	background-color: #DFDFDF;
+	transition: .1s ease;
+}
+
+.switch-toggle input:checked + div {
+	left: 50%;
+	background-color: #aaa;
+}
+
+.switch-toggle.rect {
+	border-radius: 0;
+}
+
+.switch-toggle.rect div {
+	border-radius: 0;
+}
+
+.switch-toggle.inner div {
+	width: 18px;
+	height: 18px;
+	top: 1px;
+	left: 1px;
+	
+}
+
+.switch-toggle.outer div {
+	width: 29px;
+	height: 29px;
+	top: -0px;
+	left: -1.5px;
+	
 }
