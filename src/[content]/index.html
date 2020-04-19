@@ -29,7 +29,7 @@
     </div>
     <hr/>
     <br/><br/>
-    <a target="_blank" rel="noopener noreferer" class="twitter-share-button blog shadow" href="https://twitter.com/intent/tweet?text=" data-size="large">
+    <a target="_blank" rel="noopener noreferer" class="twitter-share-button blog dynamic-url shadow" href="https://twitter.com/intent/tweet?text=" data-size="large">
       <img width="20" style="position: relative;top:4px;" src="../icons/twitter.svg"> &nbsp;Share on Twitter
     </a>
   </main>
@@ -43,7 +43,7 @@
   <script>
     document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
     hljs.initHighlightingOnLoad();
-    document.querySelectorAll('.twitter-share-button.blog')
+    document.querySelectorAll('.twitter-share-button.blog.dynamic-url')
       .forEach(shareEl => shareEl.href += location.href);
   </script>
 </body>
