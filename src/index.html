@@ -25,7 +25,12 @@
   </header>
   <main>
     <div class="article-container">
-      {% $articlesList %} <!-- renders list of articles -->
+      {{ # $contentList }}
+        <article>
+          <a href="{{$slug}}"><h2>{{title}}</h2></a>
+          <p class="article-description">{{description}}</p>
+        </article>
+      {{ / $contentList }}
     </div>
   </main>
   <footer>

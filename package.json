@@ -2,7 +2,7 @@
   "name": "abell-starter-minima",
   "version": "1.0.0",
   "description": "",
-  "main": "pages/index.html",
+  "main": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "abell build",
@@ -13,6 +13,6 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "abell": "^0.1.3"
+    "abell": "^0.1.4"
   }
 }
