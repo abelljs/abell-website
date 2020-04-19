@@ -1,15 +1,15 @@
 body{
-  --background-primary: #fff; /* #222 */
-  --font-color-primary: #333; /* #ccc */
-  --article-card-color: #fff; /* #1b1b1b */
-  --code-background: #f7f7f7;
+  --background-primary: #fff;
+  --font-color-primary: #333;
+  --elevation-background: #fff;
+  --code-background: #f3f3f3;
   --font-family-primary: 'Noto Sans KR', sans-serif;
 }
 
 body.dark-mode{
   --background-primary: #121212;
   --font-color-primary: #ccc; 
-  --article-card-color: #1D1D1D;
+  --elevation-background: #1D1D1D;
   --code-background: #222;
 }
 
@@ -47,7 +47,7 @@ footer{
 .twitter-share-button{
   padding: 10px 20px;
   border-radius: 10px;
-  background-color: var(--article-card-color);
+  background-color: var(--elevation-background);
 }
 
 
