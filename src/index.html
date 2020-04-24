@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/index.css">
-  <title>Abell Minima</title>
+  <title>{{ globalMeta.siteName }}</title>
 </head>
 <body>
   <header>
@@ -18,9 +18,9 @@
       <div></div>
     </label>
 
-    <h1>Abell Minima</h1>
+    <h1>{{ globalMeta.siteName }}</h1>
     <div class="header-bio">
-      Abell Minima is a starter blog for AbellJS. <br/>This template is designed by <b>Saurabh Daware</b> you can follow him on <a href="https://twitter.com/saurabhcodes">Twitter @saurabhcodes</a>.
+      Abell Minima is a starter blog for AbellJS. <br/>This template is designed by <b>{{ globalMeta.name }}</b> you can follow him on <a href="https://twitter.com/{{ globalMeta.twitter }}">Twitter @{{ globalMeta.twitter }}</a>.
     </div>
   </header>
   <main>

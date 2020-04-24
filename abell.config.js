@@ -1,5 +1,10 @@
 module.exports = {
   sourcePath: 'src',
   destinationPath: 'dist',
-  contentPath: 'content'
+  contentPath: 'content',
+  globalMeta: {
+    siteName: 'Abell Minima',
+    name: 'Saurabh Daware',
+    twitter: 'saurabhcodes'
+  }
 }
