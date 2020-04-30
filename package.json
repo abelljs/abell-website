@@ -13,6 +13,6 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "abell": "^0.1.6"
+    "abell": "^0.1.10"
   }
 }
