@@ -13,7 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles/global.css" />
   <link rel="stylesheet" href="../styles/blog.css" />
-
   <title>{{ meta.title }} | {{ globalMeta.siteName }}</title>
 </head>
 <body>
