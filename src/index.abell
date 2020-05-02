@@ -25,12 +25,16 @@
   </header>
   <main>
     <div class="article-container">
-      {{ # $contentList }}
-        <article>
-          <a href="{{$slug}}"><h2>{{title}}</h2></a>
-          <p class="article-description">{{description}}</p>
-        </article>
-      {{ / $contentList }}
+      {{
+        $contentList
+          .map(meta => `
+            <article>
+              <a href="${meta.$slug}"><h2>${meta.title}</h2></a>
+              <p class="article-description">${meta.description}</p>
+            </article>
+          `)
+          .join('')
+      }}
     </div>
   </main>
   <footer>
