@@ -28,9 +28,12 @@
       {{
         $contentList
           .map(meta => `
-            <article>
-              <a href="${meta.$slug}"><h2>${meta.title}</h2></a>
-              <p class="article-description">${meta.description}</p>
+            <article class="shadow">
+              <a href="${meta.$slug}">
+                <h2>${meta.title}</h2>
+                <div class="article-date"><small>${meta.$createdAt}</small></div>
+                <p class="article-description">${meta.description}</p>
+              </a>
             </article>
           `)
           .join('')

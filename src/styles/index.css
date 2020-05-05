@@ -9,20 +9,28 @@ header > h1{
   font-size: 50pt;
 }
 
-.article-container{
+.article-date {
+  font-size: 10pt;
+  color: var(--font-color-primary);
+  padding: 0px 3px 2px 1px;
+}
+.article-container {
   padding: 30px 200px 100px 200px;
 }
 .article-container > article{
   background-color: var(--elevation-background);
-  padding: 30px;
-  box-shadow: 0 5px 14px -4px #0005;
   margin-bottom: 30px;
 }
+.article-container > article > a {
+  padding: 30px;
+  display: block;
+}
 .article-container > article h2{
-  margin: 9px 0px;
+  margin: 9px 0px 0px 0px;
 }
 .article-container .article-description{
-  margin: 3px;
+  margin: 3px 0px;
+  color: var(--font-color-primary);
 }
 
 @media (max-width: 768px) {
@@ -31,5 +39,9 @@ header > h1{
   }
   .article-container{
     padding: 20px 20px 20px 20px;
+  }
+  .article-container > article > a {
+    padding: 15px 20px;
+    display: block;
   }
 }
