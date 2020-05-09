@@ -66,7 +66,11 @@ footer{
 }
 
 .switch-toggle input {
-	display: none;
+  opacity: 0;
+}
+
+.switch-toggle input:focus + div {
+  border: 2px solid #09f;
 }
 
 .switch-toggle div {
