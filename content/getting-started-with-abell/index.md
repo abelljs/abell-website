@@ -1,4 +1,4 @@
-# Getting Started with Abell
+# {{meta.title}}
 
 Abell is a static site generator that lets you create blog in just few clicks without writing any code. 
 

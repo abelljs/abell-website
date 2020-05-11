@@ -24,7 +24,7 @@
     </label>
     <br/>
     <div class="blog-container">
-      {{ import_content '{{ meta.$slug }}/index.md' }} <!-- renders content of blog -->
+      {{ $importContent(`${ meta.$slug }/index.md`) }} <!-- renders content of blog -->
     </div>
     <hr/>
     <br/><br/>
