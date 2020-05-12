@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles/global.css" />
   <link rel="stylesheet" href="../styles/blog.css" />
-  <title>{{ meta.title }} | {{ globalMeta.siteName }}</title>
+  <title>{{meta.title}} | {{globalMeta.siteName}}</title>
 </head>
 <body>
   <main>
@@ -24,7 +24,7 @@
     </label>
     <br/>
     <div class="blog-container">
-      {{ $importContent(`${ meta.$slug }/index.md`) }} <!-- renders content of blog -->
+      {{ $importContent(`${meta.$slug}/index.md`) }} <!-- renders content of blog -->
     </div>
     <hr/>
     <br/><br/>

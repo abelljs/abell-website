@@ -20,7 +20,7 @@
 
     <h1>{{ globalMeta.siteName }}</h1>
     <div class="header-bio">
-      Abell Minima is a starter blog for AbellJS. <br/>This template is designed by <b>{{ globalMeta.name }}</b> you can follow him on <a href="https://twitter.com/{{ globalMeta.twitter }}">Twitter @{{ globalMeta.twitter }}</a>.
+      Abell Minima is a starter blog built with Abell. <br/>This template is designed and maintained by <b>{{ globalMeta.name }}</b> you can follow them on <a href="https://twitter.com/{{ globalMeta.twitter }}">Twitter @{{ globalMeta.twitter }}</a>.
     </div>
   </header>
   <main>

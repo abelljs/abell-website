@@ -4,7 +4,7 @@ module.exports = {
   contentPath: 'content',
   globalMeta: {
     siteName: 'Abell Minima',
-    name: 'Saurabh Daware',
-    twitter: 'saurabhcodes'
+    name: 'Hoomans of Abell Land',
+    twitter: 'AbellLand'
   }
 }
