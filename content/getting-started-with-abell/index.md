@@ -23,8 +23,7 @@ After deployment, a repository will be created on your GitHub account. You can e
 <br/><br/>
 You can also use codesandbox to edit/update and deploy blogs without local setup. <br/><br/>
 
-<iframe
-     src="https://codesandbox.io/embed/github/abelljs/abell-starter-minima/tree/master/?fontsize=14&hidenavigation=1&initialpath=%2Fhello-world&module=%2Fcontent%2Fhello-world%2Findex.md&theme=dark"
+<iframe src="https://codesandbox.io/embed/github/abelljs/abell-starter-minima/tree/master/?fontsize=14&hidenavigation=1&initialpath=%2Fhello-world&module=%2Fcontent%2Fhello-world%2Findex.md&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="abell-starter-minima"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr"

@@ -9,7 +9,7 @@
 
 A starter template for creating your blog with [abelljs/abell](https://github.com/abelljs/abell).
 
-***ABELL IS NOT READY SO DO NOT USE IT IN PRODUCTION APPLICATIONS***
+***ABELL IS NOT READY SO DO NOT USE IT IN SERIOUS APPLICATIONS***
 
 
 ## Using this template to create your blog.
@@ -20,6 +20,11 @@ Just one click and your blog will be ready!
 
 This will create a repository in your GitHub and will deploy it to the Netlify.
 
+## Write/Edit blogs
+The new repository will have a `content` folder in the root directory. You can edit blogs from there and you can create a new folder with `index.md` to create a new blog.
+
 ---
+
+For documentation on editing layout, check out README of [abelljs/abell](https://github.com/abelljs/abell) repository
 
 Thank you and do let us know what you think [Twitter @AbellLand](https://twitter.com/abellland)
