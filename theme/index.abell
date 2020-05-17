@@ -7,8 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/index.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <title>{{ globalMeta.siteName }}</title>
+
+  <link rel="prefetch" href="./styles/blog.css">
+  <link rel="prefetch" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"/>
 </head>
 <body>
   <header>
@@ -30,7 +32,7 @@
         $contentArray
           .map(meta => `
             <article class="shadow">
-              <a href="${meta.$slug}">
+              <a href="${meta.$slug}/">
                 <h2>${meta.title}</h2>
                 <div class="article-date"><small>${meta.$createdAt.toDateString()}</small></div>
                 <p class="article-description">${meta.description}</p>
@@ -48,15 +50,6 @@
   <script defer src="./js/themeHandler.js"></script>
   <script>
     document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
   </script>
 </body>
 </html>
