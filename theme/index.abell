@@ -8,9 +8,6 @@
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/index.css">
   <title>{{ globalMeta.siteName }}</title>
-
-  <link rel="prefetch" href="./styles/blog.css">
-  <link rel="prefetch" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css"/>
 </head>
 <body>
   <header>
