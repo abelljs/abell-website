@@ -1,3 +1,6 @@
+{{
+  const DarkModeToggle = require('../components/DarkModeToggle.js');
+}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,11 +20,7 @@
 </head>
 <body>
   <main>
-    <label class="dark-mode-toggle switch-toggle outer">
-      <span style="display:inline-block;padding:1px 3px">🌙 &nbsp; ☀️</span>
-      <input id="dark-mode-toggle" type="checkbox">
-      <div></div>
-    </label>
+    {{ DarkModeToggle() }}
     <br/>
     <div class="blog-container">
       {{ $importContent(`${meta.$slug}/index.md`) }} <!-- renders content of blog -->

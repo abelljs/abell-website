@@ -1,3 +1,6 @@
+{{
+  const DarkModeToggle = require('./components/DarkModeToggle.js');
+}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +14,7 @@
 </head>
 <body>
   <header>
-
-    <label class="dark-mode-toggle switch-toggle outer">
-      <span style="display:inline-block;padding:1px 3px">🌙 &nbsp; ☀️</span>
-      <input id="dark-mode-toggle" type="checkbox">
-      <div></div>
-    </label>
-
+    {{ DarkModeToggle() }}
     <h1>{{ globalMeta.siteName }}</h1>
     <div class="header-bio">
       Abell Minima is a starter blog built with Abell. <br/>This template is designed and maintained by <b>{{ globalMeta.name }}</b> you can follow them on <a href="https://twitter.com/{{ globalMeta.twitter }}">Twitter @{{ globalMeta.twitter }}</a>.
