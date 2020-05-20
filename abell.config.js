@@ -5,6 +5,7 @@ module.exports = {
   globalMeta: {
     siteName: 'Abell Minima',
     name: 'Hoomans of Abell Land',
-    twitter: 'AbellLand'
+    twitter: 'AbellLand',
+    domain: 'https://abell-starter-minima.netlify.app'
   }
 }

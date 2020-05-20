@@ -1,5 +1,6 @@
 {{
   const DarkModeToggle = require('../components/DarkModeToggle.js');
+  const TwitterShareButton = require('../components/TwitterShareButton.js');
 }}
 <!DOCTYPE html>
 <html lang="en">
@@ -14,22 +15,19 @@
   
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../styles/global.css" />
-  <link rel="stylesheet" href="../styles/blog.css" />
+  <link rel="preload" href="../styles/global.css" as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
+  <link rel="preload" href="../styles/blog.css"   as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
   <title>{{meta.title}} | {{globalMeta.siteName}}</title>
 </head>
 <body>
   <main>
     {{ DarkModeToggle() }}
-    <br/>
     <div class="blog-container">
       {{ $importContent(`${meta.$slug}/index.md`) }} <!-- renders content of blog -->
     </div>
     <hr/>
     <br/><br/>
-    <a target="_blank" rel="noopener noreferer" class="twitter-share-button blog dynamic-url shadow" href="https://twitter.com/intent/tweet?text=" data-size="large">
-      <img width="20" style="position: relative;top:4px;" alt="Twitter Logo" src="../icons/twitter.svg"> &nbsp;Share on Twitter
-    </a>
+    {{ TwitterShareButton({link:`${globalMeta.domain}/${meta.$slug}/`}) }}
   </main>
 
   <footer>
@@ -41,8 +39,6 @@
   <script>
     document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
     hljs.initHighlightingOnLoad();
-    document.querySelectorAll('.twitter-share-button.blog.dynamic-url')
-      .forEach(shareEl => shareEl.href += location.href);
   </script>
 </body>
 </html>
