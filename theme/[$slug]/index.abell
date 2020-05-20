@@ -1,44 +1,79 @@
 {{
   const DarkModeToggle = require('../components/DarkModeToggle.js');
   const TwitterShareButton = require('../components/TwitterShareButton.js');
+  const Placeholder = require('../components/Placeholder.js');
+  const Footer = require('../components/Footer.js');
 }}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="description" content="{{ meta.description }}"/>
-  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
 
   <meta name="og:title" content="{{ meta.title }}"/>
   <meta name="og:description" content="{{ meta.description }}"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
-  <link rel="preload" href="../styles/global.css" as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
-  <link rel="preload" href="../styles/blog.css"   as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
-  <title>{{meta.title}} | {{globalMeta.siteName}}</title>
+  <!-- Preloads for performance -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" as="style" onload="this.rel = 'stylesheet'; this.onload = null" >
+  <link rel="preload" class="before-content-load" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
+  <link rel="preload" class="before-content-load" href="../styles/global.css" as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
+  <link rel="preload" class="before-content-load" href="../styles/blog.css"  as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
+  <title>{{ meta.title }} | {{ globalMeta.siteName }}</title>
+
+  <style>
+    /* inlined-css for fast load */
+    main {
+      padding: 100px 200px;
+    }
+    .content {
+      display: none;
+    }
+    {{ Placeholder.css }}
+
+    @media (max-width: 768px) {
+      main {
+        padding: 40px 20px;
+      }
+    }
+
+    {{ DarkModeToggle.css }}
+  </style>
 </head>
 <body>
   <main>
-    {{ DarkModeToggle() }}
+    {{ DarkModeToggle.html }}
     <div class="blog-container">
-      {{ $importContent(`${meta.$slug}/index.md`) }} <!-- renders content of blog -->
+      {{ Placeholder.html }}
+      <div class="content">
+        {{ $importContent(`${meta.$slug}/index.md`) }}
+      </div>
     </div>
     <hr/>
     <br/><br/>
     {{ TwitterShareButton({link:`${globalMeta.domain}/${meta.$slug}/`}) }}
   </main>
-
-  <footer>
-    <div style="text-align: right;">© <span id="footer-year"></span>, Built with <a href="https://github.com/abelljs/abell">Abell</a></div>
-  </footer>
   
-  <script src="../js/themeHandler.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  {{ Footer.html }}
+  
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script defer src="../js/themeHandler.js"></script>
   <script>
+
+    // When important links are done loading, we show the content.
+    const importantLinks = document.querySelectorAll('link.before-content-load');
+    let count = 0;
+    importantLinks.forEach(link => {
+      link.addEventListener('load', () => { 
+        count+= 1;
+        if (count >= importantLinks.length) {
+          document.querySelector('.content').style.display = 'block';
+          document.querySelector('.loading-placeholder').style.display = 'none';
+        }
+      });
+    });
     document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
-    hljs.initHighlightingOnLoad();
   </script>
 </body>
 </html>

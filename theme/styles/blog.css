@@ -1,6 +1,3 @@
-main{
-  padding: 100px 200px;
-}
 p{
   margin: 0px;
 }
@@ -43,10 +40,4 @@ blockquote{
 hr{
   border-color: var(--code-background);
   opacity: .3;
-}
-
-@media (max-width: 768px) {
-  main{
-    padding: 40px 20px;
-  }
 }

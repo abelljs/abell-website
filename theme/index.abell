@@ -11,10 +11,13 @@
   <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/index.css">
   <title>{{ globalMeta.siteName }}</title>
+  <style>
+    {{ DarkModeToggle.css }}
+  </style>
 </head>
 <body>
   <header>
-    {{ DarkModeToggle() }}
+    {{ DarkModeToggle.html }}
     <h1>{{ globalMeta.siteName }}</h1>
     <div class="header-bio">
       Abell Minima is a starter blog built with Abell. <br/>This template is designed and maintained by <b>{{ globalMeta.name }}</b> you can follow them on <a href="https://twitter.com/{{ globalMeta.twitter }}">Twitter @{{ globalMeta.twitter }}</a>.
