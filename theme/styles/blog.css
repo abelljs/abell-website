@@ -4,7 +4,7 @@ p{
 div.blog-container{
   padding-top: 30px;
 }
-div.blog-container > h1{
+div.blog-container h1{
   font-size: 30pt;
   font-weight: bold;
 }
