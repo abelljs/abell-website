@@ -7,10 +7,16 @@ Abell can be customized without any knowledge of JavaScript frameworks. You just
 ## Create your blog
 
 You can create your blog in one button click!!
-<br/><br/>
+<br/>
+<br/>
 
-[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/abelljs/abell-starter-minima)
+<a 
+  style="border-radius: 6px; padding:8px 15px;background-color: #20C6B7; color: #fff;" 
+  href="https://app.netlify.com/start/deploy?repository=https://github.com/abelljs/abell-starter-minima"> 
+  Create and Deploy Blog to Netlify
+</a>
 
+<br/>
 This will create a new project in your GitHub and will deploy it to Netlify. Later you can make changes in the blog by editing files in your new project.
 <br/>
 
