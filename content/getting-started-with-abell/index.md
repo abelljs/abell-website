@@ -11,9 +11,9 @@ You can create your blog in one button click!!
 <br/>
 
 <a 
-  style="border-radius: 6px; padding:8px 15px;background-color: #20C6B7; color: #fff;" 
+  style="border-radius: 6px;font-size: 11pt; padding:10px 20px;background-color: #353D3E; color: #ffffff;" 
   href="https://app.netlify.com/start/deploy?repository=https://github.com/abelljs/abell-starter-minima"> 
-  Create and Deploy Blog to Netlify
+  Create and Deploy Blog to Netlify <img style="position: relative; top: 5px;left: 3px;" alt="netlify logo" width="20" src="../icons/netlify.svg">
 </a>
 
 <br/>
