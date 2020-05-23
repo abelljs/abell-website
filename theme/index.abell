@@ -1,5 +1,7 @@
 {{
   const DarkModeToggle = require('./components/DarkModeToggle.js');
+  const globalInlinedCSS = require('./styles/inlined/global.css.js');
+  const Footer = require('./components/Footer.js');
 }}
 <!DOCTYPE html>
 <html lang="en">
@@ -8,10 +10,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Welcome to the {{ globalMeta.siteName }}, A blog by {{ globalMeta.name }}" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/global.css">
   <link rel="stylesheet" href="./styles/index.css">
   <title>{{ globalMeta.siteName }}</title>
   <style>
+    {{ globalInlinedCSS }}
     {{ DarkModeToggle.css }}
   </style>
 </head>

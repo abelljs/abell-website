@@ -18,8 +18,6 @@ if(localPreference) {
   // If color is preferred
   setTheme('dark-mode');
 }
-hljs.initHighlightingOnLoad();
-
 
 document.querySelector('#dark-mode-toggle')
   .addEventListener('change', e => {

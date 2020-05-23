@@ -1,4 +1,4 @@
-body {
+module.exports = /* css */`body {
   --background-primary: #fff;
   --font-color-primary: #333;
   --elevation-background: #fff;
@@ -68,4 +68,4 @@ footer{
   padding: 10px 20px;
   border-radius: 10px;
   background-color: var(--elevation-background);
-}
+}`;

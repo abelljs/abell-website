@@ -3,6 +3,7 @@
   const TwitterShareButton = require('../components/TwitterShareButton.js');
   const Placeholder = require('../components/Placeholder.js');
   const Footer = require('../components/Footer.js');
+  const globalInlinedCSS = require('../styles/inlined/global.css.js');
 }}
 <!DOCTYPE html>
 <html lang="en">
@@ -17,13 +18,13 @@
   
   <!-- Preloads for performance -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" as="style" onload="this.rel = 'stylesheet'; this.onload = null" >
-  <link rel="preload" class="before-content-load" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
-  <link rel="preload" class="before-content-load" href="../styles/global.css" as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
-  <link rel="preload" class="before-content-load" href="../styles/blog.css"  as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
+  <link rel="preload" href="../styles/blog.css"  as="style" onload="this.rel = 'stylesheet'; loadContent() ;this.onload = null" />
   <title>{{ meta.title }} | {{ globalMeta.siteName }}</title>
 
   <style>
     /* inlined-css for fast load */
+    {{ globalInlinedCSS }}
     main {
       padding: 100px 200px;
     }
@@ -59,20 +60,13 @@
   
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script defer src="../js/themeHandler.js"></script>
+  <script defer src="../js/static-main.js"></script>
   <script>
+    function loadContent() {
+      document.querySelector('.content').style.display = 'block';
+      document.querySelector('.loading-placeholder').style.display = 'none';
+    }
 
-    // When important links are done loading, we show the content.
-    const importantLinks = document.querySelectorAll('link.before-content-load');
-    let count = 0;
-    importantLinks.forEach(link => {
-      link.addEventListener('load', () => { 
-        count+= 1;
-        if (count >= importantLinks.length) {
-          document.querySelector('.content').style.display = 'block';
-          document.querySelector('.loading-placeholder').style.display = 'none';
-        }
-      });
-    });
     document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
   </script>
 </body>
