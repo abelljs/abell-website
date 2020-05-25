@@ -46,8 +46,8 @@
     <div style="text-align: right;">© <span id="footer-year"></span>, Built with <a href="https://github.com/abelljs/abell">Abell</a></div>
   </footer>
   
-  <script defer src="./js/themeHandler.js"></script>
   <script>
+    {{ DarkModeToggle.inlinedJS }}
     document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
   </script>
 </body>

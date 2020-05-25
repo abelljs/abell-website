@@ -59,13 +59,14 @@
   {{ Footer.html }}
   
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-  <script defer src="../js/themeHandler.js"></script>
   <script defer src="../js/static-main.js"></script>
   <script>
     function loadContent() {
       document.querySelector('.content').style.display = 'block';
       document.querySelector('.loading-placeholder').style.display = 'none';
     }
+
+    {{ DarkModeToggle.inlinedJS }}
 
     document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
   </script>
