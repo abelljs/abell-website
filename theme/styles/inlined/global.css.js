@@ -1,4 +1,5 @@
-module.exports = /* css */`body {
+module.exports = /* css */`
+body {
   --background-primary: #fff;
   --font-color-primary: #333;
   --elevation-background: #fff;
@@ -13,24 +14,6 @@ body.dark-mode {
   --elevation-background: #1D1D1D;
   --code-background: #222;
   --link-color: #09f;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    --background-primary: #121212;
-    --font-color-primary: #ccc; 
-    --elevation-background: #1D1D1D;
-    --code-background: #222;
-    --link-color: #09f;
-    --font-family-primary: 'Noto Sans KR', sans-serif;
-  }
-  body:not(.dark-mode) {
-    --background-primary: #fff;
-    --font-color-primary: #333;
-    --elevation-background: #fff;
-    --code-background: #f3f3f3;
-    --link-color: #009;
-  }
 }
 
 html, body{

@@ -19,7 +19,7 @@ const css = /* css */`
     height: 100%;
   }
   .loading-placeholder > .strip{
-    background-color: #eee;
+    background-color: var(--code-background);
     height: 13px;
     display: block;
     width: 70%;

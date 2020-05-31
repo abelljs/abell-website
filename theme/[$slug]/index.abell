@@ -19,7 +19,7 @@
   <!-- Preloads for performance -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" as="style" onload="this.rel = 'stylesheet'; this.onload = null" >
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
-  <link rel="preload" href="../styles/blog.css"  as="style" onload="this.rel = 'stylesheet'; loadContent() ;this.onload = null" />
+  <link rel="preload" href="../styles/blog.css"  as="style" onload="loadContent(); this.rel = 'stylesheet';this.onload = null" />
   <title>{{ meta.title }} | {{ globalMeta.siteName }}</title>
 
   <style>
