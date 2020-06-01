@@ -45,7 +45,7 @@
   <footer>
     <div style="text-align: right;">© <span id="footer-year"></span>, Built with <a href="https://github.com/abelljs/abell">Abell</a></div>
   </footer>
-  
+  <script defer src="./js/static-main.js"></script>
   <script>
     {{ DarkModeToggle.inlinedJS }}
   </script>
