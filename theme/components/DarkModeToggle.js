@@ -7,7 +7,6 @@ const html = /* html */`
 
 const css = /* css */`
 
-
 /* DARK MODE SWITCH */
 .dark-mode-toggle {
   cursor: pointer;
@@ -26,30 +25,30 @@ body:not(.user-is-tabbing) .dark-mode-toggle:focus {
 }
 body .dark-mode-toggle .moon {display: none}
 body .dark-mode-toggle .sun {display: inline-block}
-body.dark-mode .dark-mode-toggle .moon {display: inline-block;}
-body.dark-mode .dark-mode-toggle .sun {display: none;}
+body.dark .dark-mode-toggle .moon {display: inline-block;}
+body.dark .dark-mode-toggle .sun {display: none;}
 `
 
 const inlinedJS = `
 
 function toggleTheme() {
-  if (document.body.classList.contains('dark-mode')) {
-    document.body.classList.remove('dark-mode');
-    window.localStorage.setItem('prefers-theme', 'light-mode');
+  if (document.body.classList.contains('dark')) {
+    document.body.classList.remove('dark');
+    window.localStorage.setItem('prefers-theme', 'light');
   } else {
-    document.body.classList.add('dark-mode');
-    window.localStorage.setItem('prefers-theme', 'dark-mode');
+    document.body.classList.add('dark');
+    window.localStorage.setItem('prefers-theme', 'dark');
   }
 }
 
-const localPreference = window.localStorage.getItem('prefers-theme') || 'light-mode';
+const localPreference = window.localStorage.getItem('prefers-theme') || 'light';
 
-if(window.matchMedia('(prefers-color-scheme: dark)').matches || localPreference === 'dark-mode') {
+if(window.matchMedia('(prefers-color-scheme: dark)').matches || localPreference === 'dark') {
   // If color is preferred
-  document.body.classList.add('dark-mode');
-} else if(localPreference === 'light-mode') {
+  document.body.classList.add('dark');
+} else if(localPreference === 'light') {
   // If locally values are stored
-  document.body.classList.remove('dark-mode');
+  document.body.classList.remove('dark');
 } 
 
 

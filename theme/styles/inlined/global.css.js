@@ -4,11 +4,11 @@ body {
   --font-color-primary: #333;
   --elevation-background: #fff;
   --code-background: #f3f3f3;
-  --font-family-primary: 'Noto Sans KR', sans-serif;
   --link-color: #006EB8;
+  --font-family-primary: 'Noto Sans KR', sans-serif;
 }
 
-body.dark-mode {
+body.dark {
   --background-primary: #121212;
   --font-color-primary: #ccc; 
   --elevation-background: #1D1D1D;
