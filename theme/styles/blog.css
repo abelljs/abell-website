@@ -81,4 +81,7 @@ hr{
   .theme-container {
     width: 100%;
   }
+  div.blog-container h1{
+    font-size: 30pt;
+  }
 }

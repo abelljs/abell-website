@@ -1,5 +1,5 @@
-const html = /* html */`
-  <button onclick="toggleTheme()" class="dark-mode-toggle nav-item">
+const html = ({classes}={classes: ''}) => /* html */`
+  <button onclick="toggleTheme()" class="dark-mode-toggle nav-item ${classes} ">
     <span class="sun"> <img width="33px" src="../icons/sun.svg" /></span>
     <span class="moon"><img width="23px" src="../icons/moon.svg" /></span>
   </button>

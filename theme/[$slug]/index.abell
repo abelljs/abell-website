@@ -1,6 +1,6 @@
 {{
   const DarkModeToggle = require('../components/DarkModeToggle.js');
-  const TwitterShareButton = require('../components/TwitterShareButton.js');
+  const GitHubContributeButton = require('../components/GitHubContributeButton.js');
   const { TopNavigationHTML, NavigationCSS, SideNavigationHTML } = require('../components/Navigation.js');
   const Footer = require('../components/Footer.js');
   const globalInlinedCSS = require('../styles/inlined/global.css.js');
@@ -38,12 +38,18 @@
     main {
       display: inline-block;
       flex: 1;
+    }
+    .blog-container {
       padding: 50px 100px;
     }
 
     @media (max-width: 768px) {
-      main {
+      .blog-container {
         padding: 40px 20px;
+      }
+      main {
+        display: block;
+        width: 100%;
       }
     }
 
@@ -59,15 +65,15 @@
         <div class="content">
           {{ $importContent(`${meta.$slug}/index.md`) }}
         </div>
+        <hr/>
+        <br/>
+        {{ GitHubContributeButton(meta.$path) }}
       </div>
-      <hr/>
-      <br/><br/>
-      {{ TwitterShareButton({link:`${globalMeta.domain}/${meta.$slug}/`}) }}
+      {{ Footer.html }}
     </main>
-    <div class="side-nav-styles nav-placeholder">.</div>
+    <div class="side-nav-styles nav-placeholder hide-mobile"></div>
   </div>
   
-  {{ Footer.html }}
   
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script defer src="../js/static-main.js"></script>

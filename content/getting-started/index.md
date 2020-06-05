@@ -33,4 +33,6 @@ npm run dev
 
 ## Editing Content
 
-After Installtion is done, you can edit content from `content/` directory.
+Once Installtion is done, you can edit content from `content/` directory in the root folder.
+
+<br/><br/>

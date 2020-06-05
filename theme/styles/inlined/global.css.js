@@ -49,8 +49,25 @@ a{
 footer{
   padding: 20px 30px;
 }
-.twitter-share-button{
+.github-contribute-button{
   padding: 10px 20px;
   border-radius: 10px;
+  color: var(--font-color);
   background-color: var(--elevation-background);
-}`;
+}
+body.dark .github-contribute-button > img {
+  filter: invert(100);
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-pc {
+    display: none !important;
+  }
+}
+`;
