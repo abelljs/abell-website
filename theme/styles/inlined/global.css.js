@@ -7,6 +7,7 @@ body {
   --code-background: #f3f3f3;
   --link-color: #006EB8;
   --font-family-primary: 'Noto Sans KR', sans-serif;
+  --abell-primary: #3354ea;
 }
 
 body.dark {
@@ -58,7 +59,15 @@ footer{
 body.dark .github-contribute-button > img {
   filter: invert(100);
 }
-
+a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 4px;
+}
+.primary-bg {
+  background-color: var(--abell-primary);
+}
 @media (max-width: 768px) {
   .hide-mobile {
     display: none !important;

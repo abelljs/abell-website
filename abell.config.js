@@ -3,7 +3,7 @@ module.exports = {
   destinationPath: 'dist',
   contentPath: 'content',
   globalMeta: {
-    siteName: 'Abell Minima',
+    siteName: 'Abell',
     name: 'Hoomans of Abell Land',
     twitter: 'AbellLand',
     domain: 'http://localhost:5000',

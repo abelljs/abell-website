@@ -9,7 +9,7 @@ const TopNavigationHTML = (navigationPath, globalMeta) => /* html */ `
       </a>
       <div style="display: inline-block; float: right;">
         <a class="nav-item hide-mobile ${navigationPath ? '' : 'active'}" href="${globalMeta.domain}">Home</a>
-        <a class="nav-item hide-mobile" href="${globalMeta.domain}/getting-started/">Docs</a>
+        <a class="nav-item hide-mobile ${navigationPath ? 'active': ''}" href="${globalMeta.domain}/getting-started/">Docs</a>
         <a class="nav-item hide-mobile" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
         <button 
           class="nav-item hide-pc"
@@ -73,7 +73,7 @@ nav.top-nav {
   left: 0px;
   width: 100%;
   background-color: var(--elevation-background);
-  z-index: 1;
+  z-index: 10000;
   padding: 0px 10px;
 }
 nav.top-nav .nav-item {
@@ -85,6 +85,9 @@ nav.top-nav .nav-item {
 nav.top-nav .nav-item:hover {
   border-bottom: 2px solid var(--link-color);
   transition: border-bottom .2s ease;
+}
+nav.top-nav .active {
+  border-bottom: 2px solid var(--link-color);
 }
 
 @media (max-width: 768px) {

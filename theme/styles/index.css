@@ -1,47 +1,57 @@
 /* CSS Variables defined in ./global.css */
-
-header{
-  width: 100%;
-  padding: 100px 200px;
+body {
+  --header-background: #eee;
 }
-header > h1{
+body.dark {
+  --header-background: #292929;
+}
+header.landing{
+  width: 100%;
+  padding: 130px 300px;
+  background-color: var(--header-background);
+  overflow-y: hidden;
+  position: relative;
+  text-align: center;
+}
+header.landing .header-abell-logo {
+  position: absolute;
+  bottom: -200px;
+  filter: grayscale(100%);
+  opacity: .3;
+  right: 0px;
+  width: 600px;
+}
+body.dark header.landing .header-abell-logo {
+  filter: grayscale(100%) invert(100%);
+  opacity: .1;
+}
+header.landing h1{
   margin: 10px 0px;
   font-size: 50pt;
 }
-
-.article-date {
-  font-size: 10pt;
-  color: var(--font-color-primary);
-  padding: 0px 3px 2px 1px;
-}
-.article-container {
-  padding: 30px 200px 100px 200px;
-}
-.article-container > article{
-  background-color: var(--elevation-background);
-  margin-bottom: 30px;
-}
-.article-container > article > a {
-  padding: 30px;
-  display: block;
-}
-.article-container > article h2{
-  margin: 9px 0px 0px 0px;
-}
-.article-container .article-description{
-  margin: 3px 0px;
-  color: var(--font-color-primary);
+.header-bio {
+  font-size: 18pt;
+  position: relative;
+  z-index: 1;
 }
 
+main {
+  padding: 100px 200px;
+}
+
+
+code {
+  background-color: var(--code-background);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: var(--font-family-primary);
+}
+
+code.language-md {
+  padding: 20px;
+}
 @media (max-width: 768px) {
   header{
     padding: 30px 20px 100px 20px;
-  }
-  .article-container{
-    padding: 20px 20px 20px 20px;
-  }
-  .article-container > article > a {
-    padding: 15px 20px;
-    display: block;
   }
 }
