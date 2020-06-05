@@ -2,10 +2,10 @@ p{
   margin: 0px;
 }
 div.blog-container{
-  padding-top: 30px;
+  padding-top: 20px;
 }
 div.blog-container h1{
-  font-size: 30pt;
+  font-size: 45pt;
   font-weight: bold;
 }
 
@@ -14,7 +14,6 @@ div.blog-container h2{
   font-weight: bold;
   margin-bottom: 14px;
 }
-
 
 div.blog-container h3{
   font-size: 16pt;
@@ -29,6 +28,9 @@ code{
   font-family: var(--font-family-primary);
 }
 
+code.language-md {
+  padding: 20px;
+}
 
 blockquote{
   background-color: var(--code-background);
@@ -40,4 +42,43 @@ blockquote{
 hr{
   border-color: var(--code-background);
   opacity: .3;
+}
+
+.theme-container {
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 45%;
+}
+.theme-info {
+  padding: 10px 10px 20px 10px;
+  background-color: var(--elevation-background);
+  width: 100%;
+}
+.theme-info > .theme-name {
+  font-weight: bold;
+  font-size: 17pt;
+  padding: 5px 0px;
+}
+.theme-links > a {
+  margin-right: 15px;
+}
+.theme-create-locally {
+  font-size: 11pt;
+  padding: 10px 0px;
+}
+.theme-create-locally code {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+.theme-create-locally code::-webkit-scrollbar {
+  height: 2px;
+}
+.theme-create-locally code::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .theme-container {
+    width: 100%;
+  }
 }

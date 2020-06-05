@@ -6,7 +6,16 @@ module.exports = {
     siteName: 'Abell Minima',
     name: 'Hoomans of Abell Land',
     twitter: 'AbellLand',
-    domain: 'https://abell-starter-minima.netlify.app'
+    domain: 'http://localhost:5000',
+    themes: [
+      {
+        name: "Abell Minima",
+        github: "https://github.com/abelljs/abell-starter-minima",
+        cover: "https://res.cloudinary.com/saurabhdaware/image/upload/v1588342001/abell/og.png",
+        deploy: "https://app.netlify.com/start/deploy?repository=https://github.com/abelljs/abell-starter-minima",
+        preview: "https://abell-starter-minima.netlify.app"
+      }
+    ]
   },
   ignoreInBuild: ['styles/inlined']
 }

@@ -1,6 +1,7 @@
 module.exports = /* css */`
 body {
   --background-primary: #fff;
+  --side-nav-background: #f3f3f3;
   --font-color-primary: #333;
   --elevation-background: #fff;
   --code-background: #f3f3f3;
@@ -13,6 +14,7 @@ body.dark {
   --font-color-primary: #ccc; 
   --elevation-background: #1D1D1D;
   --code-background: #222;
+  --side-nav-background: #0f0f0f;
   --link-color: #09f;
 }
 

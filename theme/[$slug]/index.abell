@@ -1,7 +1,7 @@
 {{
   const DarkModeToggle = require('../components/DarkModeToggle.js');
   const TwitterShareButton = require('../components/TwitterShareButton.js');
-  const Placeholder = require('../components/Placeholder.js');
+  const { TopNavigationHTML, NavigationCSS, SideNavigationHTML } = require('../components/Navigation.js');
   const Footer = require('../components/Footer.js');
   const globalInlinedCSS = require('../styles/inlined/global.css.js');
 }}
@@ -17,21 +17,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
   <!-- Preloads for performance -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" as="style" onload="this.rel = 'stylesheet'; this.onload = null" >
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" as="style" onload="this.rel = 'stylesheet'; this.onload = null" />
-  <link rel="preload" href="../styles/blog.css"  as="style" onload="loadContent(); this.rel = 'stylesheet';this.onload = null" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" />
+  <link rel="stylesheet" href="../styles/blog.css" />
   <title>{{ meta.title }} | {{ globalMeta.siteName }}</title>
 
   <style>
     /* inlined-css for fast load */
     {{ globalInlinedCSS }}
+    body {
+      height: 100%;
+    }
+    .flex-container{
+      display: flex;
+      margin-top: 50px;
+    }
+
+    {{ NavigationCSS }}
+
     main {
-      padding: 100px 200px;
+      display: inline-block;
+      flex: 1;
+      padding: 50px 100px;
     }
-    .content {
-      display: none;
-    }
-    {{ Placeholder.css }}
 
     @media (max-width: 768px) {
       main {
@@ -43,29 +51,27 @@
   </style>
 </head>
 <body>
-  <main>
-    {{ DarkModeToggle.html }}
-    <div class="blog-container">
-      {{ Placeholder.html }}
-      <div class="content">
-        {{ $importContent(`${meta.$slug}/index.md`) }}
+  {{ TopNavigationHTML(meta.$path, globalMeta) }}
+  {{ SideNavigationHTML($contentArray, meta.$path, globalMeta) }}
+  <div class="flex-container">
+    <main>
+      <div class="blog-container">
+        <div class="content">
+          {{ $importContent(`${meta.$slug}/index.md`) }}
+        </div>
       </div>
-    </div>
-    <hr/>
-    <br/><br/>
-    {{ TwitterShareButton({link:`${globalMeta.domain}/${meta.$slug}/`}) }}
-  </main>
+      <hr/>
+      <br/><br/>
+      {{ TwitterShareButton({link:`${globalMeta.domain}/${meta.$slug}/`}) }}
+    </main>
+    <div class="side-nav-styles nav-placeholder">.</div>
+  </div>
   
   {{ Footer.html }}
   
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script defer src="../js/static-main.js"></script>
   <script>
-    function loadContent() {
-      document.querySelector('.content').style.display = 'block';
-      document.querySelector('.loading-placeholder').style.display = 'none';
-    }
-
     {{ DarkModeToggle.inlinedJS }}
   </script>
 </body>

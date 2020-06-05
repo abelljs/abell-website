@@ -1,7 +1,7 @@
 const html = /* html */`
-  <button onclick="toggleTheme()" class="dark-mode-toggle">
-    <span class="sun"> <img width="35px" src="../icons/sun.svg" /></span>
-    <span class="moon"><img width="25px" src="../icons/moon.svg" /></span>
+  <button onclick="toggleTheme()" class="dark-mode-toggle nav-item">
+    <span class="sun"> <img width="33px" src="../icons/sun.svg" /></span>
+    <span class="moon"><img width="23px" src="../icons/moon.svg" /></span>
   </button>
 `;
 
@@ -13,14 +13,12 @@ const css = /* css */`
   float: right;
   border:none;
   background:transparent;
+  padding: 17px 20px !important;
 }
 body:not(.user-is-tabbing) .dark-mode-toggle:focus {
   outline: none;
 }
 .dark-mode-toggle .moon {
-  padding: 10px;
-}
-.dark-mode-toggle .sun {
   padding: 5px;
 }
 body .dark-mode-toggle .moon {display: none}

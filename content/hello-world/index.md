@@ -33,7 +33,7 @@ console.log(c);
 
 ## Doggo
 
-![a doggo gif with doggo moving his ears up and down](doggo.gif)
+![A hooman pulling doggo's cheeks GIF](assets/doggo.gif)
 
 
 
