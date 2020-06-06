@@ -9,7 +9,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Welcome to the {{ globalMeta.siteName }}, A blog by {{ globalMeta.name }}" />
+
+  <meta name="description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites"/>
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Abell Documentation" />
+  <meta name="og:description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites"/>
+  <meta property="og:url" content="https://abelljs.netlify.app" />
+  
+  <meta name="twitter:card" content="summary_large_image"></meta>
+  <meta name="twitter:creator" content="@AbellLand"></meta>
+
+  <meta property="og:image:secure_url" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1591474179/abell/docs-og.png"/>
+  <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1591474179/abell/docs-og.png"/>
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="300" />
+  <meta property="og:image:alt" content="OG image of Abell Docs that shows the title of page" />
+  <meta property="og:description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites" />
+  <meta property="og:site_name" content="abelljs.netlify.app"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" as="style" onload="this.rel = 'stylesheet'; this.onload = null"/>
   <link rel="stylesheet" href="./styles/index.css">
