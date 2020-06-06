@@ -27,8 +27,8 @@ body.dark .dark-mode-toggle .moon {display: inline-block;}
 body.dark .dark-mode-toggle .sun {display: none;}
 `
 
-const inlinedJS = `
-
+const inlinedJS = /* html */ `
+<script>
 function toggleTheme() {
   if (document.body.classList.contains('dark')) {
     document.body.classList.remove('dark');
@@ -39,17 +39,14 @@ function toggleTheme() {
   }
 }
 
-const localPreference = window.localStorage.getItem('prefers-theme') || 'light';
+const localPreference = window.localStorage.getItem('prefers-theme');
 
-if(window.matchMedia('(prefers-color-scheme: dark)').matches || localPreference === 'dark') {
-  // If color is preferred
+if (localPreference) {
+  document.body.classList.add(localPreference);
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches){
   document.body.classList.add('dark');
-} else if(localPreference === 'light') {
-  // If locally values are stored
-  document.body.classList.remove('dark');
-} 
-
-
-`
+}
+</script>
+`.replace(/\<\/?script\>/g, '')
 
 module.exports = {html, css, inlinedJS};

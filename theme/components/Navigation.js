@@ -27,7 +27,6 @@ const SideNavigationHTML = ($contentArray, navigationPath, prefixPath) => /* htm
   <nav class="side-nav side-nav-styles">
   ${ 
     $contentArray
-      .filter(meta => meta.$slug !== '.')
       .map(meta => /* html */ `
       <a class="nav-item ${meta.$path === navigationPath ? 'active': ''}" href="${prefixPath}/${meta.$path}/">${meta.title}</a>
     `).join('')

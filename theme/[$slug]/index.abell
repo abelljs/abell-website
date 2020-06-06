@@ -63,7 +63,7 @@
     <main>
       <div class="blog-container">
         <div class="content">
-          {{ $importContent(`${meta.$slug}/index.md`) }}
+          {{ $importContent(`${meta.$path}/index.md`) }}
         </div>
         <hr/>
         <br/>
