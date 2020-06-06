@@ -17,7 +17,7 @@ header.landing .header-abell-logo {
   position: absolute;
   bottom: -200px;
   filter: grayscale(100%);
-  opacity: .3;
+  opacity: .2;
   right: 0px;
   width: 600px;
 }
@@ -28,6 +28,15 @@ body.dark header.landing .header-abell-logo {
 header.landing h1{
   margin: 10px 0px;
   font-size: 50pt;
+}
+
+h2 {
+  font-size: 26pt;
+}
+
+h3 {
+  font-size: 20pt;
+  margin: 40px 0px 10px 0px !important;
 }
 .header-bio {
   font-size: 18pt;
@@ -47,11 +56,35 @@ code {
   font-family: var(--font-family-primary);
 }
 
-code.language-md {
+code.nohighlight {
   padding: 20px;
 }
+
+nav.side-nav {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  header{
-    padding: 30px 20px 100px 20px;
+  header.landing {
+    padding: 100px 20px 100px 20px;
+  }
+  header.landing .header-bio {
+    font-size: 14pt;
+  }
+  header.landing .header-abell-logo {
+    opacity: .1;
+  }
+
+  main {
+    padding: 100px 30px;
+  }
+
+  /* Overrride nav styles for index */
+  nav.side-nav {
+    display: inline-block;
+    padding-top: 0px !important;
+  }
+  nav.side-nav br:not(:first-child), nav.side-nav hr {
+    display: none;
   }
 }

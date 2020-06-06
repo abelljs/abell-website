@@ -3,6 +3,9 @@ const DarkModeToggle = require('./DarkModeToggle.js');
 const TopNavigationHTML = (navigationPath, prefixPath) => /* html */ `
   <header>
     <nav class="top-nav shadow">
+      <div style="background-color: #111; font-size: 10pt; color: #fff;padding: 5px 10px;text-align: center;">
+        Abell is currently unstable (v0.3.x) and should not be used for serious projects.
+      </div>
       <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17px 20px;" href="${prefixPath}/">
         <img src="../favicon.ico" width="30" />
         <span style="position: relative; top: -5px;left: 3px;">Abell</span>
@@ -37,7 +40,7 @@ const SideNavigationHTML = ($contentArray, navigationPath, prefixPath) => /* htm
     <a class="nav-item ${navigationPath ? '' : 'active'}" href="${prefixPath}/">Home</a>
     <a class="nav-item" href="${prefixPath}/getting-started/">Docs</a>
     <a class="nav-item" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
-    <div style="position: absolute;bottom:70px;right: 0px;">
+    <div style="position: absolute;bottom:90px;right: 0px;">
       ${DarkModeToggle.html()}
     </div>
   </div>
@@ -53,8 +56,9 @@ const NavigationCSS = /* css */`
 nav.side-nav {
   position: fixed;
   right: 0px; top: 0px;
-  margin-top: 70px;
+  margin-top: 90px;
   padding-top: 50px;
+  z-index: 9999;
   background-color: var(--side-nav-background);
 }
 
@@ -62,6 +66,7 @@ nav.side-nav .nav-item {
   display: block;
   padding: 10px 30px;
   color: var(--font-color);
+  font-size: 14pt;
 }
 
 nav.side-nav .nav-item.active {
@@ -75,7 +80,7 @@ nav.top-nav {
   width: 100%;
   background-color: var(--elevation-background);
   z-index: 10000;
-  padding: 0px 10px;
+  padding: 0px 0px;
 }
 nav.top-nav .nav-item {
   padding: 23px 20px;

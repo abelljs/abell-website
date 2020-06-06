@@ -2,4 +2,6 @@ window.addEventListener('keydown', e => e.keyCode === 9 && (document.body.classL
 document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
 try {
   hljs.initHighlightingOnLoad();
-} catch(err) {}
+} catch(err) {
+  console.log("Current page does not support code highlighting");
+}

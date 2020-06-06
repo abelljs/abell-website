@@ -68,9 +68,21 @@ a.button {
 .primary-bg {
   background-color: var(--abell-primary);
 }
+
+.row {
+  display: flex;
+}
+
+.row > div {
+  padding-right: 15px;
+}
+
 @media (max-width: 768px) {
   .hide-mobile {
     display: none !important;
+  }
+  .row.row-responsive {
+    display: block;
   }
 }
 

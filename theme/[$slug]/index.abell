@@ -45,7 +45,7 @@
 
     @media (max-width: 768px) {
       .blog-container {
-        padding: 40px 20px;
+        padding: 80px 20px;
       }
       main {
         display: block;
