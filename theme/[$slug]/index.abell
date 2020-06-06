@@ -57,8 +57,8 @@
   </style>
 </head>
 <body>
-  {{ TopNavigationHTML(meta.$path, globalMeta) }}
-  {{ SideNavigationHTML($contentArray, meta.$path, globalMeta) }}
+  {{ TopNavigationHTML(meta.$path, meta.$root) }}
+  {{ SideNavigationHTML($contentArray, meta.$path, meta.$root) }}
   <div class="flex-container">
     <main>
       <div class="blog-container">

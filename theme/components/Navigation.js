@@ -1,15 +1,15 @@
 const DarkModeToggle = require('./DarkModeToggle.js');
 
-const TopNavigationHTML = (navigationPath, globalMeta) => /* html */ `
+const TopNavigationHTML = (navigationPath, prefixPath) => /* html */ `
   <header>
     <nav class="top-nav shadow">
-      <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17px 20px;" href="${ globalMeta.domain }">
+      <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17px 20px;" href="${prefixPath}/">
         <img src="../favicon.ico" width="30" />
         <span style="position: relative; top: -5px;left: 3px;">Abell</span>
       </a>
       <div style="display: inline-block; float: right;">
-        <a class="nav-item hide-mobile ${navigationPath ? '' : 'active'}" href="${globalMeta.domain}">Home</a>
-        <a class="nav-item hide-mobile ${navigationPath ? 'active': ''}" href="${globalMeta.domain}/getting-started/">Docs</a>
+        <a class="nav-item hide-mobile ${navigationPath ? '' : 'active'}" href="${prefixPath}/" replace>Home</a>
+        <a class="nav-item hide-mobile ${navigationPath ? 'active': ''}" href="${prefixPath}/getting-started/" replace>Docs</a>
         <a class="nav-item hide-mobile" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
         <button 
           class="nav-item hide-pc"
@@ -23,18 +23,20 @@ const TopNavigationHTML = (navigationPath, globalMeta) => /* html */ `
 `;
 
 
-const SideNavigationHTML = ($contentArray, navigationPath, globalMeta) => /* html */ `
+const SideNavigationHTML = ($contentArray, navigationPath, prefixPath) => /* html */ `
   <nav class="side-nav side-nav-styles">
   ${ 
-    $contentArray.map(meta => /* html */ `
-      <a class="nav-item ${meta.$path === navigationPath ? 'active': ''}" href="${globalMeta.domain}/${meta.$path}/">${meta.title}</a>
+    $contentArray
+      .filter(meta => meta.$slug !== '.')
+      .map(meta => /* html */ `
+      <a class="nav-item ${meta.$path === navigationPath ? 'active': ''}" href="${prefixPath}/${meta.$path}/">${meta.title}</a>
     `).join('')
   }
   <div class="hide-pc">
     <br/><br/>
     <hr/>
-    <a class="nav-item ${navigationPath ? '' : 'active'}" href="${globalMeta.domain}">Home</a>
-    <a class="nav-item" href="${globalMeta.domain}/getting-started/">Docs</a>
+    <a class="nav-item ${navigationPath ? '' : 'active'}" href="${prefixPath}/">Home</a>
+    <a class="nav-item" href="${prefixPath}/getting-started/">Docs</a>
     <a class="nav-item" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
     <div style="position: absolute;bottom:70px;right: 0px;">
       ${DarkModeToggle.html()}

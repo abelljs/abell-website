@@ -6,7 +6,6 @@ module.exports = {
     siteName: 'Abell',
     name: 'Hoomans of Abell Land',
     twitter: 'AbellLand',
-    domain: 'http://localhost:5000',
     themes: [
       {
         name: "Abell Minima",
