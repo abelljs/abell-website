@@ -66,7 +66,7 @@ nav.side-nav .nav-item {
   display: block;
   padding: 10px 30px;
   color: var(--font-color);
-  font-size: 14pt;
+  font-size: 13pt;
 }
 
 nav.side-nav .nav-item.active {
