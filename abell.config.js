@@ -6,6 +6,7 @@ module.exports = {
     siteName: 'Abell',
     name: 'Hoomans of Abell Land',
     twitter: 'AbellLand',
+    domain: 'https://abelljs.org/',
     themes: [
       {
         name: "Abell Minima",
@@ -16,5 +17,6 @@ module.exports = {
       }
     ]
   },
-  ignoreInBuild: ['styles/inlined']
+  ignoreInBuild: ['styles/inlined'],
+  plugins: ['abell-sitemap-plugin']
 }
