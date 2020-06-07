@@ -17,7 +17,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Abell Documentation" />
   <meta name="og:description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites"/>
-  <meta property="og:url" content="https://abelljs.netlify.app" />
+  <meta property="og:url" content="https://abelljs.org" />
   
   <meta name="twitter:card" content="summary_large_image"></meta>
   <meta name="twitter:creator" content="@AbellLand"></meta>
@@ -28,7 +28,7 @@
   <meta property="og:image:height" content="300" />
   <meta property="og:image:alt" content="OG image of Abell Docs that shows the title of page" />
   <meta property="og:description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites" />
-  <meta property="og:site_name" content="abelljs.netlify.app"/>
+  <meta property="og:site_name" content="abelljs.org"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
