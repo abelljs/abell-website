@@ -17,6 +17,6 @@ module.exports = {
       }
     ]
   },
-  ignoreInBuild: ['styles/inlined'],
+  ignoreInDist: ['components', 'styles/inlined'],
   plugins: ['abell-sitemap-plugin']
 }
