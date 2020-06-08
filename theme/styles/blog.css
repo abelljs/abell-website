@@ -1,18 +1,21 @@
-p{
+:root {
+  scroll-behavior: smooth;
+}
+p {
   margin: 0px;
 }
-div.blog-container h1{
+div.blog-container h1 {
   font-size: 45pt;
   font-weight: bold;
 }
 
-div.blog-container h2{
+div.blog-container h2 {
   font-size: 23pt;
   font-weight: bold;
   margin-bottom: 14px;
 }
 
-div.blog-container h3{
+div.blog-container h3 {
   font-size: 16pt;
   font-weight: bold;
   margin-bottom: 14px;

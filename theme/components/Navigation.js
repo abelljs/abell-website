@@ -28,6 +28,7 @@ const TopNavigationHTML = (navigationPath, prefixPath) => /* html */ `
 
 const SideNavigationHTML = ($contentArray, navigationPath, prefixPath) => /* html */ `
   <nav class="side-nav side-nav-styles">
+  <div class="side-nav-items-container">
   ${ 
     $contentArray
       .sort((a, b) => a.pageNum - b.pageNum)
@@ -38,23 +39,21 @@ const SideNavigationHTML = ($contentArray, navigationPath, prefixPath) => /* htm
         ? `<div class="submenu" style="display: ${meta.$path === navigationPath ? 'block': 'none'}">
           ${
             meta.sublinks
-              .map(sublink => `<a href="${prefixPath}/${meta.$path}/${sublink.path}"> <b>-</b> ${sublink.title}</a>`)
+              .map(sublink => `<a href="${prefixPath}/${meta.$path}/${sublink.path}">${sublink.title}</a>`)
               .join('')
           }
         </div>
         `
         : ''
       }
-      </div>
     `).join('')
   }
-  <div class="hide-pc">
-    <br/><br/>
-    <hr/>
+  </div>
+  <div class="hide-pc mobile-top-nav-items">
     <a class="nav-item ${navigationPath ? '' : 'active'}" href="${prefixPath}/">Home</a>
     <a class="nav-item" href="${prefixPath}/getting-started/">Docs</a>
     <a class="nav-item" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
-    <div style="position: absolute;bottom:90px;right: 0px;">
+    <div style="text-align: right;">
       ${DarkModeToggle.html()}
     </div>
   </div>
@@ -85,7 +84,19 @@ nav.side-nav .nav-item {
 
 .submenu a {
   color: var(--font-color);
+  padding: 2px 0px;
   padding-left: 35px;
+  display: block;
+  opacity: 1;
+}
+
+.submenu a:before {
+  content: '- ';
+}
+.submenu a:hover:before {
+  content: '- ';
+  font-weight: bold;
+  color: var(--abell-primary);
 }
 
 nav.side-nav .nav-item.active {
@@ -114,7 +125,14 @@ nav.top-nav .nav-item:hover {
 nav.top-nav .active {
   border-bottom: 2px solid var(--link-color);
 }
-
+.mobile-top-nav-items {
+  border-top: 1px solid #ddd;
+  height: 310px;
+  position: absolute;
+  padding-top: 10px;
+  bottom: 0px;
+  width: 100%;
+}
 @media (max-width: 768px) {
   nav.side-nav {
     right: -100%;
@@ -129,6 +147,10 @@ nav.top-nav .active {
   }
   nav.top-nav {
     padding: 0px;
+  }
+  .side-nav-items-container {
+    overflow-y: scroll;
+    height: calc(100% - 310px);
   }
 }
 `

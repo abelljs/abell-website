@@ -5,7 +5,11 @@
   "sublinks": [
     {
       "path": "#-hello--world---in-abell",
-      "title": "\"Hello, World!\" in Abell"
+      "title": "'Hello, World!' in Abell"
+    },
+    {
+      "path": "#loops--conditions--and-variables",
+      "title": "Loops, Conditions, and Variables"
     }
   ]
 }

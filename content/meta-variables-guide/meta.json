@@ -1,0 +1,18 @@
+{
+  "title": "Meta Variables Guide",
+  "pageNum": 4,
+  "sublinks": [
+    {
+      "path": "#globalmeta",
+      "title": "globalMeta"
+    },
+    {
+      "path": "#meta-json",
+      "title": "Meta.json"
+    },
+    {
+      "path": "#predefined-variables",
+      "title": "Predefined Variables"
+    }
+  ]
+}
