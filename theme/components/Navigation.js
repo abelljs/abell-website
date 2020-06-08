@@ -30,8 +30,22 @@ const SideNavigationHTML = ($contentArray, navigationPath, prefixPath) => /* htm
   <nav class="side-nav side-nav-styles">
   ${ 
     $contentArray
+      .sort((a, b) => a.pageNum - b.pageNum)
       .map(meta => /* html */ `
       <a class="nav-item ${meta.$path === navigationPath ? 'active': ''}" href="${prefixPath}/${meta.$path}/">${meta.title}</a>
+      ${ 
+        meta.sublinks && meta.sublinks.length > 0 && navigationPath !== ''
+        ? `<div class="submenu" style="display: ${meta.$path === navigationPath ? 'block': 'none'}">
+          ${
+            meta.sublinks
+              .map(sublink => `<a href="${prefixPath}/${meta.$path}/${sublink.path}"> <b>-</b> ${sublink.title}</a>`)
+              .join('')
+          }
+        </div>
+        `
+        : ''
+      }
+      </div>
     `).join('')
   }
   <div class="hide-pc">
@@ -67,6 +81,11 @@ nav.side-nav .nav-item {
   padding: 10px 30px;
   color: var(--font-color);
   font-size: 13pt;
+}
+
+.submenu a {
+  color: var(--font-color);
+  padding-left: 35px;
 }
 
 nav.side-nav .nav-item.active {

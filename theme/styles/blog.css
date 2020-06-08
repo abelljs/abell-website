@@ -22,11 +22,14 @@ code{
   background-color: var(--code-background);
   padding: 3px 8px;
   border-radius: 4px;
+  word-spacing: 3px;
+  font-size: smaller;
   font-family: var(--font-family-primary);
 }
 
-code.language-md {
+code.hljs {
   padding: 20px;
+  font-size: unset;
 }
 
 blockquote{
