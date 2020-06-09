@@ -1,7 +1,7 @@
 const html = ({classes}={classes: ''}) => /* html */`
-  <button onclick="toggleTheme()" aria-label="Toggle Dark Mode" title="Toggle Dark Mode" class="dark-mode-toggle nav-item ${classes} ">
-    <span class="sun"> <img width="33px" src="../icons/sun.svg" /></span>
-    <span class="moon"><img width="23px" src="../icons/moon.svg" /></span>
+  <button onclick="toggleTheme(this)" aria-label="Activate Dark Mode" aria-pressed="false" title="Toggle Dark Mode" class="dark-mode-toggle nav-item ${classes} ">
+    <span class="sun"> <img alt="sun icon to represent light mode" width="33px" src="../icons/sun.svg" /></span>
+    <span class="moon"><img alt="moon icon to represent dark mode" width="23px" src="../icons/moon.svg" /></span>
   </button>
 `;
 
@@ -29,22 +29,42 @@ body.dark .dark-mode-toggle .sun {display: none;}
 
 const inlinedJS = /* html */ `
 <script>
-function toggleTheme() {
-  if (document.body.classList.contains('dark')) {
+
+function setTheme(theme, shouldStore = false) {
+  const toggleButtons = document.querySelectorAll('.dark-mode-toggle');
+  if (theme === 'light') {
     document.body.classList.remove('dark');
-    window.localStorage.setItem('prefers-theme', 'light');
+    if (shouldStore) window.localStorage.setItem('prefers-theme', 'light');
+    toggleButtons.forEach(toggleButton => {
+      toggleButton.setAttribute('aria-pressed', false);
+      toggleButton.setAttribute('aria-label', 'Activate Dark Mode');
+    })
   } else {
     document.body.classList.add('dark');
-    window.localStorage.setItem('prefers-theme', 'dark');
+    if (shouldStore) window.localStorage.setItem('prefers-theme', 'dark');
+    toggleButtons.forEach(toggleButton => {
+      toggleButton.setAttribute('aria-pressed', true);
+      toggleButton.setAttribute('aria-label', 'Activate Light Mode');
+    })      
+    
+  }
+}
+
+function toggleTheme(toggleButton) {
+  if (document.body.classList.contains('dark')) {
+    setTheme('light', true);
+  } else {
+    setTheme('dark', true);
   }
 }
 
 const localPreference = window.localStorage.getItem('prefers-theme');
 
 if (localPreference) {
-  document.body.classList.add(localPreference);
+  if (localPreference === 'light') setTheme('light');
+  else setTheme('dark');
 } else if (window.matchMedia('(prefers-color-scheme: dark)').matches){
-  document.body.classList.add('dark');
+  setTheme('dark');
 }
 </script>
 `.replace(/\<\/?script\>/g, '')
