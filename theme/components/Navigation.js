@@ -7,7 +7,7 @@ const TopNavigationHTML = (navigationPath, prefixPath) => /* html */ `
         Abell is currently unstable (v0.3.x) and should not be used for serious projects.
       </div>
       <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17px 20px;" href="${prefixPath}/">
-        <img src="../favicon.ico" width="30" />
+        <img alt="Abell logo" src="../favicon.ico" width="30" />
         <span style="position: relative; top: -5px;left: 3px;">Abell</span>
       </a>
       <div style="display: inline-block; float: right;">
