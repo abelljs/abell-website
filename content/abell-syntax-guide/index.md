@@ -101,7 +101,7 @@ Few examples are given below to give an idea of the syntax
 ### Example 2
 
 ```html
-{{
+\{{
   const foodItems = ['apple', 'mango', 'potatoes']
 }}
 <div>
