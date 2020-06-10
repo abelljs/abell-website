@@ -6,7 +6,7 @@ body {
   --elevation-background: #fff;
   --code-background: #f3f3f3;
   --link-color: #006EB8;
-  --font-family-primary: 'Noto Sans KR', sans-serif;
+  --font-family-primary: 'Roboto Condensed', sans-serif;
   --abell-primary: #3354ea;
 }
 
@@ -30,6 +30,7 @@ body{
   background-color: var(--background-primary);
   font-family: var(--font-family-primary);
   color: var(--font-color-primary);
+  font-size: 13pt;
 }
 
 h1, h2, h3, h4, h5, h6{

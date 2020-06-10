@@ -6,7 +6,7 @@ const TopNavigationHTML = (navigationPath, prefixPath) => /* html */ `
       <div style="background-color: #111; font-size: 10pt; color: #fff;padding: 5px 10px;text-align: center;">
         Abell is currently unstable (v0.3.x) and should not be used for serious projects.
       </div>
-      <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17px 20px;" href="${prefixPath}/">
+      <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17.5px 20px;" href="${prefixPath}/">
         <img alt="Abell logo" src="../favicon.ico" width="30" />
         <span style="position: relative; top: -5px;left: 3px;">Abell</span>
       </a>
@@ -108,12 +108,13 @@ nav.top-nav {
   top: 0px;
   left: 0px;
   width: 100%;
+  font-size: 13pt;
   background-color: var(--elevation-background);
   z-index: 10000;
   padding: 0px 0px;
 }
 nav.top-nav .nav-item {
-  padding: 23px 20px;
+  padding: 25px 20px;
   display: inline-block;
   color: var(--font-color);
   border-bottom: 2px solid var(--elevation-background);
