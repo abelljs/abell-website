@@ -15,8 +15,23 @@ const TopNavigationHTML = (navigationPath, prefixPath) => /* html */ `
         <a class="nav-item hide-mobile ${navigationPath ? 'active': ''}" href="${prefixPath}/getting-started/" replace>Docs</a>
         <a class="nav-item hide-mobile" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
         <button 
+          aria-label="Open Navigation Bar"
+          aria-pressed="false"
           class="nav-item hide-pc"
-          onclick="document.querySelector('.side-nav').classList.toggle('show')"
+          onclick="((_this) => {
+            const sideNav = document.querySelector('.side-nav');
+            if (sideNav.classList.contains('show')) {
+              sideNav.classList.remove('show');
+              _this.setAttribute('aria-label', 'Open Navigation Bar');
+              _this.setAttribute('aria-pressed', 'false')
+              _this.innerText = '&#9776;'
+            } else {
+              sideNav.classList.add('show');
+              _this.setAttribute('aria-label', 'Close Navigation Bar');
+              _this.setAttribute('aria-pressed', 'true');
+              _this.innerText = '&times;'
+            }
+          })(this)"
           style="padding: 25px; background: transparent; border: none;font-size: 13pt;"
         >&#9776;</button>
         ${DarkModeToggle.html({classes: 'hide-mobile'})}
@@ -27,7 +42,7 @@ const TopNavigationHTML = (navigationPath, prefixPath) => /* html */ `
 
 
 const SideNavigationHTML = ($contentArray, navigationPath, prefixPath) => /* html */ `
-  <nav class="side-nav side-nav-styles">
+  <nav class="side-nav ${navigationPath || 'index'} side-nav-styles">
   <div class="side-nav-items-container">
   ${ 
     $contentArray
@@ -53,7 +68,7 @@ const SideNavigationHTML = ($contentArray, navigationPath, prefixPath) => /* htm
     <a class="nav-item ${navigationPath ? '' : 'active'}" href="${prefixPath}/">Home</a>
     <a class="nav-item" href="${prefixPath}/getting-started/">Docs</a>
     <a class="nav-item" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
-    <div style="text-align: right;">
+    <div class="mobile-top-nav-dark-mode-container" style="text-align: right;">
       ${DarkModeToggle.html()}
     </div>
   </div>
@@ -128,7 +143,7 @@ nav.top-nav .active {
 }
 .mobile-top-nav-items {
   border-top: 1px solid #ddd;
-  height: 310px;
+  height: 290px;
   position: absolute;
   padding-top: 10px;
   bottom: 0px;
@@ -152,6 +167,17 @@ nav.top-nav .active {
   .side-nav-items-container {
     overflow-y: scroll;
     height: calc(100% - 310px);
+  }
+  nav.index.side-nav .mobile-top-nav-items {
+    top: 50px;
+    border-top: none;
+    bottom: unset;
+    height: calc(100% - 140px);
+  }
+  nav.index.side-nav .mobile-top-nav-dark-mode-container {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
   }
 }
 `
