@@ -112,8 +112,18 @@ In addition to your custom variables, there are some predefined variables provid
 
 There are some variables provided by abell they all start with `$` and can help you get idea of the content and customize the theme according to your needs.
 
-### List of predefined variables,
-- **meta.$createdAt** *(Type: JavaScript Date Object)* <br/>By default it is set to time to folder creation, you can overwrite that time by adding `$createdAt` value in `meta.json`. The new value should be added in `Jun 5 2020` format. On build time, it will turn that string to JavaScripe date object.
+### List of predefined variables
+*Variables defined in `meta` object can only be accessed inside `./theme/[$path]/index.abell` file. To access them in other `.abell` files, you can loop over `$contentArray` to get `meta` object of all contents*
+
+- **meta.$createdAt** *(Type: JavaScript Date Object)* <br/>By default it is set to time to folder creation. <br/> It is recommended to overwrite this time by adding `$createdAt` value in `meta.json` since the default can have unexpected changes. The new value should be added in `Jun 5 2020` format. On build time, Abell will turn this string to JavaScript date object.<br/>
+```json
+// ./content/my-blog/meta.json
+{
+  "title": "My blog",
+  "description": "foo bar",
+  "$createdAt": "May 5 2020"
+}
+```
 
 - **meta.$modifiedAt** *(Type: JavaScript Date Object)* <br/>Same as `$createdAt`, defaults to modified datetime of folder and can be overwritten from meta.json.
 - **meta.$path** *(Type: String)* <br/>Path to content's folder. e.g. `webperf-blog/my-webperf-blog`
@@ -134,3 +144,13 @@ There are some variables provided by abell they all start with `$` and can help 
     .join('')
 }}
 ```
+
+- **$importContent** *(Type: Function(path&lt;String&gt;: Path relative to content directory))* <br/> Import markdown content from `content` directory. <br/>Syntax: `$importContent(pathRelativeToContent)` (e.g. `$importContent('my-blog/index.md')`)<br/>Can be used with `meta.$path` variable in `[$path]/index.abell` to dynamically render all contents.
+```html
+<!-- ./theme/[$path]/index.abell -->
+<section class="blog-container">
+  \{{ $importContent(`${meta.$path}/index.md`) }}
+</section>
+```
+
+- **$root** *(Type: String)* <br/>Similar to `meta.$root` but accessible from any `.abell` file. Prefix to go to root. If user is two level deep in folders, `$root` will be `../..`. Can be used during navigations.

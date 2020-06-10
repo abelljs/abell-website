@@ -45,3 +45,16 @@ content
 ```
 
 So your directory structure from content is maintained in the output website.
+<br/><br/>
+To render the content from `content/my-cool-blog/index.md`, you would have to add `$importContent('my-cool-blog/index.md')` to `.abell` file. (*Note how path is relative to `content` directory*)
+<br/><br/>
+To render every content from `content` directory, In your `theme/[$path]/index.abell` you can add,
+
+```html
+<!-- theme/[$path]/index.abell -->
+
+<!-- ... -->
+<section class="blog-container">
+    \{{ $importContent(`${meta.$path}/index.md`) }}
+</section>
+```
