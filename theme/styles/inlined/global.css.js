@@ -78,6 +78,22 @@ a.button {
   padding-right: 15px;
 }
 
+
+code{
+  background-color: var(--code-background);
+  padding: 3px 8px;
+  border-radius: 4px;
+  word-spacing: 3px;
+  font-size: smaller;
+  font-family: var(--font-family-primary);
+}
+
+code.hljs {
+  padding: 20px;
+  font-size: unset;
+}
+
+
 @media (max-width: 768px) {
   .hide-mobile {
     display: none !important;

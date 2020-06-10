@@ -21,20 +21,6 @@ div.blog-container h3 {
   margin-bottom: 14px;
 }
 
-code{
-  background-color: var(--code-background);
-  padding: 3px 8px;
-  border-radius: 4px;
-  word-spacing: 3px;
-  font-size: smaller;
-  font-family: var(--font-family-primary);
-}
-
-code.hljs {
-  padding: 20px;
-  font-size: unset;
-}
-
 blockquote{
   background-color: var(--code-background);
   margin: 0px;
@@ -63,7 +49,7 @@ hr{
   padding: 5px 0px;
 }
 .theme-links > a {
-  margin-right: 15px;
+  margin-right: 10px;
 }
 .theme-create-locally {
   font-size: 11pt;

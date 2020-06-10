@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 function Themes(themes) {
   return themes.map(theme => /* html */ `
   <div class="theme-container shadow">
@@ -14,7 +12,7 @@ function Themes(themes) {
       <div class="theme-create-locally">
         <div style="padding: 0px 6px;">or</div> 
         <div style="padding: 5px 4px;">Create new project locally with:</div>
-        <code style="display: block;word-spacing: 3px;">npx create-abell-app my-blog --template ${theme.github}</code>
+        <code style="display: block;word-spacing: 3px;font-size: unset;">npx create-abell-app my-blog --template ${theme.github}</code>
       </div>
     </div>
   </div>
