@@ -62,6 +62,22 @@
   </header>
   <main>
     {{ $importContent('./index.md') }}
+    <section style="padding-top: 20px;" class="github-contributors-section">
+      <h2>GitHub Contributors</h2>
+      <div class="github-contributors-holder">
+      </div>
+      <div style="padding: 15px 3px;">Check out <a href="https://github.com/abelljs">GitHub @abelljs</a> for list of repositories, every repo has a README for contribution guide</div>
+    </section>
+    <section style="padding-top: 20px;" class="sponsor-section">
+      <h2>Sponsor us 🤗</h2>
+      <a href="https://www.patreon.com/bePatron?u=31891872" aria-label="Become a Patron Button">
+        <img style="border-radius: 5px;" width="200" alt="Become a patron Button" src="https://c5.patreon.com/external/logo/become_a_patron_button.png" />
+      </a>&nbsp; 
+      <a href="https://www.buymeacoffee.com/saurabhdaware" aria-label="Buy me a Coffee Button">
+        <img style="border-radius: 5px;" width="200" alt="Buy me a Coffee Button" src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" />
+      </a><br/>
+
+    </section>
   </main>
   {{ Footer.html }}
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>

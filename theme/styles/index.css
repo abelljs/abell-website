@@ -52,7 +52,10 @@ main {
 nav.side-nav {
   display: none;
 }
-
+.contributor {
+  padding: 10px;
+  display: inline-block;
+}
 @media (max-width: 768px) {
   header.landing {
     padding: 150px 20px 100px 20px;

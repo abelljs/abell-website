@@ -18,10 +18,10 @@ const html = /* html */ `
     <div class="col">
       <div class="footer-heading">Repositories</div>
       <div class="link-container">
-        <a href="https://github.com/abelljs">abelljs/abell</a>
-        <a href="https://github.com/abelljs">abelljs/abell-renderer</a>
-        <a href="https://github.com/abelljs">abelljs/abell-website</a>
-        <a href="https://github.com/abelljs">abelljs/create-abell-app</a>
+        <a href="https://github.com/abelljs/abell">abelljs/abell</a>
+        <a href="https://github.com/abelljs/abell-renderer">abelljs/abell-renderer</a>
+        <a href="https://github.com/abelljs/abell-website">abelljs/abell-website</a>
+        <a href="https://github.com/abelljs/create-abell-app">abelljs/create-abell-app</a>
       </div>
     </div>
   </div>
