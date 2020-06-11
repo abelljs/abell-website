@@ -71,6 +71,7 @@
     }
 
     {{ DarkModeToggle.css }}
+    {{ Footer.css }}
   </style>
 </head>
 <body>

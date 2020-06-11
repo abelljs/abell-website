@@ -5,6 +5,7 @@ body {
   --font-color-primary: #333;
   --elevation-background: #fff;
   --code-background: #f3f3f3;
+  --footer-background: #f9f9f9;
   --link-color: #006EB8;
   --font-family-primary: 'Roboto Condensed', sans-serif;
   --abell-primary: #3354ea;
@@ -15,6 +16,7 @@ body.dark {
   --font-color-primary: #ccc; 
   --elevation-background: #1D1D1D;
   --code-background: #222;
+  --footer-background: #0f0f0f;
   --side-nav-background: #0f0f0f;
   --link-color: #09f;
 }
@@ -48,9 +50,6 @@ a{
   box-shadow: 0 5px 20px -4px #0005;
 }
 
-footer{
-  padding: 20px 30px;
-}
 .github-contribute-button{
   padding: 10px 20px;
   border-radius: 10px;
@@ -73,7 +72,9 @@ a.button {
 .row {
   display: flex;
 }
-
+.row > .col {
+  flex: 1;
+}
 .row > div {
   padding-right: 15px;
 }

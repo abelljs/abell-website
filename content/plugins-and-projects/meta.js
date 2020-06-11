@@ -8,7 +8,7 @@ const renderProjectsList = (projects) => {
 
 module.exports = {
   title: "Plugins & Projects",
-  pageNum: 5,
+  pageNum: 6,
   projects: [
     {
       githubPath: 'abelljs/create-abell-app',

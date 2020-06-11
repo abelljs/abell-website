@@ -39,6 +39,7 @@
     {{ globalInlinedCSS }}
     {{ NavigationCSS }}
     {{ DarkModeToggle.css }}
+    {{ Footer.css }}
   </style>
 </head>
 <body class="index">
@@ -62,9 +63,7 @@
   <main>
     {{ $importContent('./index.md') }}
   </main>
-  <footer>
-    <div style="text-align: right;">© <span id="footer-year"></span>, Built with <a href="https://github.com/abelljs/abell">Abell</a></div>
-  </footer>
+  {{ Footer.html }}
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script defer src="./js/static-main.js"></script>
   <script>
