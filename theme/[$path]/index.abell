@@ -36,7 +36,7 @@
   <!-- Preloads for performance -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" as="style" onload="this.rel = 'stylesheet'; this.onload = null"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles/blog.css" />
+  <link rel="stylesheet" href="../styles/docs.css" />
   <title>{{ meta.title }} | {{ globalMeta.siteName }}</title>
 
   <style>
