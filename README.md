@@ -5,31 +5,26 @@
 
 **DEMO: https://abell-starter-minima.netlify.app**
 
-<p align="left"><a href="https://npmjs.org/package/abell"><img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/abelljs/abell?style=for-the-badge&labelColor=black&logo=npm&label=abell&color=darkred"></a>&nbsp; <a href="https://join.slack.com/t/abellland/shared_invite/zt-ebklbe8h-FhRgHxNbuO_hvFDf~nZtGQ"><img src="https://img.shields.io/badge/slack-join%20channel-4A154B?style=for-the-badge&logo=slack&logoColor=pink&labelColor=black"/></a> &nbsp; <a href="https://twitter.com/abellland"><img alt="Twitter profile badge of @abellland" src="https://img.shields.io/badge/follow-@AbellLand-1DA1F2?style=for-the-badge&logo=twitter&logoColor=1DA1F2&labelColor=black"/></a> </p>
+<p align="left"><a href="https://npmjs.org/package/abell"><img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/abelljs/abell/main?style=for-the-badge&labelColor=black&logo=npm&label=abell&color=darkred"></a>&nbsp; <a href="https://join.slack.com/t/abellland/shared_invite/zt-ebklbe8h-FhRgHxNbuO_hvFDf~nZtGQ"><img src="https://img.shields.io/badge/slack-join%20channel-4A154B?style=for-the-badge&logo=slack&logoColor=pink&labelColor=black"/></a> &nbsp; <a href="https://twitter.com/abellland"><img alt="Twitter profile badge of @abellland" src="https://img.shields.io/badge/follow-@AbellLand-1DA1F2?style=for-the-badge&logo=twitter&logoColor=1DA1F2&labelColor=black"/></a> </p>
 
-A starter template for creating your blog with [abelljs/abell](https://github.com/abelljs/abell).
+
+Source code of https://abelljs.org
 
 ***ABELL IS NOT READY SO DO NOT USE IT IN SERIOUS APPLICATIONS***
 
+## Setting up locally
 
-## Using this template to create your blog.
+- Fork this repository
+```
+git clone https://github.com/:your-github-username/abell-website
+cd abell-website
+npm install
+npm run dev
+```
 
-Just one click and your blog will be ready!
+## Contributing
 
-[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/abelljs/abell-starter-minima)
-
-This will create a repository in your GitHub and will deploy it to the Netlify.
-
-## Write/Edit blogs
-
-- Take a local copy of your blog
-  `git clone <blog-github-url>`
-- `cd` to the new cloned folder
-- `npm run dev` to run a dev server
-
-The new repository will have a `content` folder in the root directory. You can edit blogs from there and you can create a new folder with `index.md` to create a new blog.
-
-To see the final output, you can build the site with `npm run build`
+This website is built with Abell as well, after following steps from [Setting up locally](#setting-up-locally) section, you can edit the files which you want to contribute in and send pull request to the `main` branch of this repository.
 
 ---
 
