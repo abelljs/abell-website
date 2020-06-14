@@ -54,7 +54,7 @@ The dev-server is written from complete scratch to help you develop sites faster
 
 ### Build Markdown based websites 📖
 
-With abell, you can import markdown content using `$importContent(path/to/mardown.md)`. Even this text that you're reading right now is coming from [https://github.com/abelljs/abell-website/blob/master/content/index.md](https://github.com/abelljs/abell-website/blob/master/content/index.md)
+With abell, you can import markdown content using `$importContent(path/to/mardown.md)`. Even this text that you're reading right now is coming from [https://github.com/abelljs/abell-website/blob/main/content/index.md](https://github.com/abelljs/abell-website/blob/main/content/index.md)
 
 <div class="row row-responsive">
   <div style="flex: 1">
