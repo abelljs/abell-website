@@ -45,7 +45,6 @@
 <body class="index">
   {{ TopNavigationHTML('', '') }}
   {{ SideNavigationHTML([], '', '') }}
-  {{ console.log($contentArray) }}
   <header class="landing">
     <div class="header-bio">
       <h1>{{ globalMeta.siteName }}</h1>
