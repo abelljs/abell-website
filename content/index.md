@@ -41,58 +41,18 @@ Abell files are HTML files which allow you to write JS inside curly brackets so 
 </html>
 ```
 
+
 **Rendered Output**
 
 <div style="padding: 0px 10px;">I can render JavaScript! Look: Hello, WORLD 🌻</div>
 </div>
 </div>
 
+Check out [/docs/abell-syntax-guide](/docs/abell-syntax-guide) for more examples.
 
 ### Live dev-server to speed up your development 🏃
 
 The dev-server is written from complete scratch to help you develop sites faster. 
-
-### Build Markdown based websites 📖
-
-With abell, you can import markdown content using `$importContent(path/to/mardown.md)`. Even this text that you're reading right now is coming from [https://github.com/abelljs/abell-website/blob/main/content/index.md](https://github.com/abelljs/abell-website/blob/main/content/index.md)
-
-<div class="row row-responsive">
-  <div style="flex: 1">
-
-  `./content/index.md`
-  ```md
-  # Abell's Intro Blog!
-
-  I loveeee writing markdown!
-
-  Star [Abell on GitHub](https://github.com/abelljs/abell)
-  ```
-  </div>
-  <div style="flex: 1">
-
-  `./index.html`
-  ```html
-  <body>
-    <section class="blog-contaier"> 
-      \{{ $importContent('./index.md')  }}
-    </section>
-  </body>
-  ```
-  </div>
-</div>
-
-*Note: As you can see in the example, the path in $importContent is relative to `content/` directory*
-
-**Output**
-```html
-<body>
-  <section class="blog-contaier">
-    <h1 id="abell-s-intro-blog-">Abell's Intro Blog!</h1>
-    <p>I loveeee writing markdown!</p>
-    <p>Star <a href="https://github.com/abelljs/abell">Abell on GitHub</a></p>
-  </section>
-</body>
-```
 
 ### Build JSON based websites *{ }*
 
@@ -153,6 +113,50 @@ If you have a portfolio and you're bored of writing code to add new project, you
   </body>
 </html>
 ```
+<br/><br/>
+
+### Build Markdown based websites 📖
+
+With abell, you can import markdown content using `$importContent(path/to/mardown.md)`. Even this text that you're reading right now is coming from [https://github.com/abelljs/abell-website/blob/main/content/index.md](https://github.com/abelljs/abell-website/blob/main/content/index.md)
+
+<div class="row row-responsive">
+  <div style="flex: 1">
+
+  `./content/index.md`
+  ```md
+  # Abell's Intro Blog!
+
+  I loveeee writing markdown!
+
+  Star [Abell on GitHub](https://github.com/abelljs/abell)
+  ```
+  </div>
+  <div style="flex: 1">
+
+  `./index.html`
+  ```html
+  <body>
+    <section class="blog-contaier"> 
+      \{{ $importContent('./index.md')  }}
+    </section>
+  </body>
+  ```
+  </div>
+</div>
+
+*Note: As you can see in the example, the path in $importContent is relative to `content/` directory*
+
+**Output**
+```html
+<body>
+  <section class="blog-contaier">
+    <h1 id="abell-s-intro-blog-">Abell's Intro Blog!</h1>
+    <p>I loveeee writing markdown!</p>
+    <p>Star <a href="https://github.com/abelljs/abell">Abell on GitHub</a></p>
+  </section>
+</body>
+```
+
 
 <br/><br/>
 

@@ -47,6 +47,7 @@ const SideNavigationHTML = ($contentArray, navigationPath, prefixPath) => /* htm
   ${ 
     $contentArray
       .sort((a, b) => a.pageNum - b.pageNum)
+      .filter(meta => meta.draft !== true)
       .map(meta => /* html */ `
       <a class="nav-item ${meta.$path === navigationPath ? 'active': ''}" href="${prefixPath}/${meta.$path}/">${meta.title}</a>
       ${ 
