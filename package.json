@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "abell build",
+    "fetch-changelog": "node scripts/fetchChangelog.js",
     "dev": "abell serve"
   },
   "keywords": [],
@@ -13,7 +14,8 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "abell": "^0.3.0-rc.5",
-    "abell-sitemap-plugin": "0.0.3"
+    "abell": "^0.3.0",
+    "abell-sitemap-plugin": "0.0.3",
+    "node-fetch": "^2.6.0"
   }
 }
