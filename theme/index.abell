@@ -55,7 +55,7 @@
         href="https://github.com/abelljs/abell" 
         style="margin: 20px 10px;font-size: 14pt;background-color: #111;"
       >
-        <img alt="GitHub Logo" src="./icons/github.png" style="filter: invert(100%); position: relative;top:3px;" width="20"/> &nbsp;GitHub
+        <img alt="GitHub Logo" src="./icons/github.png" style="filter: invert(100%); position: relative;top:3px;" width="17"/> &nbsp;GitHub
       </a>
     </div>
     <img alt="Abell Logo" class="header-abell-logo" src="./icons/abell.svg" />
