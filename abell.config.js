@@ -8,7 +8,7 @@ module.exports = {
       {
         name: "Abell Minima",
         github: "https://github.com/abelljs/abell-starter-minima",
-        cover: "https://res.cloudinary.com/saurabhdaware/image/upload/v1588342001/abell/og.png",
+        cover: "https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_400/v1588342001/abell/og.png",
         deploy: "https://app.netlify.com/start/deploy?repository=https://github.com/abelljs/abell-starter-minima",
         preview: "https://abell-starter-minima.netlify.app"
       }
