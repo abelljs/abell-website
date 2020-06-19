@@ -10,7 +10,7 @@ function Themes(themes) {
         <a href="${theme.github}">GitHub</a>
       </div>
       <div class="theme-create-locally">
-        <div style="padding: 0px 6px;">or</div> 
+        <div style="padding: 0px 6px 3px 6px;">or</div> 
         <div style="padding: 5px 4px;">Create new project locally with:</div>
         <code style="display: block;word-spacing: 3px;font-size: unset;">npx create-abell-app my-blog --template ${theme.github}</code>
       </div>

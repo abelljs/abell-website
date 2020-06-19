@@ -27,6 +27,5 @@ abell serve --port 5000 --socket-port 3000
 ```
 
 `--port <port>`: Changes dev-server port
-<br/><br/>
 
 `--socket-port <port>`: Abell requires another port to host a websocket server that handles the live-reload.

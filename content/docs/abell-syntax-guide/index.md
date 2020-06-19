@@ -9,7 +9,6 @@ src/
   |- index.abell
 abell.config.js
 ```
-<br/>
 
 In `./abell.config.js`,
 ```js
@@ -18,7 +17,6 @@ module.exports = {
 }
 ```
 This will tell Abell to look into `src` directory for `index.abell`.
-<br/><br/>
 
 Then in `./src/index.abell`,
 ```html
@@ -35,6 +33,7 @@ Running this will run the abell live server,
 ```sh
 npx abell serve
 ```
+
 <br/>
 or you can, `npm install --save-dev abell` and add `abell serve` script to `package.json`
 
@@ -55,7 +54,7 @@ With this, you can run `npm run dev` to run dev-server and `npm run build` to bu
 ## Loops, Conditions, and Variables
 
 In Abell files, you can use JavaScript inside HTML files by writing it inside `\{{` curly brackets `}}`. This JavaScript code is executed on build time and thus you get vanilla `.html` file as output. 
-<br/><br/>
+
 Few examples are given below to give an idea of the syntax
 
 ### Example 1

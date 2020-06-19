@@ -1,9 +1,7 @@
 const renderProjectsList = (projects) => {
-  return projects.map(project => `
-  ### ${project.githubPath}
-  ${project.description || ''}
-  <br/>[GitHub Repository](https://github.com/${project.githubPath})
-  `).join('')
+  return projects
+    .map((project) => `- [${project.githubPath}](https://github.com/${project.githubPath}) - ${project.description || ''}`)
+    .join('\n')
 }
 
 module.exports = {

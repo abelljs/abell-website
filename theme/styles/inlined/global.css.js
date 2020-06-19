@@ -79,8 +79,14 @@ a.button {
   padding-right: 15px;
 }
 
-
-code{
+li {
+  padding: 3px;
+  font-size: 13pt;
+}
+pre {
+  margin: 5px 0px;
+}
+code {
   background-color: var(--code-background);
   padding: 3px 8px;
   border-radius: 4px;

@@ -5,7 +5,7 @@
 # {{ meta.title }}
 
 This section will help you setup the initial blog and get started with Abell.
-<br/><br/>
+
 Abell requires [Node.js 8 or higher](https://nodejs.org) installed.
 
 <pre>
@@ -15,10 +15,10 @@ Abell requires [Node.js 8 or higher](https://nodejs.org) installed.
 ## Select Starter Template
 
 *Note: We'll be adding more starters when Abell gets stable.*
-<br/><br/>
+
 {{ Themes(globalMeta.themes) }}
 
-### Local Setup
+### - Local Setup
 ```md
 git clone https://github.com/:github-username/:project-slug
 
@@ -28,8 +28,6 @@ npm install
 
 npm run dev
 ```
-
-<br/>
 
 Once Installtion is done, you can edit content from `content/` directory in the root folder. Check out [Editing Content Guide]({{ meta.$root }}/editing-content/)
 <br/><br/>

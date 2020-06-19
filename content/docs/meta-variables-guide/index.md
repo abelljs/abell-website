@@ -115,7 +115,8 @@ There are some variables provided by abell they all start with `$` and can help 
 ### List of predefined variables
 *Variables defined in `meta` object can only be accessed inside `./theme/[$path]/index.abell` file. To access them in other `.abell` files, you can loop over `$contentArray` to get `meta` object of all contents*
 
-- **meta.$createdAt** *(Type: JavaScript Date Object)* <br/>By default it is set to time to folder creation. <br/> It is recommended to overwrite this time by adding `$createdAt` value in `meta.json` since the default can have unexpected changes. The new value should be added in `Jun 5 2020` format. On build time, Abell will turn this string to JavaScript date object.<br/>
+- **meta.$createdAt** *(Type: JavaScript Date Object)* <br/>By default it is set to time to folder creation. <br/> It is recommended to overwrite this time by adding `$createdAt` value in `meta.json` since the default can have unexpected changes. The new value should be added in `Jun 5 2020` format. On build time, Abell will turn this string to JavaScript date object.
+
 ```json
 // ./content/my-blog/meta.json
 {
