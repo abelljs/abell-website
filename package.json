@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "abell build",
-    "fetch-changelog": "node scripts/fetchChangelog.js",
+    "fetch-ghdata": "node scripts/fetchGHData.js",
     "dev": "abell serve"
   },
   "keywords": [],

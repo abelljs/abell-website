@@ -12,3 +12,13 @@ fetch('https://raw.githubusercontent.com/abelljs/abell/main/CHANGELOG.md')
     console.log(err);
   })
 
+
+fetch('https://raw.githubusercontent.com/abelljs/abell/main/CONTRIBUTING.md')
+  .then(res => res.text())
+  .then(markdown => {
+    const fixBrackets = markdown.replace(/{{/g, '\\{{');
+    fs.writeFileSync(path.join(process.cwd(), 'content', 'contributing' ,'index.md'), fixBrackets);
+  })
+  .catch(err => {
+    console.log(err);
+  })
