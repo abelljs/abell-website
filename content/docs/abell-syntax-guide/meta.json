@@ -1,6 +1,6 @@
 {
   "title": "Abell Syntax Guide",
-  "description": "This is the first blog.",
+  "description": "Abell is built on top of a 0 dependency javascript based template engine, This guide takes you through how you can loop over elements and use conditions in Abell",
   "pageNum": 2,
   "sublinks": [
     {

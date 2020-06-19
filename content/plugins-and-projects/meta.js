@@ -8,6 +8,7 @@ const renderProjectsList = (projects) => {
 
 module.exports = {
   title: "Plugins & Projects",
+  description: "List of plugins and projects related to Abell",
   pageNum: 7,
   projects: [
     {

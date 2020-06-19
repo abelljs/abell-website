@@ -21,7 +21,7 @@ function Themes(themes) {
 
 module.exports = {
   title: "Getting Started",
-  description: "Abell is a static site generator. This blog will take you through the basics of Abell.",
+  description: "Abell is a static site generator. This blog will take you through the basics of Abell and will help you to create your first blog with Abell.",
   $createdAt: "Jun 5 2020",
   pageNum: 1,
   components: {
