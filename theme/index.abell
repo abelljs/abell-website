@@ -62,13 +62,6 @@
   </header>
   <main>
     {{ $importContent('./index.md') }}
-    <section>
-      <h2>Talks</h2>
-      <h3>Reactify India</h3>
-      <div style="text-align: left">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/2UyeWRZbiTg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </section>
     <section style="padding-top: 20px;" class="github-contributors-section">
       <h2>GitHub Contributors</h2>
       <div class="github-contributors-holder">
