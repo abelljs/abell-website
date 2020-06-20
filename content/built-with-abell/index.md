@@ -1,3 +1,9 @@
+<style>
+p {
+  padding: 2px 0px;
+}
+</style>
+
 # {{ meta.title }}
 
 ## List of projects that use Abell
