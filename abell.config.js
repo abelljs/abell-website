@@ -4,6 +4,18 @@ module.exports = {
     name: 'Hoomans of Abell Land',
     twitter: 'AbellLand',
     domain: 'https://abelljs.org/',
+    builtWithAbell: [
+      {
+        title: 'Abelljs.org (This documentation website) 🎉',
+        description: 'The content in this website is written inside markdown and json files and Abell applies this content over a layout to build this pretty website 🐨 🎉',
+        url: 'https://abelljs.org'
+      },
+      {
+        title: 'React Native Wifi and Hotspot Library Documentation',
+        description: 'A React Native Library To Configure Wifi & Hotspot Settings',
+        url: 'https://react-native-wifi-and-hotspot-wizard.netlify.app/'
+      }
+    ],
     themes: [
       {
         name: "Abell Minima",
