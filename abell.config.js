@@ -11,10 +11,21 @@ module.exports = {
         url: 'https://abelljs.org'
       },
       {
+        title: 'Akashic Records',
+        description: 'Blog of Akash',
+        url: 'https://records.akashj.com/'
+      },
+      {
         title: 'React Native Wifi and Hotspot Library Documentation',
         description: 'A React Native Library To Configure Wifi & Hotspot Settings',
         url: 'https://react-native-wifi-and-hotspot-wizard.netlify.app/'
+      },
+      {
+        title: 'Unlighted',
+        description: 'Astronomy blog of Saurabh (Not ready yet)',
+        url: 'https://unlighted.saurabhdaware.in'
       }
+      
     ],
     themes: [
       {
