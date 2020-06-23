@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "abell": "^0.3.0",
+    "abell": "^0.3.1",
     "abell-sitemap-plugin": "0.0.3",
     "node-fetch": "^2.6.0"
   }
