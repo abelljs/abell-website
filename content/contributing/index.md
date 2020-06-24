@@ -7,7 +7,7 @@
 - `cd abell`
 - `npm install` - to install dependencies
 - `npm link` - This will add the current directory to global packages.
-- `cd demo` - Directory `demo` has a demo abell project.
+- `cd examples/main` - Directory `examples` has sample abell projects.
 - `abell build` to build project or `abell serve` to start dev server.
 
 ## Creating Pull Request
@@ -15,6 +15,12 @@
 - Create a branch with name of feature you are working on. (e.g. `feat-abell-config`, `fix-serve-fails`, etc)
 - Make changes in your locally cloned fork
 - Send Pull Request from your branch to `main` branch.
+
+## Running Automated Tests
+
+Automated tests help us know if the changed code breaks something in the existing projects.
+
+These automated tests will automatically run on Pull Request but if you want to run them locally before making a PR, you can follow [Testing Guide](https://github.com/abelljs/abell/tree/main/tests/README.md) to run tests locally.
 
 ## Detailed Guide to Code
 
