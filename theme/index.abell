@@ -32,7 +32,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" as="style" onload="this.rel = 'stylesheet'; this.onload = null"/>
   <link rel="stylesheet" href="./styles/index.css">
   <title>Abell - a JavaScript based static site generator to create markdown and configuration based websites</title>
   <style>
@@ -80,6 +79,7 @@
     </section>
   </main>
   {{ Footer.html }}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script defer src="./js/static-main.js"></script>
   <script>
