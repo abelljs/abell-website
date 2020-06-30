@@ -52,7 +52,7 @@
   </style>
 </head>
 <body class="playground">
-  {{ TopNavigationHTML('', '') }}
+  {{ TopNavigationHTML('playground', '') }}
   {{ SideNavigationHTML([], '', '') }}
   <main style="padding-top: 130px;">
     <h1>Abell Playground</h1>

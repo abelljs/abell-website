@@ -11,8 +11,8 @@ const TopNavigationHTML = (navigationPath, prefixPath) => /* html */ `
         <span style="position: relative; top: -5px;left: 3px;">Abell</span>
       </a>
       <div style="display: inline-block; float: right;">
-        <a class="nav-item hide-mobile ${navigationPath ? '' : 'active'}" href="${prefixPath}/" replace>Home</a>
-        <a class="nav-item hide-mobile ${navigationPath ? 'active': ''}" href="${prefixPath}/getting-started/" replace>Docs</a>
+        <a class="nav-item hide-mobile ${navigationPath === '' ? 'active' : ''}" href="${prefixPath}/" replace>Home</a>
+        <a class="nav-item hide-mobile ${(navigationPath !== '' && navigationPath !== 'playground') ? 'active': ''}" href="${prefixPath}/getting-started/" replace>Docs</a>
         <a class="nav-item hide-mobile" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
         <button 
           aria-label="Open Navigation Bar"
