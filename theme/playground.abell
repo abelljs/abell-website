@@ -1,0 +1,52 @@
+{{
+  const globalInlinedCSS = require('./styles/inlined/global.css.js');
+}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites"/>
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Abell Documentation" />
+  <meta name="og:description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites"/>
+  <meta property="og:url" content="https://abelljs.org" />
+  
+  <meta name="twitter:card" content="summary_large_image"></meta>
+  <meta name="twitter:creator" content="@AbellLand"></meta>
+
+  <meta property="og:image:secure_url" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1591474179/abell/docs-og.png"/>
+  <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1591474179/abell/docs-og.png"/>
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="300" />
+  <meta property="og:image:alt" content="OG image of Abell Docs that shows the title of page" />
+  <meta property="og:description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites" />
+  <meta property="og:site_name" content="abelljs.org"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/index.css">
+  <title>Abell - a JavaScript based static site generator to create markdown and configuration based websites</title>
+  <style>
+    {{ globalInlinedCSS }}
+  </style>
+</head>
+<body class="playground">
+  <main>
+    <div class="row row-responsive">
+      <div class="col"><pre><code class="hljs language-html" id="code-to-run" contenteditable="true">\{{<br>  const greet = 'Hello, World!';<br>  const a = 10;<br>  const b = 9;<br>}}<br>&lt;body&gt;<br>  \{{ greet }} <br>  &lt;div&gt;Addition of \{{ a }} and \{{ b }} is \{{ a + b }}&lt;/div&gt;<br>&lt;/body&gt;&nbsp;</code></pre></div>
+      <div style="padding: 20px 10px;"><button id="run-code">Run</button></div>
+      <div class="col">
+        <pre><code class="hljs language-html" id="html-output"></code></pre>
+      </div>
+    </div>
+  </main>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script defer src="./js/code-run.js"></script>
+</body>
+</html>

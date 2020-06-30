@@ -3,6 +3,7 @@ document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
 try {
   hljs.initHighlightingOnLoad();
 } catch(err) {
+  console.log(err);
   console.log("Current page does not support code highlighting");
 }
 
