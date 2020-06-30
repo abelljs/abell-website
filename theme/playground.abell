@@ -60,7 +60,7 @@
     <div class="row row-responsive">
       <div class="col">
         <b>index.abell</b>
-        <pre><code class="hljs language-html" id="code-to-run" contenteditable="true">\{{<br>  const greet = 'Hello, World!';<br>  const a = 10;<br>  const b = 9;<br>}}<br>&lt;body&gt;<br>  \{{ greet }} <br>  &lt;div&gt;Addition of \{{ a }} and \{{ b }} is \{{ a + b }}&lt;/div&gt;<br>&lt;/body&gt;&nbsp;</code></pre>
+        <pre><code class="hljs language-html" id="code-to-run" contenteditable="true">\{{<br>  const greet = 'Hello, World!';<br>  const a = 10;<br>  const b = 9;<br>  const fruits = ['apple', 'mango', 'banana']<br>}}<br>&lt;body&gt;<br>  \{{ greet }} <br>  &lt;div&gt;Addition of \{{ a }} and \{{ b }} is \{{ a + b }}&lt;/div&gt;<br>  Fruits: <br>  &lt;ul&gt;<br>    \{{ <br>      fruits<br>        .map(fruit =&gt; `&lt;li&gt;${fruit}&lt;/li&gt;`)<br>        .join('\n') <br>    }}<br>  &lt;/ul&gt;<br>&lt;/body&gt;&nbsp;</code></pre>
       </div>
       <div style="padding: 70px 10px;text-align: center;"><button class="run-button shadow" id="run-code">Run</button></div>
       <div class="col">
