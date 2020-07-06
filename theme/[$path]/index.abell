@@ -5,6 +5,18 @@
   const Footer = require('../components/Footer.js');
   const globalInlinedCSS = require('../styles/inlined/global.css.js');
 }}
+
+{{
+  const nextPage = ((currentPageNum) => {
+    const next = $contentArray.find((metaInfo) => metaInfo.pageNum === (currentPageNum + 1));
+    if (next) {
+      return next;
+    } else {
+      return {title: ''}
+    }
+  })(meta.pageNum);
+}}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,6 +92,15 @@
       <div class="blog-container">
         <div class="content">
           {{ $importContent(`${meta.$path}/index.md`) }}
+          {{
+            nextPage.title ?
+            `<div style="text-align: right;padding: 30px 0px;">
+              <a class="github-contribute-button shadow" href="${$root}/${nextPage.$path}/">
+                ${nextPage.title} &#8594;
+              </a>
+            </div>`
+            : ''
+          }}
         </div>
         <hr/>
         <br/>

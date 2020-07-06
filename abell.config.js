@@ -42,5 +42,5 @@ module.exports = {
       }
     ]
   },
-  plugins: ['abell-sitemap-plugin']
+  plugins: ['abell-sitemap-plugin', 'plugins/fetch-ghdata.js']
 }
