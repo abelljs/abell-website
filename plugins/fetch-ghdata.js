@@ -15,7 +15,7 @@ async function beforeBuild(programInfo) {
     .then(res => res.text());
 
   const fixBracketsContributing = contributingMD.replace(/{{/g, '\\{{').replace(/\n\n\n/g, '<br/><br/>');
-  fs.writeFileSync(path.join(process.cwd(), 'content', 'contributing' ,'index.md'), fixBracketsContributing);
+  fs.writeFileSync(path.join(programInfo.abellConfigs.contentPath, 'contributing' ,'index.md'), fixBracketsContributing);
 }
 
 
