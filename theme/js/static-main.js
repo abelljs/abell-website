@@ -1,10 +1,7 @@
 window.addEventListener('keydown', e => e.keyCode === 9 && (document.body.classList.add("user-is-tabbing")));
-document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
-try {
+
+if (hljs) {  
   hljs.initHighlightingOnLoad();
-} catch(err) {
-  console.log(err);
-  console.log("Current page does not support code highlighting");
 }
 
 if (document.body.classList.contains('index')) {

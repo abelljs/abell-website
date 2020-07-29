@@ -1,4 +1,4 @@
-# {{ meta.title }}
+# {{ Abell.meta.title }}
 
 With Abell, you can create websites that are based on markdown content. This content can be created/edited/deleted from `./content/` directory.
 

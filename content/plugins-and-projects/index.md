@@ -1,3 +1,7 @@
+{{
+  const { meta } = Abell;
+}}
+
 # {{ meta.title }}
 
 ## Plugins and Projects from Abell Team and Community

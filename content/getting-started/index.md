@@ -1,4 +1,5 @@
 {{
+  const { meta, globalMeta } = Abell;
   const { Themes } = meta.components
 }}
 

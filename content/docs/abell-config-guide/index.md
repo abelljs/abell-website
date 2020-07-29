@@ -1,4 +1,4 @@
-# {{ meta.title }}
+# {{ Abell.meta.title }}
 
 You can change configurations, install plugins, change paths, and add variables from `abell.config.js` file in root.
 

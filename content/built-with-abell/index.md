@@ -1,3 +1,7 @@
+{{
+  const { meta, globalMeta } = Abell;
+}}
+
 <style>
 p {
   padding: 2px 0px;

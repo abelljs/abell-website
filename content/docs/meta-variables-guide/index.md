@@ -1,4 +1,4 @@
-# {{ meta.title }}
+# {{ Abell.meta.title }}
 
 There are two ways to two ways to have variables defined in Abell, `globalMeta` object in `abell.config.js`, and `meta.json`. 
 

@@ -1,82 +1,90 @@
-const DarkModeToggle = require('./DarkModeToggle.js');
-
-const TopNavigationHTML = (navigationPath, prefixPath) => /* html */ `
+<AbellComponent>
+{{ 
+  const DarkModeToggle = require('./DarkModeToggle.abell');
+  const { prefixPath, navigationPath, contentArray } = props;
+}}
+<template>
   <header>
     <nav class="top-nav shadow">
       <div style="background-color: #111; font-size: 10pt; color: #fff;padding: 5px 10px;text-align: center;">
         Abell is currently unstable (v0.3.x) and should not be used for serious projects.
       </div>
-      <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17.5px 20px;" href="${prefixPath}/">
+      <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17.5px 20px;" href="{{prefixPath}}/">
         <img alt="Abell logo" src="../favicon.ico" width="30" />
         <span style="position: relative; top: -5px;left: 3px;">Abell</span>
       </a>
       <div style="display: inline-block; float: right;">
-        <a class="nav-item hide-mobile ${navigationPath === '' ? 'active' : ''}" href="${prefixPath}/" replace>Home</a>
-        <a class="nav-item hide-mobile ${(navigationPath !== '' && navigationPath !== 'playground') ? 'active': ''}" href="${prefixPath}/getting-started/" replace>Docs</a>
+        <a class="nav-item hide-mobile {{navigationPath === '' ? 'active' : ''}}" href="{{prefixPath}}/" replace>Home</a>
+        <a class="nav-item hide-mobile {{(navigationPath !== '' && navigationPath !== 'playground') ? 'active': ''}}" href="{{prefixPath}}/getting-started/" replace>Docs</a>
         <a class="nav-item hide-mobile" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
         <button 
           aria-label="Open Navigation Bar"
           aria-pressed="false"
           class="nav-item hide-pc"
-          onclick="((_this) => {
-            const sideNav = document.querySelector('.side-nav');
-            if (sideNav.classList.contains('show')) {
-              sideNav.classList.remove('show');
-              _this.setAttribute('aria-label', 'Open Navigation Bar');
-              _this.setAttribute('aria-pressed', 'false')
-              _this.innerText = '&#9776;'
-            } else {
-              sideNav.classList.add('show');
-              _this.setAttribute('aria-label', 'Close Navigation Bar');
-              _this.setAttribute('aria-pressed', 'true');
-              _this.innerText = '&times;'
-            }
-          })(this)"
+          onclick="toggleSideBar(this)"
           style="padding: 25px; background: transparent; border: none;font-size: 13pt;"
         >&#9776;</button>
-        ${DarkModeToggle.html({classes: 'hide-mobile'})}
+        <DarkModeToggle props={classes: 'hide-mobile'} />
       </div>
     </nav>
   </header>
-`;
 
-
-const SideNavigationHTML = ($contentArray, navigationPath, prefixPath) => /* html */ `
-  <nav class="side-nav ${navigationPath || 'index'} side-nav-styles">
-  <div class="side-nav-items-container">
-  ${ 
-    $contentArray
-      .sort((a, b) => a.pageNum - b.pageNum)
-      .filter(meta => meta.draft !== true)
-      .map(meta => /* html */ `
-      <a class="nav-item ${meta.$path === navigationPath ? 'active': ''}" href="${prefixPath}/${meta.$path}/">${meta.title}</a>
-      ${ 
-        meta.sublinks && meta.sublinks.length > 0 && navigationPath !== ''
-        ? `<div class="submenu" style="display: ${meta.$path === navigationPath ? 'block': 'none'}">
-          ${
-            meta.sublinks
-              .map(sublink => `<a href="${prefixPath}/${meta.$path}/${sublink.path}">${sublink.title}</a>`)
-              .join('')
-          }
-        </div>
-        `
-        : ''
-      }
-    `).join('')
-  }
-  </div>
-  <div class="hide-pc mobile-top-nav-items">
-    <a class="nav-item ${navigationPath ? '' : 'active'}" href="${prefixPath}/">Home</a>
-    <a class="nav-item" href="${prefixPath}/getting-started/">Docs</a>
-    <a class="nav-item" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
-    <div class="mobile-top-nav-dark-mode-container" style="text-align: right;">
-      ${DarkModeToggle.html()}
+  <!-- Side Navigation Menu -->
+  <nav class="side-nav {{navigationPath || 'index'}} side-nav-styles">
+    <div class="side-nav-items-container">
+    {{ 
+      contentArray
+        .filter((meta) => meta.title !== '.')
+        .sort((a, b) => a.pageNum - b.pageNum)
+        .filter(meta => meta.draft !== true)
+        .map(meta => /* html */ `
+        <a class="nav-item ${meta.$path === navigationPath ? 'active': ''}" href="${prefixPath}/${meta.$path}/">${meta.title}</a>
+        ${ 
+          meta.sublinks && 
+          meta.sublinks.length > 0 && 
+          navigationPath !== '' && 
+          (meta.$path === navigationPath)
+          ? `<div class="submenu">
+            ${
+              meta.sublinks
+                .map(sublink => `<a href="${prefixPath}/${meta.$path}/${sublink.path}">${sublink.title}</a>`)
+                .join('')
+            }
+          </div>
+          `
+          : ''
+        }
+      `)
+    }}
     </div>
-  </div>
+    <div class="hide-pc mobile-top-nav-items">
+      <a class="nav-item {{navigationPath ? '' : 'active'}}" href="{{prefixPath}}/">Home</a>
+      <a class="nav-item" href="{{prefixPath}}/getting-started/">Docs</a>
+      <a class="nav-item" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
+      <div class="mobile-top-nav-dark-mode-container" style="text-align: right;">
+        <DarkModeToggle/>
+      </div>
+    </div>
   </nav>
-`
+</template>
+<script>
+const toggleSideBar = (_this) => {
+  const sideNav = document.querySelector('.side-nav');
+  if (sideNav.classList.contains('show')) {
+    sideNav.classList.remove('show');
+    _this.setAttribute('aria-label', 'Open Navigation Bar');
+    _this.setAttribute('aria-pressed', 'false')
+    _this.innerText = '&#9776;'
+  } else {
+    sideNav.classList.add('show');
+    _this.setAttribute('aria-label', 'Close Navigation Bar');
+    _this.setAttribute('aria-pressed', 'true');
+    _this.innerText = '&times;'
+  }
+}
+</script>
 
-const NavigationCSS = /* css */`
+<style>
 .side-nav-styles {
   display: inline-block;
   width: 350px;
@@ -181,10 +189,5 @@ nav.top-nav .active {
     width: 100%;
   }
 }
-`
-
-module.exports = {
-  TopNavigationHTML,
-  NavigationCSS,
-  SideNavigationHTML
-}
+</style>
+</AbellComponent>
