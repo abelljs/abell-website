@@ -2,7 +2,7 @@ module.exports = /* css */`
 body {
   --background-primary: #fff;
   --side-nav-background: #f3f3f3;
-  --header-background: #eee;
+  --header-background: linear-gradient(to top left, #fff, #3354ea88 90%);
   --font-color-primary: #333;
   --elevation-background: #fff;
   --code-background: #f3f3f3;
@@ -15,7 +15,7 @@ body {
 body.dark {
   --background-primary: #121212;
   --font-color-primary: #ccc; 
-  --header-background: linear-gradient(to top, #161616, #282C34cc);
+  --header-background: linear-gradient(to top left, #111, #09239daa 200%);
   --elevation-background: #171717;
   --code-background: #222;
   --footer-background: #0f0f0f;
