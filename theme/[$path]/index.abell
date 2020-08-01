@@ -48,15 +48,16 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles/docs.css" />
-  <title>{{ meta.title }} | {{ globalMeta.siteName }}</title>
+  <title>{{ meta.title }} - {{ globalMeta.siteName }}</title>
 
+  <style>{{ globalInlinedCSS }}</style>
+  
   <style>
     /* inlined-css for fast load */
-    {{ globalInlinedCSS }}
     body {
       height: 100%;
     }
-    .flex-container{
+    .flex-container {
       display: flex;
       margin-top: 50px;
     }
@@ -95,12 +96,14 @@
         <div class="content">
           {{ importContent(`${meta.$path}/index.md`) }}
           {{
-            nextPage.title ?
-            `<div style="text-align: right;padding: 30px 0px;">
+            nextPage.title 
+            ? /* html */ `
+            <div style="text-align: right;padding: 30px 0px;">
               <a class="github-contribute-button shadow" href="${$root}/${nextPage.$path}/">
                 ${nextPage.title} &#8594;
               </a>
-            </div>`
+            </div>
+            `
             : ''
           }}
         </div>
@@ -118,8 +121,8 @@
     <div class="side-nav-styles nav-placeholder hide-mobile"></div>
   </div>
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <link rel="stylesheet" href="../styles/highlight.css"/>
   <script defer src="../js/static-main.js"></script>
 </body>
 </html>

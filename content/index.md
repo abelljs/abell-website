@@ -1,5 +1,5 @@
 <pre>
-<code class="hljs nohighlight shadow" style="word-spacing: 4px;line-height: 40px;">npx create-abell-app my-cool-blog<br/>cd my-cool-blog<br/>npm run dev</code>
+<code class="hljs hljs-shell nohighlight shadow" style="word-spacing: 4px;line-height: 40px;">npx create-abell-app my-cool-blog<br/>cd my-cool-blog<br/>npm run dev</code>
 </pre>
 
 <br/><br/>
@@ -17,7 +17,8 @@ Abell files are HTML files which allow you to write JS inside curly brackets so 
 
 **Input (.abell)**
 
-```html
+`index.abell`
+```abell
 \{{ 
   const a = 'Hello';
   const b = ', World 🌻';
@@ -33,6 +34,8 @@ Abell files are HTML files which allow you to write JS inside curly brackets so 
 <div style="flex: 1">
 
 **Output (.html)**
+
+`index.html`
 ```html
 <html>
   <body>
@@ -42,13 +45,13 @@ Abell files are HTML files which allow you to write JS inside curly brackets so 
 ```
 
 
-**Rendered Output**
+**View on CodeSandbox**
 
-<div style="padding: 0px 10px;">I can render JavaScript! Look: Hello, WORLD 🌻</div>
+[![Edit abell-hello-world](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/abell-hello-world-zit90?fontsize=14&hidenavigation=1&module=%2Fsrc%2Findex.abell&theme=dark)
+
 </div>
 </div>
 
-Check out [/docs/abell-syntax-guide](/docs/abell-syntax-guide) for more examples.
 
 ### Live dev-server to speed up your development 🏃
 
@@ -81,7 +84,7 @@ If you have a portfolio and you're bored of writing code to add new project, you
   <div style="flex: 1">
 
   `./projects.abell`
-  ```html
+  ```abell
   \{{ const siteData = require('./site.json'); }}
   <html>
     <head>
@@ -90,8 +93,9 @@ If you have a portfolio and you're bored of writing code to add new project, you
     <body>
       \{{
         siteData.projects
-          .map(project => `<div>${project.name}</div>`)
-          .join('')
+          .map(project => 
+            `<div>${project.name}</div>`
+          )
       }}
     </body>
   </html>
@@ -102,6 +106,7 @@ If you have a portfolio and you're bored of writing code to add new project, you
 
 **Output**
 
+`./projects.html`
 ```html
 <html>
   <head>
@@ -113,11 +118,12 @@ If you have a portfolio and you're bored of writing code to add new project, you
   </body>
 </html>
 ```
+[![Edit read-json](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/read-json-obfmw?fontsize=14&hidenavigation=1&module=%2Fsrc%2Findex.abell&theme=dark)
 <br/><br/>
 
 ### Build Markdown based websites 📖
 
-With abell, you can import markdown content using `$importContent(path/to/mardown.md)`. Even this text that you're reading right now is coming from [https://github.com/abelljs/abell-website/blob/main/content/index.md](https://github.com/abelljs/abell-website/blob/main/content/index.md)
+With abell, you can import markdown content using `Abell.importContent('path/to/mardown.md')`. Even this text that you're reading right now is coming from [https://github.com/abelljs/abell-website/blob/main/content/index.md](https://github.com/abelljs/abell-website/blob/main/content/index.md)
 
 <div class="row row-responsive">
   <div style="flex: 1">
@@ -133,20 +139,23 @@ With abell, you can import markdown content using `$importContent(path/to/mardow
   </div>
   <div style="flex: 1">
 
-  `./index.html`
+  `./theme/index.abell`
   ```html
   <body>
     <section class="blog-contaier"> 
-      \{{ $importContent('./index.md')  }}
+      \{{ Abell.importContent('./index.md')  }}
     </section>
   </body>
   ```
   </div>
 </div>
 
-*Note: As you can see in the example, the path in $importContent is relative to `content/` directory*
+*Note: As you can see in the example, the path in Abell.importContent is relative to `./content` directory*
 
 **Output**
+
+`./dist/index.html`
+
 ```html
 <body>
   <section class="blog-contaier">
@@ -156,10 +165,14 @@ With abell, you can import markdown content using `$importContent(path/to/mardow
   </section>
 </body>
 ```
-
+[![Edit read-markdown](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/read-markdown-f6cet?fontsize=14&hidenavigation=1&module=%2Fsrc%2Findex.abell&theme=dark)
 
 <br/><br/>
 
 ### And a lot more!!
 
 [Get started with Abell](getting-started/) for complete documentation 🐨🎉
+
+<br/><br/>
+
+## Abell vs Other static-site-generators

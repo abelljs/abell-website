@@ -7,7 +7,7 @@
   <header>
     <nav class="top-nav shadow">
       <div style="background-color: #111; font-size: 10pt; color: #fff;padding: 5px 10px;text-align: center;">
-        Abell is currently unstable (v0.3.x) and should not be used for serious projects.
+        Abell is currently unstable (v0.4.x) and should not be used for serious projects.
       </div>
       <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17.5px 20px;" href="{{prefixPath}}/">
         <img alt="Abell logo" src="../favicon.ico" width="30" />
@@ -34,7 +34,6 @@
     <div class="side-nav-items-container">
     {{ 
       contentArray
-        .filter((meta) => meta.title !== '.')
         .sort((a, b) => a.pageNum - b.pageNum)
         .filter(meta => meta.draft !== true)
         .map(meta => /* html */ `
@@ -44,10 +43,12 @@
           meta.sublinks.length > 0 && 
           navigationPath !== '' && 
           (meta.$path === navigationPath)
-          ? `<div class="submenu">
+          ? /* html */ `
+          <div class="submenu">
             ${
               meta.sublinks
-                .map(sublink => `<a href="${prefixPath}/${meta.$path}/${sublink.path}">${sublink.title}</a>`)
+                .map(sublink => 
+                  /* html */ `<a href="${prefixPath}/${meta.$path}/${sublink.path}">${sublink.title}</a>`)
                 .join('')
             }
           </div>

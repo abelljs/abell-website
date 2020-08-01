@@ -3,6 +3,7 @@
 
   const globalInlinedCSS = require('./styles/inlined/global.css.js');
   const Navigation = require('./components/Navigation.abell');
+  const HighlightCode = require('./components/HighlightCode.abell');
   const Footer = require('./components/Footer.abell');
 }}
 <!DOCTYPE html>
@@ -20,8 +21,8 @@
   <meta name="og:description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites"/>
   <meta property="og:url" content="https://abelljs.org" />
   
-  <meta name="twitter:card" content="summary_large_image"></meta>
-  <meta name="twitter:creator" content="@AbellLand"></meta>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:creator" content="@AbellLand"/>
 
   <meta property="og:image:secure_url" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1591474179/abell/docs-og.png"/>
   <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1591474179/abell/docs-og.png"/>
@@ -35,9 +36,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/index.css">
   <title>Abell - a JavaScript based static site generator to create markdown and configuration based websites</title>
-  <style>
-    {{ globalInlinedCSS }}
-  </style>
+  
+  <!-- global css file -->
+  <style>{{ globalInlinedCSS }}</style>
 </head>
 <body class="index">
   <Navigation props={contentArray, navigationPath: '', prefixPath: ''}/>
@@ -76,8 +77,8 @@
     </section>
   </main>
   <Footer/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <link rel="stylesheet" href="./styles/highlight.css"/>
   <script defer src="./js/static-main.js"></script>
 </body>
 </html>
