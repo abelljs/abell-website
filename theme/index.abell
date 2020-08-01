@@ -48,10 +48,7 @@
       a JavaScript based static-site-generator to help you create JSON, Markdown, or static-data based websites
       <br/>
       <a class="button primary-bg" href="getting-started/" style="margin: 20px 10px;font-size: 14pt;">Get Started</a>
-      <a class="button" 
-        href="https://github.com/abelljs/abell" 
-        style="margin: 20px 10px;font-size: 14pt;background-color: #111;"
-      >
+      <a class="button github-button" href="https://github.com/abelljs/abell">
         <img alt="GitHub Logo" src="./icons/github.png" style="filter: invert(100%); position: relative;top:3px;" width="17"/> &nbsp;GitHub
       </a>
     </div>

@@ -10,6 +10,7 @@ body {
   --link-color: #006EB8;
   --font-family-primary: 'Roboto Condensed', sans-serif;
   --abell-primary: #3354ea;
+  --abell-secondary: #09239d;
 }
 
 body.dark {
@@ -69,6 +70,24 @@ a.button {
 }
 .primary-bg {
   background-color: var(--abell-primary);
+  transition: background-color .23s ease;
+}
+
+.primary-bg:hover {
+  background-color: var(--abell-secondary);
+  transition: background-color .23s ease;
+}
+
+.github-button {
+  margin: 20px 10px;
+  font-size: 14pt;
+  background-color: #111;
+  transition: background-color .23s ease;
+}
+
+.github-button:hover {
+  background-color: #191919;
+  transition: background-color .23s ease;
 }
 
 .row {
