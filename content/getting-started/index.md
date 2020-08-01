@@ -7,9 +7,7 @@
 
 {{ meta.description }}
 
-**Abell** is a JavaScript based static-site-generator to help you build fast and secure websites from static data like JSON, Markdown, or CMS. 
-
-To know more about what Abell is, check out [Why Abell](https://abelljs.org/#why-abell) section on our Home Page.
+**Abell** is a JavaScript based static-site-generator to help you build fast and secure websites from static data like JSON, Markdown, or CMS.  Check out [Why Abell](https://abelljs.org/#why-abell) section on our Home Page for more info.
 
 There are various ways you can approach this documentation,
 - If you prefer to **learn by doing**, check out 
