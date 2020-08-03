@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="copyright-container">
-      Copyright © <span id="footer-year"></span> <a href="https://github.com/abelljs/abell">Abell</a>.
+      Copyright © <span id="footer-year"></span> <a href="https://saurabhdaware.in">Saurabh Daware</a>.
     </div>
   </footer>
 </template>

@@ -24,36 +24,46 @@ body.dark {
   --link-color: #09f;
 }
 
-html, body{
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
   margin: 0px;
   padding: 0px;
   width: 100%;
   overflow-x: hidden;
 }
 
-body{
+body {
   background-color: var(--background-primary);
   font-family: var(--font-family-primary);
   color: var(--font-color-primary);
   font-size: 13pt;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-primary);
   color: var(--font-color-primary);
 }
-*{
+
+hr {
+  border-color: var(--code-background);
+  opacity: .6;
+}
+
+* {
   box-sizing: border-box;
 }
-a{
+a {
   text-decoration: none;
   color: var(--link-color);
 }
-.shadow{
+.shadow {
   box-shadow: 0 5px 20px -4px #0005;
 }
 
-.github-contribute-button{
+.github-contribute-button {
   padding: 10px 20px;
   border-radius: 10px;
   color: var(--font-color);
