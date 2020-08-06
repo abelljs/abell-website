@@ -35,9 +35,9 @@ module.exports = {
     themes: [
       {
         name: "Abell Minima",
+        author: "Abell Team",
         github: "https://github.com/abelljs/abell-starter-minima",
         cover: "https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_400/v1588342001/abell/og.png",
-        deploy: "https://app.netlify.com/start/deploy?repository=https://github.com/abelljs/abell-starter-minima",
         preview: "https://abell-starter-minima.netlify.app"
       }
     ]

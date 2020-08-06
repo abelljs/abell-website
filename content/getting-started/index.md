@@ -1,6 +1,5 @@
 {{
   const { meta, globalMeta, $root } = Abell;
-  const { Themes } = meta.components
 }}
 
 # {{ meta.title }}
@@ -9,10 +8,13 @@
 
 **Abell** is a JavaScript based static-site-generator to help you build fast and secure websites from static data like JSON, Markdown, or CMS.  Check out [Why Abell](https://abelljs.org/#why-abell) section on our Home Page for more info.
 
-There are various ways you can approach this documentation,
-- If you prefer to **learn by doing**, check out 
-  - [Create Your Blog with Abell in 5 mins]({{$root}}/tutorial/create-blog/)
-  - [Building Twitter Clone with Abell]({{$root}}/tutorial/create-twitter-clone/).
+
+## Approaching Documentation
+
+If you want **to quickly get blog running**, check out [Creating Blog from Starter Themes]({{$root}}/starters/)
+
+To learn Abell, you can approach this documentation in various ways
+- If you prefer to **learn by doing**, check out [Tutorial to Create Your Blog from Scratch]({{$root}}/tutorial/create-twitter-clone/)
 - If you prefer to **learn from concepts**, try [A Conceptual Guide of Abell]({{$root}}/docs/concepts).
 - If you prefer to **learn by playing around the code**, you would like our [Abell Playground on CodeSandbox &#x2197;]() .
 

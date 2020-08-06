@@ -109,7 +109,9 @@ a.button {
 .row > div {
   padding-right: 15px;
 }
-
+ul {
+  padding-left: 30px;
+}
 li {
   padding: 3px;
   font-size: 13pt;
