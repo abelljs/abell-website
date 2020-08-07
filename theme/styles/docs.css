@@ -59,15 +59,28 @@ hr {
   font-weight: bold;
   font-size: 17pt;
   padding: 5px 0px;
+  margin: 0px 0px;
 }
+
+.theme-links {
+  padding-top: 10px;
+}
+
 .theme-links > a {
   margin-right: 10px;
 }
-.theme-create-locally {
+
+.theme-deploy a {
+  display: inline-block;
+  padding: 1px;
+  margin: 0px 5px 0px 0px;
+}
+
+.theme-use {
   font-size: 11pt;
   padding: 10px 0px;
 }
-.theme-create-locally code {
+.theme-use code {
   overflow-x: scroll;
   white-space: nowrap;
 }

@@ -80,10 +80,25 @@ Apart from these, you will find some more files and folders which are copied as 
 
 ## Edit/Create/Update Post
 
-To create postm, In `content` directory, you can create a folder with `index.md` file in it. The name of the folder becomes the path to that post. 
+To create post, In `content` directory, you can create a folder with `index.md` file in it. The name of the folder becomes the path to that post. 
 
 E.g. `content/hello-world/index.md` becomes `dist/hello-world/index.html`
 
 ### meta.json
 
 The same directory of post can also have `meta.json` (e.g. `content/hello-world/meta.json`) file. All the keys defined in `meta.json` can be accessed from `[path]/index.abell` with `Abell.meta.<key>`.
+
+```json
+// content/hello-world/meta.json
+
+{
+  "$createdAt": "3 May 2020",
+  "foo": "bar"
+}
+```
+
+```abell
+<!-- theme/[path]/index.abell -->
+
+<div>\{{ Abell.meta.foo }}</div> <!-- Prints `<div>bar</div>` -->
+```
