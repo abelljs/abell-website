@@ -1,5 +1,5 @@
 {{
-  const { meta, globalMeta } = Abell;
+  const { meta, globalMeta, $root } = Abell;
 }}
 
 # {{ meta.title }}
@@ -57,7 +57,7 @@ abell-starter-minima/
 </code>
 </pre>
 
-With this structure, you will get a following files generated.
+With this structure, you will get a following files generated on `npm run build`.
 
 <pre>
 <code class="hljs hljs-shell language-sh" style="line-height: 1.5;">
@@ -80,13 +80,13 @@ Apart from these, you will find some more files and folders which are copied as 
 
 ## Edit/Create/Update Post
 
-To create post, In `content` directory, you can create a folder with `index.md` file in it. The name of the folder becomes the path to that post. 
+### index.md
 
-E.g. `content/hello-world/index.md` becomes `dist/hello-world/index.html`
+To create post, you can create a folder with `index.md` file in it inside `content` directory. The name of the folder becomes the path to that post. (E.g. `content/hello-world/index.md` becomes `dist/hello-world/index.html` in the output)
 
 ### meta.json
 
-The same directory of post can also have `meta.json` (e.g. `content/hello-world/meta.json`) file. All the keys defined in `meta.json` can be accessed from `[path]/index.abell` with `Abell.meta.<key>`.
+The same directory of post can also have `meta.json` (e.g. `content/hello-world/meta.json`) file.
 
 ```json
 // content/hello-world/meta.json
@@ -97,8 +97,13 @@ The same directory of post can also have `meta.json` (e.g. `content/hello-world/
 }
 ```
 
+This meta information can be accessed from `index.md` and `theme/[path]/index.abell` in `Abell.meta.foo` variable
+
 ```abell
 <!-- theme/[path]/index.abell -->
 
 <div>\{{ Abell.meta.foo }}</div> <!-- Prints `<div>bar</div>` -->
 ```
+
+<br/><br/><br/>
+This will get you started with writing blogs. If you want to know more about editing theme, We will suggest going through our [Tutorial to Create Your Portfolio from Scratch]({{$root}}/tutorial/create-portfolio/)

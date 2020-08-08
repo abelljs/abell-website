@@ -14,7 +14,7 @@
 If you want **to quickly get blog running**, check out [Creating Blog from Starter Themes]({{$root}}/starters/)
 
 To learn Abell, you can approach this documentation in various ways
-- If you prefer to **learn by doing**, check out [Tutorial to Create Your Blog from Scratch]({{$root}}/tutorial/create-twitter-clone/)
+- If you prefer to **learn by doing**, check out [Tutorial to Create Your Portfolio from Scratch]({{$root}}/tutorial/create-portfolio/)
 - If you prefer to **learn from concepts**, try [A Conceptual Guide of Abell]({{$root}}/docs/concepts).
 - If you prefer to **learn by playing around the code**, you would like our [Abell Playground on CodeSandbox &#x2197;]() .
 
