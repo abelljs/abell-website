@@ -16,6 +16,7 @@
 
 ---
 ## Table of Content
+
 - [Setting Up Project Locally](#setting-up-project-locally)
 - [Folder Structure](#folder-structure)
 - [Edit/Create/Update Post](#editcreateupdate-post)

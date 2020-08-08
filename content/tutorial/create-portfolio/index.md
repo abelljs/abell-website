@@ -19,3 +19,16 @@ Even if you don't want a portfolio, It is still recommended to go through this T
 
 - CSS and styling
 
+---
+## Table of Content
+
+- [Prerequisites](#prerequisites)
+- [Hello World in Abell](#hello-world-in-abell)
+
+---
+
+## Prerequisites
+
+- Abell requires basic knowledge of HTML, CSS, and JavaScript to edit layout of the page.
+
+## "Hello, World!" in Abell
