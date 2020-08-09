@@ -1,7 +1,7 @@
 <AbellComponent>
 {{ 
   const DarkModeToggle = require('./DarkModeToggle.abell');
-  const { prefixPath, navigationPath, contentArray } = props;
+  const { $root, $path, contentArray } = props;
 }}
 <template>
   <header>
@@ -9,13 +9,13 @@
       <div style="font-size: 10pt;padding: 5px 10px;text-align: center;">
         Abell is not completely ready (v0.4.x) and should not be used for extreme serious projects.
       </div>
-      <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17.5px 20px;" href="{{prefixPath}}/">
-        <img alt="Abell logo" src="../favicon.ico" width="30" />
+      <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17.5px 20px;" href="{{$root}}/">
+        <img alt="Abell logo" src="{{$root}}/favicon.ico" width="30" />
         <span style="position: relative; top: -5px;left: 3px;">Abell</span>
       </a>
       <div style="display: inline-block; float: right;">
-        <a class="nav-item hide-mobile {{navigationPath === '' ? 'active' : ''}}" href="{{prefixPath}}/" replace>Home</a>
-        <a class="nav-item hide-mobile {{(navigationPath !== '' && navigationPath !== 'playground') ? 'active': ''}}" href="{{prefixPath}}/getting-started/" replace>Docs</a>
+        <a class="nav-item hide-mobile {{$path === '' ? 'active' : ''}}" href="{{$root}}/" replace>Home</a>
+        <a class="nav-item hide-mobile {{($path !== '' && $path !== 'playground') ? 'active': ''}}" href="{{$root}}/getting-started/" replace>Docs</a>
         <a class="nav-item hide-mobile" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
         <button 
           aria-label="Open Navigation Bar"
@@ -24,31 +24,31 @@
           onclick="toggleSideBar(this)"
           style="padding: 25px; background: transparent; border: none;font-size: 13pt;"
         >&#9776;</button>
-        <DarkModeToggle props={classes: 'hide-mobile'} />
+        <DarkModeToggle props={classes: 'hide-mobile', $root} />
       </div>
     </nav>
   </header>
 
   <!-- Side Navigation Menu -->
-  <nav class="side-nav {{navigationPath || 'index'}} side-nav-styles">
+  <nav class="side-nav {{$path || 'index'}} side-nav-styles">
     <div class="side-nav-items-container">
     {{ 
       contentArray
         .sort((a, b) => a.pageNum - b.pageNum)
         .filter(meta => meta.draft !== true)
         .map(meta => /* html */ `
-        <a class="nav-item ${meta.$path === navigationPath ? 'active': ''}" href="${prefixPath}/${meta.$path}/">${meta.title}</a>
+        <a class="nav-item ${meta.$path === $path ? 'active': ''}" href="${$root}/${meta.$path}/">${meta.title}</a>
         ${ 
           meta.sublinks && 
           meta.sublinks.length > 0 && 
-          navigationPath !== '' && 
-          (meta.$path === navigationPath)
+          $path !== '' && 
+          (meta.$path === $path)
           ? /* html */ `
           <div class="submenu">
             ${
               meta.sublinks
                 .map(sublink => 
-                  /* html */ `<a href="${prefixPath}/${meta.$path}/${sublink.path}">${sublink.title}</a>`)
+                  /* html */ `<a href="${$root}/${meta.$path}/${sublink.path}">${sublink.title}</a>`)
                 .join('')
             }
           </div>
@@ -59,8 +59,8 @@
     }}
     </div>
     <div class="hide-pc mobile-top-nav-items">
-      <a class="nav-item {{navigationPath ? '' : 'active'}}" href="{{prefixPath}}/">Home</a>
-      <a class="nav-item" href="{{prefixPath}}/getting-started/">Docs</a>
+      <a class="nav-item {{$path ? '' : 'active'}}" href="{{$root}}/">Home</a>
+      <a class="nav-item" href="{{$root}}/getting-started/">Docs</a>
       <a class="nav-item" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
       <div class="mobile-top-nav-dark-mode-container" style="text-align: right;">
         <DarkModeToggle/>

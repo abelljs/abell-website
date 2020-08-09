@@ -1,5 +1,5 @@
 {{
-  const { meta, globalMeta, importContent, contentArray, $root } = Abell;
+  const { meta, globalMeta, importContent, contentArray, $root, $path } = Abell;
 
   const GitHubContributeButton = require('../components/GitHubContributeButton.abell');
   const Navigation = require('../components/Navigation.abell');
@@ -86,8 +86,8 @@
   <Navigation 
     props={
       contentArray, 
-      navigationPath: meta.$path, 
-      prefixPath: meta.$root
+      $path,
+      $root
     }
   />
   <div class="flex-container">
