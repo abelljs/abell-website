@@ -39,6 +39,15 @@ blockquote {
   border-left: 3px solid #333;
 }
 
+summary {
+  cursor: pointer;
+}
+
+details {
+  border: 1px solid var(--code-background);
+  padding: 10px;
+}
+
 hr {
   border-color: var(--code-background);
   opacity: .3;
