@@ -1,5 +1,12 @@
 {{
-  const { meta, globalMeta, importContent, contentArray, $root, $path } = Abell;
+  const { 
+    globalMeta, 
+    meta, 
+    importContent, 
+    contentArray, 
+    $root, 
+    $path 
+  } = Abell;
 
   const GitHubContributeButton = require('../components/GitHubContributeButton.abell');
   const Navigation = require('../components/Navigation.abell');
@@ -23,7 +30,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="description" content="{{ meta.description }}"/>
-  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="{{$root}}/favicon.ico" type="image/x-icon" />
 
   <!-- OPEN GRAPH -->
   <meta name="og:title" content="{{ meta.title }}"/>
