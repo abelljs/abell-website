@@ -8,7 +8,7 @@ module.exports = {
       'getting-started',
       'starters',
       'tutorial/create-portfolio',
-      'docs',
+      'guide',
       'changelog'
     ],
     builtWithAbell: [

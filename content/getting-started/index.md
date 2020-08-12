@@ -11,7 +11,7 @@
 
 ## Approaching Documentation
 
-If you want **to quickly get blog running**, check out [Creating Blog from Starter Themes]({{$root}}/starters/)
+If you want to **quickly get blog running**, check out [Creating Blog from Starter Themes]({{$root}}/starters/)
 
 To learn Abell, you can approach this documentation in various ways
 - If you prefer to **learn by doing**, check out [Tutorial to Create Your Portfolio from Scratch]({{$root}}/tutorial/create-portfolio/)

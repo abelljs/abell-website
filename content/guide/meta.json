@@ -1,0 +1,9 @@
+{
+  "title": "Detailed Guide",
+  "sublinks": [
+    {
+      "title": "How to Build Plugins",
+      "path": "create-plugins"
+    }
+  ]
+}
