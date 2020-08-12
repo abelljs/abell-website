@@ -2,6 +2,10 @@
   "title": "Detailed Guide",
   "sublinks": [
     {
+      "title": "Syntax Guide",
+      "path": "syntax-guide"
+    },
+    {
       "title": "How to Build Plugins",
       "path": "create-plugins"
     }

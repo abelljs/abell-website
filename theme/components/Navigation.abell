@@ -33,7 +33,7 @@
   <nav class="side-nav {{$path || 'index'}} side-nav-styles">
     <div class="side-nav-items-container">
       <ul>
-        {{ const isSublink = (meta) =>  meta.sublinks && $path !== '' && (meta.$path === $path)}}
+        {{ const isSublink = (meta) =>  meta.sublinks && $path !== '' && $path.includes(meta.$path) }}
         {{ 
           contentArray
             .filter(meta => navMenuOrder.includes(meta.$path))
@@ -41,7 +41,7 @@
             .map(meta => /* html */ `
               <li>
                 <a 
-                  class="nav-item ${meta.$path === $path ? 'active': ''}" 
+                  class="nav-item ${$path.includes(meta.$path) ? 'active': ''}" 
                   href="${$root}/${meta.$path}/"
                 >
                   ${meta.title} ${ meta.sublinks && !isSublink(meta) ? '<span class="collapse-icon">&#43;</span>' : '' }
@@ -55,7 +55,7 @@
                     meta.sublinks
                       .map(sublink => /* html */ `
                         <li>
-                          <a href="${$root}/${meta.$path}/${sublink.path}">${sublink.title}</a>
+                          <a class="${$path.includes(meta.$path + '/' + sublink.path) ? 'active': ''}" href="${$root}/${meta.$path}/${sublink.path}">${sublink.title}</a>
                         </li>
                       `)
                       .join('')
@@ -157,6 +157,12 @@ ul.submenu a:hover:before {
 
 nav.side-nav .nav-item.active {
   font-weight: bold;
+}
+
+nav.side-nav ul.submenu a.active:before {
+  content: '> ';
+  font-weight: bold;
+  color: var(--abell-primary);
 }
 
 nav.top-nav {
