@@ -1,7 +1,7 @@
 <AbellComponent>
 {{ 
   const DarkModeToggle = require('./DarkModeToggle.abell');
-  const { $root, $path, contentArray } = props;
+  const { $root, $path, contentArray, navMenuOrder } = props;
 }}
 <template>
   <header>
@@ -32,31 +32,41 @@
   <!-- Side Navigation Menu -->
   <nav class="side-nav {{$path || 'index'}} side-nav-styles">
     <div class="side-nav-items-container">
-    {{ 
-      contentArray
-        .sort((a, b) => a.pageNum - b.pageNum)
-        .filter(meta => meta.draft !== true)
-        .map(meta => /* html */ `
-        <a class="nav-item ${meta.$path === $path ? 'active': ''}" href="${$root}/${meta.$path}/">${meta.title}</a>
-        ${ 
-          meta.sublinks && 
-          meta.sublinks.length > 0 && 
-          $path !== '' && 
-          (meta.$path === $path)
-          ? /* html */ `
-          <div class="submenu">
-            ${
-              meta.sublinks
-                .map(sublink => 
-                  /* html */ `<a href="${$root}/${meta.$path}/${sublink.path}">${sublink.title}</a>`)
-                .join('')
-            }
-          </div>
-          `
-          : ''
-        }
-      `)
-    }}
+      <ul>
+        {{ const isSublink = (meta) =>  meta.sublinks && $path !== '' && (meta.$path === $path)}}
+        {{ 
+          contentArray
+            .filter(meta => navMenuOrder.includes(meta.$path))
+            .sort((a, b) => navMenuOrder.indexOf(a.$path) - navMenuOrder.indexOf(b.$path))
+            .map(meta => /* html */ `
+              <li>
+                <a 
+                  class="nav-item ${meta.$path === $path ? 'active': ''}" 
+                  href="${$root}/${meta.$path}/"
+                >
+                  ${meta.title} ${ meta.sublinks && !isSublink(meta) ? '<span class="collapse-icon">&#43;</span>' : '' }
+                </a>
+              </li>
+              ${ 
+                isSublink(meta)
+                ? /* html */ `
+                <ul class="submenu">
+                  ${
+                    meta.sublinks
+                      .map(sublink => /* html */ `
+                        <li>
+                          <a href="${$root}/${meta.$path}/${sublink.path}">${sublink.title}</a>
+                        </li>
+                      `)
+                      .join('')
+                  }
+                </ul>
+                `
+                : ''
+              }
+            `)
+        }}
+      </ul>
     </div>
     <div class="hide-pc mobile-top-nav-items">
       <a class="nav-item {{$path ? '' : 'active'}}" href="{{$root}}/">Home</a>
@@ -90,14 +100,31 @@ const toggleSideBar = (_this) => {
   display: inline-block;
   width: 350px;
   height: 100%;
+  overflow-y: scroll;
 }
 nav.side-nav {
   position: fixed;
   right: 0px; top: 0px;
-  margin-top: 90px;
-  padding-top: 50px;
+  padding-top: 120px;
   z-index: 9999;
   background-color: var(--side-nav-background);
+}
+
+nav.side-nav ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+nav.side-nav ul li {
+  padding: 0px;
+  margin: 0px;
+}
+
+nav.side-nav .collapse-icon {
+  color: var(--abell-primary);
+  font-weight: bold;
+  display: inline-block;
+  padding: 0px 10px;
 }
 
 nav.side-nav .nav-item {
@@ -107,18 +134,22 @@ nav.side-nav .nav-item {
   font-size: 13pt;
 }
 
-.submenu a {
+ul.submenu a {
   color: var(--font-color);
-  padding: 2px 0px;
-  padding-left: 35px;
   display: block;
-  opacity: 1;
+  padding: 3px;
 }
 
-.submenu a:before {
+ul.submenu {
+  padding-left: 40px !important;
+  padding-bottom: 10px;
+}
+
+ul.submenu a:before {
   content: '- ';
 }
-.submenu a:hover:before {
+
+ul.submenu a:hover:before {
   content: '- ';
   font-weight: bold;
   color: var(--abell-primary);

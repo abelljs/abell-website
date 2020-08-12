@@ -23,6 +23,21 @@ if (hljs) {
   hljs.initHighlightingOnLoad();
 }
 
+const anchorlinks = document.querySelectorAll('a[href*="#"]')
+for (const item of anchorlinks) { 
+  item.addEventListener('click', (e)=> {
+    const href = item.getAttribute('href');
+    const hashval = href.slice(href.lastIndexOf('#'));
+    const target = document.querySelector(hashval)
+    target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    })
+    history.pushState(null, null, hashval)
+    e.preventDefault();
+  })
+}
+
 if (document.body.classList.contains('index')) {
   // Index JavaScript
   (async () => {

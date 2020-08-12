@@ -24,10 +24,6 @@ body.dark {
   --link-color: #09f;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 html, body {
   margin: 0px;
   padding: 0px;

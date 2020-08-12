@@ -28,7 +28,6 @@ function Themes(themes) {
 module.exports = {
   title: "Abell Starters",
   description: "You will find starter projects here which will help you set up blog quickly",
-  pageNum: 2,
   components: {
     Themes
   }

@@ -30,7 +30,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="description" content="{{ meta.description }}"/>
-  <link rel="shortcut icon" href="{{$root}}/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="{{ $root }}/favicon.ico" type="image/x-icon" />
 
   <!-- OPEN GRAPH -->
   <meta name="og:title" content="{{ meta.title }}"/>
@@ -54,7 +54,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{$root}}/styles/docs.css" />
+  <link rel="stylesheet" href="{{ $root }}/styles/docs.css" />
   <title>{{ meta.title }} - {{ globalMeta.siteName }}</title>
 
   <style>{{ globalInlinedCSS }}</style>
@@ -92,7 +92,8 @@
 <body>
   <Navigation 
     props={
-      contentArray, 
+      contentArray,
+      navMenuOrder: globalMeta.navMenuOrder,
       $path,
       $root
     }

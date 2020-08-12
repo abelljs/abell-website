@@ -4,6 +4,13 @@ module.exports = {
     name: 'Hoomans of Abell Land',
     twitter: 'AbellLand',
     domain: 'https://abelljs.org/',
+    navMenuOrder: [
+      'getting-started',
+      'starters',
+      'tutorial/create-portfolio',
+      'docs',
+      'changelog'
+    ],
     builtWithAbell: [
       {
         title: 'Abelljs.org (This documentation website) 🎉',

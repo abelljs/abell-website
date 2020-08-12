@@ -29,9 +29,18 @@ Even if you don't want a portfolio, It is still recommended to go through this T
 ---
 ## Table of Content
 
-- [Setting Up Project](#setting-up-project)
-- ["Hello, World!" in Abell](#hello-world-in-abell)
-
+- [Overview](#overview)
+- [Setup for the Tutorial](#setup-for-the-tutorial)
+- [Exploring the Starter Code](#exploring-the-starter-code)
+  - [abell.config.js](#abellconfigjs)
+  - [theme/index.abell](#themeindexabell)
+  - [theme/components/Navbar.abell](#themecomponentsnavbarabell)
+- [Reading Data from JSON File](#reading-data-from-json-file)
+- [Reading Data from Markdown](#reading-data-from-markdown)
+- [Dynamic Page Generation from Content](#dynamic-page-generation-from-content)
+  - [Writing Blog](#writing-blog)
+  - [Creating Blog Layout](#creating-blog-layout)
+  - [Listing Blogs on Index Page](#listing-blogs-on-index-page)
 ---
 
 ## Overview
@@ -503,7 +512,7 @@ Next we need to list all our blogs on index page. For that we need information o
 
 We get this information from `Abell.contentArray` variable which is an array of all the meta informations from all the blogs. 
 
-In your `./theme/index.abell`, on top, Add
+In your `./theme/index.abell`, on top, read `contentArray` variable from `Abell` object
 
 ```abell
 \{{ const { contentArray } = Abell; }}
