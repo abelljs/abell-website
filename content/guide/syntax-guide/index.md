@@ -95,7 +95,7 @@ if the conditions are nested writing ternary operator is not ideal, it is recomm
 
 **Why `/* html */` before the strings?**
 
-Ans: Adding `/* html */` before the string, highlights the block as HTML content in our [Abell Language Features VSCode Extension]()
+Ans: Adding `/* html */` before the string, highlights the block as HTML content in our [Abell Language Features VSCode Extension](https://marketplace.visualstudio.com/items?itemName=saurabh.abell-language-features)
 
 ### 4. Loops in Abell
 

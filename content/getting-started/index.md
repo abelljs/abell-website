@@ -15,7 +15,7 @@ If you want to **quickly get blog running**, check out [Creating Blog from Start
 
 To learn Abell, you can approach this documentation in various ways
 - If you prefer to **learn by doing**, check out [Tutorial to Create Your Portfolio from Scratch]({{$root}}/tutorial/create-portfolio/)
-- If you prefer to **learn from concepts**, try [A Conceptual Guide of Abell]({{$root}}/docs/concepts).
+- If you prefer to **learn from concepts**, try [A Conceptual Guide of Abell]({{$root}}/guide/).
 - If you prefer to **learn by playing around the code**, you would like our [Abell Playground on CodeSandbox &#x2197;]() .
 
 ---
@@ -23,8 +23,17 @@ To learn Abell, you can approach this documentation in various ways
 
 ## Requirements
 
-- Abell requires [Node.js 10 or higher](https://nodejs.org) installed.
-- In documentation, you will find reference of `npx` command which comes along with the Node.js
+- Abell requires [Node.js 8 or higher](https://nodejs.org) installed.
+
+Though it is not "required", if you're using VSCode, it is recommended to have [Abell Language Features Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=saurabh.abell-language-features) for syntax highlighting of `.abell` files.
+
+
+## Terms used in Documentation
+
+- **Abell Components** - Abell Components are the `.abell` files with content wrapped inside `<AbellComponent>` tag. Check out [Abell Components Guide](../guide/syntax-guide/#abell-components) for more information. (Usually named as `CamelCased.abell`)
+- **Abell Pages** - Abell Pages are close to HTML, they have `<html>` tag and these files eventually become `.html` page in output. (Follow `lowercase.abell` format)
+- In documentation, you will find reference of `npx` command which comes along with the Node.js and NPM. It executes the scripts directly.
+
 
 ## More Resources from Community 
 
