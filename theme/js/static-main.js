@@ -1,5 +1,12 @@
 window.addEventListener('keydown', e => e.keyCode === 9 && (document.body.classList.add("user-is-tabbing")));
 
+function throttle(method, scope) {
+  clearTimeout(method._tId);
+  method._tId= setTimeout(function(){
+      method.call(scope);
+  }, 100);
+}
+
 if (hljs) {  
   function abellHighlighter(e) {
     return {
@@ -37,6 +44,30 @@ for (const item of anchorlinks) {
     e.preventDefault();
   })
 }
+
+
+const halfHeight = window.innerHeight / 2;
+
+function onScroll() {
+  const sections = anchorlinks;
+  const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  
+  for (let i = 0; i < sections.length; i++) {
+    const currLink = sections[i];
+    const href = currLink.getAttribute('href');
+    const hashval = href.slice(href.lastIndexOf('#'));
+    const refElement = document.querySelector(hashval);
+    if ((refElement.offsetTop - halfHeight) <= scrollPos) {
+      currLink.classList.add('done');
+    } else {
+      currLink.classList.remove('done');
+    }
+  }
+};
+
+onScroll();
+
+window.document.addEventListener('scroll', () => throttle(onScroll));
 
 if (document.body.classList.contains('index')) {
   // Index JavaScript

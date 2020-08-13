@@ -149,10 +149,15 @@ ul.submenu a:before {
   content: '- ';
 }
 
-ul.submenu a:hover:before {
+ul.submenu a:hover:before, ul.submenu a.done:before {
   content: '- ';
   font-weight: bold;
   color: var(--abell-primary);
+  text-shadow: 
+    0 0 20px var(--abell-primary), 
+    0 0 10px var(--abell-primary),
+    0 0 30px var(--abell-primary), 
+    0 0 0px var(--abell-primary);
 }
 
 nav.side-nav .nav-item.active {
@@ -163,6 +168,11 @@ nav.side-nav ul.submenu a.active:before {
   content: '> ';
   font-weight: bold;
   color: var(--abell-primary);
+  text-shadow: 
+    0 0 20px var(--abell-primary), 
+    0 0 10px var(--abell-primary), 
+    0 0 30px var(--abell-primary), 
+    0 0 0px var(--abell-primary);
 }
 
 nav.top-nav {
