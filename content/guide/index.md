@@ -7,11 +7,11 @@ This section takes you through all the concepts of Abell and the API reference.
 
 ## Table of Content
 
-- [Syntax Guide](#syntax-guide)
-  - [Basic Syntax](#basic-syntax)
-  - [Abell Components](#abell-components)
-- Abell API Reference
-  - Abell.$root `<string>`
+- [Syntax Guide](syntax-guide)
+  - [Basic Syntax](syntax-guide#basic-syntax)
+  - [Abell Components](syntax-guide#abell-components)
+- [Abell API Reference](api-reference)
+  - [Abell.$root `<string>`](api-reference)
   - Abell.$path `<string>`
   - Abell.importContent `{Function (pathToMarkdown<string>): htmlString<string>}`
   - Abell.meta `<MetaInfo>`

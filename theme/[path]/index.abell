@@ -58,36 +58,6 @@
   <title>{{ meta.title }} - {{ globalMeta.siteName }}</title>
 
   <style>{{ globalInlinedCSS }}</style>
-  
-  <style>
-    /* inlined-css for fast load */
-    body {
-      height: 100%;
-    }
-    .flex-container {
-      display: flex;
-      margin-top: 50px;
-    }
-
-    main {
-      display: inline-block;
-      flex: 1;
-    }
-    .blog-container {
-      padding: 50px 100px;
-    }
-
-    @media (max-width: 768px) {
-      .blog-container {
-        padding: 80px 20px;
-      }
-      main {
-        display: block;
-        width: 100%;
-      }
-    }
-
-  </style>
 </head>
 <body>
   <Navigation 
@@ -98,7 +68,7 @@
       $root
     }
   />
-  <div class="flex-container">
+  <div>
     <main>
       <div class="blog-container">
         <div class="content">
@@ -126,7 +96,6 @@
       </div>
       <Footer/>
     </main>
-    <div class="side-nav-styles nav-placeholder hide-mobile"></div>
   </div>
   
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>

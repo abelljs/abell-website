@@ -53,15 +53,17 @@ function onScroll() {
   const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
   
   for (let i = 0; i < sections.length; i++) {
-    const currLink = sections[i];
-    const href = currLink.getAttribute('href');
-    const hashval = href.slice(href.lastIndexOf('#'));
-    const refElement = document.querySelector(hashval);
-    if ((refElement.offsetTop - halfHeight) <= scrollPos) {
-      currLink.classList.add('done');
-    } else {
-      currLink.classList.remove('done');
-    }
+    try {
+      const currLink = sections[i];
+      const href = currLink.getAttribute('href');
+      const hashval = href.slice(href.lastIndexOf('#'));
+      const refElement = document.querySelector(hashval);
+      if ((refElement.offsetTop - halfHeight) <= scrollPos) {
+        currLink.classList.add('done');
+      } else {
+        currLink.classList.remove('done');
+      }
+    } catch (err) {}
   }
 };
 

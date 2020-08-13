@@ -33,7 +33,30 @@
   <nav class="side-nav {{$path || 'index'}} side-nav-styles">
     <div class="side-nav-items-container">
       <ul>
-        {{ const isSublink = (meta) =>  meta.sublinks && $path !== '' && $path.includes(meta.$path) }}
+        {{ 
+          const isSublink = (meta) =>  {
+            return meta.sublinks && $path !== '' && $path.includes(meta.$path);
+          }
+          const renderSubMenu = (meta) => /* html */ `
+            <ul class="submenu">
+              ${
+                meta.sublinks
+                  .map(sublink => /* html */ `
+                    <li>
+                      <a 
+                        class="${$path.includes(meta.$path + '/' + sublink.path) ? 'active': ''}" 
+                        href="${$root}/${meta.$path}/${sublink.path}"
+                      >
+                        ${sublink.title}
+                      </a>
+                    </li>
+                    ${isSublink(sublink) ? renderSubMenu(sublink) : ''}
+                  `)
+                  .join('')
+              }
+            </ul>
+            `
+        }}
         {{ 
           contentArray
             .filter(meta => navMenuOrder.includes(meta.$path))
@@ -47,23 +70,7 @@
                   ${meta.title} ${ meta.sublinks && !isSublink(meta) ? '<span class="collapse-icon">&#43;</span>' : '' }
                 </a>
               </li>
-              ${ 
-                isSublink(meta)
-                ? /* html */ `
-                <ul class="submenu">
-                  ${
-                    meta.sublinks
-                      .map(sublink => /* html */ `
-                        <li>
-                          <a class="${$path.includes(meta.$path + '/' + sublink.path) ? 'active': ''}" href="${$root}/${meta.$path}/${sublink.path}">${sublink.title}</a>
-                        </li>
-                      `)
-                      .join('')
-                  }
-                </ul>
-                `
-                : ''
-              }
+              ${isSublink(meta) ? renderSubMenu(meta) : ''}
             `)
         }}
       </ul>
@@ -85,12 +92,12 @@ const toggleSideBar = (_this) => {
     sideNav.classList.remove('show');
     _this.setAttribute('aria-label', 'Open Navigation Bar');
     _this.setAttribute('aria-pressed', 'false')
-    _this.innerText = '&#9776;'
+    _this.innerHTML = '&#9776;'
   } else {
     sideNav.classList.add('show');
     _this.setAttribute('aria-label', 'Close Navigation Bar');
     _this.setAttribute('aria-pressed', 'true');
-    _this.innerText = '&times;'
+    _this.innerHTML = '&times;'
   }
 }
 </script>
@@ -143,6 +150,10 @@ ul.submenu a {
 ul.submenu {
   padding-left: 40px !important;
   padding-bottom: 10px;
+}
+
+ul.submenu ul.submenu {
+  padding-left: 20px !important;
 }
 
 ul.submenu a:before {

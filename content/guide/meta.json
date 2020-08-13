@@ -2,8 +2,35 @@
   "title": "Detailed Guide",
   "sublinks": [
     {
+      "title": "Installation and Setup",
+      "path": "installation"
+    },
+    {
       "title": "Syntax Guide",
-      "path": "syntax-guide"
+      "path": "syntax-guide",
+      "$path": "guide/syntax-guide",
+      "sublinks": [
+        {
+          "title": "Basic Syntax",
+          "path": "#basic-syntax"
+        },
+        {
+          "title": "Debugging in Abell",
+          "path": "#debugging-in-abell"
+        },
+        {
+          "title": "Abell Components",
+          "path": "#abell-components"
+        },
+        {
+          "title": "Bundling in Abell",
+          "path": "#bundling-in-abell"
+        }
+      ]
+    },
+    {
+      "title": "API Reference",
+      "path": "api-reference"
     },
     {
       "title": "How to Build Plugins",

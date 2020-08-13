@@ -1,7 +1,36 @@
+body {
+  height: 100%;
+}
+.flex-container {
+  display: flex;
+  margin-top: 50px;
+}
+
+main {
+  display: inline-block;
+  flex: 1;
+}
+
+.blog-container {
+  padding: 130px 100px;
+}
+
 p {
   margin: 0px;
   padding: 10px 0px 6px 0px;
 }
+
+main {
+  display: inline-block;
+  width: calc(100% - 350px);
+}
+
+.content {
+  width: 100%;
+  overflow-x: hidden;
+  word-wrap: break-word;
+}
+
 div.blog-container h1 {
   font-size: 4rem;
   font-weight: bold;
@@ -101,7 +130,17 @@ hr {
   .theme-container {
     width: 100%;
   }
+
   div.blog-container h1{
     font-size: 30pt;
+  }
+
+  .blog-container {
+    padding: 80px 20px;
+  }
+
+  main {
+    display: block;
+    width: 100%;
   }
 }
