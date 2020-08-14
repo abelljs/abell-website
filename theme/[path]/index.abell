@@ -28,6 +28,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-125454191-5');
+  </script>
+
+
   <meta charset="UTF-8"/>
   <meta name="description" content="{{ meta.description }}"/>
   <link rel="shortcut icon" href="{{ $root }}/favicon.ico" type="image/x-icon" />
