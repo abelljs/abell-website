@@ -83,7 +83,8 @@ hr {
 .theme-container {
   display: inline-block;
   margin-bottom: 20px;
-  width: 45%;
+  margin-right: 20px;
+  width: 350px;
 }
 .theme-info {
   padding: 10px 10px 20px 10px;
@@ -124,6 +125,26 @@ hr {
 }
 .theme-create-locally code::-webkit-scrollbar-thumb {
   background-color: #ccc;
+}
+
+.blog-list-item {
+  padding: 10px 10px;
+  margin: 15px 0px;
+  color: var(--font-color-primary);
+}
+
+.blog-list-item h2 {
+  margin: 3px 0px !important;
+}
+
+.blog-list-item p.date {
+  opacity: .8;
+  margin: 0px 0px !important;
+  padding: 0px;
+}
+
+.blog-list-item p.description {
+  margin: 0px 0px !important;
 }
 
 @media (max-width: 768px) {
