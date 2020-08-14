@@ -211,7 +211,7 @@ nav.top-nav .active {
 }
 .mobile-top-nav-items {
   border-top: 1px solid #ddd;
-  height: 290px;
+  height: 230px;
   position: absolute;
   padding-top: 10px;
   bottom: 0px;
@@ -225,6 +225,10 @@ nav.top-nav .active {
   .side-nav-styles {
     width: 250px;
   }
+  nav.side-nav .nav-item {
+  font-size: 12pt;
+  padding-right: 5px;
+}
   nav.side-nav.show {
     right: 0px;
     transition: right .2s ease;
@@ -234,13 +238,15 @@ nav.top-nav .active {
   }
   .side-nav-items-container {
     overflow-y: scroll;
-    height: calc(100% - 310px);
+    height: calc(100% - 232px);
   }
   nav.index.side-nav .mobile-top-nav-items {
-    top: 50px;
     border-top: none;
-    bottom: unset;
     height: calc(100% - 140px);
+  }
+
+  nav.index.side-nav .side-nav-items-container {
+    display: none;
   }
   nav.index.side-nav .mobile-top-nav-dark-mode-container {
     position: absolute;
