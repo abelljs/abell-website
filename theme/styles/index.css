@@ -1,14 +1,9 @@
 /* CSS Variables defined in ./global.css */
-body {
-  --header-background: #eee;
-}
-body.dark {
-  --header-background: #292929;
-}
+
 header.landing{
   width: 100%;
   padding: 130px 300px;
-  background-color: var(--header-background);
+  background: var(--header-background);
   overflow-y: hidden;
   position: relative;
   text-align: center;
@@ -23,7 +18,7 @@ header.landing .header-abell-logo {
 }
 body.dark header.landing .header-abell-logo {
   filter: grayscale(100%) invert(100%);
-  opacity: .1;
+  opacity: .07;
 }
 header.landing h1{
   margin: 10px 0px;

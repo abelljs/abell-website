@@ -1,17 +1,30 @@
 {{
-  const DarkModeToggle = require('./components/DarkModeToggle.js');
+  const { globalMeta, importContent, contentArray, $path, $root } = Abell;
+
   const globalInlinedCSS = require('./styles/inlined/global.css.js');
-  const { TopNavigationHTML, NavigationCSS, SideNavigationHTML } = require('./components/Navigation.js');
-  const Footer = require('./components/Footer.js');
+  const Navigation = require('./components/Navigation.abell');
+  const HighlightCode = require('./components/HighlightCode.abell');
+  const Footer = require('./components/Footer.abell');
 }}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-125454191-5');
+  </script>
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <meta name="description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites"/>
-  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
   <!-- OPEN GRAPH -->
   <meta property="og:type" content="website" />
@@ -19,8 +32,8 @@
   <meta name="og:description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites"/>
   <meta property="og:url" content="https://abelljs.org" />
   
-  <meta name="twitter:card" content="summary_large_image"></meta>
-  <meta name="twitter:creator" content="@AbellLand"></meta>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:creator" content="@AbellLand"/>
 
   <meta property="og:image:secure_url" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1591474179/abell/docs-og.png"/>
   <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1591474179/abell/docs-og.png"/>
@@ -34,33 +47,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/index.css">
   <title>Abell - a JavaScript based static site generator to create markdown and configuration based websites</title>
-  <style>
-    {{ globalInlinedCSS }}
-    {{ NavigationCSS }}
-    {{ DarkModeToggle.css }}
-    {{ Footer.css }}
-  </style>
+  
+  <!-- global css file -->
+  <style>{{ globalInlinedCSS }}</style>
 </head>
 <body class="index">
-  {{ TopNavigationHTML('', '') }}
-  {{ SideNavigationHTML([], '', '') }}
+  <Navigation 
+    props={
+      contentArray, 
+      navMenuOrder: globalMeta.navMenuOrder,
+      $path, 
+      $root
+    }
+  />
   <header class="landing">
     <div class="header-bio">
       <h1>{{ globalMeta.siteName }}</h1>
       a JavaScript based static-site-generator to help you create JSON, Markdown, or static-data based websites
       <br/>
       <a class="button primary-bg" href="getting-started/" style="margin: 20px 10px;font-size: 14pt;">Get Started</a>
-      <a class="button" 
-        href="https://github.com/abelljs/abell" 
-        style="margin: 20px 10px;font-size: 14pt;background-color: #111;"
-      >
+      <a class="button github-button" href="https://github.com/abelljs/abell">
         <img alt="GitHub Logo" src="./icons/github.png" style="filter: invert(100%); position: relative;top:3px;" width="17"/> &nbsp;GitHub
       </a>
     </div>
     <img alt="Abell Logo" class="header-abell-logo" src="./icons/abell.svg" />
   </header>
   <main>
-    {{ $importContent('./index.md') }}
+    {{ importContent('./home.md') }}
     <section style="padding-top: 20px;" class="github-contributors-section">
       <h2>GitHub Contributors</h2>
       <div class="github-contributors-holder">
@@ -78,12 +91,9 @@
 
     </section>
   </main>
-  {{ Footer.html }}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
+  <Footer/>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <link rel="stylesheet" href="./styles/highlight.css"/>
   <script defer src="./js/static-main.js"></script>
-  <script>
-    {{ DarkModeToggle.inlinedJS }}
-  </script>
 </body>
 </html>

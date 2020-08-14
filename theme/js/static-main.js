@@ -1,11 +1,75 @@
 window.addEventListener('keydown', e => e.keyCode === 9 && (document.body.classList.add("user-is-tabbing")));
-document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
-try {
-  hljs.initHighlightingOnLoad();
-} catch(err) {
-  console.log(err);
-  console.log("Current page does not support code highlighting");
+
+function throttle(method, scope) {
+  clearTimeout(method._tId);
+  method._tId= setTimeout(function(){
+      method.call(scope);
+  }, 100);
 }
+
+if (hljs) {  
+  function abellHighlighter(e) {
+    return {
+      name: "abell",
+      aliases: ["Abell", "abell"],
+      subLanguage: ["xml"],
+      contains: [
+        e.C_LINE_COMMENT_MODE,
+        e.C_BLOCK_COMMENT_MODE,
+        {
+          className: "abell",
+          begin: "{{",
+          end: "}}",
+          subLanguage: ["javascript"]
+        }
+      ],
+    };
+  }
+
+  hljs.registerLanguage('abell', abellHighlighter);
+  hljs.initHighlightingOnLoad();
+}
+
+const anchorlinks = document.querySelectorAll('a[href*="#"]')
+for (const item of anchorlinks) { 
+  item.addEventListener('click', (e)=> {
+    const href = item.getAttribute('href');
+    const hashval = href.slice(href.lastIndexOf('#'));
+    const target = document.querySelector(hashval)
+    target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    })
+    history.pushState(null, null, hashval)
+    e.preventDefault();
+  })
+}
+
+
+const halfHeight = window.innerHeight / 2;
+
+function onScroll() {
+  const sections = anchorlinks;
+  const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  
+  for (let i = 0; i < sections.length; i++) {
+    try {
+      const currLink = sections[i];
+      const href = currLink.getAttribute('href');
+      const hashval = href.slice(href.lastIndexOf('#'));
+      const refElement = document.querySelector(hashval);
+      if ((refElement.offsetTop - halfHeight) <= scrollPos) {
+        currLink.classList.add('done');
+      } else {
+        currLink.classList.remove('done');
+      }
+    } catch (err) {}
+  }
+};
+
+onScroll();
+
+window.document.addEventListener('scroll', () => throttle(onScroll));
 
 if (document.body.classList.contains('index')) {
   // Index JavaScript

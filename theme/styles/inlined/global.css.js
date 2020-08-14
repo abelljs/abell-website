@@ -2,6 +2,7 @@ module.exports = /* css */`
 body {
   --background-primary: #fff;
   --side-nav-background: #f3f3f3;
+  --header-background: linear-gradient(to top left, #fff, #3354ea88 90%);
   --font-color-primary: #333;
   --elevation-background: #fff;
   --code-background: #f3f3f3;
@@ -9,48 +10,56 @@ body {
   --link-color: #006EB8;
   --font-family-primary: 'Roboto Condensed', sans-serif;
   --abell-primary: #3354ea;
+  --abell-secondary: #09239d;
 }
 
 body.dark {
   --background-primary: #121212;
   --font-color-primary: #ccc; 
-  --elevation-background: #1D1D1D;
+  --header-background: linear-gradient(to top left, #111, #09239daa 200%);
+  --elevation-background: #171717;
   --code-background: #222;
   --footer-background: #0f0f0f;
   --side-nav-background: #0f0f0f;
   --link-color: #09f;
 }
 
-html, body{
+html, body {
   margin: 0px;
   padding: 0px;
   width: 100%;
   overflow-x: hidden;
 }
 
-body{
+body {
   background-color: var(--background-primary);
   font-family: var(--font-family-primary);
   color: var(--font-color-primary);
   font-size: 13pt;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-primary);
   color: var(--font-color-primary);
 }
-*{
+
+hr {
+  border-color: var(--code-background);
+  opacity: .6;
+}
+
+* {
   box-sizing: border-box;
 }
-a{
+a {
   text-decoration: none;
   color: var(--link-color);
 }
-.shadow{
+.shadow {
   box-shadow: 0 5px 20px -4px #0005;
 }
 
-.github-contribute-button{
+.github-contribute-button {
   padding: 10px 20px;
   border-radius: 10px;
   color: var(--font-color);
@@ -67,6 +76,24 @@ a.button {
 }
 .primary-bg {
   background-color: var(--abell-primary);
+  transition: background-color .23s ease;
+}
+
+.primary-bg:hover {
+  background-color: var(--abell-secondary);
+  transition: background-color .23s ease;
+}
+
+.github-button {
+  margin: 20px 10px;
+  font-size: 14pt;
+  background-color: #111;
+  transition: background-color .23s ease;
+}
+
+.github-button:hover {
+  background-color: #191919;
+  transition: background-color .23s ease;
 }
 
 .row {
@@ -78,7 +105,9 @@ a.button {
 .row > div {
   padding-right: 15px;
 }
-
+ul {
+  padding-left: 30px;
+}
 li {
   padding: 3px;
   font-size: 13pt;
