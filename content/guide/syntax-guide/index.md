@@ -99,7 +99,7 @@ Ans: Adding `/* html */` before the string, highlights the block as HTML content
 
 ### 4. Loops in Abell
 
-You can loop over content with Native JavaScript methods such as [.map()](TODO). You can also use `sort`, `filter` and other array methods to customize the loop.
+You can loop over content with Native JavaScript methods such as [.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). You can also use `sort`, `filter` and other array methods to customize the loop.
 
 ```abell
 \{{

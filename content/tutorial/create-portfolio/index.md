@@ -451,7 +451,7 @@ Our blogs usually have meta content such as title, date of creation, open-graph 
 
 `meta.json` supports any key so you can write `foo: 'bar'` and access it from `theme/[path]/index.abell`, and respective `index.md` with `Abell.meta.foo`
 
-In addition to that, there are few predefined keys with meanings. Such as `title`, `description`, `$modifiedAt`, and `$createdAt` which have their respective meanings. Learn More at [meta Variable Guide](TODO)
+In addition to that, there are few predefined keys with meanings. Such as `title`, `description`, `$modifiedAt`, and `$createdAt` which have their respective meanings. Learn More at [meta Variable Guide]({{Abell.$root}}/guide/api-reference#abellmeta-ltmetainfogt)
 
 For now, you can just copy-paste this JSON in `content/hello-world/meta.json`
 ```json
@@ -498,7 +498,7 @@ In `theme/[path]/index.abell`, add
 
 As we saw earlier in [Reading Data from Markdown Section](#reading-data-from-markdown), we can use `Abell.importContent` to import markdown content from `content` directory. But this time, rather than binding it to a static-path, we use `Abell.meta.$path`. 
 
-During build, The layout is called for each blog with it's respective meta information. This meta object includes meta information from `meta.json` plus some additional variables for your help such as `meta.$path` that holds path to the content (`hello-world/` in this case). `meta.$slug` which holds the slug of blog. You can learn more about this at [meta Variable Guide](TODO)
+During build, The layout is called for each blog with it's respective meta information. This meta object includes meta information from `meta.json` plus some additional variables for your help such as `meta.$path` that holds path to the content (`hello-world/` in this case). `meta.$slug` which holds the slug of blog. You can learn more about this at [meta Variable Guide]({{Abell.$root}}/guide/api-reference#abellmeta-ltmetainfogt)
 
 Remember, you can always `\{{ console.log(meta) }}` to see its content in terminal.
 

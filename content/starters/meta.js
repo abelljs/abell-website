@@ -1,7 +1,7 @@
 function Themes(themes) {
   return themes.map(theme => /* html */ `
   <div class="theme-container shadow">
-    <img style="width: 100%;" loading="lazy" src="${theme.cover}" />
+    <img alt="Cover image of ${theme.name}" style="width: 100%;" loading="lazy" src="${theme.cover}" />
     <div class="theme-info">
       <h3 class="theme-name">${theme.name}</h3>
       <div>by ${theme.author}</div>

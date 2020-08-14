@@ -12,6 +12,7 @@ Hey there! Abell v0.4 adds some super cool things to help you build plugins but 
 - [Setup new Plugin](#setup-new-plugin)
 - [Exploring Code](#exploring-code)
 - [Creating Source Plugin](#creating-source-plugin)
+- [Deploy your Plugin](#deploy-your-plugin)
 ---
 
 ## Setup new Plugin
@@ -117,4 +118,19 @@ Apart from these properties, you can add any other values in the object. For exa
 
 As an example, you can refer to [abell-source-devto](https://github.com/abelljs/official-plugins/blob/main/abell-source-devto/plugin/index.js)'s code.
 
+## Deploy your Plugin
 
+You can check if your plugin is working correctly by running `npm run build`. If everything works well, we can go ahead to deploying this plugin as an NPM package.
+
+### Deploy Checklist
+- In `package.json`, "main" points to the entry file of plugin. which is `plugin/index.js` in given starter.
+- In `package.json`, "name" value has the name of your plugin. See [Naming Conventions](#naming-conventions)
+- Make sure, `theme`, `content`, `abell.config.js` are present in `.npmignore`. We only need plugin in NPM, other files are there to check if plugin is working.
+- Run `npm publish --dry-run` and check if package only has `package.json`, `README.md`, `LICENSE`, and files related to your plugin.
+
+### Deployment
+
+- `npm login` if you are not already logged in.
+- `npm publish` to publish over NPM.
+
+Now to use your plugin, user can `npm install --save-dev <your-plugin-name>` and add your plugin name to `plugins` array in their `abell.config.js` file.
