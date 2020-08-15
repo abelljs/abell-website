@@ -74,7 +74,7 @@ Abell files are like HTML files but you can write JavaScript inside double curly
 </html>
 ```
 
-[![Edit abell-hello-world](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/abell-hello-world-zit90?fontsize=14&hidenavigation=1&module=%2Fsrc%2Findex.abell&theme=dark)
+[![Edit abell-hello-world](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/abell-hello-world-zit90?fontsize=14&hidenavigation=1&module=%2Ftheme%2Findex.abell&theme=dark)
 
 
 
@@ -102,7 +102,7 @@ And other files such as `package-lock.json`, `.gitignore` which we won't care ab
 
 
 <details>
-    <summary>Wait, but what did `create-abell-app` do?</summary>
+    <summary>`create-abell-app` adds a starter code, installs abell, and adds basic configs</summary>
       
 `npx create-abell-app my-portfolio --template minimal` is equivalent to following steps:
 
@@ -185,6 +185,8 @@ module.exports = {
 
 
 ## Exploring the Starter Code.
+
+[![Edit minimal-starter-code](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/create-abell-app-minimal-93hgf?fontsize=14&hidenavigation=1&module=%2Ftheme%2Findex.abell&theme=dark)
 
 In our starter project, there are three major files that we have to care about.
 
@@ -372,6 +374,8 @@ Woop Woop! This is what we're supposed to have now:
 ![Screenshot that shows navbar on top with home, about, blogs links. Then top header that says My Portfolio followed by a projects sub-heading. Then mini-headings with name of project and their description. The headings of projects are clickable.](assets/projects-output.png)
 
 
+[![Edit abell-read-from-json](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/abell-read-from-json-jfsn2?fontsize=14&hidenavigation=1&module=%2Ftheme%2Findex.abell&theme=dark)
+
 ## Reading Data from Markdown
 
 Now we will create **About Section** where we will read information from a markdown file.
@@ -421,6 +425,9 @@ So far our directory structure is
 |- ⚙️ abell.config.js
 |- ⚙️ package.json
 ```
+
+[![Edit abell-read-markdown](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/abell-read-markdown-32f2b?fontsize=14&hidenavigation=1&module=%2Ftheme%2Findex.abell&theme=dark)
+
 
 ## Dynamic Page Generation from Content
 
@@ -537,3 +544,6 @@ This will create a list of all blogs with it's description, and a clickable titl
 
 
 You can `\{{ console.log(contentArray) }}` to see all the content in terminal.
+
+
+[![Edit dynamic-page-generation](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/dynamic-page-generation-zkl34?fontsize=14&hidenavigation=1&module=%2Ftheme%2Findex.abell&theme=dark)
