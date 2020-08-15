@@ -1,7 +1,8 @@
 {
   "title": "Abell v0.4 🎉: Components, Source Plugins, Bundling, and more!",
-  "description": "Abell v0.4 includes major things like Abell Components, Source Plugins and a way to inline CSS, and scripts from Components, and a lot more 🌻",
+  "description": "Abell v0.4 includes major things like Abell Components, Source Plugins, a way to inline CSS, and scripts from Components, and a lot more 🌻",
   "$createdAt": "14 Aug 2020",
+  "ogImage": "https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/g_center,c_fit,e_colorize:50,l_text:arial_33_bold:Abell%20v0.4%3A%20Components%252C%20Source%20Plugins%20and%20more!,r_0,w_340,y_0,x_90/v1591474213/abell/docs-section.png",
   "author": {
     "name": "Saurabh Daware",
     "twitter": "saurabhcodes"

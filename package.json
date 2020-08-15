@@ -2,7 +2,7 @@
   "name": "abell-starter-minima",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.html",
+  "main": "abell.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "abell build",

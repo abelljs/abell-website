@@ -2,6 +2,36 @@
 {{ 
   const DarkModeToggle = require('./DarkModeToggle.abell');
   const { $root, $path, contentArray, navMenuOrder } = props;
+
+  const isSublink = (meta) =>  {
+    return meta.sublinks && $path !== '' && $path.includes(meta.$path);
+  }
+
+  const section = (() => {
+    if ($path === '') return 'home'
+    if ($path.includes('blog')) return 'blog'
+    return 'docs';
+  })();
+          
+  const renderSubMenu = (meta) => /* html */ `
+    <ul class="submenu">
+      ${
+        meta.sublinks
+          .map(sublink => /* html */ `
+            <li>
+              <a 
+                class="${$path.includes(meta.$path + '/' + sublink.path) ? 'active': ''}" 
+                href="${$root}/${meta.$path}/${sublink.path}"
+              >
+                ${sublink.title}
+              </a>
+            </li>
+            ${isSublink(sublink) ? renderSubMenu(sublink) : ''}
+          `)
+          .join('')
+      }
+    </ul>
+    `
 }}
 <template>
   <header>
@@ -14,8 +44,9 @@
         <span style="position: relative; top: -5px;left: 3px;">Abell <small style="opacity: .7;">v0.4</small></span>
       </a>
       <div style="display: inline-block; float: right;">
-        <a class="nav-item hide-mobile {{$path === '' ? 'active' : ''}}" href="{{$root}}/" replace>Home</a>
-        <a class="nav-item hide-mobile {{($path !== '' && $path !== 'playground') ? 'active': ''}}" href="{{$root}}/getting-started/" replace>Docs</a>
+        <a class="nav-item hide-mobile {{section === 'home' ? 'active' : ''}}" href="{{$root}}/" replace>Home</a>
+        <a class="nav-item hide-mobile {{(section === 'docs') ? 'active': ''}}" href="{{$root}}/getting-started/" replace>Docs</a>
+        <a class="nav-item hide-mobile {{(section === 'blog') ? 'active': ''}}" href="{{$root}}/blog/" replace>Blog</a>
         <a class="nav-item hide-mobile" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
         <button 
           aria-label="Open Navigation Bar"
@@ -33,30 +64,6 @@
   <nav class="side-nav {{$path || 'index'}} side-nav-styles">
     <div class="side-nav-items-container">
       <ul>
-        {{ 
-          const isSublink = (meta) =>  {
-            return meta.sublinks && $path !== '' && $path.includes(meta.$path);
-          }
-          const renderSubMenu = (meta) => /* html */ `
-            <ul class="submenu">
-              ${
-                meta.sublinks
-                  .map(sublink => /* html */ `
-                    <li>
-                      <a 
-                        class="${$path.includes(meta.$path + '/' + sublink.path) ? 'active': ''}" 
-                        href="${$root}/${meta.$path}/${sublink.path}"
-                      >
-                        ${sublink.title}
-                      </a>
-                    </li>
-                    ${isSublink(sublink) ? renderSubMenu(sublink) : ''}
-                  `)
-                  .join('')
-              }
-            </ul>
-            `
-        }}
         {{ 
           contentArray
             .filter(meta => navMenuOrder.includes(meta.$path))
@@ -76,7 +83,7 @@
       </ul>
     </div>
     <div class="hide-pc mobile-top-nav-items">
-      <a class="nav-item {{$path ? '' : 'active'}}" href="{{$root}}/">Home</a>
+      <a class="nav-item {{section === 'home' ? 'active' : ''}}" href="{{$root}}/">Home</a>
       <a class="nav-item" href="{{$root}}/getting-started/">Docs</a>
       <a class="nav-item" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
       <div class="mobile-top-nav-dark-mode-container" style="text-align: right;">

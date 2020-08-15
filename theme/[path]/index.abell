@@ -75,7 +75,7 @@
   <style>{{ globalInlinedCSS }}</style>
 </head>
 <body>
-  <Navigation 
+  <Navigation
     props={
       contentArray,
       navMenuOrder: globalMeta.navMenuOrder,
