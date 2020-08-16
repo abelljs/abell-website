@@ -143,7 +143,7 @@ If you are an individual or a company who would like to back us with a one-time 
 
 
 
-Thank you for reading! Do drop a ⭐️ in GitHub Repository of Abell [https://github.com/abelljs/abell].
+Thank you for reading! Do drop a ⭐️ in GitHub Repository of [Abell](https://github.com/abelljs/abell).
 
 and Share this article with your friends🌻
 
