@@ -1,5 +1,9 @@
 /* CSS Variables defined in ./global.css */
 
+section {
+  padding: 30px 0px;
+}
+
 header.landing{
   width: 100%;
   padding: 130px 300px;
@@ -38,6 +42,20 @@ h3 {
   position: relative;
   z-index: 1;
 }
+.large-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.announcement {
+  padding: 40px 0px;
+}
+.announcement-tile {
+  color: var(--font-color-primary);
+  background-color: var(--code-background);
+  padding: 30px;
+  display: block;
+}
 
 main {
   padding: 100px 200px;
@@ -50,6 +68,22 @@ nav.side-nav {
 .contributor {
   padding: 10px;
   display: inline-block;
+}
+
+.gold-sponsors {
+  padding: 30px;
+}
+.sponsor-main {
+  display: inline-block;
+}
+
+.sponsor-main .sponsor-name {
+  display: block;
+  text-align: center;
+  padding: 5px;
+  color: var(--font-color-primary);
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 @media (max-width: 768px) {
   header.landing {

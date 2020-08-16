@@ -1,9 +1,3 @@
-<pre>
-<code class="hljs hljs-shell nohighlight shadow" style="word-spacing: 4px;line-height: 40px;">npx create-abell-app my-cool-blog<br/>cd my-cool-blog<br/>npm run dev</code>
-</pre>
-
-<br/><br/>
-
 ## Why Abell?
 
 ---

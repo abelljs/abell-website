@@ -5,6 +5,8 @@
   const Navigation = require('./components/Navigation.abell');
   const HighlightCode = require('./components/HighlightCode.abell');
   const Footer = require('./components/Footer.abell');
+
+  const sponsors = require('./data/sponsors.json');
 }}
 <!DOCTYPE html>
 <html lang="en">
@@ -73,22 +75,37 @@
     <img alt="Abell Logo" class="header-abell-logo" src="./icons/abell.svg" />
   </header>
   <main>
-    {{ importContent('./home.md') }}
-    <section style="padding-top: 20px;" class="github-contributors-section">
-      <h2>GitHub Contributors</h2>
-      <div class="github-contributors-holder">
+  <pre>
+    <code class="hljs hljs-shell nohighlight shadow" style="word-spacing: 4px;line-height: 40px;">npx create-abell-app my-cool-blog<br/>cd my-cool-blog<br/>npm run dev</code>
+    </pre>
+    <section class="sponsor-section">
+      <h2>Sponsors 🤗</h2>
+      <h3>Gold Sponsors</h3>
+      <div class="gold-sponsors">
+      {{
+        sponsors.map(sponsor => /* html */`
+          <a class="sponsor-main" href="${sponsor.url}" target="_blank" rel="noopener">
+            <img alt="Logo of ${sponsor.name}" src="${sponsor.logo}"/>
+            <span class="sponsor-name">${sponsor.name}</span>
+          </a>
+        `)
+      }}
       </div>
-      <div style="padding: 15px 3px;">Check out <a href="https://github.com/abelljs">GitHub @abelljs</a> for list of repositories, every repo has a README for contribution guide</div>
-    </section>
-    <section style="padding-top: 20px;" class="sponsor-section">
-      <h2>Sponsor Abell 🤗</h2>
+      <p>You can become our sponsor through, </p>
       <a href="https://www.patreon.com/bePatron?u=31891872" aria-label="Become a Patron Button">
         <img style="border-radius: 5px;" width="200" alt="Become a patron Button" src="https://c5.patreon.com/external/logo/become_a_patron_button.png" />
       </a>&nbsp; 
       <a href="https://www.buymeacoffee.com/saurabhdaware" aria-label="Buy me a Coffee Button">
         <img style="border-radius: 5px;" width="200" alt="Buy me a Coffee Button" src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" />
-      </a><br/>
-
+      </a>
+      <p>Or if you prefer any other mode of payment, you can contact at <a href="mailto:saurabhdaware99@gmail.com">saurabhdaware99@gmail.com</a>
+    </section>
+    {{ importContent('./home.md') }}
+    <section class="github-contributors-section">
+      <h2>GitHub Contributors</h2>
+      <div class="github-contributors-holder">
+      </div>
+      <div style="padding: 15px 3px;">Check out <a href="https://github.com/abelljs">GitHub @abelljs</a> for list of repositories, every repo has a README for contribution guide</div>
     </section>
   </main>
   <Footer/>
