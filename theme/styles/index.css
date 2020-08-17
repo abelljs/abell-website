@@ -71,10 +71,11 @@ nav.side-nav {
 }
 
 .gold-sponsors {
-  padding: 30px;
+  padding: 30px 5px;
 }
 .sponsor-main {
   display: inline-block;
+  margin: 0px 25px 0px 0px;
 }
 
 .sponsor-main .sponsor-name {

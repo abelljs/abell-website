@@ -84,7 +84,8 @@
     </div>
     <div class="hide-pc mobile-top-nav-items">
       <a class="nav-item {{section === 'home' ? 'active' : ''}}" href="{{$root}}/">Home</a>
-      <a class="nav-item" href="{{$root}}/getting-started/">Docs</a>
+      <a class="nav-item {{section === 'docs' ? 'active': ''}}" href="{{$root}}/getting-started/">Docs</a>
+      <a class="nav-item {{section === 'blog' ? 'active' : ''}}" href="{{$root}}/blog/">Blog</a>
       <a class="nav-item" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
       <div class="mobile-top-nav-dark-mode-container" style="text-align: right;">
         <DarkModeToggle/>

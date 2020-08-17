@@ -2,6 +2,11 @@
   {
     "name": "JSLovers",
     "url": "https://jslovers.com",
-    "logo": "https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_100/v1597586914/abell/sponsors/jsloverslogo.png"
+    "logo": "https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_120/v1597586914/abell/sponsors/jsloverslogo.png"
+  },
+  {
+    "name": "The Web Dev",
+    "url": "https://www.youtube.com/channel/UCRf7mazcufqZxd2pR3oQJuQ",
+    "logo": "https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_120/v1597644866/abell/sponsors/twd.png"
   }
 ]
