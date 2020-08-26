@@ -1,7 +1,7 @@
 <AbellComponent>
 {{ 
   const DarkModeToggle = require('./DarkModeToggle.abell');
-  const { $root, $path, contentArray, navMenuOrder } = props;
+  const { $root, $path, contentArray, navMenuOrder, version } = props;
 
   const isSublink = (meta) =>  {
     return meta.sublinks && $path !== '' && $path.includes(meta.$path);
@@ -37,11 +37,11 @@
   <header>
     <nav class="top-nav shadow">
       <div style="font-size: 10pt;padding: 5px 10px;text-align: center;">
-        Abell is not completely ready (v0.4.x) and should not be used in serious projects.
+        Abell is not completely ready (v{{ version }}) and should not be used in serious projects.
       </div>
       <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17.5px 20px;" href="{{$root}}/">
         <img alt="Abell logo" src="{{$root}}/favicon.ico" width="30" />
-        <span style="position: relative; top: -5px;left: 3px;">Abell <small style="opacity: .7;">v0.4</small></span>
+        <span style="position: relative; top: -5px;left: 3px;">Abell <small style="opacity: .7;">v{{ version }}</small></span>
       </a>
       <div style="display: inline-block; float: right;">
         <a class="nav-item hide-mobile {{section === 'home' ? 'active' : ''}}" href="{{$root}}/" replace>Home</a>

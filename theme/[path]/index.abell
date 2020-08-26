@@ -80,7 +80,8 @@
       contentArray,
       navMenuOrder: globalMeta.navMenuOrder,
       $path,
-      $root
+      $root,
+      version: globalMeta.version
     }
   />
   <div>
