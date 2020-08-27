@@ -26,7 +26,9 @@ git clone https://github.com/saurabhdaware/abell-plugin-starter
 
 **Step 2.** Delete `.git` folder to remove git history.
 
-**Step 3.** Run Abell Build
+**Step 3.** Run `npm install` to install dependencies (Including abell)
+
+**Step 4.** Run Abell Build
 ```sh
 npm run build
 ```
@@ -68,10 +70,16 @@ function afterBuild(programInfo) {
   // do something after build
 }
 
-module.exports = { beforeBuild, afterBuild }
+function beforeHTMLWrite(htmlText, programInfo) {
+  // alter HTML text and return new HTML Text
+  // Executes before writing .html files
+  return htmlText;
+}
+
+module.exports = { beforeBuild, afterBuild, beforeHTMLWrite }
 ```
 
-Either of these functions are optional so you can export the one that you want to use and remove the other.
+These functions are optional so you can export the one that you want to use and remove the other.
 
 ### When do you need `beforeBuild`?
 
@@ -81,6 +89,10 @@ Either of these functions are optional so you can export the one that you want t
 
 - In plugins like sitemap, rss feed, anything that creates a file based on information. It is ideal to go for `afterBuild`.
 - When you don't know what to use, use `afterBuild`.
+
+### When do you need `beforeHTMLWrite`?
+
+- In plugins like code minifiers, obfuscators, etc. You can alter HTML with minified HTML and return the minified HTML.
 
 
 ## Creating Source Plugin
@@ -123,8 +135,9 @@ As an example, you can refer to [abell-source-devto](https://github.com/abelljs/
 You can check if your plugin is working correctly by running `npm run build`. If everything works well, we can go ahead to deploying this plugin as an NPM package.
 
 ### Deploy Checklist
+
 - In `package.json`, "main" points to the entry file of plugin. which is `plugin/index.js` in given starter.
-- In `package.json`, "name" value has the name of your plugin. See [Naming Conventions](#naming-conventions)
+- In `package.json`, "name" value has the name of your plugin.
 - Make sure, `theme`, `content`, `abell.config.js` are present in `.npmignore`. We only need plugin in NPM, other files are there to check if plugin is working.
 - Run `npm publish --dry-run` and check if package only has `package.json`, `README.md`, `LICENSE`, and files related to your plugin.
 
@@ -134,3 +147,5 @@ You can check if your plugin is working correctly by running `npm run build`. If
 - `npm publish` to publish over NPM.
 
 Now to use your plugin, user can `npm install --save-dev <your-plugin-name>` and add your plugin name to `plugins` array in their `abell.config.js` file.
+
+*Note: For plugins with names like `abell-x-plugin` or `abell-source-x`, NPM's spam detection may block the publish. In that case, you can mail NPM with your package name to unblock the spam detection for that name. (Email id will be mentioned in the error message of npm publish)*
