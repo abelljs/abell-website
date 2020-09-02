@@ -77,7 +77,8 @@ if (document.body.classList.contains('index')) {
     const contributorsArray = await Promise.all([
       fetch('https://api.github.com/repos/abelljs/abell/contributors').then(res => res.json()),
       fetch('https://api.github.com/repos/abelljs/abell-renderer/contributors').then(res => res.json()),
-      fetch('https://api.github.com/repos/abelljs/abell-website/contributors').then(res => res.json())
+      fetch('https://api.github.com/repos/abelljs/abell-website/contributors').then(res => res.json()),
+      fetch('https://api.github.com/repos/abelljs/official-plugins/contributors').then(res => res.json())
     ])
     .then((data) => {
       const allContributors = [];
