@@ -15,6 +15,6 @@
   "devDependencies": {
     "abell": "^0.5.0",
     "abell-sitemap-plugin": "0.0.6",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   }
 }
