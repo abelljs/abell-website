@@ -1,7 +1,7 @@
 {{
   const { globalMeta, importContent, contentArray, $path, $root } = Abell;
 
-  const globalInlinedCSS = require('./styles/inlined/global.css.js');
+  const GlobalCSS = require('./static/styles/inlined/global.css.abell');
   const Navigation = require('./components/Navigation.abell');
   const Footer = require('./components/Footer.abell');
 
@@ -46,11 +46,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/index.css">
+  <link rel="stylesheet" href="./static/styles/index.css">
   <title>Abell - a JavaScript based static site generator to create markdown and configuration based websites</title>
   
   <!-- global css file -->
-  <style>{{ globalInlinedCSS }}</style>
+  <GlobalCSS/>
 </head>
 <body class="index">
   <Navigation 
@@ -69,10 +69,10 @@
       <br/>
       <a class="button primary-bg" href="getting-started/" style="margin: 20px 10px;font-size: 14pt;">Get Started</a>
       <a class="button github-button" href="https://github.com/abelljs/abell">
-        <img alt="GitHub Logo" src="./icons/github.png" style="filter: invert(100%); position: relative;top:3px;" width="17"/> &nbsp;GitHub
+        <img alt="GitHub Logo" src="./static/icons/github.png" style="filter: invert(100%); position: relative;top:3px;" width="17"/> &nbsp;GitHub
       </a>
     </div>
-    <img alt="Abell Logo" class="header-abell-logo" src="./icons/abell.svg" />
+    <img alt="Abell Logo" class="header-abell-logo" src="./static/icons/abell.svg" />
   </header>
   <main>
   <pre>
@@ -110,7 +110,7 @@
   </main>
   <Footer/>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-  <link rel="stylesheet" href="./styles/highlight.css"/>
-  <script defer src="./js/static-main.js"></script>
+  <link rel="stylesheet" href="./static/styles/highlight.css"/>
+  <script defer src="./static/js/main.js"></script>
 </body>
 </html>

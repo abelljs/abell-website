@@ -149,6 +149,6 @@ and Share this article with your friends🌻
 
 <br/><br/>
 &nbsp; &nbsp;<a href="https://twitter.com/intent/tweet?text=Abell v0.4 is Released! Check out this blog by @AbellLand at https://abelljs.org/blog/abell-v04/" class="github-contribute-button shadow" style="display: inline-block;">
-  <img width="20" style="position: relative;top:4px;" alt="Twitter Logo" src="{{ Abell.$root }}/icons/twitter.svg"/>&nbsp; Share this Article on Twitter
+  <img width="20" style="position: relative;top:4px;" alt="Twitter Logo" src="{{ Abell.$root }}/static/icons/twitter.svg"/>&nbsp; Share this Article on Twitter
 </a>
 <br/><br/>

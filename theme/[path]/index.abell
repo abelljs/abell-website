@@ -11,7 +11,7 @@
   const GitHubContributeButton = require('../components/GitHubContributeButton.abell');
   const Navigation = require('../components/Navigation.abell');
   const Footer = require('../components/Footer.abell');
-  const globalInlinedCSS = require('../styles/inlined/global.css.js');
+  const GlobalCSS = require('../static/styles/inlined/global.css.abell');
 }}
 
 {{
@@ -69,10 +69,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ $root }}/styles/docs.css" />
+  <link rel="stylesheet" href="{{ $root }}/static/styles/docs.css" />
   <title>{{ meta.title }} - {{ globalMeta.siteName }}</title>
 
-  <style>{{ globalInlinedCSS }}</style>
+  <GlobalCSS/>
 </head>
 <body>
   <Navigation
@@ -115,7 +115,7 @@
   </div>
   
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-  <link rel="stylesheet" href="{{$root}}/styles/highlight.css"/>
-  <script defer src="{{$root}}/js/static-main.js"></script>
+  <link rel="stylesheet" href="{{$root}}/static/styles/highlight.css"/>
+  <script defer src="{{$root}}/static/js/main.js"></script>
 </body>
 </html>
