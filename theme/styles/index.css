@@ -61,10 +61,6 @@ main {
   padding: 100px 200px;
 }
 
-
-nav.side-nav {
-  display: none;
-}
 .contributor {
   padding: 10px;
   display: inline-block;

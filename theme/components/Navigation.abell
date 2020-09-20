@@ -61,7 +61,7 @@
   </header>
 
   <!-- Side Navigation Menu -->
-  <nav class="side-nav {{$path || 'index'}} side-nav-styles">
+  <nav class="side-nav {{section}} side-nav-styles">
     <div class="side-nav-items-container">
       <ul>
         {{ 
@@ -123,6 +123,10 @@ nav.side-nav {
   padding-top: 120px;
   z-index: 9999;
   background-color: var(--side-nav-background);
+}
+
+nav.side-nav.home {
+  display: none;
 }
 
 nav.side-nav ul {
@@ -248,15 +252,15 @@ nav.top-nav .active {
     overflow-y: scroll;
     height: calc(100% - 232px);
   }
-  nav.index.side-nav .mobile-top-nav-items {
+  nav.home.side-nav .mobile-top-nav-items {
     border-top: none;
     height: calc(100% - 140px);
   }
 
-  nav.index.side-nav .side-nav-items-container {
+  nav.home.side-nav .side-nav-items-container {
     display: none;
   }
-  nav.index.side-nav .mobile-top-nav-dark-mode-container {
+  nav.home.side-nav .mobile-top-nav-dark-mode-container {
     position: absolute;
     bottom: 0px;
     width: 100%;

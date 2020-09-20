@@ -3,7 +3,6 @@
 
   const globalInlinedCSS = require('./styles/inlined/global.css.js');
   const Navigation = require('./components/Navigation.abell');
-  const HighlightCode = require('./components/HighlightCode.abell');
   const Footer = require('./components/Footer.abell');
 
   const sponsors = require('./data/sponsors.json');
