@@ -77,7 +77,10 @@ Have a critical CSS/JS that needs to load as soon as user visits the page? With 
       padding: 10px 20px;
     }
 
-    /* Other critical CSS */
+    /*
+      styles are scoped by default.
+      You can use 'global' attribute on style tag to make it global.
+    */
   </style>
 
   <!-- 

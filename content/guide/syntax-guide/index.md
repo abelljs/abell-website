@@ -188,6 +188,11 @@ Abell Components wrap `<template>`, `<style>`, and `<script>` in `<AbellComponen
 
 <style>
   /* CSS for that HTML */
+
+  /* 
+    styles are scoped by default. 
+    You can add 'global' attribute to styles to make them global (not recommended)
+  */
 </style>
 
 <script>
@@ -215,7 +220,7 @@ So a component for Footer would look like,
 </template>
 
 <style>
-  footer#main-footer {
+  footer {
     text-align: right;
     padding: 10px;
   }
@@ -227,9 +232,9 @@ So a component for Footer would look like,
 </AbellComponent>
 ```
 
-***Note:** Styles and Scripts are not currently scoped but it is a good practice to scope them by adding id to your HTML element and refering to the element with respect to the id in styles and scripts.*
+***Note:** Scripts are not currently scoped but it is a good practice to scope them by adding id to your HTML element and refering to the element with respect to the id in scripts.*
 
-*We do have plans to scope the styles and scripts in future.*
+*We do have plans to scope the scripts in future.*
 
 Lets use this component in Abell Page (index.abell)
 

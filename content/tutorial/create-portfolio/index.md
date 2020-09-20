@@ -265,16 +265,21 @@ It is called as "Destructuring" in JavaScript. It is equivalent to `const global
 </template>
 
 <style>
-  nav#top-nav {
+  /* 
+    styles are scoped by default.
+    you can add 'global' attribute to style tag to make styles global (not recommended)
+  */
+
+  nav {
     padding: 10px;
     background-color: #ddd;
   }
 
-  nav#top-nav a {
+  nav {
     text-decoration: none;
   }
 
-  nav#top-nav .brand {
+  nav .brand {
     font-weight: bold;
   }
 </style>
@@ -300,7 +305,7 @@ By default, all style from components is bundled into single file during output.
 
 #### Q and A
 - **Are these styles and scripts, scoped?**<br/>
-Unfortunately not. But we have plans to scope it in next versions of Abell. Till then, as you can see in the example, it is a good practice to give id to outer element and write styles and scripts with respect to that id so that you can be sure about the scope.
+Styles are scoped (you can use 'global' attribute to make styles global) but scripts are not scoped yet. We have plans to scope it in next versions of Abell. Till then, as you can see in the example, it is a good practice to give id to outer element and write scripts with respect to that id so that you can be sure about the scope.
 
 
 ## Reading Data from JSON File
