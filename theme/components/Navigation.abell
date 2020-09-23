@@ -230,6 +230,9 @@ nav.top-nav .active {
   width: 100%;
 }
 @media (max-width: 768px) {
+nav.side-nav.home {
+  display: block;
+}
   nav.side-nav {
     right: -100%;
     transition: right .1s ease;
