@@ -1,0 +1,115 @@
+<AbellComponent>
+{{
+  const process = require('process');
+  require('dotenv').config()
+}}
+<template>
+  <section>
+    <div id="issue-container"></div>
+  </section>
+</template>
+<style global>
+  .issue-card {
+    margin: 20px 0px;
+    padding: 2px 30px 20px 30px;
+    background-color: var(--elevation-background);
+  }
+  .issue-card p {
+    margin: 8px 0px;
+  }
+  .issue-card > h3 {
+    margin-bottom: 8px !important;
+  }
+
+  .issue-labels .label {
+    background-color: var(--font-color-primary);
+    color: var(--background-primary);
+    padding: 2px 7px;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: smaller;
+    border-radius: 3px;
+  }
+</style>
+<script>
+let repos;
+function loadGithubIssues({definedLabel, res}) {
+  repos = res.data;
+  let issueCards = `Showing issues with "${definedLabel}" label`;
+  for (const repoName of Object.keys(repos)) {
+    const issues = repos[repoName].issues.edges;
+    for (const issue of issues) {
+      issueCards += `
+        <div class="issue-card shadow">
+          <h3>${issue.node.title}</h3>
+          <div class="issue-labels">
+            ${
+              issue.node.labels.nodes
+                .map(label => `<span class="label">${label.name}</span>`)
+                .join('')
+            }
+          </div>
+          <div style="padding: 5px 0px;">
+            <p>Repo: <b>${repos[repoName].name}</b></p>
+            <p><a href="${issue.node.url}">View on GitHub</a></p>
+          </div>
+        </div>
+      `
+    }
+  }
+
+  document.querySelector('#issue-container').innerHTML = issueCards;
+}
+
+function fetchIssues(label) {
+  let repoQueryString = '';
+  const findIssues = (repoName) => `
+    repository(name: "${repoName}", owner: "abelljs") {
+      name
+      issues(last: 100, orderBy: {field: CREATED_AT, direction: DESC}, filterBy: {labels: "${label}", states: OPEN}) {
+        edges {
+          node {
+            title
+            url
+            labels(first: 10) {
+              nodes {
+                name
+              }
+            }
+          }
+        }
+        totalCount
+      }
+    }
+  `;
+
+  return fetch('https://api.github.com/graphql', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `bearer {{ process.env.GITHUB_TOKEN }}`
+    },
+    body: JSON.stringify({query: `
+      query {
+        abell: ${findIssues('abell')}
+        abellRenderer: ${findIssues('abell-renderer')}
+        createAbellApp: ${findIssues('create-abell-app')}
+        abellWebsite: ${findIssues('abell-website')}
+        vscodeAbellLanguageFeatures: ${findIssues('vscode-abell-language-features')}
+      }
+    `})
+  })
+  .then(res => res.json())
+  .then(res => {
+    return {
+      definedLabel: label,
+      res
+    }
+  })
+}
+
+const label = location.search.slice(location.search.indexOf('label=') + 6);
+fetchIssues(label || 'Hacktoberfest')
+  .then(loadGithubIssues)
+</script>
+</AbellComponent>
