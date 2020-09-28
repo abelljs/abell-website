@@ -37,7 +37,7 @@ function loadGithubIssues({definedLabel, res}) {
   repos = res.data;
   let issueCards = `Showing issues with "${definedLabel}" label`;
   for (const repoName of Object.keys(repos)) {
-    const issues = repos[repoName].issues.edges;
+    const issues = repos[repoName].issues.edges.filter(issue => issue.node.assignees.edges.length <= 0);
     for (const issue of issues) {
       issueCards += `
         <div class="issue-card shadow">
@@ -50,8 +50,8 @@ function loadGithubIssues({definedLabel, res}) {
             }
           </div>
           <div style="padding: 5px 0px;">
-            <p>Repo: <b>${repos[repoName].name}</b></p>
-            <p><a href="${issue.node.url}">View on GitHub</a></p>
+            <p>Repository: <a href="https://github.com/abelljs/${repos[repoName].name}">abelljs/${repos[repoName].name}</a></p>
+            <p><a style="font-size: 1.2rem;padding-top: 10px;display: block;" href="${issue.node.url}">View Issue on GitHub</a></p>
           </div>
         </div>
       `
@@ -76,6 +76,13 @@ function fetchIssues(label) {
                 name
               }
             }
+            assignees(first: 1) {
+              edges {
+                node {
+                  login
+                }
+              }
+            }
           }
         }
         totalCount
@@ -95,6 +102,7 @@ function fetchIssues(label) {
         abellRenderer: ${findIssues('abell-renderer')}
         createAbellApp: ${findIssues('create-abell-app')}
         abellWebsite: ${findIssues('abell-website')}
+        abellStarterMinima: ${findIssues('abell-starter-minima')}
         vscodeAbellLanguageFeatures: ${findIssues('vscode-abell-language-features')}
       }
     `})

@@ -64,16 +64,18 @@
   />
   <main>
     <h1>Abell Issue Finder</h1>
-    <p>Hey everyone! This page is to help developers find issues in the overall Abell project.</p> 
+    <p>Hey everyone! This page is to help developers find issues in the overall Abell project. </p>
+    
+    <p>If you need any additional help, you can drop us a message in <a href="https://discord.com/invite/ndsVpRG">our discord chat</a></p> 
     
     <p>
       This project includes issues from multiple repositories like
       <ul> 
-        <li>abelljs/abell (Static Site Generator)</li>
-        <li>abelljs/abell-renderer (Template Engine)</li> 
-        <li>abelljs/create-abell-app (CLI)</li> 
-        <li>abelljs/vscode-abell-language-features (VSCode Extension)</li>
-        <li>abelljs/abell-website (This Website)</li> 
+        <li><a href="https://github.com/abelljs/abell">abelljs/abell</a> (Static Site Generator)</li>
+        <li><a href="https://github.com/abelljs/abell-renderer">abelljs/abell-renderer</a> (Template Engine/Parser)</li> 
+        <li><a href="https://github.com/abelljs/create-abell-app">abelljs/create-abell-app</a> (CLI)</li> 
+        <li><a href="https://github.com/abelljs/vscode-abell-language-features">abelljs/vscode-abell-language-features</a> (VSCode Extension)</li>
+        <li><a href="https://github.com/abelljs/abell-website">abelljs/abell-website</a> (This Website)</li> 
       </ul>
     </p>
     <IssueFinder/>
