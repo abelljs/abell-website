@@ -294,7 +294,7 @@ It is called as "Destructuring" in JavaScript. It is equivalent to `const global
 </AbellComponent>
 ```
 
-Abell Components have `<template>`, `<style?`, and `<script>` tag wrapped inside a `<AbellComponent>` tag.
+Abell Components have `<template>`, `<style>`, and `<script>` tag wrapped inside a `<AbellComponent>` tag.
 
 Remember how in 'theme/index.abell' we passed brand and $root from props with `<Nav props={brand: globalMeta.siteTitle, $root: $root} />`? we can access these variables from `props` object inside that component. 
 
