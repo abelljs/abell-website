@@ -78,7 +78,9 @@ if (document.body.classList.contains('index')) {
       fetch('https://api.github.com/repos/abelljs/abell/contributors').then(res => res.json()),
       fetch('https://api.github.com/repos/abelljs/abell-renderer/contributors').then(res => res.json()),
       fetch('https://api.github.com/repos/abelljs/abell-website/contributors').then(res => res.json()),
-      fetch('https://api.github.com/repos/abelljs/official-plugins/contributors').then(res => res.json())
+      fetch('https://api.github.com/repos/abelljs/official-plugins/contributors').then(res => res.json()),
+      fetch('https://api.github.com/repos/abelljs/abell-starter-minima/contributors').then(res => res.json()),
+      fetch('https://api.github.com/repos/abelljs/create-abell-app/contributors').then(res => res.json())
     ])
     .then((data) => {
       const allContributors = [];
