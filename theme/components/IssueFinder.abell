@@ -33,11 +33,16 @@
 </style>
 <script>
 let repos;
+
+function returnSearchLabels() {
+  return '"' + allLabels.join('", "') + '"';
+}
+
 function loadGithubIssues({definedLabel, res}) {
   repos = res.data;
-  let issueCards = `Showing issues with "${definedLabel}" label`;
+  let issueCards = `Showing issues with ${returnSearchLabels()} label`;
   for (const repoName of Object.keys(repos)) {
-    const issues = repos[repoName].issues.edges.filter(issue => issue.node.assignees.edges.length <= 0);
+    const issues = containsAll(allLabels, repos[repoName].issues.edges.filter(issue => issue.node.assignees.edges.length <= 0));    
     for (const issue of issues) {
       issueCards += `
         <div class="issue-card shadow">
@@ -57,7 +62,6 @@ function loadGithubIssues({definedLabel, res}) {
       `
     }
   }
-
   document.querySelector('#issue-container').innerHTML = issueCards;
 }
 
@@ -66,7 +70,7 @@ function fetchIssues(label) {
   const findIssues = (repoName) => `
     repository(name: "${repoName}", owner: "abelljs") {
       name
-      issues(last: 100, orderBy: {field: CREATED_AT, direction: DESC}, filterBy: {labels: "${label}", states: OPEN}) {
+      issues(last: 100, orderBy: {field: CREATED_AT, direction: DESC}, filterBy: {labels: ["${label}"], states: OPEN}) {
         edges {
           node {
             title
@@ -116,8 +120,28 @@ function fetchIssues(label) {
   })
 }
 
+function containsAll(labels, repos){ 
+  let output = new Set();
+  // Manually loop over repo's it's quicker than map
+  for(var i = 0; i < repos.length; i++) {
+    const item = repos[i].node.labels.nodes;
+    let s = [];
+    item.forEach(label => {
+      s.push(label.name);
+    });
+    if(labels.every(j => s.includes(j))) {
+      output.add(repos[i]);
+    }
+  }
+  return output;
+}
+
 const label = location.search.slice(location.search.indexOf('label=') + 6);
-fetchIssues(label || 'Hacktoberfest')
+let allLabels = label.split(',');
+if(!allLabels[0]) {
+  allLabels = ['Hacktoberfest'];
+}
+fetchIssues(allLabels[0] || 'Hacktoberfest')
   .then(loadGithubIssues)
 </script>
 </AbellComponent>
