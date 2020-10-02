@@ -137,7 +137,10 @@ function containsAll(labels, repos){
 }
 
 const label = location.search.slice(location.search.indexOf('label=') + 6);
-const allLabels = label.split(',');
+let allLabels = label.split(',');
+if(!allLabels[0]) {
+  allLabels = ['Hacktoberfest'];
+}
 fetchIssues(allLabels[0] || 'Hacktoberfest')
   .then(loadGithubIssues)
 </script>
