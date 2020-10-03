@@ -11,7 +11,7 @@
 {{ meta.components.Themes(globalMeta.themes) }}
 
 
-- If you **Deploy with Netlify**, a new repository will be created on your GitHub account and it will be deployed to [Netlify](https://www.netlify.com/). Later you can make changes in the deployed website by  [Commiting to the New Repository](https://docs.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository-using-the-command-line). (This method is recommended to quickly get a blog running and deployed).
+- If you **Deploy with Netlify**, a new repository will be created on your GitHub account and it will be deployed to [Netlify](https://www.netlify.com/). Later you can make changes in the deployed website by  [Committing to the New Repository](https://docs.github.com/en/github/managing-files-in-a-repository/adding-a-file-to-a-repository-using-the-command-line). (This method is recommended to quickly get a blog running and deployed).
 - If you **Create Project Locally** with `create-abell-app`, You will get a website running locally. Later you can deploy to whichever platform you like.
 
 ---
