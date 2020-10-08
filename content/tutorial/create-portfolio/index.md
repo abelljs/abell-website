@@ -514,7 +514,7 @@ During build, The layout is called for each blog with it's respective meta infor
 
 Remember, you can always `\{{ console.log(meta) }}` to see its content in terminal.
 
-*Note: `Abell.meta` is only avaible in .abell pages that are inside `[path]` directory*
+*Note: `Abell.meta` is only available in .abell pages that are inside `[path]` directory*
 
 That's it! Now you can navigate to [http://localhost:5000/hello-world](http://localhost:5000/hello-world/) to see your blog.
 
