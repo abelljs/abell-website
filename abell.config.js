@@ -2,7 +2,7 @@ module.exports = {
   globalMeta: {
     siteName: 'Abell',
     name: 'Hoomans of Abell Land',
-    version: '0.6',
+    version: '0.7',
     twitter: 'AbellLand',
     domain: 'https://abelljs.org/',
     navMenuOrder: [
