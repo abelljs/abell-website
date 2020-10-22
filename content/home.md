@@ -176,7 +176,7 @@ With abell, you can import markdown content using `Abell.importContent('path/to/
   <div style="flex: 1">
 
   `./theme/index.abell`
-  ```html
+  ```abell
   <body>
     <section class="blog-contaier"> 
       \{{ Abell.importContent('./index.md')  }}

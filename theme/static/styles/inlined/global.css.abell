@@ -16,12 +16,12 @@ body {
 
 body.dark {
   --background-primary: #121212;
+  --side-nav-background: #0c0c0c;
   --font-color-primary: #ccc; 
   --header-background: linear-gradient(to top left, #111, #09239daa 200%);
   --elevation-background: #171717;
   --code-background: #222;
   --footer-background: #0f0f0f;
-  --side-nav-background: #0f0f0f;
   --link-color: #09f;
 }
 
