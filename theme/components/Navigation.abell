@@ -35,12 +35,9 @@
 }}
 <template>
   <header>
-    <nav class="top-nav shadow">
-      <div style="font-size: 0.8rem;padding: 1px 10px;text-align: center;">
-        Abell is not completely ready (v{{ version }}) and should not be used in serious projects.
-      </div>
+    <nav class="top-nav shadow-clean">
       <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17.5px 20px;" href="{{$root}}/">
-        <img alt="Abell logo" src="{{$root}}/favicon.ico" width="30" />
+        <img style="filter: brightness(1.2);position: relative; top: 3px" alt="Abell logo" src="{{$root}}/favicon.ico" width="31" />
         <span style="position: relative; top: -5px;left: 3px;">Abell <small style="opacity: .7;">v{{ version }}</small></span>
       </a>
       <div style="display: inline-block; float: right;">
@@ -209,7 +206,7 @@ nav.top-nav {
   left: 0px;
   width: 100%;
   font-size: 13pt;
-  background-color: var(--elevation-background);
+  background-color: var(--top-nav-background);
   z-index: 10000;
   padding: 0px 60px;
 }
@@ -217,7 +214,7 @@ nav.top-nav .nav-item {
   padding: 25px 20px;
   display: inline-block;
   color: var(--font-color);
-  border-bottom: 2px solid var(--elevation-background);
+  border-bottom: 2px solid var(--top-nav-background);
 }
 nav.top-nav .nav-item:hover {
   border-bottom: 2px solid var(--link-color);

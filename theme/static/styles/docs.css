@@ -9,10 +9,11 @@ body {
 main {
   display: inline-block;
   flex: 1;
+  font-size: 1.02rem;
 }
 
 .blog-container {
-  padding: 130px 100px;
+  padding: 100px 100px;
 }
 
 p {
