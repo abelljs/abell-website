@@ -11,12 +11,12 @@
 
 ## Approaching Documentation
 
-If you want to **quickly get blog running**, check out [Creating Blog from Starter Themes]({{$root}}/starters/)
+If you want **to quickly get blog running**, check out [Creating Blog from Starter Themes]({{$root}}/starters/)
 
 To learn Abell, you can approach this documentation in various ways
-- If you prefer to **learn by doing**, check out [Tutorial to Create Your Portfolio from Scratch]({{$root}}/tutorial/create-portfolio/)
-- If you prefer to **learn from concepts**, try [A Conceptual Guide of Abell]({{$root}}/guide/).
-- If you prefer to **learn by playing around the code**, you would like our [Abell Playground on CodeSandbox &#x2197;](https://codesandbox.io/s/abell-playground-wcdq2?file=/theme/index.abell) .
+- If you prefer **to learn by doing**, check out [Tutorial to Create Your Portfolio from Scratch]({{$root}}/tutorial/create-portfolio/)
+- If you prefer **to learn from concepts**, try [A Conceptual Guide of Abell]({{$root}}/guide/).
+- If you prefer **to learn by playing around the code**, you would like our [Abell Playground on CodeSandbox &#x2197;](https://codesandbox.io/s/abell-playground-wcdq2?file=/theme/index.abell) .
 
 ---
 
@@ -46,7 +46,7 @@ Check out [List of Plugins and Libraries of Abell &#x2192;]({{$root}}/plugins/)
 
 ## Changelog
 
-From v0.4.0, we'll be following [Semantic-Versioning](https://semver.org/) which means, now there will not be any breaking change until v1.0.0.
+From v0.4.0, we follow [Semantic-Versioning](https://semver.org/) which means, there will not be any breaking change until v1.0.0.
 
 Check out [Changelog of Abell]({{$root}}/changelog/).
 

@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "abell": "^0.7.0",
+    "abell": "^0.7.1",
     "abell-sitemap-plugin": "0.0.6",
     "dotenv": "^8.2.0",
     "node-fetch": "^2.6.1"
