@@ -9,7 +9,8 @@ body {
   --code-background: #f3f3f3;
   --footer-background: #f9f9f9;
   --link-color: #006EB8;
-  --font-family-primary: 'DM Sans', sans-serif;;
+  --font-family-primary: 'DM Sans', sans-serif;
+  --font-family-monospace: 'DM Mono', sans-serif;
   --abell-primary: #3354ea;
   --abell-secondary: #09239d;
 }
@@ -121,7 +122,7 @@ code {
   border-radius: 4px;
   word-spacing: 3px;
   font-size: smaller;
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family-monospace);
 }
 
 code.hljs {
