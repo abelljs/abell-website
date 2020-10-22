@@ -154,11 +154,14 @@ hr {
   }
 
   div.blog-container h1{
-    font-size: 30pt;
+    font-size: 3rem;
   }
 
+  div.blog-container h1 + p {
+    font-size: 1.2rem;
+  }
   .blog-container {
-    padding: 140px 20px;
+    padding: 100px 20px;
   }
 
   main {
