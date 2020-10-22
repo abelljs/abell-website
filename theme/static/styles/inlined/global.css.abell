@@ -3,6 +3,7 @@
 body {
   --background-primary: #fff;
   --side-nav-background: #eee;
+  --top-nav-background: #fff;
   --header-background: linear-gradient(to top left, #fff, #3354ea88 90%);
   --font-color-primary: #333;
   --elevation-background: #fff;
@@ -16,12 +17,13 @@ body {
 }
 
 body.dark {
-  --background-primary: #121212;
-  --side-nav-background: #0c0c0c;
-  --font-color-primary: #ccc; 
+  --background-primary: #1c1c1c;
+  --side-nav-background: #181818;
+  --top-nav-background: #212121;
+  --elevation-background: #292929;
+  --font-color-primary: #e9e9e9; 
   --header-background: linear-gradient(to top left, #111, #09239daa 200%);
-  --elevation-background: #171717;
-  --code-background: #222;
+  --code-background: #2f2f2f;
   --footer-background: #0f0f0f;
   --link-color: #09f;
 }
@@ -52,12 +54,22 @@ hr {
 * {
   box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
   color: var(--link-color);
 }
+
 .shadow {
   box-shadow: 0 5px 20px -4px #0005;
+}
+
+.shadow-clean {
+  box-shadow: 0 3px 16px 0px #0005;
+}
+
+body.dark .shadow-clean {
+  box-shadow: 0 3px 16px 0px #0006;
 }
 
 .github-contribute-button {
