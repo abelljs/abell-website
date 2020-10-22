@@ -60,6 +60,32 @@ Abell files are HTML files which allow you to write JS inside curly brackets so 
 
 Abell builds a static website for you on `abell build` so if your website does not need any client-side JavaScript, Abell will not add any JavaScript in your project!
 
+For example, if we don't have any CSS and script in the code, this is what the output will look like: 
+
+<div class="row">
+<div class="abell-li" style="flex:2">
+
+**Input**
+
+
+- index.abell
+- Nav.abell 
+- Footer.abell 
+- Meta.abell
+
+</div>
+<div style="flex:3;">
+
+**Output**
+
+<div style="padding: 30px 0px">
+<img src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png" width="15"/> index.html
+
+</div>
+
+</div>
+</div>
+
 ### Control over bundling!
 
 Have a critical CSS/JS that needs to load as soon as user visits the page? With Abell you can inline a CSS or JavaScript from component!

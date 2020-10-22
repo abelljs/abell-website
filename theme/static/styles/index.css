@@ -95,6 +95,24 @@ pre {
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+.abell-li {
+  padding: 0px 30px;
+}
+.abell-li ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0;
+}
+
+.abell-li ul > li {
+  background: url('../../favicon.ico') no-repeat left top;
+  background-size: 20px 20px;
+  background-position:0px 3px;
+  padding-left: 30px;
+  filter: brightness(1.2);
+}
+
 @media (max-width: 768px) {
   header.landing {
     padding: 150px 20px 100px 20px;
@@ -121,5 +139,9 @@ pre {
 
   .row > div {
     padding-right: 0px;
+  }
+
+  .abell-li {
+    padding: 0px;
   }
 }
