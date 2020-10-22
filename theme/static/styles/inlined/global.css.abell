@@ -11,7 +11,7 @@ body {
   --footer-background: #f9f9f9;
   --link-color: #006EB8;
   --font-family-primary: 'DM Sans', sans-serif;
-  --font-family-monospace: 'DM Mono', sans-serif;
+  --font-family-monospace: 'DM Sans', sans-serif;
   --abell-primary: #3354ea;
   --abell-secondary: #09239d;
 }
