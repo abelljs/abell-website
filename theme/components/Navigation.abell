@@ -227,7 +227,7 @@ nav.top-nav .active {
   border-bottom: 2px solid var(--link-color);
 }
 .mobile-top-nav-items {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #9993;
   position: absolute;
   padding-top: 10px;
   bottom: 0px;
@@ -239,7 +239,7 @@ nav.top-nav .active {
   height: 100%;
   width: 100%;
   background-color: #000a;
-  z-index: 1;
+  z-index: 3;
   display: none;
 }
 

@@ -2,7 +2,7 @@
 <style inlined global>
 body {
   --background-primary: #fff;
-  --side-nav-background: #f3f3f3;
+  --side-nav-background: #eee;
   --header-background: linear-gradient(to top left, #fff, #3354ea88 90%);
   --font-color-primary: #333;
   --elevation-background: #fff;
