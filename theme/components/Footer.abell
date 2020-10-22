@@ -43,7 +43,7 @@
   .links > .col a {
     display: block;
     padding: 2px 0px;
-    font-size: 13pt;
+    font-size: 1rem;
     color: var(--font-color);
   }
   .footer-heading {
@@ -64,6 +64,12 @@
     }
     .links > .col a {
       padding: 5px 0px;
+      font-size: 0.9rem;
+    }
+
+    .copyright-container {
+      padding: 20px 20px;
+      font-size: 0.9rem;
     }
   }
 </style>
