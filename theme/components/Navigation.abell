@@ -36,7 +36,7 @@
 <template>
   <header>
     <nav class="top-nav shadow">
-      <div style="font-size: 10pt;padding: 5px 10px;text-align: center;">
+      <div style="font-size: 0.8rem;padding: 1px 10px;text-align: center;">
         Abell is not completely ready (v{{ version }}) and should not be used in serious projects.
       </div>
       <a class="brand nav-item" style="font-size: 15pt;font-weight: bold; color: var(--font-color); padding: 17.5px 20px;" href="{{$root}}/">
@@ -45,8 +45,8 @@
       </a>
       <div style="display: inline-block; float: right;">
         <a class="nav-item hide-mobile {{section === 'home' ? 'active' : ''}}" href="{{$root}}/" replace>Home</a>
-        <a class="nav-item hide-mobile {{(section === 'docs') ? 'active': ''}}" href="{{$root}}/getting-started/" replace>Docs</a>
-        <a class="nav-item hide-mobile {{(section === 'blog') ? 'active': ''}}" href="{{$root}}/blog/" replace>Blog</a>
+        <a class="nav-item hide-mobile {{section === 'docs' ? 'active': ''}}" href="{{$root}}/getting-started/" replace>Docs</a>
+        <a class="nav-item hide-mobile {{section === 'blog' ? 'active': ''}}" href="{{$root}}/blog/" replace>Blog</a>
         <a class="nav-item hide-mobile" href="https://github.com/abelljs/abell">GitHub 	&#x2197;</a>
         <button 
           aria-label="Open Navigation Bar"
@@ -129,9 +129,12 @@ nav.side-nav.home {
   display: none;
 }
 
+nav.side-nav .side-nav-items-container > ul {
+  padding-left: 0px;
+}
+
 nav.side-nav ul {
   list-style: none;
-  padding-left: 0px;
 }
 
 nav.side-nav ul li {
@@ -160,7 +163,7 @@ ul.submenu a {
 }
 
 ul.submenu {
-  padding-left: 40px !important;
+  padding-left: 40px;
   padding-bottom: 10px;
 }
 
@@ -229,40 +232,61 @@ nav.top-nav .active {
   bottom: 0px;
   width: 100%;
 }
+
 @media (max-width: 768px) {
-nav.side-nav.home {
-  display: block;
-}
+  nav.side-nav.home {
+    display: block;
+  }
+
   nav.side-nav {
     right: -100%;
     transition: right .1s ease;
   }
+
   .side-nav-styles {
     width: 250px;
   }
+
   nav.side-nav .nav-item {
-  font-size: 12pt;
-  padding-right: 5px;
-}
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+
+  nav.side-nav .collapse-icon {
+    padding: 0px 5px;
+  }
+
   nav.side-nav.show {
     right: 0px;
     transition: right .2s ease;
   }
+
   nav.top-nav {
     padding: 0px;
   }
+
   .side-nav-items-container {
     overflow-y: scroll;
     height: calc(100% - 232px);
   }
+
   nav.home.side-nav .mobile-top-nav-items {
     border-top: none;
     height: calc(100% - 140px);
   }
 
+  ul.submenu {
+    padding-left: 20px;
+  }
+
+  ul.submenu li {
+    font-size: 0.9rem;
+  }
+
   nav.home.side-nav .side-nav-items-container {
     display: none;
   }
+
   nav.home.side-nav .mobile-top-nav-dark-mode-container {
     position: absolute;
     bottom: 0px;
