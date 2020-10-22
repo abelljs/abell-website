@@ -61,6 +61,19 @@ main {
   padding: 100px 200px;
 }
 
+.row > div {
+  overflow-x: hidden;
+  padding-right: 15px;
+}
+
+.row > div:last-child {
+  padding-right: 0px;
+}
+
+pre {
+  overflow-x: auto;
+}
+
 .contributor {
   padding: 10px;
   display: inline-block;
