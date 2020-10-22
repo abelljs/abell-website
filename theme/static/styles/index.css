@@ -118,4 +118,8 @@ pre {
   nav.side-nav br:not(:first-child), nav.side-nav hr {
     display: none;
   }
+
+  .row > div {
+    padding-right: 0px;
+  }
 }
