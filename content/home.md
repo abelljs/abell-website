@@ -28,7 +28,8 @@ Abell files are HTML files which allow you to write JS inside curly brackets so 
 
 <html>
   <body>
-    I can render JavaScript! Look: \{{ a + b.toUpperCase() }}
+    I can render JavaScript! 
+    Look: \{{ a + b.toUpperCase() }}
   </body>
 </html>
 ```
@@ -41,7 +42,8 @@ Abell files are HTML files which allow you to write JS inside curly brackets so 
 ```html
 <html>
   <body>
-    I can render JavaScript! Look: Hello, WORLD 🌻
+    I can render JavaScript! 
+    Look: Hello, WORLD 🌻
   </body>
 </html>
 ```
