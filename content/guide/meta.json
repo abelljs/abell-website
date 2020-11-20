@@ -60,6 +60,10 @@
         {
           "title": "Abell.contentObj",
           "path": "#abellcontentobj-objectltstring-metainfogt"
+        },
+        {
+          "title": "Abell.programInfo",
+          "path": "#abellprograminfo-ltobjectgt"
         }
       ]
     }

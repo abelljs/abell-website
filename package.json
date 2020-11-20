@@ -6,14 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "abell build",
-    "dev": "abell serve"
+    "dev": "abell serve",
+    "dev:fast": "abell serve --ignore-plugins"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
-    "abell": "^0.7.5",
+    "abell": "^0.8.0",
     "abell-sitemap-plugin": "0.0.6",
     "dotenv": "^8.2.0",
     "node-fetch": "^2.6.1"

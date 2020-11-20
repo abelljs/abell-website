@@ -34,6 +34,8 @@ To know what all is there in your `Abell` variable, you can also console log the
   - [Abell.meta.$modifiedAt `<Date>`](#abellmetamodifiedat-ltdategt)
 - [Abell.contentArray `<MetaInfo[]>`](#abellcontentarray-ltmetainfogt)
 - [Abell.contentObj `{Object.<string, MetaInfo>}`](#abellcontentobj-objectltstring-metainfogt)
+- [Abell.programInfo `{Object}`](#abellprograminfo-ltobjectgt)
+
 ---
 
 ## Abell.$root &lt;string&gt;
@@ -278,4 +280,16 @@ This is similar to `Abell.contentArray` but instead of array this values holds t
 
 ```abell
 \{{ Abell.contentObj['hello-world'].title }} <!-- Prints title of hello-world blog -->
+```
+
+## Abell.programInfo {&lt;Object&gt;}
+
+Newly added in v0.8.0, Abell.programInfo contains information about the running Abell process. It has following object-
+```js
+{
+  contentPath: 'content',
+  themePath: 'theme',
+  outputPath: 'dist', // '.debug' during `abell serve`
+  task: 'build' // or 'serve'
+}
 ```

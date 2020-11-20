@@ -175,7 +175,7 @@ module.exports = {
   // Client-side JavaScript code goes here!
   let i = 0;
   setInterval(() => {
-    document.querySelector('nav#top-nav .counter').innerText = ++i
+    scopedSelector('nav#top-nav .counter').innerText = ++i
   }, 1000)
 </script>
 </AbellComponent>
@@ -190,7 +190,7 @@ module.exports = {
 
 In our starter project, there are three major files that we have to care about.
 
-- `abell.config.js` - All Abell Configurations (Installed plungins, global variables, paths of folder) go into this file
+- `abell.config.js` - All Abell Configurations (Installed plungins, global variables) go into this file
 - `./theme/index.abell` - This file, in output, becomes `./index.html`. 
 - `./theme/components/Navbar.abell` - Reusable Navbar Component. It is imported in `./theme/index.abell`
 
@@ -288,7 +288,9 @@ It is called as "Destructuring" in JavaScript. It is equivalent to `const global
   // Client-side JavaScript code goes here!
   let i = 0;
   setInterval(() => {
-    document.querySelector('nav#top-nav .counter').innerText = ++i
+    // scopedSelector and scopedSelectorAll ensures element-
+    // -is selected from same component
+    scopedSelector('nav .counter').innerText = ++i
   }, 1000)
 </script>
 </AbellComponent>
@@ -305,7 +307,7 @@ By default, all style from components is bundled into single file during output.
 
 #### Q and A
 - **Are these styles and scripts, scoped?**<br/>
-Styles are scoped (you can use 'global' attribute to make styles global) but scripts are not scoped yet. We have plans to scope it in next versions of Abell. Till then, as you can see in the example, it is a good practice to give id to outer element and write scripts with respect to that id so that you can be sure about the scope.
+Yes! Starting v0.8.0, both styles and scripts are scoped. Styles are scoped by default and you can use `global` attribute to make styles global. Scripts have `scopedSelector`, and `scopedSelectorAll` function which are equivalent to `document.querySelector`, and `document.querySelectorAll`. To select global element (DONT!), you can use default vanilla JavaScript document selectors.
 
 
 ## Reading Data from JSON File

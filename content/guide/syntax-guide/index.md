@@ -9,9 +9,10 @@ This section covers some common concepts of Abell's syntax including examples of
   - [1. Hello World in Abell](#1-hello-world-in-abell)
   - [2. Execute Maths](#2-execute-maths)
   - [3. Conditions in Abell](#3-conditions-in-abell)
-  - [4. Loops in Abell](#4-loops-in-abell)
-  - [5. Escape Double Curly Brackets](#5-escape-double-curly-brackets)
-  - [6. Require JavaScipt, NPM Packages, and JSON files](#6-require-javascript-npm-packages-and-json-files)
+  - [4. Inlined Functions](#4-inlined-functions)
+  - [5. Loops in Abell](#5-loops-in-abell)
+  - [6. Escape Double Curly Brackets](#6-escape-double-curly-brackets)
+  - [7. Require JavaScipt, NPM Packages, and JSON files](#7-require-javascript-npm-packages-and-json-files)
 - [Debugging in Abell](#debugging-in-abell)
 - [Abell Components](#abell-components)
   - [Passing Values to Component](#passing-values-to-component)
@@ -97,7 +98,32 @@ if the conditions are nested writing ternary operator is not ideal, it is recomm
 
 Ans: Adding `/* html */` before the string, highlights the block as HTML content in our [Abell Language Features VSCode Extension](https://marketplace.visualstudio.com/items?itemName=saurabh.abell-language-features)
 
-### 4. Loops in Abell
+### 4. Inlined Functions
+
+Don't like ternary operator for conditions? no issue!
+
+You can write a function that returns value and the value it returns is rendered in template.
+
+The same example as above, can be written as-
+```abell
+\{{
+  const isLink = true;
+}}
+
+<main>
+\{{ 
+  () => {
+    if (isLink) {
+      return /* html */ `<a href="https://google.com">Google</a>`;
+    }
+
+    return /* html */ `<button>Do something!</button>`
+  }  
+}}
+</main>
+```
+
+### 5. Loops in Abell
 
 You can loop over content with Native JavaScript methods such as [.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). You can also use `sort`, `filter` and other array methods to customize the loop.
 
@@ -130,12 +156,11 @@ You can loop over content with Native JavaScript methods such as [.map()](https:
 </main>
 ```
 
-### 5. Escape Double Curly Brackets
+### 6. Escape Double Curly Brackets
 
-If you want something to be printed as it is, You can escape double curly brackets by adding forward slash before curly brackets.
+If you want something to be printed as it is, You can escape double curly brackets by adding forward slash before curly brackets \
 
-
-### 6. Require JavaScript, NPM Packages, and JSON files
+### 7. Require JavaScript, NPM Packages, and JSON files
 
 With Abell, you can `require()` whatever you can require with Node.js! So you can use JavaScript files, JSON files, and NPM Packages from `.abell` files.
 
@@ -148,6 +173,10 @@ With Abell, you can `require()` whatever you can require with Node.js! So you ca
 ```
 
 It is a good practice to have all your requires on top before the `<html>` tag.
+
+This allows you to make use of Node.js ecosystem in various ways. For example you can use Node's [dotenv](https://npmjs.org/dotenv) package to read environment variables.
+
+You can use [remarkable](https://npmjs.org/remarkable) to convert Markdown to HTML on the go!
 
 ## Debugging in Abell
 
@@ -187,7 +216,7 @@ Abell Components wrap `<template>`, `<style>`, and `<script>` in `<AbellComponen
 </template>
 
 <style>
-  /* CSS for that HTML */
+  /* CSS for the HTML */
 
   /* 
     styles are scoped by default. 
@@ -197,6 +226,9 @@ Abell Components wrap `<template>`, `<style>`, and `<script>` in `<AbellComponen
 
 <script>
   // Client-side JavaScript for the HTML
+  // Use scopedSelector instead of document.querySelector
+  // and scopedSelectorAll instead of document.querySelectorAll
+  // to ensure you always select element from same component.
 </script>
 </AbellComponent>
 ```
@@ -211,7 +243,7 @@ So a component for Footer would look like,
 
 `theme/components/Footer.abell`
 
-```abell
+```html
 <AbellComponent>
 <template>
   <footer id="main-footer">
@@ -227,14 +259,11 @@ So a component for Footer would look like,
 </style>
 
 <script>
-  document.querySelector('footer#main-footer #year').innerText = new Date().getFullYear();
+  // ensures I only select footer component that is inside this component.
+  scopedSelector('footer #year').innerText = new Date().getFullYear();
 </script>
 </AbellComponent>
 ```
-
-***Note:** Scripts are not currently scoped but it is a good practice to scope them by adding id to your HTML element and refering to the element with respect to the id in scripts.*
-
-*We do have plans to scope the scripts in future.*
 
 Lets use this component in Abell Page (index.abell)
 
@@ -285,7 +314,7 @@ Note that this is only valid for `props` attribute so you cannot `<Footer foo={b
 
 Abell supports inlining styles and scripts to main page, as well as bundling it to separate CSS file and defining which file to bundle into.
 
-On `<script>` and `<style>` tag inside Abell Component, you can use attribute 
+On `<script>` and `<style>` tag inside Abell Component, you can use following bundling attributes-
 - `inlined` to inline the content to the main page.
 - `bundle="something.css"` to bundle inside `bundled-css/something.css` file on build.
 
@@ -307,7 +336,7 @@ When not defined, it is bundled into a common `bundled-css/main.abell.css` and `
 
 <!-- this CSS will be added to <head> tag in parent page -->
 <style inlined>
-  footer#main-footer {
+  footer {
     text-align: right;
     padding: 10px;
   }
@@ -315,7 +344,7 @@ When not defined, it is bundled into a common `bundled-css/main.abell.css` and `
 
 <!-- This JavaScript will go into `bundled-js/footer.js` and <script src="bundled-js/footer.js"> will be added before end of <body>  -->
 <script bundle="footer.js">
-  document.querySelector('footer#main-footer #year').innerText = new Date().getFullYear();
+  scopedSelector('footer #year').innerText = new Date().getFullYear();
 </script>
 </AbellComponent>
 ```
@@ -333,9 +362,12 @@ When not defined, it is bundled into a common `bundled-css/main.abell.css` and `
   </footer>
 </template>
 
-<!-- this CSS will be added to bundled-css/footer.css and link rel will be added to parent page. -->
+<!-- 
+  This CSS will be added to bundled-css/footer.css 
+  and It's <link rel="" /> will be added to parent page. 
+-->
 <style bundle="footer.css">
-  footer#main-footer {
+  footer {
     text-align: right;
     padding: 10px;
   }
@@ -343,7 +375,7 @@ When not defined, it is bundled into a common `bundled-css/main.abell.css` and `
 
 <!-- This JavaScript will be added to <script> tag before </body> -->
 <script inlined>
-  document.querySelector('footer#main-footer #year').innerText = new Date().getFullYear();
+  scopedSelector('footer #year').innerText = new Date().getFullYear();
 </script>
 </AbellComponent>
 ```
