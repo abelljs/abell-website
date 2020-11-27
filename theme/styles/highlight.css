@@ -1,12 +1,15 @@
 .hljs {
   display: block;
   overflow-x: auto;
-  padding: 0.5em;
-  color: #abb2bf;
+  padding: 2rem;
+  border-radius: 8px;
+  color: var(--blue-6);
+  font-size: 1.1rem;
+  line-height: 3rem;
   background: #151515;
 }
 .hljs-shell {
-  background: #282c34
+  background: var(--blue-2);
 }
 .hljs-comment,
 .hljs-quote {

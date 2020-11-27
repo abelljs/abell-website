@@ -1,83 +1,33 @@
 {{
-  const { globalMeta, importContent, contentArray, $path, $root } = Abell;
-
-  const GlobalCSS = require('./static/styles/inlined/global.css.abell');
-  const Navigation = require('./components/Navigation.abell');
-  const Footer = require('./components/Footer.abell');
+  const { $root } = Abell;
 
   const sponsors = require('./data/sponsors.json');
 }}
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-125454191-5');
-  </script>
-
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <meta name="description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites"/>
-  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-
-  <!-- OPEN GRAPH -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Abell Documentation" />
-  <meta name="og:description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites"/>
-  <meta property="og:url" content="https://abelljs.org" />
-  
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:creator" content="@AbellLand"/>
-
-  <meta property="og:image:secure_url" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1591474179/abell/docs-og.png"/>
-  <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1591474179/abell/docs-og.png"/>
-  <meta property="og:image:width" content="600" />
-  <meta property="og:image:height" content="300" />
-  <meta property="og:image:alt" content="OG image of Abell Docs that shows the title of page" />
-  <meta property="og:description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites" />
-  <meta property="og:site_name" content="abelljs.org"/>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./static/styles/index.css">
-  <title>Abell - a JavaScript based static site generator to create markdown and configuration based websites</title>
-  
-  <!-- global css file -->
-  <GlobalCSS/>
+  <link rel="stylesheet" href="./styles/global.css" />
 </head>
-<body class="index">
-  <Navigation 
-    props={
-      contentArray, 
-      navMenuOrder: globalMeta.navMenuOrder,
-      $path, 
-      $root,
-      version: globalMeta.version
-    }
-  />
-  <header class="landing">
-    <div class="header-bio">
-      <h1>{{ globalMeta.siteName }}</h1>
-      <p>A Static-Site-Generator for JavaScript Developers.</p>
-      <a class="button primary-bg" href="getting-started/" style="margin: 20px 10px;font-size: 14pt;">Get Started</a>
-      <a class="button github-button" href="https://github.com/abelljs/abell">
-        <img alt="GitHub Logo" src="./static/icons/github.png" style="filter: invert(100%); position: relative;top:3px;" width="17"/> &nbsp;GitHub
-      </a>
+<body>
+  <div>
+    <h1 class="text-shadow">Abell</h1>
+    <div>
+      <p class="m-1 text-xxl text-gradient">A Static-Site-Generator for JavaScript Developers</p>
+      <div class="text-m" style="padding: 0.5rem 0.7rem;">
+        <a class="button-primary text-bold" href="{{ $root }}/getting-started/">Get Started</a>
+        <a class="button-secondary m-2" href="https://github.com/abelljs/abell">GitHub</a>
+      </div>
     </div>
-    <img alt="Abell Logo" class="header-abell-logo" src="./static/icons/abell.svg" />
-  </header>
+
+    <div style="padding: 4rem 0rem">
+      <pre><code class="hljs hljs-shell nohighlight shadow">npx create-abell-app my-cool-blog<br/>cd my-cool-blog<br/>npm run dev<br/></code>
+      </pre>
+    </div>
+  </div>
+  
   <main>
-  <pre>
-    <code class="hljs hljs-shell nohighlight shadow" style="word-spacing: 4px;line-height: 40px;">npx create-abell-app my-cool-blog<br/>cd my-cool-blog<br/>npm run dev</code>
-    </pre>
-    <section class="sponsor-section">
-      <h2>Sponsors 🤗</h2>
+    <section>
+      <h2>Sponsors</h2>
       <h3>Gold Sponsors</h3>
       <div class="gold-sponsors">
       {{
@@ -89,26 +39,11 @@
         `)
       }}
       </div>
-      <p>You can become our sponsor through, </p>
-      <a href="https://www.patreon.com/bePatron?u=31891872" aria-label="Become a Patron Button">
-        <img style="border-radius: 5px;" width="200" alt="Become a patron Button" src="https://c5.patreon.com/external/logo/become_a_patron_button.png" />
-      </a>&nbsp; 
-      <a href="https://www.buymeacoffee.com/saurabhdaware" aria-label="Buy me a Coffee Button">
-        <img style="border-radius: 5px;" width="200" alt="Buy me a Coffee Button" src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" />
-      </a>
-      <p>Or if you prefer any other mode of payment, you can contact at <a href="mailto:saurabhdaware99@gmail.com">saurabhdaware99@gmail.com</a>
-    </section>
-    {{ importContent('./home.md') }}
-    <section class="github-contributors-section">
-      <h2>GitHub Contributors</h2>
-      <div class="github-contributors-holder">
-      </div>
-      <div style="padding: 15px 3px;">Check out <a href="https://github.com/abelljs">GitHub @abelljs</a> for list of repositories, every repo has a README for contribution guide</div>
     </section>
   </main>
-  <Footer/>
+
+
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-  <link rel="stylesheet" href="./static/styles/highlight.css"/>
-  <script defer src="./static/js/main.js"></script>
+  <link rel="stylesheet" href="./styles/highlight.css"/>
 </body>
 </html>
