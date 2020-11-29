@@ -1,0 +1,35 @@
+<AbellComponent>
+{{
+  const sponsors = require('../data/sponsors.json');
+}}
+<template>
+  <section>
+    <h2>Sponsors</h2>
+    <h3>Gold Sponsors</h3>
+    <div class="gold-sponsors">
+    {{
+      sponsors.map(sponsor => /* html */`
+        <a class="sponsor-main" href="${sponsor.url}" target="_blank" rel="noopener">
+          <img alt="Logo of ${sponsor.name}" src="${sponsor.logo}"/>
+          <span class="sponsor-name text-center text-m">${sponsor.name}</span>
+        </a>
+      `)
+    }}
+    </div>
+  </section>
+</template>
+<style>
+  .gold-sponsors {
+    padding: 1rem 2rem;
+  }
+
+  .sponsor-main {
+    display: inline-block;
+  }
+
+  .sponsor-name {
+    display: block;
+    padding: 1rem;
+  }
+</style>
+</AbellComponent>

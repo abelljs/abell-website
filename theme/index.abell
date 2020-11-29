@@ -1,7 +1,9 @@
 {{
-  const { $root } = Abell;
+  const { $root, importContent } = Abell;
 
-  const sponsors = require('./data/sponsors.json');
+  const DarkModeToggle = require('./components/DarkModeToggle.abell');
+  const Hero = require('./components/Hero.abell');
+  const Sponsors = require('./components/Sponsors.abell');
 }}
 <html>
 <head>
@@ -9,41 +11,20 @@
   <link rel="stylesheet" href="./styles/global.css" />
 </head>
 <body>
-  <div>
-    <h1 class="text-shadow">Abell</h1>
-    <div>
-      <p class="m-1 text-xxl text-gradient">A Static-Site-Generator for JavaScript Developers</p>
-      <div class="text-m" style="padding: 0.5rem 0.7rem;">
-        <a class="button-primary text-bold" href="{{ $root }}/getting-started/">Get Started</a>
-        <a class="button-secondary m-2" href="https://github.com/abelljs/abell">GitHub</a>
-      </div>
-    </div>
-
-    <div style="padding: 4rem 0rem">
-      <pre><code class="hljs hljs-shell nohighlight shadow">npx create-abell-app my-cool-blog<br/>cd my-cool-blog<br/>npm run dev<br/></code>
-      </pre>
-    </div>
-  </div>
+  <DarkModeToggle />
+  <Hero props={$root} />
   
   <main>
+    <Sponsors />
     <section>
-      <h2>Sponsors</h2>
-      <h3>Gold Sponsors</h3>
-      <div class="gold-sponsors">
-      {{
-        sponsors.map(sponsor => /* html */`
-          <a class="sponsor-main" href="${sponsor.url}" target="_blank" rel="noopener">
-            <img alt="Logo of ${sponsor.name}" src="${sponsor.logo}"/>
-            <span class="sponsor-name">${sponsor.name}</span>
-          </a>
-        `)
-      }}
-      </div>
+      <h2>New Template Engine</h2>
+      {{ importContent('./home.md') }} 
     </section>
   </main>
 
 
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script defer src="./static-js/main.js"></script>
   <link rel="stylesheet" href="./styles/highlight.css"/>
 </body>
 </html>

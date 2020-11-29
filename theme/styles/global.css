@@ -19,14 +19,25 @@
   --blue-6: #929FDA;
   --blue-9: #c0cbfb;
   --blue-10: #e7ebfd;
-
-  --font-family: "DM Sans";
-  --font-family-mono: "DM Mono";
 }
 
 body {
-  background-color: var(--blue-1);
-  color: var(--blue-6);
+  --font-family: "DM Sans";
+  --font-family-mono: "DM Mono";
+
+  --font-color-primary: var(--blue-2);
+  --background-primary: #fafaff;
+}
+
+body.dark {
+  --font-color-primary: var(--blue-6);
+  --background-primary: var(--blue-1);
+}
+
+
+body {
+  background-color: var(--background-primary);
+  color: var(--font-color-primary);
   font-family: var(--font-family);
   padding: 100px 200px;
 }
@@ -40,11 +51,9 @@ code {
   font-family: var(--font-family-mono);
 }
 
-h1 {
-  font-size: 7rem;
-  margin: 0rem 0px;
-  color: var(--blue-10);
-}
+h1 { font-size: 7rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.6rem; }
 
 .m-0 { margin: 0px; }
 .m-1 { margin: 0.5rem; }
@@ -73,21 +82,26 @@ h1 {
 }
 
 .button-primary {
-  background-color: var(--blue-4);
-  color: var(--blue-10);
+  background-color: var(--blue-2);
+  color: var(--blue-9);
 }
 
 .button-secondary {
   background-color: transparent;
+  color: var(--blue-3);
+  border: 2px solid var(--blue-3);
+}
+
+body.dark .button-primary {
+  background-color: var(--blue-4);
+  color: var(--blue-10);
+}
+
+body.dark .button-secondary {
   color: var(--blue-5);
   border: 2px solid var(--blue-4);
 }
 
-.text-gradient {
-  background: linear-gradient(to top left, var(--blue-3), var(--blue-9));
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 .text-m { font-size: 1.2rem; }
 .text-l { font-size: 1.5rem; }
@@ -100,8 +114,12 @@ h1 {
 .text-bold { font-weight: bold; }
 .text-center { text-align: center; }
 
+body.dark .text-shadow {
+  text-shadow: 3px 5px 2px #0004;
+}
+
 .text-shadow {
-  text-shadow: 3px 5px 2px #0009;
+  text-shadow: 3px 5px 2px #0002;
 }
 
 .shadow {

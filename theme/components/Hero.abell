@@ -1,0 +1,45 @@
+<AbellComponent>
+<template>
+  <div>
+    <h1 class="brand-name text-shadow">Abell</h1>
+    <div>
+      <p class="m-1 text-xxl hero-gradient">A Static-Site-Generator for<br/> JavaScript Developers</p>
+      <div class="text-m" style="padding: 0.5rem 0.7rem;">
+        <a class="button-primary text-bold" href="{{ props.$root }}/getting-started/">Get Started</a>
+        <a class="button-secondary m-2" href="https://github.com/abelljs/abell">GitHub</a>
+      </div>
+    </div>
+
+    <div style="padding: 4rem 0rem">
+      <pre><code class="hljs hljs-shell nohighlight shadow">npx create-abell-app my-cool-blog<br/>cd my-cool-blog<br/>npm run dev<br/></code>
+      </pre>
+    </div>
+    <div style="padding: 4rem 0rem">
+      <pre><code class="language-abell">\{{ const a = 3; }}</code></pre>
+    </div>
+  </div>
+</template>
+
+<style>
+  .brand-name {
+    margin: 0rem 0px;
+    color: var(--blue-3);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(to top left, var(--blue-1), var(--blue-4));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  body.dark .hero-gradient {
+    background: linear-gradient(to top left, var(--blue-3), var(--blue-9));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  body.dark .brand-name {
+    color: var(--blue-10);
+  }
+</style>
+</AbellComponent>
