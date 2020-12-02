@@ -26,12 +26,18 @@ body {
   --font-family-mono: "DM Mono";
 
   --font-color-primary: var(--blue-2);
+  --heading-color: var(--blue-2);
   --background-primary: #fafaff;
+  --link-color: #092e92;
+  --elevation-1: var(--blue-10);
 }
 
 body.dark {
-  --font-color-primary: var(--blue-6);
+  --font-color-primary: var(--blue-9);
+  --heading-color: var(--blue-10);
   --background-primary: var(--blue-1);
+  --link-color: #76a9fa;
+  --elevation-1: var(--blue-5);
 }
 
 
@@ -44,15 +50,48 @@ body {
 
 a { 
   text-decoration: none; 
-  color: var(--blue-5);
+  color: var(--link-color);
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: .2s ease;
+}
+
+li > a:hover {
+  border-bottom: 2px solid var(--link-color);
+  transition: .3s ease;
+}
+
+pre {
+  margin: 5px 0px;
 }
 
 code {
   font-family: var(--font-family-mono);
+  padding: 0px 8px;
+  border-radius: 4px;
+  word-spacing: 3px;
+  font-size: smaller;
+}
+
+hr { border-color: var(--elevation-1); }
+
+ul {
+  padding-left: 30px;
+}
+
+li {
+  padding: 3px;
+  font-size: 1.05rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--heading-color);
 }
 
 h1 { font-size: 7rem; }
-h2 { font-size: 2.2rem; }
+h2 { font-size: 3rem; }
 h3 { font-size: 1.6rem; }
 
 .m-0 { margin: 0px; }
@@ -124,4 +163,11 @@ body.dark .text-shadow {
 
 .shadow {
   box-shadow: 3px 5px 2px #0004;
+}
+
+.row {
+  display: flex;
+}
+.row > .col {
+  flex: 1;
 }

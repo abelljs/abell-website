@@ -4,12 +4,12 @@
   padding: 2rem;
   border-radius: 8px;
   color: var(--blue-9);
-  font-size: 1.1rem;
   background: var(--blue-2);
 }
 .hljs-shell {
   background: var(--blue-2);
   color: var(--blue-6);
+  font-size: 1rem;
   line-height: 3rem;
 }
 .hljs-comment,

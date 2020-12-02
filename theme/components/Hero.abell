@@ -14,9 +14,6 @@
       <pre><code class="hljs hljs-shell nohighlight shadow">npx create-abell-app my-cool-blog<br/>cd my-cool-blog<br/>npm run dev<br/></code>
       </pre>
     </div>
-    <div style="padding: 4rem 0rem">
-      <pre><code class="language-abell">\{{ const a = 3; }}</code></pre>
-    </div>
   </div>
 </template>
 
@@ -29,12 +26,14 @@
   .hero-gradient {
     background: linear-gradient(to top left, var(--blue-1), var(--blue-4));
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   body.dark .hero-gradient {
     background: linear-gradient(to top left, var(--blue-3), var(--blue-9));
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 

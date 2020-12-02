@@ -3,8 +3,8 @@
   const sponsors = require('../data/sponsors.json');
 }}
 <template>
-  <section>
-    <h2>Sponsors</h2>
+  <section id="sponsors">
+    <h2 style="visibility: hidden; position: absolute;">Sponsors</h2>
     <h3>Gold Sponsors</h3>
     <div class="gold-sponsors">
     {{
@@ -19,6 +19,11 @@
   </section>
 </template>
 <style>
+  #sponsors {
+    text-align: center;
+    padding: 1rem 0px 4rem 0px;
+  }
+
   .gold-sponsors {
     padding: 1rem 2rem;
   }

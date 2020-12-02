@@ -4,6 +4,7 @@
   const DarkModeToggle = require('./components/DarkModeToggle.abell');
   const Hero = require('./components/Hero.abell');
   const Sponsors = require('./components/Sponsors.abell');
+  const WhyAbell = require('./components/WhyAbell.abell');
 }}
 <html>
 <head>
@@ -16,10 +17,7 @@
   
   <main>
     <Sponsors />
-    <section>
-      <h2>New Template Engine</h2>
-      {{ importContent('./home.md') }} 
-    </section>
+    <WhyAbell props={importContent} />
   </main>
 
 
