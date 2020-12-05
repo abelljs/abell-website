@@ -1,6 +1,8 @@
 {{
   const { $root, importContent } = Abell;
 
+  const GlobalCSS = require('./styles/global.css.abell');
+
   const DarkModeToggle = require('./components/DarkModeToggle.abell');
   const Hero = require('./components/Hero.abell');
   const Sponsors = require('./components/Sponsors.abell');
@@ -9,7 +11,7 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/global.css" />
+  <GlobalCSS />
 </head>
 <body>
   <DarkModeToggle />

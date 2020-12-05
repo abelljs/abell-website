@@ -15,7 +15,7 @@ Abell files are HTML files which allow you to write JS inside curly brackets so 
 
 
 <div class="row row-responsive">
-<div style="flex: 1">
+<div class="col">
 
 **Input (.abell)**
 
@@ -34,7 +34,7 @@ Abell files are HTML files which allow you to write JS inside curly brackets so 
 </html>
 ```
 </div>
-<div style="flex: 1">
+<div class="col">
 
 **Output (.html)**
 
@@ -47,9 +47,6 @@ Abell files are HTML files which allow you to write JS inside curly brackets so 
   </body>
 </html>
 ```
-
-
-**View on CodeSandbox**
 
 [![Edit abell-hello-world](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/abell-hello-world-zit90?fontsize=14&hidenavigation=1&module=%2Fsrc%2Findex.abell&theme=dark)
 
@@ -126,7 +123,7 @@ Have a critical CSS/JS that needs to load as soon as user visits the page? With 
 If you have a portfolio and you're bored of writing code to add new project, you can have all the info of your projects 
 
 <div class="row row-responsive">
-  <div style="flex: 1">
+  <div class="col">
 
   `./site.json`
   ```json
@@ -145,7 +142,7 @@ If you have a portfolio and you're bored of writing code to add new project, you
   }
   ```
   </div>
-  <div style="flex: 1">
+  <div class="col">
 
   `./projects.abell`
   ```abell
@@ -187,10 +184,10 @@ If you have a portfolio and you're bored of writing code to add new project, you
 
 ### Build Markdown based websites 📖
 
-With abell, you can import markdown content using `Abell.importContent('path/to/mardown.md')`. Even this text that you're reading right now is coming from [https://github.com/abelljs/abell-website/blob/main/content/index.md](https://github.com/abelljs/abell-website/blob/main/content/index.md)
+With abell, you can import markdown content using `Abell.importContent('path/to/markdown.md')`. Even this text that you're reading right now is coming from [this website's repository](https://github.com/abelljs/abell-website/blob/main/content/index.md)
 
 <div class="row row-responsive">
-  <div style="flex: 1">
+  <div class="col">
 
   `./content/index.md`
   ```md
@@ -201,7 +198,7 @@ With abell, you can import markdown content using `Abell.importContent('path/to/
   Star [Abell on GitHub](https://github.com/abelljs/abell)
   ```
   </div>
-  <div style="flex: 1">
+  <div class="col">
 
   `./theme/index.abell`
   ```abell
@@ -235,6 +232,6 @@ With abell, you can import markdown content using `Abell.importContent('path/to/
 
 ### And a lot more!!
 
-[Get started with Abell](getting-started/) for complete documentation 🐨🎉
+[Get Started with Abell](getting-started/) for complete documentation 🐨🎉
 
 <br/><br/>

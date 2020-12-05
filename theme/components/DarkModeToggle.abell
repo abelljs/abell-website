@@ -33,7 +33,7 @@
 
 <script inlined>
   function setTheme(theme, shouldStore = false) {
-    const toggleButtons = scopedSelector('.dark-mode-toggle');
+    const toggleButtons = scopedSelectorAll('.dark-mode-toggle');
     if (theme === 'light') {
       document.body.classList.remove('dark');
       if (shouldStore) window.localStorage.setItem('prefers-theme', 'light');

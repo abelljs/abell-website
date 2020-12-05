@@ -1,43 +1,42 @@
-/*
-
---rich-black-fogra-29: #03040dff;
---oxford-blue: #040923ff;
---oxford-blue-2: #040e39ff;
---midnight-blue: #071b74ff;
---dark-cornflower-blue: #364796ff;
---violet-blue-crayola: #6473b8ff;
---lavender-blue: #c0cbfbff;
---lavender-web: #e7ebfdff;
-
-*/
+<AbellComponent>
+<style global inlined>
 :root {
-  --blue-1: #03040d;
-  --blue-2: #040923;
-  --blue-3: #071b74;
-  --blue-4: #364796;
-  --blue-5: #6473B8;
-  --blue-6: #929FDA;
-  --blue-9: #c0cbfb;
-  --blue-10: #e7ebfd;
+  --blue-1: #050715;
+  --blue-2: #090B21DD;
+  --blue-3: #19216D;
+  --blue-4: #24309D;
+  --blue-5: #2E3ECC;
+  --blue-6: #4654D3;
+  --blue-7: #5D6AD9;
+  --blue-8: #8B95E5; 
+  --blue-9: #A2ABEB;
+  --blue-10: #E7EBFD;
 }
+
 
 body {
   --font-family: "DM Sans";
   --font-family-mono: "DM Mono";
 
+  --white-black: #111;
+
   --font-color-primary: var(--blue-2);
-  --heading-color: var(--blue-2);
-  --background-primary: #fafaff;
-  --link-color: #092e92;
-  --elevation-1: var(--blue-10);
+  --background-primary: #F9F9F9; /* Almost White */
+  --hr-color: var(--blue-10);
+
+  --link-color: #044F9F;
+  --link-color-hover: #1081F9;
 }
 
 body.dark {
+  --white-black: #ddd;
+
   --font-color-primary: var(--blue-9);
-  --heading-color: var(--blue-10);
   --background-primary: var(--blue-1);
-  --link-color: #76a9fa;
-  --elevation-1: var(--blue-5);
+  --hr-color: var(--blue-5);
+
+  --link-color: #ddd;
+  --link-color-hover: #7ACAFF;
 }
 
 
@@ -46,19 +45,17 @@ body {
   color: var(--font-color-primary);
   font-family: var(--font-family);
   padding: 100px 200px;
+  font-size: 1.05rem;
+  word-spacing: 0.05rem;
 }
 
 a { 
-  text-decoration: none; 
   color: var(--link-color);
-  padding-bottom: 2px;
-  border-bottom: 2px solid transparent;
-  transition: .2s ease;
+  text-decoration: none;
 }
 
-li > a:hover {
-  border-bottom: 2px solid var(--link-color);
-  transition: .3s ease;
+a:hover {
+  color: var(--link-color-hover);
 }
 
 pre {
@@ -73,7 +70,7 @@ code {
   font-size: smaller;
 }
 
-hr { border-color: var(--elevation-1); }
+hr { border-color: var(--hr-color); }
 
 ul {
   padding-left: 30px;
@@ -82,12 +79,6 @@ ul {
 li {
   padding: 3px;
   font-size: 1.05rem;
-}
-
-h1,
-h2,
-h3 {
-  color: var(--heading-color);
 }
 
 h1 { font-size: 7rem; }
@@ -101,43 +92,35 @@ h3 { font-size: 1.6rem; }
 .p-1 { padding: 0.5rem; }
 .p-2 { padding: 1rem; }
 
-.button-primary,
-.button-secondary {
+
+[class^="button-"] {
   display: inline-block;
   border-radius: 6px;
   min-width: 100px;
   text-align: center;
+  text-decoration: none;
 }
 
 .button-primary {
   padding: 10px 20px;
+  background-color: var(--blue-3) !important;
+  color: var(--blue-10) !important;
 }
 
 .button-secondary {
-  display: inline-block;
   padding: 8px 20px;
-  border-radius: 6px;
-  min-width: 100px;
-}
-
-.button-primary {
-  background-color: var(--blue-2);
-  color: var(--blue-9);
-}
-
-.button-secondary {
-  background-color: transparent;
-  color: var(--blue-3);
+  background-color: transparent !important;
+  color: var(--blue-3) !important;
   border: 2px solid var(--blue-3);
 }
 
 body.dark .button-primary {
-  background-color: var(--blue-4);
-  color: var(--blue-10);
+  background-color: var(--blue-4) !important;
+  color: var(--blue-10) !important;
 }
 
 body.dark .button-secondary {
-  color: var(--blue-5);
+  color: var(--blue-6) !important;
   border: 2px solid var(--blue-4);
 }
 
@@ -170,4 +153,9 @@ body.dark .text-shadow {
 }
 .row > .col {
   flex: 1;
+} 
+.row > .col:first-child {
+  padding-right: 20px;
 }
+</style>
+</AbellComponent>
