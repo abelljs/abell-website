@@ -3,7 +3,7 @@
   const sponsors = require('../data/sponsors.json');
 }}
 <template>
-  <section id="sponsors">
+  <section class="container" id="sponsors">
     <h2 style="visibility: hidden; position: absolute;">Sponsors</h2>
     <h3>Gold Sponsors</h3>
     <div class="gold-sponsors">

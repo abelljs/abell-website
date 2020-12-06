@@ -13,27 +13,30 @@
   --blue-10: #E7EBFD;
 }
 
+* {
+  box-sizing: border-box;
+}
 
 body {
   --font-family: "DM Sans";
   --font-family-mono: "DM Mono";
 
-  --white-black: #111;
-
   --font-color-primary: var(--blue-2);
   --background-primary: #F9F9F9; /* Almost White */
   --hr-color: var(--blue-10);
+  --white-black: #111;
+  --elevation-1: #eee;
 
   --link-color: #044F9F;
   --link-color-hover: #1081F9;
 }
 
 body.dark {
-  --white-black: #ddd;
-
   --font-color-primary: var(--blue-9);
   --background-primary: var(--blue-1);
   --hr-color: var(--blue-5);
+  --white-black: #ddd;
+  --elevation-1: var(--blue-2);
 
   --link-color: #ddd;
   --link-color-hover: #7ACAFF;
@@ -44,7 +47,6 @@ body {
   background-color: var(--background-primary);
   color: var(--font-color-primary);
   font-family: var(--font-family);
-  padding: 100px 200px;
   font-size: 1.05rem;
   word-spacing: 0.05rem;
 }
@@ -64,10 +66,12 @@ pre {
 
 code {
   font-family: var(--font-family-mono);
-  padding: 0px 8px;
+  padding: 1px 8px;
+  transition: background-color .3s ease;
   border-radius: 4px;
   word-spacing: 3px;
   font-size: smaller;
+  background-color: var(--elevation-1);
 }
 
 hr { border-color: var(--hr-color); }
@@ -82,8 +86,8 @@ li {
 }
 
 h1 { font-size: 7rem; }
-h2 { font-size: 3rem; }
-h3 { font-size: 1.6rem; }
+h2 { font-size: 4rem; }
+h3 { font-size: 2rem; }
 
 .m-0 { margin: 0px; }
 .m-1 { margin: 0.5rem; }
@@ -132,6 +136,10 @@ body.dark .button-secondary {
   font-size: 3rem;
   font-weight: bold;
 }
+.text-xxxl {
+  font-size: 3.8rem;
+  font-weight: bold;
+}
 
 .text-bold { font-weight: bold; }
 .text-center { text-align: center; }
@@ -156,6 +164,10 @@ body.dark .text-shadow {
 } 
 .row > .col:first-child {
   padding-right: 20px;
+}
+
+.container {
+  padding: 100px 200px;
 }
 </style>
 </AbellComponent>

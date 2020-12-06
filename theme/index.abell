@@ -2,8 +2,7 @@
   const { $root, importContent } = Abell;
 
   const GlobalCSS = require('./styles/global.css.abell');
-
-  const DarkModeToggle = require('./components/DarkModeToggle.abell');
+  const TopNav = require('./components/TopNav.abell');
   const Hero = require('./components/Hero.abell');
   const Sponsors = require('./components/Sponsors.abell');
   const WhyAbell = require('./components/WhyAbell.abell');
@@ -11,11 +10,11 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans&display=swap" rel="stylesheet">
-  <title>AbellJS - A Static Site Generator for JavaScript Developers</title>
+  <title>Abell.js - A Static Site Generator for JavaScript Developers</title>
   <GlobalCSS />
 </head>
 <body>
-  <DarkModeToggle />
+  <TopNav props={$root} />
   <Hero props={$root} />
   
   <main>

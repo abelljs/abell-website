@@ -1,6 +1,6 @@
 <AbellComponent>
 <template>
-  <section id="why-abell">
+  <section class="container" id="why-abell">
     {{ props.importContent('./why-abell.md') }} 
   </section>
 </template>

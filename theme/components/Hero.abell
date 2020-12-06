@@ -1,9 +1,9 @@
 <AbellComponent>
 <template>
-  <div>
-    <h1 class="brand-name text-shadow">Abell</h1>
+  <div class="container component-hero">
+    <!-- <h1 class="brand-name text-shadow">Abell</h1> -->
     <div>
-      <p class="m-1 text-xxl hero-gradient">A Static-Site-Generator for<br/> JavaScript Developers</p>
+      <p class="m-2 text-xxxl hero-gradient">A Static-Site-Generator for<br/> JavaScript Developers</p>
       <div class="text-m" style="padding: 0.5rem 0.7rem;">
         <a class="button-primary text-bold" href="{{ props.$root }}/getting-started/">Get Started</a>
         <a class="button-secondary m-2" href="https://github.com/abelljs/abell">GitHub</a>
@@ -18,6 +18,11 @@
 </template>
 
 <style>
+  .component-hero {
+    position: relative;
+    padding-top: 150px;
+  }
+
   .brand-name {
     margin: 0rem 0px;
     color: var(--blue-3);

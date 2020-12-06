@@ -1,0 +1,53 @@
+<AbellComponent>
+{{
+  const DarkModeToggle = require('./DarkModeToggle.abell');
+}}
+<template>
+  <header>
+    <a class="nav-item" href="/">
+      <img class="brand-logo" src="{{ props.$root }}/favicon.ico" />
+      <span class="brand-name"><strong>Abell</strong> <small>(v0.8)</small></span>
+    </a>
+    <nav>
+      <a class="nav-item" href="{{ props.$root }}/getting-started/">Documentation</a>
+      <DarkModeToggle />
+    </nav>
+  </header>
+</template>
+<style>
+  header {
+    padding: 0px 190px;
+    position: fixed;
+    top:0px;
+    left:0px;
+    width: 100%;
+    background-color: var(--background-primary);
+    z-index: 99999;
+    transition: .3s ease;
+  }
+
+  nav {
+    display: inline-block;
+    float: right;
+  }
+
+  .nav-item {
+    padding: 25px 10px;
+    display: inline-block;
+  }
+
+  .brand-logo {
+    position: absolute;
+    width: 35px;
+    top: 18px;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+    margin-left: 45px;
+  }
+</style>
+<script>
+  
+</script>
+</AbellComponent>
