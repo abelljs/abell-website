@@ -1,9 +1,15 @@
 <AbellComponent>
 {{
   const DarkModeToggle = require('./DarkModeToggle.abell');
+
+  const isDocs = props.$path !== '';
 }}
 <template>
-  <header>
+  <header 
+    class="dark-transition" 
+    data-transit-props="background-color, border"
+    style="{{ isDocs ? 'border-bottom: 1px solid var(--elevation-2);': '' }}"
+  >
     <a class="nav-item" href="/">
       <img class="brand-logo" src="{{ props.$root }}/favicon.ico" />
       <span class="brand-name"><strong>Abell</strong> <small>(v0.8)</small></span>
@@ -23,7 +29,10 @@
     width: 100%;
     background-color: var(--background-primary);
     z-index: 99999;
-    transition: .3s ease;
+  }
+  
+  a {
+    color: var(--color-primary);
   }
 
   nav {
@@ -32,7 +41,7 @@
   }
 
   .nav-item {
-    padding: 25px 10px;
+    padding: 25px 30px;
     display: inline-block;
   }
 

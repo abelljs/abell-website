@@ -1,0 +1,41 @@
+<AbellComponent>
+{{
+  const menuItems = [
+    {
+      title: 'Getting Started',
+      path: '/getting-started/'
+    },
+    {
+      title: 'Tutorial',
+      path: '/tutorial/create-portfolio/'
+    }
+  ]
+}}
+<template>
+  <nav class="dark-transition" data-transit-props="background-color, border">
+    {{
+      menuItems.map((menu) => /* html */ `
+        <a class="menu-item" href="${menu.path}">${menu.title}</a>
+      `)
+    }}
+  </nav>
+</template>
+
+<style>
+  nav {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    padding-top: 100px;
+    height: 100%;
+    border-right: 1px solid var(--elevation-2);
+    width: 250px;
+  }
+
+  nav a.menu-item {
+    display: block;
+    padding: 10px 20px;
+  }
+</style>
+</AbellComponent>

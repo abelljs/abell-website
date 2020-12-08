@@ -1,5 +1,5 @@
 {{
-  const { $root, importContent } = Abell;
+  const { $root, $path, importContent } = Abell;
 
   const GlobalCSS = require('./styles/global.css.abell');
   const TopNav = require('./components/TopNav.abell');
@@ -13,8 +13,8 @@
   <title>Abell.js - A Static Site Generator for JavaScript Developers</title>
   <GlobalCSS />
 </head>
-<body>
-  <TopNav props={$root} />
+<body class="dark-transition">
+  <TopNav props={$root, $path} />
   <Hero props={$root} />
   
   <main>

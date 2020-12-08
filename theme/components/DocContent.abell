@@ -1,0 +1,27 @@
+<AbellComponent>
+{{ const { importContent, contentPath } = props }}
+<template>
+  <main class="container">
+    {{ importContent(contentPath) }}
+  </main>
+</template>
+<style bundle="docs.css">
+  h1 {
+    font-size: 4rem;
+    margin: 0px;
+  }
+
+  h1 + p {
+    font-size: 1.5rem;
+    opacity: .7;
+  }
+
+  main {
+    margin-left: 200px;
+  }
+
+  main.container {
+    padding: 100px 100px;
+  }
+</style>
+</AbellComponent>

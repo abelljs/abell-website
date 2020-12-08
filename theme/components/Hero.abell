@@ -1,7 +1,6 @@
 <AbellComponent>
 <template>
   <div class="container component-hero">
-    <!-- <h1 class="brand-name text-shadow">Abell</h1> -->
     <div>
       <p class="m-2 text-xxxl hero-gradient">A Static-Site-Generator for<br/> JavaScript Developers</p>
       <div class="text-m" style="padding: 0.5rem 0.7rem;">
@@ -17,7 +16,7 @@
   </div>
 </template>
 
-<style>
+<style bundle="index.css">
   .component-hero {
     position: relative;
     padding-top: 150px;

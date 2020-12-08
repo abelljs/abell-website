@@ -4,7 +4,10 @@
     {{ props.importContent('./why-abell.md') }} 
   </section>
 </template>
-<style>
+<style bundle="index.css">
+
+  h2 { font-size: 4rem; }
+  h3 { font-size: 2rem; }
 
   .abell-li {
     padding: 0px 30px;

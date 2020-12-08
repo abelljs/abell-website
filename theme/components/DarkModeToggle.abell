@@ -53,7 +53,18 @@
   }
 
   function toggleTheme(toggleButton) {
-    document.body.style.transition = 'all .3s ease'
+    document.querySelectorAll('.dark-transition').forEach((el) => {      
+      if (el.dataset.transitProps) {
+        el.style.transition = el.dataset.transitProps
+          .split(',')
+          .map(transitProp => `${transitProp} .3s ease`)
+          .join(', ');
+
+      } else {
+        el.style.transition = 'all .3s ease';
+      }
+    })
+
     if (document.body.classList.contains('dark')) {
       setTheme('light', true);
     } else {

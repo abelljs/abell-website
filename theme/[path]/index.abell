@@ -1,5 +1,30 @@
+{{
+  const { $root, $path, importContent, meta } = Abell;
+
+  const GlobalCSS = require('../styles/global.css.abell');
+  const TopNav = require('../components/TopNav.abell');
+  const Sidebar = require('../components/Sidebar.abell');
+  const DocContent = require('../components/DocContent.abell');
+}}
 <html>
-<body>
-  {{ Abell.meta.$path }}
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans&display=swap" rel="stylesheet">
+  <title>Abell.js - A Static Site Generator for JavaScript Developers</title>
+  <GlobalCSS />
+</head>
+<body class="dark-transition">
+  <TopNav props={$root, $path} />
+  
+  <Sidebar />
+  <DocContent 
+    props={
+      contentPath: `${meta.$path}/index.md`, 
+      importContent
+    } 
+  />
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script defer src="./static-js/main.js"></script>
+  <link rel="stylesheet" href="./styles/highlight.css"/>
 </body>
 </html>
