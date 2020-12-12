@@ -1,7 +1,7 @@
 <AbellComponent>
 <style global inlined>
 :root {
-  --blue-1: #070922;
+  --blue-1: #0E0F1B;
   --blue-2: #0A1034;
   --blue-3: #19216D;
   --blue-4: #24309D;
@@ -34,7 +34,7 @@ body {
 
 body.dark {
   --font-color-primary: #cccc;
-  --background-primary: #070922;
+  --background-primary: #0D0E21;
   --hr-color: var(--blue-5);
   --white-black: #ddd;
   --elevation-1: var(--blue-2);
@@ -107,6 +107,7 @@ li {
   padding: 10px 20px;
   background-color: var(--blue-3) !important;
   color: var(--blue-10) !important;
+  text-decoration: none !important;
 }
 
 .button-secondary {
@@ -114,6 +115,7 @@ li {
   background-color: transparent !important;
   color: var(--blue-3) !important;
   border: 2px solid var(--blue-3);
+  text-decoration: none !important;
 }
 
 body.dark .button-primary {
