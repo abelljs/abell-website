@@ -9,7 +9,8 @@
 }}
 <html>
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <title>Abell.js - A Static Site Generator for JavaScript Developers</title>
   <GlobalCSS />
 </head>
@@ -25,6 +26,7 @@
 
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script defer src="./static-js/main.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/highlight.css"/>
 </body>
 </html>

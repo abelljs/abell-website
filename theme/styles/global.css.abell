@@ -1,8 +1,8 @@
 <AbellComponent>
 <style global inlined>
 :root {
-  --blue-1: #050715;
-  --blue-2: #090B21DD;
+  --blue-1: #070922;
+  --blue-2: #0A1034;
   --blue-3: #19216D;
   --blue-4: #24309D;
   --blue-5: #2E3ECC;
@@ -33,17 +33,16 @@ body {
 }
 
 body.dark {
-  --font-color-primary: var(--blue-9);
-  --font-color-primary: #aaa;
-  --background-primary: var(--blue-1);
+  --font-color-primary: #cccc;
+  --background-primary: #070922;
   --hr-color: var(--blue-5);
   --white-black: #ddd;
   --elevation-1: var(--blue-2);
   --elevation-2: #0B0F32;
 
   --link-color: #ddd;
-  --link-color: var(--blue-8);
-  --link-color-hover: #7ACAFF;
+  --link-color: #81A7FF;
+  --link-color-hover: #94B4FF;
 }
 
 
@@ -60,8 +59,9 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:not(.no-decoration):hover {
   color: var(--link-color-hover);
+  text-decoration: underline;
 }
 
 pre {

@@ -10,12 +10,12 @@
     data-transit-props="background-color, border"
     style="{{ isDocs ? 'border-bottom: 1px solid var(--elevation-2);': '' }}"
   >
-    <a class="nav-item" href="/">
+    <a class="nav-item no-decoration" href="/">
       <img class="brand-logo" src="{{ props.$root }}/favicon.ico" />
       <span class="brand-name"><strong>Abell</strong> <small>(v0.8)</small></span>
     </a>
     <nav>
-      <a class="nav-item" href="{{ props.$root }}/getting-started/">Documentation</a>
+      <a class="nav-item no-decoration" href="{{ props.$root }}/getting-started/">Documentation</a>
       <DarkModeToggle />
     </nav>
   </header>
