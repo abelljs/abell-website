@@ -3,7 +3,7 @@
 
   const GlobalCSS = require('../styles/global.css.abell');
   const TopNav = require('../components/TopNav.abell');
-  const Sidebar = require('../components/Sidebar.abell');
+  const Sidebar = require('../components/Sidebar/Sidebar.abell');
   const DocContent = require('../components/DocContent.abell');
 }}
 <html>

@@ -1,22 +1,15 @@
 <AbellComponent>
 {{
-  const menuItems = [
-    {
-      title: 'Getting Started',
-      path: '/getting-started/'
-    },
-    {
-      title: 'Tutorial',
-      path: '/tutorial/create-portfolio/'
-    }
-  ]
+  const routes = require('./routes.js')
 }}
 <template>
   <nav class="dark-transition" data-transit-props="background-color, border">
     {{
-      menuItems.map((menu) => /* html */ `
-        <a class="menu-item" href="${menu.path}">${menu.title}</a>
-      `)
+      Object.entries(routes).map((route) => {
+        return /* html */ `
+          <a class="menu-item" href="${route[1]}">${route[0]}</a>
+        `; 
+      })
     }}
   </nav>
 </template>
@@ -36,6 +29,13 @@
   nav a.menu-item {
     display: block;
     padding: 10px 20px;
+    text-decoration: none;
+    transition: color .2s ease;
+  }
+
+  body.dark nav a.menu-item:hover {
+    color: #fff;
+    transition: color .2s ease;
   }
 </style>
 </AbellComponent>
