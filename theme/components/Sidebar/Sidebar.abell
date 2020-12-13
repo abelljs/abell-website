@@ -1,13 +1,19 @@
 <AbellComponent>
 {{
-  const routes = require('./routes.js')
+  const routes = require('./routes.js');
+  const { $root, $path } = props;
 }}
 <template>
   <nav class="dark-transition" data-transit-props="background-color, border">
     {{
       Object.entries(routes).map((route) => {
         return /* html */ `
-          <a class="menu-item" href="${route[1]}">${route[0]}</a>
+          <a 
+            class="menu-item ${route[1].includes($path) ? 'active' : ''}" 
+            href="${route[1]}"
+          >
+            ${route[0]}
+          </a>
         `; 
       })
     }}
@@ -31,6 +37,10 @@
     padding: 10px 20px;
     text-decoration: none;
     transition: color .2s ease;
+  }
+
+  nav a.menu-item.active {
+    color: #ddd;
   }
 
   body.dark nav a.menu-item:hover {
