@@ -1,8 +1,8 @@
 <AbellComponent>
 <style global inlined>
 :root {
-  --blue-1: #0E0F1B;
-  --blue-2: #0A1034;
+  --blue-1: #101028;
+  --blue-2: #17173A;
   --blue-3: #19216D;
   --blue-4: #24309D;
   --blue-5: #2E3ECC;
@@ -21,7 +21,7 @@ body {
   --font-family: "DM Sans";
   --font-family-mono: "DM Mono";
 
-  --font-color-primary: var(--blue-2);
+  --font-color-primary: #333;
   --background-primary: #F9F9F9; /* Almost White */
   --hr-color: var(--blue-10);
   --white-black: #111;
@@ -32,13 +32,15 @@ body {
   --link-color-hover: #1081F9;
 }
 
+/* 141424 */
+
 body.dark {
-  --font-color-primary: #cccc;
-  --background-primary: #0D0E21;
-  --hr-color: var(--blue-5);
+  --font-color-primary: #ddd;
+  --background-primary: #101023;
+  --hr-color: #1C1C4A;
   --white-black: #ddd;
   --elevation-1: var(--blue-2);
-  --elevation-2: #0B0F32;
+  --elevation-2: #1C1C4A;
 
   --link-color: #ddd;
   --link-color: #81A7FF;
