@@ -76,10 +76,14 @@ code {
   border-radius: 4px;
   word-spacing: 3px;
   font-size: smaller;
-  background-color: var(--blue-2);
+  background-color: var(--elevation-1);
+  transition: background-color .3s ease;
 }
 
-hr { border-color: var(--hr-color); }
+hr { 
+  border: 1px solid var(--hr-color);
+  transition: border-color .3s ease;
+}
 
 ul {
   padding-left: 30px;

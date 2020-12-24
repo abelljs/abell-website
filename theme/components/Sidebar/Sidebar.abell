@@ -2,25 +2,49 @@
 {{
   const routes = require('./routes.js');
   const { $root, $path } = props;
-}}
-<template>
-  <nav class="dark-transition" data-transit-props="background-color, border">
-    {{
-      Object.entries(routes).map((route) => {
-        return /* html */ `
+
+  function renderRoutes(routesObj) {
+    const renderedLi = Object.entries(routesObj).map((route) => {
+      const isDirectPath = typeof route[1] === 'string';
+      let isActive = isDirectPath && route[1].includes($path);
+
+      if (!isDirectPath) {
+        isActive = route[1].path.includes($path);
+      }
+
+      return /* html */ `
+        <li>
           <a 
-            class="menu-item ${route[1].includes($path) ? 'active' : ''}" 
-            href="${route[1]}"
+            class="menu-item ${isActive ? 'active' : ''}" 
+            href="${isDirectPath ? route[1] : route[1].path}"
           >
             ${route[0]}
           </a>
-        `; 
-      })
-    }}
+          ${
+            isDirectPath
+            ? ''
+            : renderRoutes(route[1].routes)
+          }
+        </li>
+      `})
+      .join('');
+
+    return '<ul>' + renderedLi + '</ul>'
+  }
+}}
+
+<template>
+  <nav class="dark-transition" data-transit-props="background-color, border">
+    {{ renderRoutes(routes) }}   
   </nav>
 </template>
 
 <style>
+  ul {
+    list-style: none;
+    padding-left: 10px;
+  }
+
   nav {
     position: fixed;
     left: 0px;
