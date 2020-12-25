@@ -9,7 +9,8 @@
 }}
 <html>
 <head>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="stylesheet" href="{{ $root }}/fonts/i.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <title>Abell.js - A Static Site Generator for JavaScript Developers</title>
   <GlobalCSS />
@@ -19,6 +20,7 @@
   <Hero props={$root} />
   
   <main>
+    <i class="i-abell"></i> Helo
     <Sponsors />
     <WhyAbell props={importContent} />
   </main>

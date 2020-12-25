@@ -135,12 +135,13 @@ body.dark .button-secondary {
   border: 2px solid var(--blue-4);
 }
 
-
-.text-m { font-size: 1.2rem; }
-.text-l { font-size: 1.5rem; }
-.text-xl { font-size: 2rem; }
+.text-xs { font-size: 0.8rem !important; }
+.text-s { font-size: 1rem !important; }
+.text-m { font-size: 1.2rem !important; }
+.text-l { font-size: 1.5rem !important; }
+.text-xl { font-size: 2rem !important; }
 .text-xxl {
-  font-size: 3rem;
+  font-size: 3rem !important;
   font-weight: bold;
 }
 .text-xxxl {
@@ -167,12 +168,18 @@ body.dark .shadow {
   box-shadow: 9px 9px 38px -2px rgba(0,0,0,0.75);
 }
 
+[class^="i-"], [class*=" i-"] {
+  vertical-align: bottom;
+}
+
 .row {
   display: flex;
 }
+
 .row > .col {
   flex: 1;
 } 
+
 .row > .col:first-child {
   padding-right: 20px;
 }

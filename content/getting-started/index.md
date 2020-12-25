@@ -2,21 +2,20 @@
   const { meta, globalMeta, $root } = Abell;
 }}
 
-# {{ meta.title }}
+# Getting Started
 
-{{ meta.description }}
+This section is an overview of Abell Documentation and will help you navigate to the page you need.
 
-**Abell** is a JavaScript based static-site-generator to help you build fast and secure websites from static data like JSON, Markdown, or CMS.  Check out [Why Abell](https://abelljs.org/#why-abell) section on our Home Page for more info.
+<h2 class="text-m">Different Ways to Learn Abell</h2>
 
+<div class="row">
+<a class="docs-tile" href="{{ $root }}/tutorial/create-portfolio/">Learn by doing with <strong>Tutorial</strong></a>
+<a class="docs-tile" href="{{ $root }}/guide/syntax-guide/">Start with Concepts from <strong>Syntax Guide</strong></a>
+<a class="docs-tile" href="">Play around on <strong>CodeSandbox <i class="i-external-link text-xs"></i></strong></a>
+<a class="docs-tile" href="{{ $root }}/starters">Get going with <strong>Starter Themes</strong></a>
+</div>
 
-## Approaching Documentation
-
-If you want **to quickly get blog running**, check out [Creating Blog from Starter Themes]({{$root}}/starters/)
-
-To learn Abell, you can approach this documentation in various ways
-- If you prefer **to learn by doing**, check out [Tutorial to Create Your Portfolio from Scratch]({{$root}}/tutorial/create-portfolio/)
-- If you prefer **to learn from concepts**, try [A Conceptual Guide of Abell]({{$root}}/guide/).
-- If you prefer **to learn by playing around the code**, you would like our [Abell Playground on CodeSandbox &#x2197;](https://codesandbox.io/s/abell-playground-wcdq2?file=/theme/index.abell) .
+<br/>
 
 ---
 
@@ -24,8 +23,7 @@ To learn Abell, you can approach this documentation in various ways
 ## Requirements
 
 - Abell requires [Node.js 8 or higher](https://nodejs.org) installed.
-
-Though it is not "required", if you're using VSCode, it is recommended to have [Abell Language Features Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=saurabh.abell-language-features) for syntax highlighting of `.abell` files.
+- Though it is not "required", if you're using VSCode, it is recommended to have [Abell Language Features Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=saurabh.abell-language-features) for syntax highlighting of `.abell` files.
 
 
 ## Terms used in Documentation

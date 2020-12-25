@@ -31,5 +31,6 @@ module.exports = {
       }
     ]
   },
-  plugins: ['abell-sitemap-plugin', 'plugins/fetch-ghdata.js']
+  plugins: ['abell-sitemap-plugin', 'plugins/fetch-ghdata.js', 'plugins/generate-icon-font.js'],
+  ignoreInOutput: ['icons/abell-i']
 }

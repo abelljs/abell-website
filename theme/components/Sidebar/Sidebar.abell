@@ -3,10 +3,10 @@
   const routes = require('./routes.js');
   const { $root, $path } = props;
 
-  function renderRoutes(routesObj) {
+  function renderRoutes(routesObj, isChild = false) {
     const renderedLi = Object.entries(routesObj).map((route) => {
       const isDirectPath = typeof route[1] === 'string';
-      let isActive = isDirectPath && route[1].includes($path);
+      let isActive = isDirectPath && !isChild && route[1].includes($path);
 
       if (!isDirectPath) {
         isActive = route[1].path.includes($path);
@@ -23,7 +23,7 @@
           ${
             isDirectPath
             ? ''
-            : renderRoutes(route[1].routes)
+            : renderRoutes(route[1].routes, true)
           }
         </li>
       `})

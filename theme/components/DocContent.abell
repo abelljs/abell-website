@@ -11,6 +11,10 @@
     margin: 0px;
   }
 
+  h2 {
+    font-size: 2.5rem;
+  }
+
   h1 + p {
     font-size: 1.5rem;
     opacity: .7;
@@ -22,6 +26,40 @@
 
   main.container {
     padding: 100px 100px;
+  }
+
+  /* Documentation Styles */
+  .docs-tile {
+    color: #eee;
+    display: inline-block;
+    padding: 20px 12px;
+    background-color: #09f;
+    min-height: 100px;
+    margin: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    flex: 1;
+    background: linear-gradient(to bottom right, #8a2387, #e94057, #f27121); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  body.dark .docs-tile {
+    background: linear-gradient(to bottom right, #7f00ff, #e100ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  .docs-tile strong {
+    font-size: 1.1rem;
+    display: block;
+  }
+
+  .docs-tile:hover {
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 4px 4px 28px -0px #f27121;
+    transition-property: box-shadow;
+  }
+
+  body.dark .docs-tile:hover {
+    box-shadow: 4px 4px 28px -0px #ff93;
   }
 </style>
 </AbellComponent>
