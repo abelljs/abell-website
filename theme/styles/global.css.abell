@@ -187,5 +187,11 @@ body.dark .shadow {
 .container {
   padding: 100px 200px;
 }
+
+@media (max-width: 768px) {
+  .row.row-responsive {
+    display: block;
+  }
+}
 </style>
 </AbellComponent>
