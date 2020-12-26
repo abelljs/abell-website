@@ -34,14 +34,14 @@
     -webkit-text-fill-color: transparent;
   }
 
-  body.dark .hero-gradient {
+  body.dark-dim .hero-gradient {
     background: linear-gradient(to top left, var(--blue-3), var(--blue-9));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  body.dark .brand-name {
+  body.dark-dim .brand-name {
     color: var(--blue-10);
   }
 </style>

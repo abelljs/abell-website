@@ -64,10 +64,11 @@
   }
 
   nav a.menu-item.active {
-    color: #ddd;
+    color: var(--sidebar-active-link);
+    font-weight: bold;
   }
 
-  body.dark nav a.menu-item:hover {
+  body.dark-dim nav a.menu-item:hover {
     color: #fff;
     transition: color .2s ease;
   }

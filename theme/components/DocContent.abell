@@ -42,7 +42,7 @@
     background: linear-gradient(to bottom right, #8a2387, #e94057, #f27121); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
-  body.dark .docs-tile {
+  body.dark-dim .docs-tile {
     background: linear-gradient(to bottom right, #7f00ff, #e100ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
@@ -58,7 +58,7 @@
     transition-property: box-shadow;
   }
 
-  body.dark .docs-tile:hover {
+  body.dark-dim .docs-tile:hover {
     box-shadow: 4px 4px 28px -0px #ff93;
   }
 </style>

@@ -1,7 +1,7 @@
 <AbellComponent>
 <style global inlined>
 :root {
-  --blue-1: #101028;
+  --blue-1: #0d0d21;
   --blue-2: #17173A;
   --blue-3: #19216D;
   --blue-4: #24309D;
@@ -30,6 +30,8 @@ body {
 
   --link-color: #044F9F;
   --link-color-hover: #1081F9;
+  --code-background: var(--blue-2);
+  --sidebar-active-link: #111;
 }
 
 /* 141424 */
@@ -39,12 +41,29 @@ body.dark {
   --background-primary: #000;
   --hr-color: #222;
   --white-black: #ddd;
-  --elevation-1: #222;
+  --elevation-1: var(--blue-1);
   --elevation-2: #333;
 
   --link-color: #ddd;
   --link-color: #81A7FF;
   --link-color-hover: #94B4FF;
+  --code-background: var(--blue-1);
+  --sidebar-active-link: #fff;
+}
+
+body.dim {
+  --font-color-primary: #ddd;
+  --background-primary: #101023;
+  --hr-color: #1C1C4A;
+  --white-black: #ddd;
+  --elevation-1: var(--blue-2);
+  --elevation-2: #1C1C4A;
+
+  --link-color: #ddd;
+  --link-color: #81A7FF;
+  --link-color-hover: #94B4FF;
+  --code-background: var(--blue-2);
+  --sidebar-active-link: #fff;
 }
 
 
@@ -125,12 +144,12 @@ li {
   text-decoration: none !important;
 }
 
-body.dark .button-primary {
+body.dark-dim .button-primary {
   background-color: var(--blue-4) !important;
   color: var(--blue-10) !important;
 }
 
-body.dark .button-secondary {
+body.dark-dim .button-secondary {
   color: var(--blue-6) !important;
   border: 2px solid var(--blue-4);
 }
@@ -152,7 +171,7 @@ body.dark .button-secondary {
 .text-bold { font-weight: bold; }
 .text-center { text-align: center; }
 
-body.dark .text-shadow {
+body.dark-dim .text-shadow {
   text-shadow: 3px 5px 2px #0004;
 }
 
@@ -164,7 +183,7 @@ body.dark .text-shadow {
   box-shadow: 9px 9px 38px -2px rgba(0,0,0,0.3);
 }
 
-body.dark .shadow {
+body.dark-dim .shadow {
   box-shadow: 9px 9px 38px -2px rgba(0,0,0,0.75);
 }
 

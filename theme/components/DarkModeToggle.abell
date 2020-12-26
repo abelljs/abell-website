@@ -1,8 +1,9 @@
 <AbellComponent>
 <template>
-  <button onclick="toggleTheme(this)" aria-label="Activate Dark Mode" aria-pressed="false" title="Toggle Dark Mode" class="dark-mode-toggle nav-item {{ props.classes }} ">
-    <span class="sun"> <img alt="sun icon to represent light mode" width="33px" src="{{props.$root}}/icons/sun.svg" /></span>
-    <span class="moon"><img alt="moon icon to represent dark mode" width="24px" src="{{props.$root}}/icons/moon.svg" /></span>
+  <button onclick="toggleTheme(this)" aria-label="Activate Dim Mode" aria-pressed="false" title="Toggle Theme" class="dark-mode-toggle nav-item {{ props.classes }} ">
+    <span class="sun"><i class="i-sun text-l"></i></span>
+    <span class="cloud"><i class="i-cloud-sun text-l"></i></span>
+    <span class="moon"><i class="i-moon"></i></span>
   </button>
 </template>
 
@@ -14,6 +15,7 @@
     border:none;
     background:transparent;
     padding: 17px 20px !important;
+    width: 40px;
   }
   body:not(.user-is-tabbing) .dark-mode-toggle:focus {
     outline: none;
@@ -22,30 +24,83 @@
   body:not(.user-is-tabbing) button::-moz-focus-inner {
     border: 0;
   }
-  .dark-mode-toggle .moon {
-    padding: 5px;
+
+  button i.i-moon {
+    font-size: 2rem;
+    position: relative;
+    top: -6px;
+    left: 2px;
   }
-  body .dark-mode-toggle .moon {display: none}
+
+  button i.i-sun,
+  button i.i-cloud-sun {
+    position: relative;
+    top: 4px;
+
+  }
+
+
+  button i.i-moon,
+  button i.i-cloud-sun {
+    color: #fff;
+  }
+
+  button i.i-sun {
+    color: #333;
+  }
+
+  body .dark-mode-toggle .moon,
+  body .dark-mode-toggle .cloud {
+    display: none
+  }
   body .dark-mode-toggle .sun {display: inline-block}
-  body.dark .dark-mode-toggle .moon {display: inline-block;}
-  body.dark .dark-mode-toggle .sun {display: none;}
+
+  body.dim .dark-mode-toggle .moon,
+  body.dim .dark-mode-toggle .sun {
+    display: none;
+  }
+  
+  body.dim .dark-mode-toggle .cloud {
+    display: inline-block;
+  }
+
+
+  body.dark .dark-mode-toggle .cloud,
+  body.dark .dark-mode-toggle .sun {
+    display: none;
+  }
+
+  body.dark .dark-mode-toggle .moon {
+    display: inline-block;
+  }
 </style>
 
 <script inlined>
   function setTheme(theme, shouldStore = false) {
     const toggleButtons = scopedSelectorAll('.dark-mode-toggle');
     if (theme === 'light') {
+      document.body.classList.remove('dim');
       document.body.classList.remove('dark');
+      document.body.classList.remove('dark-dim');
       if (shouldStore) window.localStorage.setItem('prefers-theme', 'light');
       toggleButtons.forEach(toggleButton => {
-        toggleButton.setAttribute('aria-pressed', false);
+        toggleButton.setAttribute('aria-label', 'Activate Dim Mode');
+      })
+    } else if (theme === 'dim') {
+      document.body.classList.remove('dark');
+      document.body.classList.add('dim');
+      document.body.classList.add('dark-dim');
+      
+      if (shouldStore) window.localStorage.setItem('prefers-theme', 'dim');
+      toggleButtons.forEach(toggleButton => {
         toggleButton.setAttribute('aria-label', 'Activate Dark Mode');
       })
-    } else {
+    }else {
+      document.body.classList.remove('dim');
       document.body.classList.add('dark');
+      document.body.classList.add('dark-dim');
       if (shouldStore) window.localStorage.setItem('prefers-theme', 'dark');
       toggleButtons.forEach(toggleButton => {
-        toggleButton.setAttribute('aria-pressed', true);
         toggleButton.setAttribute('aria-label', 'Activate Light Mode');
       })      
       
@@ -65,18 +120,19 @@
       }
     })
 
-    if (document.body.classList.contains('dark')) {
+    if (document.body.classList.contains('dim')) {
+      setTheme('dark', true);
+    } else if (document.body.classList.contains('dark')) {
       setTheme('light', true);
     } else {
-      setTheme('dark', true);
+      setTheme('dim', true);
     }
   }
 
   const localPreference = window.localStorage.getItem('prefers-theme');
 
   if (localPreference) {
-    if (localPreference === 'light') setTheme('light');
-    else setTheme('dark');
+    setTheme(localPreference);
   } else if (window.matchMedia('(prefers-color-scheme: dark)').matches){
     setTheme('dark');
   }
