@@ -134,7 +134,7 @@
   if (localPreference) {
     setTheme(localPreference);
   } else if (window.matchMedia('(prefers-color-scheme: dark)').matches){
-    setTheme('dark');
+    setTheme('dim');
   }
 </script>
 </AbellComponent>
