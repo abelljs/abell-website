@@ -23,13 +23,13 @@
   <DocContent 
     props={
       contentPath: `${meta.$path}/index.md`, 
-      importContent
+      importContent,
+      $path
     } 
   />
 
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script defer src="{{ $root }}/static-js/main.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ $root }}/styles/highlight.css"/>
 </body>
 </html>

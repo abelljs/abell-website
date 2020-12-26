@@ -1,7 +1,7 @@
 <AbellComponent>
-{{ const { importContent, contentPath } = props }}
+{{ const { importContent, contentPath, $path } = props }}
 <template>
-  <main class="container">
+  <main class="container {{ $path }}">
     {{ importContent(contentPath) }}
   </main>
 </template>
@@ -21,11 +21,19 @@
   }
 
   main {
-    margin-left: 200px;
+    margin-left: 250px;
   }
 
   main.container {
-    padding: 100px 100px;
+    padding: 100px 200px 100px 90px;
+  }
+
+  main.container.getting-started {
+    padding: 100px 100px 100px 50px;
+  }
+
+  main.container.getting-started .sub-container {
+    padding: 0px 100px 0px 40px;
   }
 
   /* Documentation Styles */

@@ -31,6 +31,5 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script defer src="./static-js/main.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/highlight.css"/>
 </body>
 </html>
