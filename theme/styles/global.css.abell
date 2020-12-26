@@ -21,8 +21,8 @@ body {
   --font-family: "DM Sans";
   --font-family-mono: "DM Mono";
 
-  --font-color-primary: #333;
-  --background-primary: #F9F9F9; /* Almost White */
+  --font-color-primary: #222;
+  --background-primary: #fff; /* Almost White */
   --hr-color: var(--blue-10);
   --white-black: #111;
   --elevation-1: #eee;
@@ -36,11 +36,11 @@ body {
 
 body.dark {
   --font-color-primary: #ddd;
-  --background-primary: #101023;
-  --hr-color: #1C1C4A;
+  --background-primary: #000;
+  --hr-color: #222;
   --white-black: #ddd;
-  --elevation-1: var(--blue-2);
-  --elevation-2: #1C1C4A;
+  --elevation-1: #222;
+  --elevation-2: #333;
 
   --link-color: #ddd;
   --link-color: #81A7FF;
