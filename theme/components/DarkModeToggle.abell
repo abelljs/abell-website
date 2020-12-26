@@ -107,6 +107,14 @@
     }
   }
 
+  const localPreference = window.localStorage.getItem('prefers-theme');
+
+  if (localPreference) {
+    setTheme(localPreference);
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches){
+    setTheme('dim');
+  }
+
   function toggleTheme(toggleButton) {
     document.querySelectorAll('.dark-transition').forEach((el) => {      
       if (el.dataset.transitProps) {
@@ -127,14 +135,6 @@
     } else {
       setTheme('dim', true);
     }
-  }
-
-  const localPreference = window.localStorage.getItem('prefers-theme');
-
-  if (localPreference) {
-    setTheme(localPreference);
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches){
-    setTheme('dim');
   }
 </script>
 </AbellComponent>
