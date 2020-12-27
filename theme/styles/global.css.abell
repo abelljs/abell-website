@@ -87,6 +87,7 @@ a:not(.no-decoration):hover {
 
 pre {
   margin: 5px 0px;
+  overflow-x: auto;
 }
 
 code {
@@ -197,6 +198,7 @@ body.dark-dim .shadow {
 
 .row > .col {
   flex: 1;
+  overflow-x: hidden;
 } 
 
 .row > .col:first-child {

@@ -22,7 +22,6 @@
   <Hero props={$root} />
   
   <main>
-    <i class="i-abell"></i> Helo
     <Sponsors />
     <WhyAbell props={importContent} />
   </main>

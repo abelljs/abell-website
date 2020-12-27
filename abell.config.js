@@ -8,7 +8,7 @@ module.exports = {
     navMenuOrder: [
       'getting-started',
       'starters',
-      'tutorial/create-portfolio',
+      'tutorial',
       'guide',
       'plugins',
       'contributing',

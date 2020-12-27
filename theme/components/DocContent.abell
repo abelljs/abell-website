@@ -69,5 +69,9 @@
   body.dark-dim .docs-tile:hover {
     box-shadow: 4px 4px 28px -0px #ff93;
   }
+
+  ol {
+    padding-left: 30px;
+  }
 </style>
 </AbellComponent>

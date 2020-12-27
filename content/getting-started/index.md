@@ -9,7 +9,7 @@ This section is an overview of Abell Documentation and will help you navigate to
 <h2 class="text-m">Different Ways to Learn Abell</h2>
 
 <div class="row row-responsive">
-<a class="docs-tile" href="{{ $root }}/tutorial/create-portfolio/">Learn by doing from <strong>Tutorial</strong></a>
+<a class="docs-tile" href="{{ $root }}/tutorial/">Learn by doing from <strong>Tutorial</strong></a>
 <a class="docs-tile" href="{{ $root }}/guide/syntax-guide/">Start with Concepts from <strong>Syntax Guide</strong></a>
 <a class="docs-tile" target="_blank" href="https://codesandbox.io/s/abell-playground-wcdq2?file=/theme/index.abell">Play around on <strong>CodeSandbox <i class="i-external-link text-xs"></i></strong></a>
 <a class="docs-tile" href="{{ $root }}/starters">Get going with <strong>Starter Themes</strong></a>

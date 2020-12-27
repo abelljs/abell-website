@@ -107,4 +107,4 @@ This meta information can be accessed from `index.md` and `theme/[path]/index.ab
 ```
 
 <br/><br/><br/>
-This will get you started with writing blogs. If you want to know more about editing theme, We will suggest going through our [Tutorial to Create Your Portfolio from Scratch]({{$root}}/tutorial/create-portfolio/)
+This will get you started with writing blogs. If you want to know more about editing theme, We will suggest going through our [Tutorial to Create Your Portfolio from Scratch]({{$root}}/tutorial/)
