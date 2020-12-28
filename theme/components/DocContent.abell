@@ -62,12 +62,12 @@
   .docs-tile:hover {
     color: #fff;
     text-decoration: none;
-    box-shadow: 4px 4px 28px -0px #f27121;
+    box-shadow: 0px 0px 20px -0px #f27121;
     transition-property: box-shadow;
   }
 
   body.dark-dim .docs-tile:hover {
-    box-shadow: 4px 4px 28px -0px #ff93;
+    box-shadow: 0px 0px 20px -0px #ff93;
   }
 
   ol {

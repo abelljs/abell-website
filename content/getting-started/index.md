@@ -28,15 +28,8 @@ This section is an overview of Abell Documentation and will help you navigate to
 
 ## Stuck?
 
-- If you're stuck anywhere in the documentation, you can ask question at [Abell's GitHub Discussions](https://github.com/abelljs/abell/discussions/categories/q-a)
+- If you're stuck anywhere in the documentation, you can ask questions at [Abell's GitHub Discussions](https://github.com/abelljs/abell/discussions/categories/q-a)
 - If you have any suggestion or feedback that can help us in improving documentation, do create an issue at [The GitHub Repository of This Site](https://github.com/abelljs/abell-website)
-
-
-## Terms used in Documentation
-
-- **Abell Components** - Abell Components are the `.abell` files with content wrapped inside `<AbellComponent>` tag. Check out [Abell Components Guide](../guide/syntax-guide/#abell-components) for more information. (Usually named as `CamelCased.abell`)
-- **Abell Pages** - Abell Pages are close to HTML, they have `<html>` tag and these files eventually become `.html` page in output. (Follow `lowercase.abell` format)
-- In documentation, you will find reference of `npx` command which comes along with the Node.js and NPM. It executes the scripts directly.
 
 
 ## Plugins and Libraries

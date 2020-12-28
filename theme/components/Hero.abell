@@ -17,14 +17,13 @@
 </template>
 
 <style bundle="index.css">
+  pre {
+    overflow-x: visible;
+  }
+
   .component-hero {
     position: relative;
     padding-top: 150px;
-  }
-
-  .brand-name {
-    margin: 0rem 0px;
-    color: var(--blue-3);
   }
 
   .hero-gradient {
@@ -35,14 +34,10 @@
   }
 
   body.dark-dim .hero-gradient {
-    background: linear-gradient(to top left, var(--blue-3), var(--blue-9));
+    background: linear-gradient(to top left, var(--blue-4), var(--blue-10));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-
-  body.dark-dim .brand-name {
-    color: var(--blue-10);
   }
 </style>
 </AbellComponent>

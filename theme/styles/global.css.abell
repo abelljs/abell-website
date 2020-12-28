@@ -2,7 +2,7 @@
 <style global inlined>
 :root {
   --blue-1: #0d0d21;
-  --blue-2: #17173A;
+  --blue-2: #12122B;
   --blue-3: #19216D;
   --blue-4: #24309D;
   --blue-5: #2E3ECC;
@@ -30,7 +30,7 @@ body {
 
   --link-color: #044F9F;
   --link-color-hover: #1081F9;
-  --code-background: var(--blue-2);
+  --code-background: var(--blue-1);
   --sidebar-active-link: #111;
 }
 
@@ -53,16 +53,15 @@ body.dark {
 
 body.dim {
   --font-color-primary: #ddd;
-  --background-primary: #101023;
-  --hr-color: #1C1C4A;
+  --background-primary: #171736;
+  --hr-color: #8FB0FF22;
   --white-black: #ddd;
-  --elevation-1: var(--blue-2);
-  --elevation-2: #1C1C4A;
+  --elevation-1: #1F1F47;
+  --elevation-2: #8FB0FF22;
 
-  --link-color: #ddd;
-  --link-color: #81A7FF;
+  --link-color: #8FB0FF;
   --link-color-hover: #94B4FF;
-  --code-background: var(--blue-2);
+  --code-background: var(--blue-1);
   --sidebar-active-link: #fff;
 }
 
@@ -181,11 +180,11 @@ body.dark-dim .text-shadow {
 }
 
 .shadow {
-  box-shadow: 9px 9px 38px -2px rgba(0,0,0,0.3);
+  box-shadow: 9px 9px 38px -2px rgba(0,0,0,0.4);
 }
 
 body.dark-dim .shadow {
-  box-shadow: 9px 9px 38px -2px rgba(0,0,0,0.75);
+  box-shadow: 9px 5px 38px -2px rgba(0,0,0,0.5);
 }
 
 [class^="i-"], [class*=" i-"] {
@@ -232,7 +231,7 @@ body.dark-dim .shadow {
 }
 .hljs-comment,
 .hljs-quote {
-  color: #888;
+  color: #9DA6AF;
   font-style: italic;
 }
 .hljs-doctag,
