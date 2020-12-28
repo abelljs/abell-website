@@ -150,8 +150,8 @@ body.dark-dim .button-primary {
 }
 
 body.dark-dim .button-secondary {
-  color: var(--blue-6) !important;
-  border: 2px solid var(--blue-4);
+  color: var(--blue-8) !important;
+  border: 2px solid var(--blue-6);
 }
 
 .text-xs { font-size: 0.8rem !important; }
