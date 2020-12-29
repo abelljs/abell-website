@@ -23,7 +23,7 @@ This section is an overview of Abell Documentation and will help you navigate to
 
 ## Requirements
 
-- Abell requires [Node.js 8 or higher](https://nodejs.org) installed.
+- Abell requires [Node.js 10 or higher](https://nodejs.org) installed.
 - Though it is not "required", if you're using VSCode, it is recommended to have [Abell Language Features Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=saurabh.abell-language-features) for syntax highlighting of `.abell` files.
 
 ## Stuck?

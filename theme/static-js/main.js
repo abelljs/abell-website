@@ -12,6 +12,12 @@ if (hljs) {
           begin: "{{",
           end: "}}",
           subLanguage: ["javascript"]
+        },
+        {
+          className: "abell",
+          begin: "props={",
+          end: "}",
+          subLanguage: ["javascript"]
         }
       ],
     };
