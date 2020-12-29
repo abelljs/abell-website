@@ -54,6 +54,14 @@ npm run dev
 
 ## Setting Up Our Portfolio
 
+We have two important files that we need to care about-
+```md
+- theme/
+  |- index.abell
+
+- abell.config.js
+```
+
 Let's start by changing **Abell Example** with your name.
 
 In `./abell.config.js`-
@@ -85,7 +93,9 @@ Now if you open `theme/index.abell`, you will see code not same but similar to t
 </body>
 ```
 
-All values defined inside globalMeta in `./abell.config.js` are accessible from any `.abell` file with `Abell.globalMeta.<key>`.
+All values defined inside globalMeta in `./abell.config.js` are accessible from any `.abell` file with `Abell.globalMeta.<key>`. 
+
+Thus `siteTitle` variable defined in `abell.config.js` can be used in `.abell` files with `\{{ Abell.globalMeta.siteTitle }}`
 
 ## Adding CSS to Our Project
 
