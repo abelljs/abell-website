@@ -127,6 +127,26 @@ Abell.$root always points to the `theme` directory irrespective of which abell f
 
 Components allow you to group markup, styles, scripts that can be reused across pages (even across projects).
 
+This is how a syntax of Abell Components looks like-
+
+```
+<AbellComponent>
+<template>
+  <!-- HTML/Abell -->
+</template>
+
+<style>
+  /* CSS (Scoped for Component By Default) */
+</style>
+
+<script>
+  // FrontEnd JavaScript
+</script>
+</AbellComponent>
+```
+
+Let's build a component for our portfolio
+
 ### Let's Build a Footer for Our Portfolio!
 
 This will be a simple Footer with year and your name on it.
@@ -172,6 +192,39 @@ All props that we want to pass to component go through props attribute.
 </template>
 </AbellComponent>
 ```
+
+### Add CSS to Components
+
+If you have CSS that is limited to the component, you can add it inside `<style></style>` tag in our Component.
+
+In `theme/components/Footer.abell`-
+```
+<AbellComponent>
+<template>
+  <footer>&#169; \{{ props.footerText }}</footer>
+</template>
+
+<style>
+  footer {
+    padding: 10px 20px;
+    background-color: #111;
+    color: #ffff;
+    text-align: right;
+  }
+</style>
+</AbellComponent>
+```
+
+Now here's the fun part, the styles we write inside component are scoped for the component. 
+
+So the styles we wrote for `footer` tag in above code will not be applicable to other footer elements outside of the component.
+
+
+### Add JavaScript to Components
+
+The JavaScript that we write inside double curly brackets is executed on `npm run build` so when we want something dynamic to happen on client-side, we have to write Frontend JavaScript. 
+
+We can write this JavaScript inside Component using 
 
 ## Trash
 
