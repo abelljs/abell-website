@@ -229,7 +229,7 @@ body.dark-dim .shadow {
   border: none;
   display: inline-block;
   padding: 10px 20px;
-  font-size: .8rem;
+  font-size: .9rem;
   cursor: pointer;
   border-radius: 4px 4px 0px 0px;
   background-color: var(--blue-1);

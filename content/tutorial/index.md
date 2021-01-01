@@ -64,26 +64,29 @@ We have two important files that we need to care about-
 
 Let's start by changing **Abell Example** with your name.
 
-In `./abell.config.js`-
+<div class="tabbed-editor">
+<div class="menu">
+  <button class="active" data-editorid="setting-up-abellconfig">./abell.config.js</button>
+  <button data-editorid="setting-up-index-1">./theme/index.abell</button>
+</div>
+
+<div class="tabs">
+<div class="active-tab" id="setting-up-abellconfig">
+
 ```js
 module.exports = {
   // ..
   globalMeta: {
-    siteTitle: 'Saurabh'
+    siteTitle: 'Saurabh', // replace with your name
   }
   //...
 }
 ```
 
-This will change the text on our website to **Hello, Saurabh!** 🥳
+</div>
+<div id="setting-up-index-1">
 
-Replace `Saurabh` with your name.
-
-### Using `globalMeta` in Abell Files
-
-Now if you open `theme/index.abell`, you will see code not same but similar to this-
 ```abell
-<!-- theme/index.abell --> 
 \{{
   const { globalMeta } = Abell;
 }}
@@ -92,6 +95,12 @@ Now if you open `theme/index.abell`, you will see code not same but similar to t
   <h1>Hello, \{{ globalMeta.siteTitle }}</h1>
 </body>
 ```
+
+</div>
+</div>
+</div>
+
+This will change the text on our website to **Hello, Saurabh!** 🥳
 
 All values defined inside globalMeta in `./abell.config.js` are accessible from any `.abell` file with `Abell.globalMeta.<key>`. 
 
@@ -128,33 +137,15 @@ Normally in Plain HTML Website, we have to edit the whole HTML to add/remove/edi
 With Abell, we can create a `projects.json` and define our projects there and render it in our website. 
 
 1. Create `theme/data/projects.json`
+2. Require this JSON file in `theme/index.abell` with `require('./data/projects.json')`
+3. We can use [JavaScript's `.map` method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) to loop over our projects
 
 <div class="tabbed-editor">
-
 <div class="menu">
   <button class="active" data-editorid="require-json-index-1">theme/index.abell</button>
   <button data-editorid="require-json-projects">theme/data/projects.json</button>
 </div>
 <div class="tabs">
-<div id="require-json-projects">
-
-```
-[
-  {
-    "title": "My cool project",
-    "description": "Here's my sample project that is built with Abell",
-    "url": "https://abelljs.org"
-  },
-  {
-    "title": "My Random Library",
-    "description": "I made this NPM library to learn Mewtwo Programming Language",
-    "url": "https://github.com/abelljs/abell"
-  }
-]
-```
-
-</div>
-
 <div class="active-tab" id="require-json-index-1">
 
 ```abell
@@ -177,31 +168,32 @@ With Abell, we can create a `projects.json` and define our projects there and re
 ```
 
 </div>
-</div>
+<div id="require-json-projects">
 
-</div>
-
-(Replace data with your projects.)
-
-2. Require this JSON file in `theme/index.abell`
-```abell
-\{{
-  // ...
-  const projects = require('./data/projects.json');
-}}
-
-<!-- ... -->
-<section class="projects">
-\{{
-  projects.map(project => /* html */ `
-    <div class="project">
-      <h3><a href="${project.url}">${project.title}</a></h3>
-      <p>${project.description}</p>
-    </div>
-  `)
-}}
-</section>
 ```
+[
+  {
+    "title": "My cool project",
+    "description": "Here's my sample project that is built with Abell",
+    "url": "https://abelljs.org"
+  },
+  {
+    "title": "My Random Library",
+    "description": "I made this NPM library to learn Mewtwo Programming Language",
+    "url": "https://github.com/abelljs/abell"
+  }
+]
+
+
+
+
+```
+
+</div>
+</div>
+</div>
+
+*Fun fact: We can use `require` to require NPM packages, Node Modules and everything that can be required from Node.js!*
 
 ## Building Your First Abell Component!
 
