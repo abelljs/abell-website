@@ -72,5 +72,12 @@
     color: #fff;
     transition: color .2s ease;
   }
+
+
+  @media (max-width: 768px) {
+    nav {
+      display: none;
+    }
+  }
 </style>
 </AbellComponent>

@@ -77,5 +77,13 @@
   ol {
     padding-left: 30px;
   }
+
+
+  @media (max-width: 768px) {
+    main.container {
+      padding: 30px;
+      margin-left: 0px;
+    }
+  }
 </style>
 </AbellComponent>

@@ -1,3 +1,24 @@
+document.querySelectorAll('.tabbed-editor').forEach(tabbedEditor => {
+  const menuButtons = tabbedEditor.querySelectorAll('.menu > button');
+  for (const menuButton of menuButtons) {
+    menuButton.addEventListener('click', e => {
+      const tabId = menuButton.dataset.editorid;
+      tabbedEditor.querySelectorAll('.tabs > .active-tab').forEach(activeTab => {
+        activeTab.classList.remove('active-tab');
+      })
+
+      tabbedEditor.querySelectorAll('.menu > .active').forEach(activeButton => {
+        activeButton.classList.remove('active');
+      })
+
+
+      menuButton.classList.add('active');
+      tabbedEditor.querySelector('#' + tabId).classList.add('active-tab');
+    })
+  }
+})
+
+
 if (hljs) {  
   function abellHighlighter(e) {
     return {
@@ -11,14 +32,22 @@ if (hljs) {
           className: "abell",
           begin: "{{",
           end: "}}",
-          subLanguage: ["javascript"]
+          subLanguage: ["javascript", "xml"],
+          contains: [
+            {
+              className: 'abell',
+              begin: '/* html */ `',
+              end: '`',
+              subLanguage: ['xml']
+            }
+          ]
         },
         {
           className: "abell",
           begin: "props={",
           end: "}",
           subLanguage: ["javascript"]
-        }
+        },
       ],
     };
   }

@@ -55,5 +55,12 @@
     font-size: 1.2rem;
     margin-left: 45px;
   }
+
+  @media (max-width: 768px) {
+    header {
+      display: none;
+    }
+  
+  }
 </style>
 </AbellComponent>

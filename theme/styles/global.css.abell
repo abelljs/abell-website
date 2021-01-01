@@ -144,6 +144,10 @@ li {
   text-decoration: none !important;
 }
 
+body:not(.user-is-tabbing) button {
+  outline: none;
+}
+
 body.dark-dim .button-primary {
   background-color: var(--blue-4) !important;
   color: var(--blue-10) !important;
@@ -216,6 +220,44 @@ body.dark-dim .shadow {
 </style>
 
 <style global>
+
+.tabbed-editor .menu {
+  display: flex;
+}
+
+.tabbed-editor .menu > button {
+  border: none;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: .8rem;
+  cursor: pointer;
+  border-radius: 4px 4px 0px 0px;
+  background-color: var(--blue-1);
+  color: var(--blue-9);
+}
+
+.tabbed-editor .menu > button:not(.active) {
+  background-color: var(--blue-2);
+}
+
+.tabbed-editor .tabs {
+  position: relative;
+  display: flex;
+  top: -5px;
+}
+
+.tabbed-editor .tabs > div.active-tab {
+  flex: 1;
+}
+
+.tabbed-editor .tabs > div:not(.active-tab){
+  display: none;
+}
+
+.tabbed-editor .tabs code {
+  border-radius: 0px 0px 8px 8px;
+}
+
 .hljs {
   display: block;
   overflow-x: auto;

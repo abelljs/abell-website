@@ -118,6 +118,91 @@ Though for this case it will work perfectly, It is recommended to use `Abell.$ro
 
 Abell.$root always points to the `theme` directory irrespective of which abell file it is built from. This is to avoid confusion of linking files from components or dynamic paths (we will learn these things later in this tutorial)
 
+
+## Require JSON to Abell Files
+
+Next we will add Projects to our Portfolio.
+
+Normally in Plain HTML Website, we have to edit the whole HTML to add/remove/edit the project. 
+
+With Abell, we can create a `projects.json` and define our projects there and render it in our website. 
+
+1. Create `theme/data/projects.json`
+
+<div class="tabbed-editor">
+
+<div class="menu">
+  <button class="active" data-editorid="require-json-index-1">theme/index.abell</button>
+  <button data-editorid="require-json-projects">theme/data/projects.json</button>
+</div>
+<div class="tabs">
+<div id="require-json-projects">
+
+```
+[
+  {
+    "title": "My cool project",
+    "description": "Here's my sample project that is built with Abell",
+    "url": "https://abelljs.org"
+  },
+  {
+    "title": "My Random Library",
+    "description": "I made this NPM library to learn Mewtwo Programming Language",
+    "url": "https://github.com/abelljs/abell"
+  }
+]
+```
+
+</div>
+
+<div class="active-tab" id="require-json-index-1">
+
+```abell
+\{{
+  // ...
+  const projects = require('./data/projects.json');
+}}
+
+<!-- ... -->
+<section class="projects">
+\{{
+  projects.map(project => /* html */ `
+    <div class="project">
+      <h3><a href="${project.url}">${project.title}</a></h3>
+      <p>${project.description}</p>
+    </div>
+  `)
+}}
+</section>
+```
+
+</div>
+</div>
+
+</div>
+
+(Replace data with your projects.)
+
+2. Require this JSON file in `theme/index.abell`
+```abell
+\{{
+  // ...
+  const projects = require('./data/projects.json');
+}}
+
+<!-- ... -->
+<section class="projects">
+\{{
+  projects.map(project => /* html */ `
+    <div class="project">
+      <h3><a href="${project.url}">${project.title}</a></h3>
+      <p>${project.description}</p>
+    </div>
+  `)
+}}
+</section>
+```
+
 ## Building Your First Abell Component!
 
 ---
