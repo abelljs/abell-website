@@ -200,6 +200,7 @@ With Abell, we can create a `projects.json` and define our projects there and re
 ---
 - [Let's Build a Footer for Our Portfolio](TODO)
 - [Passing Props to Components](TODO)
+- [Add JavaScript to Components](TODO)
 ---
 
 Components allow you to group markup, styles, scripts that can be reused across pages (even across projects).
@@ -228,57 +229,22 @@ Let's build a component for our portfolio
 
 This will be a simple Footer with year and your name on it.
 
-1. Create `theme/components/Footer.abell` with following content 
+1. Create `theme/components/Footer.abell`. This will hold our Footer Component.
+2. We will add HTML and CSS for our component. 
+3. Require Footer in our index.abell and use the Footer element.
+
+<div class="tabbed-editor">
+<div class="menu">
+  <button data-editorid="build-footer-index-1">theme/index.abell</button>
+  <button class="active" data-editorid="build-footer-component">theme/components/Footer.abell</button>
+</div>
+<div class="tabs">
+<div class="active-tab" id="build-footer-component">
+
 ```abell
 <AbellComponent>
 <template>
   <footer>&#169; Saurabh Daware.</footer>
-</template>
-</AbellComponent>
-```
-(Replace 'Saurabh Daware' with your name)
-2. Add following lines in `theme/index.abell` to add Footer to our index page.
-```abell
-\{{
-  // ...
-  const Footer = require('./components/Footer.abell');
-}}
-<body>
-  <!-- ... -->
-  <Footer />
-</body>
-```
-
-Wohooo we will now see `© Saurabh Daware` at the bottom of our page.
-
-### Passing Props to Components
-
-Currently we have our name statically mentioned inside the Footer component. Let's pass it from `theme/index.abell` instead.
-
-1. Change `<Footer />` in `theme/index.abell` with, 
-```abell
-<!-- ... -->
-<Footer props={footerText: 'Saurabh Daware'} />
-```
-All props that we want to pass to component go through props attribute.
-2. To use this prop in Components, add `\{{ props.footerText }}` in `theme/components/Footer.abell`
-```abell
-<AbellComponent>
-<template>
-  <footer>&#169; \{{ props.footerText }}</footer>
-</template>
-</AbellComponent>
-```
-
-### Add CSS to Components
-
-If you have CSS that is limited to the component, you can add it inside `<style></style>` tag in our Component.
-
-In `theme/components/Footer.abell`-
-```
-<AbellComponent>
-<template>
-  <footer>&#169; \{{ props.footerText }}</footer>
 </template>
 
 <style>
@@ -292,16 +258,149 @@ In `theme/components/Footer.abell`-
 </AbellComponent>
 ```
 
-Now here's the fun part, the styles we write inside component are scoped for the component. 
+</div>
+<div id="build-footer-index-1">
 
-So the styles we wrote for `footer` tag in above code will not be applicable to other footer elements outside of the component.
+```abell
+\{{
+  // ...
+  const Footer = require('./components/Footer.abell');
+}}
+<body>
+  <!-- ... -->
+  <Footer />
+</body>
+```
 
+</div>
+</div>
+</div>
+
+Wohooo we will now see `© Saurabh Daware` at the bottom of our page.
+
+The styles we wrote in Footer.abell are scoped for the component so they won't be applied to the elements outside our Footer component.
+
+### Passing Props to Components
+
+Currently we have our name statically mentioned inside the Footer component. Let's pass it from `theme/index.abell` instead.
+
+<div class="tabbed-editor">
+<div class="menu">
+  <button data-editorid="build-footer-index-1">theme/index.abell</button>
+  <button class="active" data-editorid="build-footer-component">theme/components/Footer.abell</button>
+</div>
+<div class="tabs">
+<div class="active-tab" id="build-footer-component">
+
+```abell
+<AbellComponent>
+<template>
+  <footer>&#169; \{{ props.footerText }}.</footer>
+</template>
+
+<!-- ... -->
+</AbellComponent>
+```
+
+</div>
+<div id="build-footer-index-1">
+
+```abell
+\{{
+  // ...
+  const Footer = require('./components/Footer.abell');
+}}
+<body>
+  <!-- ... -->
+  <Footer props={footerText: 'Saurabh Daware'} />
+</body>
+
+
+
+
+```
+
+</div>
+</div>
+</div>
+
+*Note that `props` is the only possible attribute for Components. Any value that you want to pass, has to be inside the props attribute object.*
 
 ### Add JavaScript to Components
 
-The JavaScript that we write inside double curly brackets is executed on `npm run build` so when we want something dynamic to happen on client-side, we have to write Frontend JavaScript. 
+Now we will add year to our Footer!
 
-We can write this JavaScript inside Component using 
+```
+<AbellComponent>
+<template>
+  <footer>&#169; \{{ new Date().getFullYear() }} \{{ props.footerText }}.</footer>
+</template>
+
+<!-- ... -->
+</AbellComponent>
+```
+
+Tadaaaa 🎉 Easy Right? NO!
+
+The JavaScript that we write inside curly bracket is executed on build. Which means every year, we will have to trigger a build to reload the footer year.
+
+Orrr.. we can write client-side JavaScript to always get the latest year.
+
+**Adding Client-Side JavaScript-**
+
+```abell
+<AbellComponent>
+<template>
+  <footer>&#169; <span class="year"></span> \{{ props.footerText }}.</footer>
+</template>
+
+<!-- css... -->
+
+<script>
+  document.querySelector('.year').innerHTML = new Date().getFullYear();
+</script>
+</AbellComponent>
+```
+
+We can write our Frontend JavaScript inside `<script>` tag in our Component. This will now be executed on Client-side and it will make sure that it always fetches the latest year irrespective of build.
+
+All problems solved right? Nope...
+
+Here we are using `document.querySelector('.year')` which will look for element with `class="year"` in entire website (even outside our component) and return the top-most element.
+
+Though this will work in this case, but we need a way to make sure we don't end up selecting elements outside Component to maintain the scalability.
+
+Thus in Abell Component scripts, it is recommended to use `scopedSelector()` and `scopedSelectorAll()` instead of `document.querySelector()` or `document.querySelectorAll()`
+
+
+```abell
+<AbellComponent>
+<template>
+  <footer>&#169; <span class="year"></span> \{{ props.footerText }}.</footer>
+</template>
+
+<!-- css... -->
+
+<script>
+  scopedSelector('.year').innerHTML = new Date().getFullYear();
+</script>
+</AbellComponent>
+```
+
+This maintains the scope of the Component which will help you in maintaining scalability.
+
+## Dynamic Page Generation
+
+Next up, we will be adding blogs to our portfolio. 
+
+For blogs in our portfolio, we can't go on creating an Abell Page for every blog. So what we do instead is create one Abell Page as a layout to hold our blog content, and pass it in the markdown content of blog.
+
+We will be writing blogs in Markdown and that content should reflect in our website.
+
+1. Create `./content/hello-world/index.md` and add sample Blog Content
+2. Create `./theme/[path]/index.abell` file to hold layout for all our blogs.
+3. Add list of blogs in `./theme/index.abell`
+
 
 ## Trash
 
