@@ -120,7 +120,7 @@ Have a critical CSS/JS that needs to load as soon as user visits the page? With 
 
 ### Build JSON based websites *{ }*
 
-If you have a portfolio and you're bored of writing code to add new project, you can have all the info of your projects 
+If you have a portfolio and you're bored of writing code to add new project, you can have all the info of your projects in a JSON file and render the list in Abell 🥳
 
 <div class="row">
 <div class="col">
