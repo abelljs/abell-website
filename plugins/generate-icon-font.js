@@ -16,7 +16,9 @@ async function beforeBuild(programInfo) {
   
     const areFontsBuilt = existingIcons.every((iconFileName, index) => iconFileName === existingFonts[index]);
   
+    console.log('> Checking if icon font is already built...');
     if (areFontsBuilt) {
+      console.log('> Font already exists, skipping the font rebuild');
       return;
     }
   }

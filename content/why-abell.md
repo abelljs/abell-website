@@ -122,52 +122,62 @@ Have a critical CSS/JS that needs to load as soon as user visits the page? With 
 
 If you have a portfolio and you're bored of writing code to add new project, you can have all the info of your projects 
 
-<div class="row row-responsive">
-  <div class="col">
-
-  `./site.json`
-  ```json
-  {
-    "title": "This is my Title",
-    "projects": [
-      {
-        "name": "My cool project",
-        "description": "Look at this cool project"
-      },
-      {
-        "name": "Another project",
-        "description": "This is another project"
-      }
-    ]
-  }
-  ```
+<div class="row">
+<div class="col">
+  <div class="tabbed-editor">
+  <div class="menu">
+    <button class="active" data-editorid="build-json-projects">./projects.abell</button>
+    <button data-editorid="build-json-site">./site.json</button>
   </div>
-  <div class="col">
+  <div class="tabs">
+  <div class="active-tab" id="build-json-projects">
 
-  `./projects.abell`
-  ```abell
-  \{{ const siteData = require('./site.json'); }}
-  <html>
-    <head>
-      <title>\{{ siteData.title }}</title>
-    </head>
-    <body>
-      \{{
-        siteData.projects
-          .map(project => 
-            `<div>${project.name}</div>`
-          )
-      }}
-    </body>
-  </html>
-  ```
+```abell
+\{{ const siteData = require('./site.json'); }}
+<html>
+  <head>
+    <title>\{{ siteData.title }}</title>
+  </head>
+  <body>
+    \{{
+      siteData.projects
+        .map(project => 
+          `<div>${project.name}</div>`
+        )
+    }}
+  </body>
+</html>
+```
 
+  </div>
+  <div id="build-json-site">
+
+```json
+{
+  "title": "This is my Title",
+  "projects": [
+    {
+      "name": "My cool project",
+      "description": "Look at this cool project"
+    },
+    {
+      "name": "Another project",
+      "description": "This is another project"
+    }
+  ]
+}
+
+```
+
+  </div>
+  </div>
   </div>
 </div>
+<div class="col">
 
 **Output**
 
-`./projects.html`
+`./dist/projects.html`
 ```html
 <html>
   <head>
@@ -179,54 +189,101 @@ If you have a portfolio and you're bored of writing code to add new project, you
   </body>
 </html>
 ```
+
+</div>
+</div>
+
 [![Edit read-json](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/read-json-obfmw?fontsize=14&hidenavigation=1&module=%2Fsrc%2Findex.abell&theme=dark)
 <br/><br/>
 
-### Build Markdown based websites 📖
+### Make use of Node.js Ecosystem 📖
 
-With abell, you can import markdown content using `Abell.importContent('path/to/markdown.md')`. Even this text that you're reading right now is coming from [this website's repository](https://github.com/abelljs/abell-website/blob/main/content/index.md)
+Though there is a way to create Abell Plugins, in most of the cases you can completely remove that abstraction and make use of Node.js directly from your Abell file. 
 
-<div class="row row-responsive">
-  <div class="col">
 
-  `./content/index.md`
-  ```md
-  # Abell's Intro Blog!
-
-  I loveeee writing markdown!
-
-  Star [Abell on GitHub](https://github.com/abelljs/abell)
-  ```
+<div class="row">
+<div style="flex: 2" class="col">
+  <div class="tabbed-editor">
+  <div class="menu">
+    <button class="active" data-editorid="node-ecosystem-index">./theme/index.abell</button>
+    <button data-editorid="node-ecosystem-introduction">./theme/introduction.md</button>
   </div>
-  <div class="col">
+  <div class="tabs">
+  <div class="active-tab" id="node-ecosystem-index">
 
-  `./theme/index.abell`
-  ```abell
-  <body>
-    <section class="blog-contaier"> 
-      \{{ Abell.importContent('./index.md')  }}
-    </section>
-  </body>
-  ```
+```abell
+\{{
+  // Native Node.js Modules
+  const fs = require('fs');
+  const path = require('path');
+
+  // NPM Library 🤯 https://npmjs.org/package/remarkable
+  const { Remarkable } = require('remarkable');
+  const md = new Remarkable();
+}}
+
+<html>
+<body>
+  \{{
+    const markdownPath = path.join(__dirname, 'introduction.md');
+
+    // Read Markdown Content and render it to HTML with Remarkable
+    md.render(fs.readFileSync(markdownPath), 'utf-8'))
+  }}
+</body>
+</html>
+```
+
+  </div>
+  <div id="node-ecosystem-introduction">
+
+```md
+# Hello from Markdown
+
+![Abell Logo](https://abelljs.org/favicon.ico)
+
+This text is coming from 
+[Markdown File](https://en.wikipedia.org/wiki/Markdown) 
+in `theme/introduction.md`
+
+Don't know how to implement something in Abell? 
+Search for how to implement it in Node.js and 
+most of the things will just work out of the box 🕺🏻
+
+
+
+
+
+
+
+
+
+```
+
+  </div>
+  </div>
   </div>
 </div>
-
-*Note: As you can see in the example, the path in Abell.importContent is relative to `./content` directory*
+<div class="col">
 
 **Output**
 
 `./dist/index.html`
+<iframe src="https://tnwx7.sse.codesandbox.io/"
+  loading="lazy"
+  style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;background-color: #fff;"
+  title="vanilla-node-markdown"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
-```html
-<body>
-  <section class="blog-contaier">
-    <h1 id="abell-s-intro-blog-">Abell's Intro Blog!</h1>
-    <p>I loveeee writing markdown!</p>
-    <p>Star <a href="https://github.com/abelljs/abell">Abell on GitHub</a></p>
-  </section>
-</body>
-```
-[![Edit read-markdown](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/read-markdown-f6cet?fontsize=14&hidenavigation=1&module=%2Fsrc%2Findex.abell&theme=dark)
+
+[![Edit vanilla-node-markdown](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/vanilla-node-markdown-tnwx7?fontsize=14&hidenavigation=1&theme=dark)
+
+</div>
+</div>
+
+
 
 <br/><br/>
 

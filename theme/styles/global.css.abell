@@ -246,6 +246,11 @@ body.dark-dim .shadow {
   top: -5px;
 }
 
+.tabbed-editor .tabs > div {
+  width: 100%
+}
+
+
 .tabbed-editor .tabs > div.active-tab {
   flex: 1;
 }
