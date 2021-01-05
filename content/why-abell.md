@@ -87,34 +87,96 @@ For example, if we don't have any CSS and script in the code, this is what the o
 
 Have a critical CSS/JS that needs to load as soon as user visits the page? With Abell you can inline a CSS or JavaScript from component!
 
-`Nav.abell`
+
+<div class="row">
+<div class="col" style="flex: 2">
+<div class="tabbed-editor">
+  <div class="menu">
+    <button class="active" data-editorid="bundling-footer">./theme/components/TestFooter.abell</button>
+    <button data-editorid="bundling-index">./theme/index.abell</button>
+  </div>
+  <div class="tabs">
+  <div class="active-tab" id="bundling-footer">
+
 ```abell
 <AbellComponent>
   <template>
-    <nav>I am an important navigation bar!</nav>
+    <footer>© Abell <span class="year"></span></footer>
   </template>
 
-  <!-- 'inlined' attribute adds CSS to <head> tag of the parent page during build -->
+  <!-- 
+    'inlined' attribute adds CSS to <head> tag of the parent page during build. 
+    Without it, styles are bundled into a new file and link is added to parent page.
+   -->
   <style inlined>
-    nav {
+    footer {
       background-color: #111;
       color: #fff;
       padding: 10px 20px;
     }
-
-    /*
-      styles are scoped by default.
-      You can use 'global' attribute on style tag to make it global.
-    */
   </style>
 
   <!-- 
-    'bundle' attribute adds the content to a new bundle of given name 
-    ('nav.js' in this case) 
+    'bundle' attribute adds the content to a separate bundle of given name 
+    ('footer.js' in this case) 
+
+    scopedSelector ensures the selected element is from same component. 
+    It is replacement to document.querySelector
   -->
-  <script bundle="nav.js"> /* not so important JavaScript */ </script>
+  <script bundle="footer.js">     
+    scopedSelector('.year').innerHTML = new Date().getFullYear();
+  </script>
 </AbellComponent>
 ```
+
+  </div>
+  <div id="bundling-index">
+  
+```abell
+\{{
+  const TestFooter = require('./components/TestFooter.abell');
+}}
+
+<html>
+<body>
+  <footer>
+    This footer will be unaffected by the styles in Footer component since they are scoped.
+    <span class="year">This span will be ignored as well</span>
+  </footer>
+
+  <TestFooter />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+  </div>
+</div>
+</div>
+</div>
+
+<div class="col">
+<iframe 
+  src="examples/components.html"
+  loading="lazy"
+  style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;background-color: #fff;"
+  title="vanilla-node-markdown"
+></iframe>
+</div>
+</div>
 
 [![Edit abell-with-components](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/abell-with-components-7u32b?fontsize=14&hidenavigation=1&module=%2Fsrc%2Findex.abell&theme=dark)
 
@@ -228,7 +290,7 @@ Though there is a way to create Abell Plugins, in most of the cases you can comp
     const markdownPath = path.join(__dirname, 'introduction.md');
 
     // Read Markdown Content and render it to HTML with Remarkable
-    md.render(fs.readFileSync(markdownPath), 'utf-8'))
+    md.render(fs.readFileSync(markdownPath, 'utf-8'))
   }}
 </body>
 </html>
@@ -269,12 +331,10 @@ most of the things will just work out of the box 🕺🏻
 **Output**
 
 `./dist/index.html`
-<iframe src="https://tnwx7.sse.codesandbox.io/"
+<iframe src="examples/markdown.html"
   loading="lazy"
   style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;background-color: #fff;"
   title="vanilla-node-markdown"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
 
