@@ -87,9 +87,6 @@ For example, if we don't have any CSS and script in the code, this is what the o
 
 Have a critical CSS/JS that needs to load as soon as user visits the page? With Abell you can inline a CSS or JavaScript from component!
 
-
-<div class="row">
-<div class="col" style="flex: 2">
 <div class="tabbed-editor">
   <div class="menu">
     <button class="active" data-editorid="bundling-footer">./theme/components/TestFooter.abell</button>
@@ -166,19 +163,59 @@ Have a critical CSS/JS that needs to load as soon as user visits the page? With 
   </div>
 </div>
 </div>
-</div>
 
-<div class="col">
-<iframe 
-  src="examples/components.html"
-  loading="lazy"
-  style="width:100%; height:300px; border:0; border-radius: 4px; overflow:hidden;background-color: #fff;"
-  title="vanilla-node-markdown"
-></iframe>
-</div>
-</div>
 
-[![Edit abell-with-components](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/abell-with-components-7u32b?fontsize=14&hidenavigation=1&module=%2Fsrc%2Findex.abell&theme=dark)
+**Output**
+
+<div class="tabbed-editor">
+  <div class="menu">
+    <button class="active" data-editorid="bundling-dist-1">./dist/index.html</button>
+    <button data-editorid="bundling-dist-2">./dist/bundled-js/footer.js</button>
+  </div>
+  <div class="tabs">
+  <div class="active-tab" id="bundling-dist-1">
+
+```html
+<html>
+<head>
+  <style>
+  /* Styles are inlined because of 'inlined' attribute in component */
+
+  footer[data-abell-hCdFua] {
+    background-color:#111;
+    color:#fff;
+    padding:10px 20px;
+  }
+  </style>
+</head>
+<body>
+  <footer>
+    This footer will be unaffected by the styles in Footer component since they are scoped
+    <span class="year">This span will be ignored as well</span>
+  </footer>
+  <footer data-abell-hCdFua>© Abell <span class="year" data-abell-hCdFua></span></footer>
+
+  <!-- JS from component, goes into this file -->
+  <script src="./bundled-js/footer.js"></script>
+</body>
+</html>
+```
+
+</div>
+<div id="bundling-dist-2">
+
+```js
+// this line is injected by Abell
+const scopedSelector = (queryString) => document.querySelector(queryString + '[data-abell-hCdFua]');const scopedSelectorAll = (queryString) => document.querySelectorAll(queryString + '[data-abell-hCdFua]'); 
+
+// Your JavaScript
+scopedSelector('.year').innerHTML = new Date().getFullYear();
+  
+```
+
+</div>
+</div>
+</div>
 
 ### Build JSON based websites *{ }*
 
@@ -310,7 +347,7 @@ in `theme/introduction.md`
 
 Don't know how to implement something in Abell? 
 Search for how to implement it in Node.js and 
-most of the things will just work out of the box 🕺🏻
+most of the things will just work out of the box
 
 
 

@@ -47,13 +47,7 @@ if (hljs) {
           begin: "props={",
           end: "}",
           subLanguage: ["javascript"]
-        },
-        {
-          className: "abell",
-          begin: "<script>",
-          end: "</script>",
-          subLanguage: ["javascript"]
-        },
+        }
       ],
     };
   }
