@@ -402,6 +402,72 @@ We will be writing blogs in Markdown and that content should reflect in our webs
 3. Add list of blogs in `./theme/index.abell`
 
 
+<div class="tabbed-editor">
+  <div class="menu">
+    <button class="active" data-editorid="dynamic-1">theme/[path]/index.abell</button>
+    <button data-editorid="dynamic-2">content/hello-world/index.md</button>
+    <button data-editorid="dynamic-3">theme/index.abell</button>
+  </div>
+  <div class="tabs">
+
+<div class="active-tab" id="dynamic-1">
+
+```abell
+\{{
+  const { importContent, meta } = Abell;
+}}
+
+<html>
+<body>
+  <div class="content">
+    \{{ importContent(`${meta.$path}/index.md`) }}
+  </div>
+</body>
+</html>
+```
+
+</div>
+
+<div id="dynamic-2">
+
+```md
+# Hello World!
+
+This text is coming from `content/hello-world/index.md`
+```
+
+</div>
+<div id="dynamic-3">
+
+```abell
+\{{ 
+  const { contentArray } = Abell; 
+}}
+
+<html>
+<body>
+<section>
+  <h2>Blogs</h2>
+  <div class="blogs">
+  \{{
+    contentArray.map(meta => /* html */ `
+      <div>
+        <h3>${meta.title}</h3>
+        <p>${meta.description}</p>
+      </div>
+    `)
+  }}
+  </div>
+</section>
+</body>
+</html>
+```
+
+</div>
+
+  </div>
+</div>
+
 ## Trash
 
 ```
