@@ -2,6 +2,21 @@
 
 This tutorial is intended to explain the concepts of Abell while building a simple portfolio.
 
+If you are someone who prefers to stare at the code till it explains itself, you can just get started with [Abell Starters](../starters/)
+
+---
+- [What is Abell?](#what-is-abell)
+- [Installation and Setup](#installation-and-setup)
+- [Setting up Our Portfolio](#setting-up-our-portfolio)
+- [Adding CSS to Our Project](#adding-css-to-our-project)
+- [Require JSON to Abell Files](#require-json-to-abell-files)
+- [Building Your First Abell Component](#building-your-first-abell-component)
+  - [Let's Build a Footer for Our Portfolio](#lets-build-a-footer-for-our-portfolio)
+  - [Passing Props to Components](#passing-props-to-components)
+  - [Add JavaScript to Components](#add-javascript-to-components)
+- [Dynamic Page Generation](#dynamic-page-generation)
+---
+
 ## What is Abell?
 
 Abell is a JavaScript-based Static-Site-Generator to help you build fast and scalable static websites. It is similar to tools like Jekyll, Eleventy, Hugo, and Hexo.
@@ -434,6 +449,11 @@ We will be writing blogs in Markdown and that content should reflect in our webs
 # Hello World!
 
 This text is coming from `content/hello-world/index.md`
+
+
+
+
+
 ```
 
 </div>
@@ -468,36 +488,45 @@ This text is coming from `content/hello-world/index.md`
   </div>
 </div>
 
-## Trash
+This makes Abell loop over the `content` directory to generate pages with names of the folders.
+
+For examples in this case,
+A `dist/hello-world/index.html` will be generated with the layout of `theme/[path]/index.abell`.
+
+You can now go on creating markdown files with format `content/<blog-slug>/index.md` and the pages will be generated out of the content.
+
+So our directory structure will look like-
 
 ```
- <span class="year"></span> 
-<style>
-  footer {
-    padding: 10px 20px;
-    background-color: #ddd;
-  }
-</style>
+- content/
+  - hello-world/
+    - index.md
+  - my-second-blog/
+    - index.md
 
-<script>
-  document.querySelector('.year').innerHTML = new Date().getFullYear();
-</script>
+- theme/
+  - [path]/
+    - index.abell
+  - index.abell
 ```
 
+You can also access the information of all the content in `Abell.contentArray` variable from all `.abell` files. In above code, we're using this variable data to create a list of blogs on index page.
 
-Sample Component Syntax-
-```abell
-<AbellComponent>
-<template>
-  <!-- HTML/Abell -->
-</template>
+You can modify the default meta values (title, date, etc)  from `meta.json` file in the blog folder. 
 
-<style>
-  /* CSS (Scoped for Component By Default) */
-</style>
-
-<script>
-  // FrontEnd JavaScript
-</script>
-</AbellComponent>
+1. Create `content/hello-world/meta.json` file
+2. Add following content
+```json
+{
+  "title": "Hello, World!",
+  "description": "This is the first blog.",
+  "$createdAt": "18 June 2020"
+}
 ```
+
+You can access these values in `Abell.meta` variable in `theme/[path]/index.abell`.
+
+Read more about them in [`Abell.meta` API Reference](http://localhost:5000/guide/api-reference/#abellmeta-ltmetainfogt)
+
+
+*Warning: We do feel there is a lot of abstraction here that makes things confusing. We are looking for new ways to handle dynamic routing in final Abell version. Have an idea? do drop it in the [GitHub Discussions of "Issues with Dynamic Routing in Abell"](https://github.com/abelljs/abell/discussions/111)*
