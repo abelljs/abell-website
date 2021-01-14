@@ -27,6 +27,7 @@ body {
   --white-black: #111;
   --elevation-1: #eee;
   --elevation-2: #ddd;
+  --elevation-3: #f8f8f8;
 
   --link-color: #044F9F;
   --link-color-hover: #1081F9;
@@ -43,6 +44,7 @@ body.dark {
   --white-black: #ddd;
   --elevation-1: var(--blue-1);
   --elevation-2: #333;
+  --elevation-3: #111;
 
   --link-color: #ddd;
   --link-color: #81A7FF;
@@ -58,6 +60,7 @@ body.dim {
   --white-black: #ddd;
   --elevation-1: #1F1F47;
   --elevation-2: #8FB0FF22;
+  --elevation-3: #1F1F47;
 
   --link-color: #8FB0FF;
   --link-color-hover: #94B4FF;

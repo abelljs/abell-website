@@ -23,7 +23,7 @@
           ${
             isDirectPath
             ? ''
-            : renderRoutes(route[1].routes, true)
+            : isActive ? renderRoutes(route[1].routes, true) : ''
           }
         </li>
       `})
@@ -40,11 +40,6 @@
 </template>
 
 <style>
-  ul {
-    list-style: none;
-    padding-left: 10px;
-  }
-
   nav {
     position: fixed;
     left: 0px;
@@ -53,19 +48,46 @@
     padding-top: 100px;
     height: 100%;
     border-right: 1px solid var(--elevation-2);
-    width: 250px;
+    width: 260px;
   }
 
   nav a.menu-item {
     display: block;
-    padding: 10px 20px;
+    padding: 8px 20px;
     text-decoration: none;
-    transition: color .2s ease;
+    color: var(--font-primary);
   }
 
   nav a.menu-item.active {
     color: var(--sidebar-active-link);
     font-weight: bold;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0px;
+  }
+
+  li {
+    font-size: 1.1rem;
+  }
+
+  li li {
+    font-size: 1rem;
+    display: flex;
+  }
+
+  li li::before {
+    content: '- ';
+    padding-left: 12px;
+    font-size: larger;
+    padding-top: 2px;
+    color: var(--link-color);
+  }
+
+  li li a.menu-item {
+    padding: 5px 8px;
+    opacity: .9;
   }
 
   body.dark-dim nav a.menu-item:hover {

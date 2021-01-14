@@ -16,7 +16,7 @@ module.exports = {
     ],
     themes: [
       {
-        name: "Abell Minima",
+        name: "Blog Starter",
         author: "Abell Team",
         github: "https://github.com/abelljs/abell-starter-minima",
         cover: "https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_400/v1588342001/abell/og.png",

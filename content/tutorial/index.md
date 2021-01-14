@@ -7,7 +7,7 @@ If you are someone who prefers to stare at the code till it explains itself, you
 ---
 - [What is Abell?](#what-is-abell)
 - [Installation and Setup](#installation-and-setup)
-- [Setting up Our Portfolio](#setting-up-our-portfolio)
+- [Setting Up Our Portfolio](#setting-up-our-portfolio)
 - [Adding CSS to Our Project](#adding-css-to-our-project)
 - [Require JSON to Abell Files](#require-json-to-abell-files)
 - [Building Your First Abell Component](#building-your-first-abell-component)
