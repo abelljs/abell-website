@@ -2,7 +2,7 @@
 
 This tutorial is intended to explain the concepts of Abell while building a simple portfolio.
 
-If you are someone who prefers to stare at the code till it explains itself, you can just get started with [Abell Starters](../starters/)
+If you are someone who prefers to stare at the code till it explains itself, you can get started with [Abell Starters](../starters/)
 
 ---
 - [What is Abell?](#what-is-abell)
@@ -21,7 +21,7 @@ If you are someone who prefers to stare at the code till it explains itself, you
 
 Abell is a JavaScript-based Static-Site-Generator to help you build fast and scalable static websites. It is similar to tools like Jekyll, Eleventy, Hugo, and Hexo.
 
-Abell files are just like HTML files except you can write JavaScript in double curly brackets which is executed to build you a static page.
+Abell files are like HTML files except you can write JavaScript in double curly brackets which is executed to build you a static page.
 
 **Input - `index.abell`**
 ```abell
@@ -123,7 +123,7 @@ Thus `siteTitle` variable defined in `abell.config.js` can be used in `.abell` f
 
 ## Adding CSS to Our Project
 
-Fun fact! It's literally just same as you do with HTML. 
+Fun fact! It's literally same as you do with HTML. 
 
 1. Create `theme/index.css`
 2. Add `<link>` to our `theme/index.abell` file.
