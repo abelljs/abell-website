@@ -1,9 +1,15 @@
 <AbellComponent>
-{{ const { importContent, contentPath, $path } = props }}
+{{ 
+  const { importContent, contentPath, $path, $root } = props;
+  const Footer = require('./Footer.abell');
+}}
 <template>
-  <main class="container {{ $path }}">
-    {{ importContent(contentPath) }}
-  </main>
+  <div class="main-content">
+    <main class="container {{ $path }}">
+      {{ importContent(contentPath) }}
+    </main>
+    <Footer props={$root} />
+  </div>
 </template>
 <style bundle="docs.css">
   h1 {
@@ -24,8 +30,8 @@
     opacity: .7;
   }
 
-  main {
-    margin-left: 250px;
+  .main-content {
+    margin-left: 260px;
   }
 
   main.container {

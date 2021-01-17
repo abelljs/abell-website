@@ -6,6 +6,8 @@
   const Hero = require('./components/Hero.abell');
   const Sponsors = require('./components/Sponsors.abell');
   const WhyAbell = require('./components/WhyAbell.abell');
+  const GitHubContributors = require('./components/GitHubContributors.abell');
+  const Footer = require('./components/Footer.abell');
 }}
 <html>
 <head>
@@ -24,8 +26,10 @@
   <main>
     <Sponsors />
     <WhyAbell props={importContent} />
+    <GitHubContributors />
   </main>
 
+  <Footer props={$root} />
 
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script defer src="./static-js/main.js"></script>

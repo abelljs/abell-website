@@ -2,13 +2,13 @@
 
 ---
 - [New Template Engine](#new-template-engine-to-flatten-the-learning-curve-and-faster-builds-💅)
-- [Output Only What is Needed](#output-what-is-needed)
+- [Output What is Needed](#output-what-is-needed)
 - [Control Over Bundling](#control-over-bundling)
 - [Build JSON Based Websites](#build-json-based-websites--)
-- [Build Markdown Based Websites](#build-markdown-based-websites-📖)
+- [Make use of Node.js Ecosystem](#make-use-of-nodejs-ecosystem)
 ---
 
-### New template engine to flatten the learning curve and faster builds 💅
+### New Template Engine to Flatten the Learning Curve and Faster Builds 💅
 
 Abell files are HTML files which allow you to write JS inside curly brackets so you can use JavaScript to loop over data, require static data, and use conditions in the HTML. Styling, client-side scripting and almost everything else stays same as you would do in vanilla HTML.
 
@@ -83,7 +83,7 @@ For example, if we don't have any CSS and script in the code, this is what the o
 </div>
 </div>
 
-### Control over bundling!
+### Control Over Bundling!
 
 Have a critical CSS/JS that needs to load as soon as user visits the page? With Abell you can inline a CSS or JavaScript from component!
 
@@ -217,7 +217,7 @@ scopedSelector('.year').innerHTML = new Date().getFullYear();
 </div>
 </div>
 
-### Build JSON based websites *{ }*
+### Build JSON Based Websites *{ }*
 
 If you have a portfolio and you're bored of writing code to add new project, you can have all the info of your projects in a JSON file and render the list in Abell 🥳
 
@@ -295,7 +295,7 @@ If you have a portfolio and you're bored of writing code to add new project, you
 [![Edit read-json](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/read-json-obfmw?fontsize=14&hidenavigation=1&module=%2Fsrc%2Findex.abell&theme=dark)
 <br/><br/>
 
-### Make use of Node.js Ecosystem 📖
+### Make Use of Node.js Ecosystem
 
 Though there is a way to create Abell Plugins, in most of the cases you can completely remove that abstraction and make use of Node.js directly from your Abell file. 
 
