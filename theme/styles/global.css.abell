@@ -71,7 +71,10 @@ body.dim {
   --footer-background: var(--blue-2);
 }
 
-
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 body {
   background-color: var(--background-primary);
   color: var(--font-color-primary);

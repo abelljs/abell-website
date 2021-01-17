@@ -150,6 +150,37 @@
     main.container {
       padding: 30px;
       margin-left: 0px;
+      word-break: break-word;
+    }
+
+    main.container.getting-started {
+      padding: 100px 10px 30px;
+    }
+
+    .main-content {
+      margin-left: 0px;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .docs-tile {
+      width: calc(100% - 30px);
+      margin: 10px 0px;
+      text-align: left;
+    }
+
+    .docs-learn-options {
+      text-align: center;
+    }
+
+    main.container.getting-started .sub-container {
+      padding: 0px 10px;
     }
   }
 </style>
