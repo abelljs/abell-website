@@ -103,6 +103,12 @@
       font-size: 0.9rem;
     }
 
+    .icon-credits {
+      font-size: .8rem;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
     .copyright-container {
       padding: 20px 20px;
       font-size: 0.9rem;

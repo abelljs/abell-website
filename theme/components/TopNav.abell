@@ -16,7 +16,7 @@
     </a>
     <nav>
       <a class="nav-item no-decoration" href="{{ props.$root }}/getting-started/">Documentation</a>
-      <DarkModeToggle />
+      <span class="dark-mode-toggle-top-nav"><DarkModeToggle /></span>
     </nav>
   </header>
 </template>
@@ -56,11 +56,38 @@
     margin-left: 45px;
   }
 
+  .dark-mode-toggle-top-nav {
+    position: relative;
+    right: 12px;
+  }
+
   @media (max-width: 768px) {
     header {
-      display: none;
+      padding: 0px 12px;
+      display: flex;
+      white-space: nowrap;
     }
-  
+
+    nav {
+      flex: 1;
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .brand-name {
+      font-size: 1rem;
+      margin-left: 36px;
+    }
+
+    .nav-item {
+      padding: 25px 10px;
+      font-size: .9rem;
+    }
+
+    .brand-logo {
+      width: 30px;
+    }
   }
 </style>
 </AbellComponent>

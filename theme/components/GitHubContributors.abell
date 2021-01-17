@@ -11,12 +11,21 @@
   h2 {
     font-size: 3rem;
   }
+
+  @media (max-width: 768px) {
+    .github-contributors-holder {
+      white-space: nowrap;
+      overflow-x: auto;
+      padding: 30px 0px;
+    }
+  }
 </style>
 <style global>
   .contributor {
     padding: 10px;
     display: inline-block;
   }
+
 </style>
 <script bundle="index.js">
   (async () => {

@@ -224,6 +224,14 @@ body.dark-dim .shadow {
   .row.row-responsive {
     display: block;
   }
+
+  .container {
+    padding: 60px 10px;
+  }
+
+  .row > .col:first-child {
+    padding-right: 0px;
+  }
 }
 </style>
 
@@ -355,6 +363,12 @@ iframe {
 }
 .hljs-link {
   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .tabbed-editor .menu {
+    overflow-x: auto;
+  }
 }
 </style>
 </AbellComponent>

@@ -39,5 +39,20 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+
+  @media (max-width: 768px) {
+    .component-hero {
+      padding-top: 90px;
+    }
+
+    .hero-gradient {
+      font-size: 2.6rem;
+    }
+
+    .hljs-shell {
+      font-size: .8rem;
+    }
+  }
 </style>
 </AbellComponent>

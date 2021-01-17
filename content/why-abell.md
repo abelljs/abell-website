@@ -221,7 +221,7 @@ scopedSelector('.year').innerHTML = new Date().getFullYear();
 
 If you have a portfolio and you're bored of writing code to add new project, you can have all the info of your projects in a JSON file and render the list in Abell 🥳
 
-<div class="row">
+<div class="row row-responsive">
 <div class="col">
   <div class="tabbed-editor">
   <div class="menu">
@@ -300,7 +300,7 @@ If you have a portfolio and you're bored of writing code to add new project, you
 Though there is a way to create Abell Plugins, in most of the cases you can completely remove that abstraction and make use of Node.js directly from your Abell file. 
 
 
-<div class="row">
+<div class="row row-responsive">
 <div style="flex: 2" class="col">
   <div class="tabbed-editor">
   <div class="menu">
