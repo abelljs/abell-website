@@ -25,7 +25,14 @@ const routes = {
   'API Reference': {
     path: '/guide/api-reference/',
     routes: {
-      'Abell.$root': '/guide/api-reference/#abellroot-ltstringgt'
+      'Abell.$root': '/guide/api-reference/#abellroot-ltstringgt',
+      'Abell.$path': '/guide/api-reference/#abellpath-ltstringgt',
+      'Abell.globalMeta': '/guide/api-reference/#abellglobalmeta-ltanygt',
+      'Abell.importContent': '/guide/api-reference/#abellimportcontent-ltfunctiongt',
+      'Abell.meta': '/guide/api-reference/#abellmeta-ltmetainfogt',
+      'Abell.contentArray': '/guide/api-reference/#abellcontentarray-ltmetainfo9193gt',
+      'Abell.contentObj': '/guide/api-reference/#abellcontentobj-objectltstring-metainfogt',
+      'Abell.programInfo': '/guide/api-reference/#abellprograminfo-ltobjectgt',
     }
   }
 }

@@ -32,7 +32,7 @@ To know what all is there in your `Abell` variable, you can also console log the
   - [Abell.meta.$path `<string>`](#abellmetapath-ltstringgt)
   - [Abell.meta.$createdAt `<Date>`](#abellmetacreatedat-ltdategt)
   - [Abell.meta.$modifiedAt `<Date>`](#abellmetamodifiedat-ltdategt)
-- [Abell.contentArray `<MetaInfo[]>`](#abellcontentarray-ltmetainfogt)
+- [Abell.contentArray `<MetaInfo[]>`](#abellcontentarray-ltmetainfo9193gt)
 - [Abell.contentObj `{Object.<string, MetaInfo>}`](#abellcontentobj-objectltstring-metainfogt)
 - [Abell.programInfo `{Object}`](#abellprograminfo-ltobjectgt)
 
