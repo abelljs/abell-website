@@ -136,6 +136,7 @@
   code.file-system {
     font-family: var(--font-family-primary);
     font-size: .9rem;
+    line-height: 1.5rem !important;
   }
 
 
