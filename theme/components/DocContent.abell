@@ -78,7 +78,7 @@
     padding-left: 30px;
   }
 
-
+  /* /starters/ START */
   .theme-container {
     display: inline-block;
     margin-bottom: 20px;
@@ -117,6 +117,7 @@
     font-size: 11pt;
     padding: 10px 0px;
   }
+
   .theme-use code {
     overflow-x: scroll;
     white-space: nowrap;
@@ -129,6 +130,12 @@
 
   .theme-create-locally code::-webkit-scrollbar-thumb {
     background-color: #ccc;
+  }
+  /* /starters END */
+
+  code.file-system {
+    font-family: var(--font-family-primary);
+    font-size: .9rem;
   }
 
 

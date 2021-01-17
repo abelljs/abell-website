@@ -34,7 +34,7 @@ Now you can make changes in the website and development server will reload itsel
 ## Folder Structure
 
 <pre>
-<code class="hljs hljs-shell language-sh" style="line-height: 1.5;">
+<code class="hljs hljs-shell language file-system" style="line-height: 1.5;">
 abell-starter-minima/
 |
 |- 📂 content/
@@ -61,7 +61,7 @@ abell-starter-minima/
 With this structure, you will get a following files generated on `npm run build`.
 
 <pre>
-<code class="hljs hljs-shell language-sh" style="line-height: 1.5;">
+<code class="hljs hljs-shell language-sh file-system" style="line-height: 1.5;">
 abell-starter-minima/
 |
 |- 📂 dist/
