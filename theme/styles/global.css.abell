@@ -271,6 +271,10 @@ body.dark-dim .shadow {
   border-radius: 0px 0px 8px 8px;
 }
 
+iframe {
+  border: 1px solid var(--elevation-2) !important;
+}
+
 .hljs {
   display: block;
   overflow-x: auto;
