@@ -13,8 +13,21 @@ const routes = {
       'Dynamic Page Generation': '/tutorial/#dynamic-page-generation',
     }
   },
-  'Syntax Guide': '/guide/syntax-guide/',
-  'API Reference': '/guide/api-reference/',
+  'Syntax Guide': {
+    path: '/guide/syntax-guide/',
+    routes: {
+      'Basic Syntax': '/guide/syntax-guide/#basic-syntax',
+      'Debugging in Abell': '/guide/syntax-guide/#debugging-in-abell',
+      'Abell Components': '/guide/syntax-guide/#abell-components',
+      'Bundling in Abell': '/guide/syntax-guide/#bundling-in-abell',
+    }
+  },
+  'API Reference': {
+    path: '/guide/api-reference/',
+    routes: {
+      'Abell.$root': '/guide/api-reference/#abellroot-ltstringgt'
+    }
+  }
 }
 
 module.exports = routes;
