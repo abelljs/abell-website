@@ -56,5 +56,57 @@ if (hljs) {
   hljs.initHighlightingOnLoad();
 }
 
+// smooth scroll to link
+const anchorlinks = document.querySelectorAll('a[href*="#"]')
+for (const item of anchorlinks) { 
+  item.addEventListener('click', (e)=> {
+    const href = item.getAttribute('href');
+    const hashval = href.slice(href.lastIndexOf('#'));
+    const target = document.querySelector(hashval)
+    target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    })
+    history.pushState(null, null, hashval)
+    e.preventDefault();
+  })
+}
+
+
+
+// On scroll change active link
+
+function throttle(method, scope) {
+  clearTimeout(method._tId);
+  method._tId= setTimeout(function(){
+      method.call(scope);
+  }, 100);
+}
+
+const halfHeight = window.innerHeight / 2;
+
+function onScroll() {
+  const sections = Array.from(anchorlinks).filter(anchorLink => anchorLink.classList.contains('menu-item'));
+  const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  
+  for (let i = 0; i < sections.length; i++) {
+    try {
+      const currLink = sections[i];
+      const href = currLink.getAttribute('href');
+      const hashval = href.slice(href.lastIndexOf('#'));
+      const refElement = document.querySelector(hashval);
+      if ((refElement.offsetTop - halfHeight) <= scrollPos) {
+        currLink.classList.add('done');
+      } else {
+        currLink.classList.remove('done');
+      }
+    } catch (err) {}
+  }
+};
+
+onScroll();
+window.document.addEventListener('scroll', () => throttle(onScroll));
+
+
 // check if user is tabbing (a11y)
 window.addEventListener('keydown', e => e.keyCode === 9 && (document.body.classList.add("user-is-tabbing")));

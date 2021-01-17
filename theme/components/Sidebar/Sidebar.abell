@@ -18,7 +18,9 @@
             class="menu-item ${isActive ? 'active' : ''}" 
             href="${isDirectPath ? route[1] : route[1].path}"
           >
-            ${route[0]}
+            <i class="i i-line">-</i>
+            <i class="i i-check"></i>
+            <span class="menu-text">${route[0]}</span>
           </a>
           ${
             isDirectPath
@@ -45,10 +47,11 @@
     left: 0px;
     top: 0px;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 90px;
     height: 100%;
     border-right: 1px solid var(--elevation-2);
     width: 260px;
+    overflow-y: auto;
   }
 
   nav a.menu-item {
@@ -56,6 +59,10 @@
     padding: 8px 20px;
     text-decoration: none;
     color: var(--font-primary);
+  }
+
+  nav a.menu-item .i {
+    display: none;
   }
 
   nav a.menu-item.active {
@@ -74,20 +81,48 @@
 
   li li {
     font-size: 1rem;
-    display: flex;
   }
 
-  li li::before {
+  li li a.menu-item .i {
     content: '- ';
     padding-left: 12px;
     font-size: larger;
     padding-top: 2px;
     color: var(--link-color);
+    display: none;
+    width: 30px;
   }
 
   li li a.menu-item {
-    padding: 5px 8px;
+    display: flex;
+    padding: 0px 0px;
+    padding-left: 8px;
+  }
+
+  li li a.menu-item .i-check {
+    font-size: .8rem;
+    position: relative;
+    top: 6px;
+    left: -2px;
+    text-shadow: 0px 0px 8px #ff99;
+  }
+
+  li li a.menu-item.done .i-check,
+  li li a.menu-item .i-line {
+    display: inline-block;
+  }
+
+  li li a.menu-item .i-check,
+  li li a.menu-item.done .i-line {
+    display: none;
+  }
+
+  li li a.menu-item .menu-text {
+    display: inline-block;
+    padding: 5px 8px 5px 0px;
+    margin-left: 0px;
     opacity: .9;
+    flex: 1;
   }
 
   body.dark-dim nav a.menu-item:hover {
