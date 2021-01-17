@@ -153,6 +153,10 @@
       word-break: break-word;
     }
 
+    main.container {
+      padding-top: 100px;
+    }
+    
     main.container.getting-started {
       padding: 100px 10px 30px;
     }

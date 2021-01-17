@@ -36,10 +36,19 @@
 }}
 
 <template>
-  <nav class="dark-transition" data-transit-props="background-color, border">
+  <nav class="dark-transition sidebar" data-transit-props="background-color, border">
     {{ renderRoutes(routes) }}   
   </nav>
+  <div class="nav-overlay"></div>
 </template>
+
+<script>
+  if (scopedSelector('.nav-overlay')) {
+    scopedSelector('.nav-overlay').addEventListener('click', () => {
+      document.body.classList.remove('open-nav');
+    })
+  }
+</script>
 
 <style>
   nav {
@@ -68,6 +77,10 @@
   nav a.menu-item.active {
     color: var(--sidebar-active-link);
     font-weight: bold;
+  }
+
+  .nav-overlay {
+    display: none;
   }
 
   ul {
@@ -133,7 +146,24 @@
 
   @media (max-width: 768px) {
     nav {
-      display: none;
+      background-color: var(--background-primary);
+      left: -100%;
+      transition: left .2s ease;
+    }
+
+    body.open-nav nav.sidebar {
+      left: 0%;
+      transition: left .3s ease;
+    }
+
+    body.open-nav nav.sidebar + .nav-overlay {
+      display: block;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      height: 100%;
+      width: 100%;
+      background-color: #0008;
     }
   }
 </style>

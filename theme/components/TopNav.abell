@@ -14,12 +14,23 @@
       <img class="brand-logo" src="{{ props.$root }}/favicon.ico" />
       <span class="brand-name"><strong>Abell</strong> <small>(v0.8)</small></span>
     </a>
-    <nav>
+    <nav class="doc-dark-mode-button">
       <a class="nav-item no-decoration" href="{{ props.$root }}/getting-started/">Documentation</a>
       <span class="dark-mode-toggle-top-nav"><DarkModeToggle /></span>
     </nav>
+    <div class="hamburger-menu">
+      <button id="ham-toggle-button">
+        <i class="i i-bars"></i>
+        <i class="i i-times"></i>
+      </button>
+    </div>
   </header>
 </template>
+<script>
+  scopedSelector('#ham-toggle-button').addEventListener('click', () => {
+    document.body.classList.toggle('open-nav');
+  })
+</script>
 <style>
   header {
     padding: 0px 190px;
@@ -35,9 +46,14 @@
     color: var(--color-primary);
   }
 
-  nav {
+  nav,
+  .hamburger-menu {
     display: inline-block;
     float: right;
+  }
+
+  .hamburger-menu {
+    display: none;
   }
 
   .nav-item {
@@ -68,11 +84,39 @@
       white-space: nowrap;
     }
 
-    nav {
+    nav,
+    .hamburger-menu {
       flex: 1;
       text-align: right;
       display: flex;
       justify-content: flex-end;
+    }
+
+    .hamburger-menu > button {
+      padding: 0px 12px;
+      background-color: transparent;
+      border: none;
+      color: var(--font-primary);
+    }
+
+    body:not(.index) nav.doc-dark-mode-button,
+    body.index .hamburger-menu {
+      display: none;
+    }
+
+    body:not(.index) .hamburger-icon {
+      display: inline-block !important;
+    }
+
+    body .hamburger-menu > button .i-times,
+    body.open-nav .hamburger-menu > button .i-bars {
+      display: none;
+      transition: transform .3s ease;
+    }
+
+    body.open-nav .hamburger-menu > button .i-times,
+    body .hamburger-menu > button .i-bars {
+      display: inline-block;
     }
 
     .brand-name {
