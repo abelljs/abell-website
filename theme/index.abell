@@ -1,10 +1,11 @@
 {{
-  const { $root, $path, importContent } = Abell;
+  const { $root, $path, importContent, globalMeta } = Abell;
 
   const GlobalCSS = require('./styles/global.css.abell');
   const TopNav = require('./components/TopNav.abell');
   const Hero = require('./components/Hero.abell');
   const Sponsors = require('./components/Sponsors.abell');
+  const Themes = require('./components/Themes.abell');
   const WhyAbell = require('./components/WhyAbell.abell');
   const GitHubContributors = require('./components/GitHubContributors.abell');
   const Footer = require('./components/Footer.abell');
@@ -25,6 +26,7 @@
   
   <main>
     <Sponsors />
+    <Themes props={ themes: globalMeta.themes } />
     <WhyAbell props={importContent} />
     <GitHubContributors />
   </main>

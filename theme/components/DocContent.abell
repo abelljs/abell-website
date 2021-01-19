@@ -1,10 +1,10 @@
 <AbellComponent>
 {{ 
-  const { importContent, contentPath, $path, $root } = props;
+  const { importContent, contentPath, isSidebarVisible, $path, $root } = props;
   const Footer = require('./Footer.abell');
 }}
 <template>
-  <div class="main-content">
+  <div class="main-content {{ isSidebarVisible === false ? 'hide-sidebar' : '' }}">
     <main class="container {{ $path }}">
       {{ importContent(contentPath) }}
     </main>
@@ -34,8 +34,16 @@
     margin-left: 260px;
   }
 
+  .main-content.hide-sidebar {
+    margin-left: 0px;
+  }
+
   main.container {
     padding: 100px 200px 100px 90px;
+  }
+
+  .main-content.hide-sidebar main.container {
+    padding: 150px 200px;
   }
 
   main.container.getting-started {
@@ -83,61 +91,6 @@
   ol {
     padding-left: 30px;
   }
-
-  /* /starters/ START */
-  .theme-container {
-    display: inline-block;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    width: 350px;
-  }
-
-  .theme-info {
-    padding: 10px 10px 20px 10px;
-    background-color: var(--elevation-3);
-    width: 100%;
-  }
-
-  .theme-info > .theme-name {
-    font-weight: bold;
-    font-size: 17pt;
-    padding: 5px 0px;
-    margin: 0px 0px;
-  }
-
-  .theme-links {
-    padding-top: 10px;
-  }
-
-  .theme-links > a {
-    margin-right: 10px;
-  }
-
-  .theme-deploy a {
-    display: inline-block;
-    padding: 1px;
-    margin: 0px 5px 0px 0px;
-  }
-
-  .theme-use {
-    font-size: 11pt;
-    padding: 10px 0px;
-  }
-
-  .theme-use code {
-    overflow-x: scroll;
-    white-space: nowrap;
-    background-color: var(--elevation-2);
-  }
-
-  .theme-create-locally code::-webkit-scrollbar {
-    height: 2px;
-  }
-
-  .theme-create-locally code::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-  }
-  /* /starters END */
 
   code.file-system {
     font-family: var(--font-family-primary);

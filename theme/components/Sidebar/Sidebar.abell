@@ -36,6 +36,7 @@
 }}
 
 <template>
+  <div class="nav-placeholder"></div>
   <nav class="dark-transition sidebar" data-transit-props="background-color, border">
     {{ renderRoutes(routes) }}   
   </nav>

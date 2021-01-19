@@ -19,12 +19,17 @@
 <body class="dark-transition">
   <TopNav props={$root, $path} />
   
-  <Sidebar props={$root, $path} />
+  {{
+    meta.isSidebarVisible === false
+    ? null
+    : <Sidebar props={$root, $path} />
+  }}
   <DocContent 
     props={
       contentPath: `${meta.$path}/index.md`, 
       importContent,
-      $path
+      $path,
+      isSidebarVisible: meta.isSidebarVisible
     } 
   />
 
