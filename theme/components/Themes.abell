@@ -41,6 +41,20 @@
     font-size: 3rem;
     margin-bottom: 50px;
   }
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    section {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .theme-container {
+      max-width: 100%;
+    }
+  }
 </style>
 <script>
   
