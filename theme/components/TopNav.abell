@@ -99,12 +99,12 @@
       color: var(--font-primary);
     }
 
-    body:not(.index) nav.doc-dark-mode-button,
-    body.index .hamburger-menu {
+    body:not(.no-sidebar) nav.doc-dark-mode-button,
+    body.no-sidebar .hamburger-menu {
       display: none;
     }
 
-    body:not(.index) .hamburger-icon {
+    body:not(.no-sidebar) .hamburger-icon {
       display: inline-block !important;
     }
 

@@ -16,7 +16,7 @@
   <title>Abell.js - A Static Site Generator for JavaScript Developers</title>
   <GlobalCSS />
 </head>
-<body class="dark-transition">
+<body class="dark-transition {{ meta.isSidebarVisible === false ? 'no-sidebar' : '' }}">
   <TopNav props={$root, $path} />
   
   {{

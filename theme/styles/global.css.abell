@@ -145,6 +145,8 @@ li {
   background-color: var(--blue-3) !important;
   color: var(--blue-10) !important;
   text-decoration: none !important;
+  border: none;
+  cursor: pointer;
 }
 
 .button-secondary {

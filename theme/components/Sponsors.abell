@@ -16,6 +16,7 @@
       `)
     }}
     </div>
+    <a href="become-a-sponsor" class="button-secondary">Become a Sponsor</a>
   </section>
 </template>
 <style bundle="index.css">

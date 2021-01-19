@@ -102,11 +102,13 @@
   @media (max-width: 768px) {
     main.container {
       padding: 30px;
+      padding-top: 100px;
       margin-left: 0px;
       word-break: break-word;
     }
 
-    main.container {
+    .main-content.hide-sidebar main.container {
+      padding: 30px;
       padding-top: 100px;
     }
     
