@@ -53,6 +53,7 @@
     }
     .theme-container {
       max-width: 100%;
+      margin-bottom: 50px !important;
     }
   }
 </style>
