@@ -8,12 +8,50 @@
 }}
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'UA-125454191-5');
+  </script>
+
+
+  <meta charset="UTF-8"/>
+  <meta name="description" content="This section is an overview of Abell Documentation and will help you navigate to the page you need."/>
+  <link rel="shortcut icon" href="{{ $root }}/favicon.ico" type="image/x-icon" />
+
+  {{ 
+    const ogImage = meta.ogImage
+      ? meta.ogImage
+      : `https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/g_center,c_fit,e_colorize:50,co_rgb:c2d4ff,l_text:roboto_33_bold:${ encodeURIComponent(meta.title.replace(/\,/g, "%2C").replace(/\//g, "%2F")) },r_0,w_300,y_0,x_90/v1611168187/abell/docs2021-og.png` 
+  }}
+  <!-- OPEN GRAPH -->
+  <meta name="og:title" content="{{ meta.title }}"/>
+  <meta name="og:description" content="This section is an overview of Abell Documentation and will help you navigate to the page you need."/>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Abell Documentation" />
+  <meta property="og:url" content="https://abelljs.org" />
+  
+  <meta name="twitter:card" content="summary_large_image"></meta>
+  <meta name="twitter:creator" content="@AbellLand"></meta>
+  
+  <meta property="og:image:secure_url" itemprop="image" content="{{ ogImage }}"/>
+  <meta property="og:image" itemprop="image" content="{{ ogImage }}"/>
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="300" />
+  <meta property="og:image:alt" content="OG image of Abell Docs that shows the title of page" />
+  <meta property="og:description" content="This section is an overview of Abell Documentation and will help you navigate to the page you need." />
+  <meta property="og:site_name" content="abelljs.org"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="{{ $root }}/fonts/i.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <title>Abell.js - A Static Site Generator for JavaScript Developers</title>
+  <title>{{ meta.title }} | Abell.js - a JavaScript based Static-Site-Generator to Create Simple and Fast Static-Sites.</title>
   <GlobalCSS />
 </head>
 <body class="dark-transition {{ meta.isSidebarVisible === false ? 'no-sidebar' : '' }}">

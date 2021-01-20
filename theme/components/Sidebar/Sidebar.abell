@@ -35,10 +35,15 @@
   }
 }}
 
+{{
+  const DarkModeToggle = require('../DarkModeToggle.abell');
+}}
+
 <template>
   <div class="nav-placeholder"></div>
   <nav class="dark-transition sidebar" data-transit-props="background-color, border">
-    {{ renderRoutes(routes) }}   
+    {{ renderRoutes(routes) }}
+    <DarkModeToggle props={classes: 'float-false sidebar-button'} />
   </nav>
   <div class="nav-overlay"></div>
 </template>
@@ -86,6 +91,14 @@
   nav a.menu-item.active {
     color: var(--sidebar-active-link);
     font-weight: bold;
+  }
+
+  .theme-button {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 10px 20px;
+    display: none;
   }
 
   .nav-overlay {
@@ -175,6 +188,10 @@
       width: 100%;
       background-color: #0008;
       z-index: 1;
+    }
+
+    .theme-button {
+      display: block;
     }
   }
 </style>

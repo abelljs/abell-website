@@ -1,9 +1,9 @@
 <AbellComponent>
 <template>
   <button onclick="toggleTheme(this)" aria-label="Activate Dim Mode" aria-pressed="false" title="Toggle Theme" class="dark-mode-toggle nav-item {{ props.classes }} ">
-    <span class="sun"><i class="i-sun text-l"></i></span>
-    <span class="cloud"><i class="i-cloud-sun text-l"></i></span>
-    <span class="moon"><i class="i-moon"></i></span>
+    <span class="sun"><i class="i-sun text-l"></i> <span class="mode-label">Theme: Light</span></span>
+    <span class="cloud"><i class="i-cloud-sun text-l"></i> <span class="mode-label">Theme: Dim</span></span>
+    <span class="moon"><i class="i-moon"></i> <span class="mode-label">Theme: Dark</span></span>
   </button>
 </template>
 
@@ -17,6 +17,34 @@
     padding: 17px 20px !important;
     width: 40px;
   }
+  .dark-mode-toggle.float-false {
+    float: unset;
+  }
+
+  .dark-mode-toggle.sidebar-button {
+    position: absolute;
+    bottom: 0px;
+    display: none;
+    width: 100%;
+    text-align: left;
+    background-color: var(--elevation-3);
+    max-height: 60px;
+  }
+
+  .mode-label {
+    display: none;
+  }
+
+  .dark-mode-toggle.sidebar-button .mode-label {
+    display: inline-block;
+    color: var(--font-color-primary);
+    font-weight: bold;
+    font-size: .9rem;
+    position: absolute;
+    left: 60px;
+    bottom: 16px;
+  }
+
   body:not(.user-is-tabbing) .dark-mode-toggle:focus {
     outline: none;
   }
@@ -72,6 +100,12 @@
 
   body.dark .dark-mode-toggle .moon {
     display: inline-block;
+  }
+
+  @media (max-width: 768px) {
+    .dark-mode-toggle.sidebar-button {
+      display: block;
+    }
   }
 </style>
 
