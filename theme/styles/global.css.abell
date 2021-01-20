@@ -244,6 +244,7 @@ body.dark-dim .shadow {
 
 .tabbed-editor .menu {
   display: flex;
+  white-space: nowrap;
 }
 
 .tabbed-editor .menu > button {
@@ -433,6 +434,11 @@ iframe {
 @media (max-width: 768px) {
   .tabbed-editor .menu {
     overflow-x: auto;
+  }
+  
+  .theme-container {
+    max-width: 100%;
+    margin-bottom: 50px !important;
   }
 }
 </style>

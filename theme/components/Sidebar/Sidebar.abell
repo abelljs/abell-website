@@ -49,6 +49,14 @@
       document.body.classList.remove('open-nav');
     })
   }
+
+  if (window.matchMedia("(max-width: 768px)")) {
+    scopedSelectorAll('nav a.menu-item').forEach((menuItem) => 
+      menuItem.addEventListener('click', () => {
+        document.body.classList.remove('open-nav');
+      })
+    )
+  }
 </script>
 
 <style>
@@ -155,6 +163,7 @@
     body.open-nav nav.sidebar {
       left: 0%;
       transition: left .3s ease;
+      z-index: 2;
     }
 
     body.open-nav nav.sidebar + .nav-overlay {
@@ -165,6 +174,7 @@
       height: 100%;
       width: 100%;
       background-color: #0008;
+      z-index: 1;
     }
   }
 </style>

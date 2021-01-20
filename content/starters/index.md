@@ -24,7 +24,7 @@
 
 ## Setting Up Project Locally
 
-- [git clone <new-repository-url>](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) (You can skip this if you've created project locally with `create-abell-app`)
+- `git clone <new-repository-url>` (You can skip this if you've created project locally with `create-abell-app`)
 - `cd <project-name>` 
 - `npm install` # to install dependencies (`create-abell-app` executes this by default)
 - `npm run dev`  # to run a development server.
