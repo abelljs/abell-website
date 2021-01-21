@@ -370,13 +370,13 @@ iframe {
 .hljs-doctag,
 .hljs-keyword,
 .hljs-formula {
-  color: #c678dd;
+  color: #CC85E0;
 }
 .hljs-section,
 .hljs-name,
 .hljs-selector-tag,
 .hljs-deletion {
-  color: #e06c75;
+  color: #E5858D;
 }
 
 .hljs-subst {
@@ -397,7 +397,7 @@ iframe {
 .hljs-addition,
 .hljs-attribute,
 .hljs-meta-string {
-  color: #98c379;
+  color: #A0C884;
 }
 .hljs-built_in,
 .hljs-class .hljs-title {
