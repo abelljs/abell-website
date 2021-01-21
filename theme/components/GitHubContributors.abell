@@ -65,7 +65,7 @@
         .sort((a, b) => b.contributions - a.contributions)
         .map(contributor => /* html */ `
           <a title="${contributor.username}" class="contributor" href="${contributor.profile}">
-            <img alt="GitHub profile picture of ${contributor.username}" width="70" src="${contributor.image}" style="border-radius: 100%;"/>
+            <img loading="lazy" alt="GitHub profile picture of ${contributor.username}" width="70" src="${contributor.image}" style="border-radius: 100%;"/>
           </a>
         `).join('') ;
   })()
