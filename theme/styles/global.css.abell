@@ -291,63 +291,63 @@ iframe {
 
 
 /* /starters/ START */
-  .theme-container {
-    display: inline-block;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    width: 350px;
-  }
+.theme-container {
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  width: 350px;
+}
 
-  .theme-container img {
-    border-bottom: 1px solid var(--elevation-2);
-  }
+.theme-container img {
+  border-bottom: 1px solid var(--elevation-2);
+}
 
-  .theme-info {
-    padding: 10px 10px 20px 10px;
-    background-color: var(--elevation-3);
-    width: 100%;
-  }
+.theme-info {
+  padding: 10px 10px 20px 10px;
+  background-color: var(--elevation-3);
+  width: 100%;
+}
 
-  .theme-info > .theme-name {
-    font-weight: bold;
-    font-size: 17pt;
-    padding: 5px 0px;
-    margin: 0px 0px;
-  }
+.theme-info > .theme-name {
+  font-weight: bold;
+  font-size: 17pt;
+  padding: 5px 0px;
+  margin: 0px 0px;
+}
 
-  .theme-links {
-    padding-top: 10px;
-  }
+.theme-links {
+  padding-top: 10px;
+}
 
-  .theme-links > a {
-    margin-right: 10px;
-  }
+.theme-links > a {
+  margin-right: 10px;
+}
 
-  .theme-deploy a {
-    display: inline-block;
-    padding: 1px;
-    margin: 0px 5px 0px 0px;
-  }
+.theme-deploy a {
+  display: inline-block;
+  padding: 1px;
+  margin: 0px 5px 0px 0px;
+}
 
-  .theme-use {
-    font-size: 11pt;
-    padding: 10px 0px;
-  }
+.theme-use {
+  font-size: 11pt;
+  padding: 10px 0px;
+}
 
-  .theme-use code {
-    overflow-x: scroll;
-    white-space: nowrap;
-    background-color: var(--elevation-2);
-  }
+.theme-use code {
+  overflow-x: scroll;
+  white-space: nowrap;
+  background-color: var(--elevation-2);
+}
 
-  .theme-create-locally code::-webkit-scrollbar {
-    height: 2px;
-  }
+.theme-create-locally code::-webkit-scrollbar {
+  height: 2px;
+}
 
-  .theme-create-locally code::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-  }
-  /* /starters END */
+.theme-create-locally code::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+/* /starters END */
 
 .hljs {
   display: block;
