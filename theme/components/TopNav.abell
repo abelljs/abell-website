@@ -19,7 +19,7 @@
       <span class="dark-mode-toggle-top-nav"><DarkModeToggle /></span>
     </nav>
     <div class="hamburger-menu">
-      <button id="ham-toggle-button">
+      <button id="ham-toggle-button" aria-label="Hamburger Menu Toggle">
         <i class="i i-bars"></i>
         <i class="i i-times"></i>
       </button>
