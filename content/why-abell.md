@@ -76,7 +76,7 @@ For example, if we don't have any CSS and script in the code, this is what the o
 **Output**
 
 <div style="padding: 30px 0px">
-<img src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png" width="15"/> index.html
+<img src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png" width="15" alt="HTML logo"/> index.html
 
 </div>
 

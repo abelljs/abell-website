@@ -6,7 +6,8 @@
   const Sidebar = require('../components/Sidebar/Sidebar.abell');
   const DocContent = require('../components/DocContent.abell');
 }}
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-5"></script>
@@ -48,7 +49,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="{{ $root }}/fonts/i.css" />
+  <link rel="preload" href="{{ $root }}/fonts/i.css" as="style" onload="this.rel = 'stylesheet';this.onload = null">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <title>{{ meta.title }} | Abell.js - a JavaScript based Static-Site-Generator to Create Simple and Fast Static-Sites.</title>

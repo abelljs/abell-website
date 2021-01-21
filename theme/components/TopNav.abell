@@ -11,7 +11,7 @@
     style="{{ isDocs ? 'border-bottom: 1px solid var(--elevation-2);': '' }}"
   >
     <a class="nav-item no-decoration" href="/">
-      <img class="brand-logo" src="{{ props.$root }}/favicon.ico" />
+      <img class="brand-logo" src="{{ props.$root }}/favicon.ico" alt="Abell Logo" />
       <span class="brand-name"><strong>Abell</strong> <small>(v0.8)</small></span>
     </a>
     <nav class="doc-dark-mode-button">

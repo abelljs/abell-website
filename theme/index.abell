@@ -10,7 +10,8 @@
   const GitHubContributors = require('./components/GitHubContributors.abell');
   const Footer = require('./components/Footer.abell');
 }}
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-5"></script>
@@ -47,7 +48,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link rel="stylesheet" href="{{ $root }}/fonts/i.css" />
+  <link rel="preload" href="{{ $root }}/fonts/i.css" as="style" onload="this.rel = 'stylesheet';this.onload = null">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <title>Abell.js - A Static Site Generator for JavaScript Developers</title>
   <GlobalCSS />
@@ -67,6 +68,6 @@
 
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script defer src="./static-js/main.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" as="style" onload="this.rel = 'stylesheet';this.onload = null" />
 </body>
 </html>
