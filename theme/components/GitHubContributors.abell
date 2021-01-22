@@ -20,7 +20,7 @@
     }
   }
 </style>
-<style global>
+<style global bundle="index.css">
   .contributor {
     padding: 10px;
     display: inline-block;

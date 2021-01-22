@@ -30,7 +30,7 @@
     }}
   </section>
 </template>
-<style>
+<style bundle="index.css">
   section {
     text-align: center;
   }
