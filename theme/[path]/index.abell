@@ -9,6 +9,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {{
+    const preloadLinks = [
+      `${$root}/fonts/i.css`,
+    ]
+  }}
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-5"></script>
   <script>
@@ -49,7 +54,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="preload" href="{{ $root }}/fonts/i.css" as="style" onload="this.rel = 'stylesheet';this.onload = null">
+  {{
+    preloadLinks.map(preloadLink => /* html */ `
+      <link rel="preload" href="${preloadLink}" as="style" onload="this.rel = 'stylesheet';this.onload = null" />
+    `)
+  }}
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <title>{{ meta.title }} | Abell.js - a JavaScript based Static-Site-Generator to Create Simple and Fast Static-Sites.</title>
@@ -75,5 +84,19 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
   <script defer src="{{ $root }}/static-js/main.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+  <script>
+    const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    if(isFirefox){
+      const preloadLinks = {{ JSON.stringify(preloadLinks) }}
+      document.head.innerHTML += /* html */ `
+        ${
+          preloadLinks.map(preloadLink => /* html */ `
+            <link rel="stylesheet" href="${preloadLink}" />
+          `).join('\n')
+        }
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" />
+      `
+    }
+  </script>
 </body>
 </html>
