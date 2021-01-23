@@ -63,7 +63,7 @@
   <GlobalCSS />
 </head>
 <body class="dark-transition index no-sidebar">
-  <TopNav props={$root, $path} />
+  <TopNav props={$root, $path, version: globalMeta.version} />
   <Hero props={$root} />
   
   <main>

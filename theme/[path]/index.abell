@@ -1,5 +1,5 @@
 {{
-  const { $root, $path, importContent, meta } = Abell;
+  const { $root, $path, importContent, meta, globalMeta } = Abell;
 
   const GlobalCSS = require('../styles/global.css.abell');
   const TopNav = require('../components/TopNav.abell');
@@ -65,7 +65,7 @@
   <GlobalCSS />
 </head>
 <body class="dark-transition {{ meta.isSidebarVisible === false ? 'no-sidebar' : '' }}">
-  <TopNav props={$root, $path} />
+  <TopNav props={$root, $path, version: globalMeta.version} />
   
   {{
     meta.isSidebarVisible === false

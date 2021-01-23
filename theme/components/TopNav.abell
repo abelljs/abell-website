@@ -12,7 +12,7 @@
   >
     <a class="nav-item no-decoration" href="/">
       <img class="brand-logo" src="{{ props.$root }}/favicon.ico" alt="Abell Logo" />
-      <span class="brand-name"><strong>Abell</strong> <small>(v0.8)</small></span>
+      <span class="brand-name"><strong>Abell</strong> <small>(v{{ props.version }})</small></span>
     </a>
     <nav class="doc-dark-mode-button">
       <a class="nav-item no-decoration" href="{{ props.$root }}/getting-started/">Documentation</a>
