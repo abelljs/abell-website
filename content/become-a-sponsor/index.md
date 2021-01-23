@@ -38,7 +38,7 @@ If you prefer any other medium, you can drop me an email at [saurabhdaware99@gma
 
 ## Sponsorship Tiers
 
-Get your company's name on the documentation website by becoming a Platinum, Gold or Silver Sponsor.
+Get your company's name on the documentation website by becoming a Platinum Sponsor.
 
 ### Open Collective
 
