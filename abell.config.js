@@ -2,13 +2,13 @@ module.exports = {
   globalMeta: {
     siteName: 'Abell',
     name: 'Hoomans of Abell Land',
-    version: '0.8',
+    version: '0.9',
     twitter: 'AbellLand',
     domain: 'https://abelljs.org/',
     navMenuOrder: [
       'getting-started',
       'starters',
-      'tutorial/create-portfolio',
+      'tutorial',
       'guide',
       'plugins',
       'contributing',
@@ -16,7 +16,7 @@ module.exports = {
     ],
     themes: [
       {
-        name: "Abell Minima",
+        name: "Blog Starter",
         author: "Abell Team",
         github: "https://github.com/abelljs/abell-starter-minima",
         cover: "https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_400/v1588342001/abell/og.png",
@@ -31,5 +31,6 @@ module.exports = {
       }
     ]
   },
-  plugins: ['abell-sitemap-plugin', 'plugins/fetch-ghdata.js']
+  plugins: ['abell-sitemap-plugin', 'plugins/generate-icon-font.js'],
+  ignoreInOutput: ['icons/abell-i']
 }

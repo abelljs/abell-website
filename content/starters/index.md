@@ -24,7 +24,7 @@
 
 ## Setting Up Project Locally
 
-- [git clone <new-repository-url>](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) (You can skip this if you've created project locally with `create-abell-app`)
+- `git clone <new-repository-url>` (You can skip this if you've created project locally with `create-abell-app`)
 - `cd <project-name>` 
 - `npm install` # to install dependencies (`create-abell-app` executes this by default)
 - `npm run dev`  # to run a development server.
@@ -34,7 +34,7 @@ Now you can make changes in the website and development server will reload itsel
 ## Folder Structure
 
 <pre>
-<code class="hljs hljs-shell language-sh" style="line-height: 1.5;">
+<code class="hljs hljs-shell language file-system" style="line-height: 1.5;">
 abell-starter-minima/
 |
 |- 📂 content/
@@ -61,7 +61,7 @@ abell-starter-minima/
 With this structure, you will get a following files generated on `npm run build`.
 
 <pre>
-<code class="hljs hljs-shell language-sh" style="line-height: 1.5;">
+<code class="hljs hljs-shell language-sh file-system" style="line-height: 1.5;">
 abell-starter-minima/
 |
 |- 📂 dist/
@@ -107,4 +107,4 @@ This meta information can be accessed from `index.md` and `theme/[path]/index.ab
 ```
 
 <br/><br/><br/>
-This will get you started with writing blogs. If you want to know more about editing theme, We will suggest going through our [Tutorial to Create Your Portfolio from Scratch]({{$root}}/tutorial/create-portfolio/)
+This will get you started with writing blogs. If you want to know more about editing theme, We will suggest going through our [Tutorial to Create Your Portfolio from Scratch]({{$root}}/tutorial/)

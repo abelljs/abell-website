@@ -1,0 +1,34 @@
+<AbellComponent>
+<template>
+  <section class="container" id="why-abell">
+    {{ props.importContent('./why-abell.md') }} 
+  </section>
+</template>
+<style bundle="index.css">
+
+  h2 { font-size: 4rem; }
+  h3 { font-size: 2rem; }
+
+  .abell-li {
+    padding: 0px 30px;
+  }
+
+  .abell-li ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0;
+  }
+
+  .abell-li ul > li {
+    background: url('../../../favicon.ico') no-repeat left top;
+    background-size: 20px 20px;
+    background-position:0px 3px;
+    padding-left: 30px;
+  }
+
+  @media (max-width: 768px) {
+    h2 { font-size: 2.8rem; }
+    h3 { font-size: 1.5rem; }
+  }
+</style>
+</AbellComponent>

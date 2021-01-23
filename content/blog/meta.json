@@ -1,4 +1,5 @@
 {
   "title": "Abell Blog",
-  "description": "Official Blog from Abell Team"
+  "description": "Official Blog from Abell Team",
+  "isSidebarVisible": false
 }

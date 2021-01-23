@@ -10,10 +10,11 @@
         </div>
         <div class="footer-heading">Channels</div>
         <div class="link-container">
+          <a href="https://github.com/abelljs/abell/discussions">GitHub Discussions <i class="i i-external-link"></i></a>
           <a href="https://discord.gg/ndsVpRG">
-            Discord Server <small>&#x2197;</small>
+            Discord Server <i class="i i-external-link"></i>
           </a>
-          <a href="https://github.com/abelljs/abell/issues">GitHub Issues <small>&#x2197;</small></a>
+          <a href="https://github.com/abelljs/abell/issues">GitHub Issues <i class="i i-external-link"></i></a>
         </div>
       </div>
       <div class="col">
@@ -24,6 +25,21 @@
           <a href="https://github.com/abelljs/abell-website">abelljs/abell-website</a>
           <a href="https://github.com/abelljs/create-abell-app">abelljs/create-abell-app</a>
         </div>
+        <div class="footer-heading">Contributing</div>
+        <div class="link-container">
+          <a href="https://github.com/abelljs/abell/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>
+          <a href="{{ props.$root }}/contributing/">Contributing Guidelines</a>
+        </div>
+      </div>
+    </div>
+    <div class="icon-credits">
+      <div>
+        Icons from <a href="https://fontawesome.com/license" title="FontAwesome">FontAwesome</a>, and 
+        <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a> 
+        (By <a href="https://www.flaticon.com/authors/google" title="Google">Google</a>)
+      </div>
+      <div>
+        Built with <a href="https://abelljs.org">Abell</a> by <a href="https://github.com/abelljs/abell-website/graphs/contributors">GitHub Contributors</a>
       </div>
     </div>
     <div class="copyright-container">
@@ -34,8 +50,9 @@
 
 <style>
   .copyright-container {
-    padding: 20px 50px;
-    text-align: right;
+    padding: 5px 50px 30px;
+    text-align: center;
+    font-size: .9rem;
   }
   .links {
     padding: 40px 100px;
@@ -44,18 +61,37 @@
     display: block;
     padding: 2px 0px;
     font-size: 1rem;
-    color: var(--font-color);
+    color: var(--link-color);
   }
+
+  .links .link-container i.i {
+    font-size: .7rem;
+    position: relative;
+    top: -5px;
+  }
+
   .footer-heading {
     padding: 13px 0px 5px 0px;
-    font-size: 11pt;
+    font-size: .8rem;
     color: var(--abell-primary);
   }
   .links .col {
     padding: 20px;
   }
+
+  .icon-credits {
+    font-size: .9rem;
+    padding: 20px 50px 5px;
+    text-align: center;
+  }
+
+  .icon-credits > div {
+    padding: 3px 0px;
+  }
+
   footer {
     background-color: var(--footer-background);
+    margin-top: 100px;
   }
 
   @media (max-width: 768px) {
@@ -67,6 +103,12 @@
       font-size: 0.9rem;
     }
 
+    .icon-credits {
+      font-size: .8rem;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
     .copyright-container {
       padding: 20px 20px;
       font-size: 0.9rem;
@@ -75,6 +117,6 @@
 </style>
 
 <script>
-  document.querySelector('#footer-year').innerHTML = new Date().getFullYear();
+  scopedSelector('#footer-year').innerHTML = new Date().getFullYear();
 </script>
 </AbellComponent>

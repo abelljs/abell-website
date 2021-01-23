@@ -1,15 +1,23 @@
 {{
-  const { globalMeta, importContent, contentArray, $path, $root } = Abell;
+  const { $root, $path, importContent, globalMeta } = Abell;
 
-  const GlobalCSS = require('./static/styles/inlined/global.css.abell');
-  const Navigation = require('./components/Navigation.abell');
+  const GlobalCSS = require('./styles/global.css.abell');
+  const TopNav = require('./components/TopNav.abell');
+  const Hero = require('./components/Hero.abell');
+  const Sponsors = require('./components/Sponsors.abell');
+  const Themes = require('./components/Themes.abell');
+  const WhyAbell = require('./components/WhyAbell.abell');
+  const GitHubContributors = require('./components/GitHubContributors.abell');
   const Footer = require('./components/Footer.abell');
-
-  const sponsors = require('./data/sponsors.json');
 }}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {{
+    const preloadLinks = [
+      `${$root}/fonts/i.css`,
+    ]
+  }}
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125454191-5"></script>
   <script>
@@ -20,95 +28,69 @@
     gtag('config', 'UA-125454191-5');
   </script>
 
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites"/>
+  <meta name="description" content="Abell - a Static-Site-Generator for JavaScript Developers. Create fast and scalable static-sites using the syntax of HTML and JavaScript."/>
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
 
   <!-- OPEN GRAPH -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Abell Documentation" />
-  <meta name="og:description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites"/>
+  <meta name="og:description" content="Abell - a Static-Site-Generator for JavaScript Developers. Create fast and scalable static-sites using the syntax of HTML and JavaScript."/>
   <meta property="og:url" content="https://abelljs.org" />
   
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:creator" content="@AbellLand"/>
 
-  <meta property="og:image:secure_url" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1591474179/abell/docs-og.png"/>
-  <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/c_scale,w_600/v1591474179/abell/docs-og.png"/>
+  <meta property="og:image:secure_url" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/v1611168187/abell/abell-2021-og.png"/>
+  <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/saurabhdaware/image/upload/v1611168187/abell/abell-2021-og.png"/>
   <meta property="og:image:width" content="600" />
   <meta property="og:image:height" content="300" />
   <meta property="og:image:alt" content="OG image of Abell Docs that shows the title of page" />
-  <meta property="og:description" content="Abell - a JavaScript based static site generator to create markdown and configuration based websites" />
+  <meta property="og:description" content="Abell - a Static-Site-Generator for JavaScript Developers. Create fast and scalable static-sites using the syntax of HTML and JavaScript." />
   <meta property="og:site_name" content="abelljs.org"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./static/styles/index.css">
-  <title>Abell - a JavaScript based static site generator to create markdown and configuration based websites</title>
-  
-  <!-- global css file -->
-  <GlobalCSS/>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  {{
+    preloadLinks.map(preloadLink => /* html */ `
+      <link rel="preload" href="${preloadLink}" as="style" onload="this.rel = 'stylesheet';this.onload = null" />
+    `)
+  }}
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Abell.js - A Static Site Generator for JavaScript Developers</title>
+  <GlobalCSS />
 </head>
-<body class="index">
-  <Navigation 
-    props={
-      contentArray, 
-      navMenuOrder: globalMeta.navMenuOrder,
-      $path, 
-      $root,
-      version: globalMeta.version
-    }
-  />
-  <header class="landing">
-    <div class="header-bio">
-      <h1>{{ globalMeta.siteName }}</h1>
-      <p>A Static-Site-Generator for JavaScript Developers.</p>
-      <a class="button primary-bg" href="getting-started/" style="margin: 20px 10px;font-size: 14pt;">Get Started</a>
-      <a class="button github-button" href="https://github.com/abelljs/abell">
-        <img alt="GitHub Logo" src="./static/icons/github.png" style="filter: invert(100%); position: relative;top:3px;" width="17"/> &nbsp;GitHub
-      </a>
-    </div>
-    <img alt="Abell Logo" class="header-abell-logo" src="./static/icons/abell.svg" />
-  </header>
+<body class="dark-transition index no-sidebar">
+  <TopNav props={$root, $path, version: globalMeta.version} />
+  <Hero props={$root} />
+  
   <main>
-  <pre>
-    <code class="hljs hljs-shell nohighlight shadow" style="word-spacing: 4px;line-height: 40px;">npx create-abell-app my-cool-blog<br/>cd my-cool-blog<br/>npm run dev</code>
-    </pre>
-    <section class="sponsor-section">
-      <h2>Sponsors 🤗</h2>
-      <h3>Gold Sponsors</h3>
-      <div class="gold-sponsors">
-      {{
-        sponsors.map(sponsor => /* html */`
-          <a class="sponsor-main" href="${sponsor.url}" target="_blank" rel="noopener">
-            <img alt="Logo of ${sponsor.name}" src="${sponsor.logo}"/>
-            <span class="sponsor-name">${sponsor.name}</span>
-          </a>
-        `)
-      }}
-      </div>
-      <p>You can become our sponsor through, </p>
-      <a href="https://www.patreon.com/bePatron?u=31891872" aria-label="Become a Patron Button">
-        <img style="border-radius: 5px;" width="200" alt="Become a patron Button" src="https://c5.patreon.com/external/logo/become_a_patron_button.png" />
-      </a>&nbsp; 
-      <a href="https://www.buymeacoffee.com/saurabhdaware" aria-label="Buy me a Coffee Button">
-        <img style="border-radius: 5px;" width="200" alt="Buy me a Coffee Button" src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" />
-      </a>
-      <p>Or if you prefer any other mode of payment, you can contact at <a href="mailto:saurabhdaware99@gmail.com">saurabhdaware99@gmail.com</a>
-    </section>
-    {{ importContent('./home.md') }}
-    <section class="github-contributors-section">
-      <h2>GitHub Contributors</h2>
-      <div class="github-contributors-holder">
-      </div>
-      <div style="padding: 15px 3px;">Check out <a href="https://github.com/abelljs">GitHub @abelljs</a> for list of repositories, every repo has a README for contribution guide</div>
-    </section>
+    <Themes props={ themes: globalMeta.themes } />
+    <Sponsors />
+    <WhyAbell props={importContent} />
+    <GitHubContributors />
   </main>
-  <Footer/>
+
+  <Footer props={$root} />
+
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-  <link rel="stylesheet" href="./static/styles/highlight.css"/>
-  <script defer src="./static/js/main.js"></script>
+  <script defer src="./static-js/main.js"></script>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" as="style" onload="this.rel = 'stylesheet';this.onload = null" />
+  <script>
+    const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+    if(isFirefox){
+      const preloadLinks = {{ JSON.stringify(preloadLinks) }}
+      document.head.innerHTML += /* html */ `
+        ${
+          preloadLinks.map(preloadLink => /* html */ `
+            <link rel="stylesheet" href="${preloadLink}" />
+          `).join('\n')
+        }
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" />
+      `
+    }
+  </script>
 </body>
 </html>

@@ -2,37 +2,34 @@
   const { meta, globalMeta, $root } = Abell;
 }}
 
-# {{ meta.title }}
+# Getting Started
 
-{{ meta.description }}
+This section is an overview of Abell Documentation and will help you navigate to the page you need.
 
-**Abell** is a JavaScript based static-site-generator to help you build fast and secure websites from static data like JSON, Markdown, or CMS.  Check out [Why Abell](https://abelljs.org/#why-abell) section on our Home Page for more info.
+<h2 class="text-m">Different Ways to Learn Abell</h2>
 
+<div class="row row-responsive docs-learn-options">
+<a class="docs-tile" href="{{ $root }}/tutorial/">Learn by doing from <strong>Tutorial</strong></a>
+<a class="docs-tile" href="{{ $root }}/guide/syntax-guide/">Start with Concepts from <strong>Syntax Guide</strong></a>
+<a class="docs-tile" target="_blank" href="https://codesandbox.io/s/abell-playground-wcdq2?file=/theme/index.abell">Play around on <strong>CodeSandbox <i class="i-external-link text-xs"></i></strong></a>
+<a class="docs-tile" href="{{ $root }}/starters">Get going with <strong>Starter Themes</strong></a>
+</div>
 
-## Approaching Documentation
-
-If you want **to quickly get blog running**, check out [Creating Blog from Starter Themes]({{$root}}/starters/)
-
-To learn Abell, you can approach this documentation in various ways
-- If you prefer **to learn by doing**, check out [Tutorial to Create Your Portfolio from Scratch]({{$root}}/tutorial/create-portfolio/)
-- If you prefer **to learn from concepts**, try [A Conceptual Guide of Abell]({{$root}}/guide/).
-- If you prefer **to learn by playing around the code**, you would like our [Abell Playground on CodeSandbox &#x2197;](https://codesandbox.io/s/abell-playground-wcdq2?file=/theme/index.abell) .
+<br/>
 
 ---
 
+<div class="sub-container">
 
 ## Requirements
 
-- Abell requires [Node.js 8 or higher](https://nodejs.org) installed.
+- Abell requires [Node.js 10 or higher](https://nodejs.org) installed.
+- Though it is not "required", if you're using VSCode, it is recommended to have [Abell Language Features Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=saurabh.abell-language-features) for syntax highlighting of `.abell` files.
 
-Though it is not "required", if you're using VSCode, it is recommended to have [Abell Language Features Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=saurabh.abell-language-features) for syntax highlighting of `.abell` files.
+## Stuck?
 
-
-## Terms used in Documentation
-
-- **Abell Components** - Abell Components are the `.abell` files with content wrapped inside `<AbellComponent>` tag. Check out [Abell Components Guide](../guide/syntax-guide/#abell-components) for more information. (Usually named as `CamelCased.abell`)
-- **Abell Pages** - Abell Pages are close to HTML, they have `<html>` tag and these files eventually become `.html` page in output. (Follow `lowercase.abell` format)
-- In documentation, you will find reference of `npx` command which comes along with the Node.js and NPM. It executes the scripts directly.
+- If you're stuck anywhere in the documentation, you can ask questions at [Abell's GitHub Discussions](https://github.com/abelljs/abell/discussions/categories/q-a)
+- If you have any suggestion or feedback that can help us in improving documentation, do create an issue at [The GitHub Repository of This Site](https://github.com/abelljs/abell-website)
 
 
 ## Plugins and Libraries
@@ -48,8 +45,10 @@ Check out [List of Plugins and Libraries of Abell &#x2192;]({{$root}}/plugins/)
 
 From v0.4.0, we follow [Semantic-Versioning](https://semver.org/) which means, there will not be any breaking change until v1.0.0.
 
-Check out [Changelog of Abell]({{$root}}/changelog/).
+Check out [Changelog of Abell](https://github.com/abelljs/abell/blob/main/CHANGELOG.md).
 
 ## Contributing
 
 We are an open-source project and completely depend on open-source community for contribution, check out our [Contributing to Abell Guide]({{$root}}/contributing/) for more information on how to contribute.
+
+</div>

@@ -1,0 +1,59 @@
+<AbellComponent>
+<template>
+  <section class="container">
+    <h2>Get Started with Starters</h2>
+    {{
+      props.themes.map(theme => /* html */ `
+      <div class="theme-container shadow">
+        <img alt="Cover image of ${theme.name}" style="width: 100%;" loading="lazy" src="${theme.cover}" />
+        <div class="theme-info">
+          <h3 class="theme-name">${theme.name}</h3>
+          <div>by ${theme.author}</div>
+          <div class="theme-links">
+            <a rel="noopener noreferrer" target="_blank" rel="noopener" href="${theme.preview}">Preview</a>
+            <a rel="noopener noreferrer" target="_blank" rel="noopener" href="${theme.github}">GitHub</a>
+            <hr style="margin: 10px 0px;"/>
+          </div>
+          <div class="theme-use">
+            <h4 style="margin: 0px 0px 16px 0px;font-size: 13pt;">Use this Starter</h4>
+            <div class="theme-deploy">
+              <a rel="noopener noreferrer" target="_blank" href="https://app.netlify.com/start/deploy?repository=${theme.github}">Deploy with Netlify</a>
+              <a rel="noopener noreferrer" target="_blank" href="${theme.github}/generate">Generate on GitHub</a>
+            </div>
+            <div style="padding: 10px 6px 3px 10px;">or</div> 
+            <div style="padding: 5px 4px;">Create new project locally with:</div>
+            <code style="display: block;word-spacing: 3px;font-size: unset;">npx create-abell-app my-app --template ${theme.github.replace('https://github.com/', '')}</code>
+          </div>
+        </div>
+      </div>
+      `)
+    }}
+  </section>
+</template>
+<style bundle="index.css">
+  section {
+    text-align: center;
+  }
+  .theme-container {
+    text-align: left;
+  }
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    section {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+</style>
+<script>
+  
+</script>
+</AbellComponent>

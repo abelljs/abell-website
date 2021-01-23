@@ -3,3 +3,5 @@ dist/
 .debug
 dump/
 .env
+oldtheme/
+theme/fonts
