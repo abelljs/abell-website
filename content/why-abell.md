@@ -164,6 +164,7 @@ Have a critical CSS/JS that needs to load as soon as user visits the page? With 
 </div>
 </div>
 
+[![Control Over Bundling](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/control-over-bundling-hkmhr?file=/theme/components/TestFooter.abell)
 
 **Output**
 
