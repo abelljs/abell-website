@@ -26,7 +26,7 @@
 
 
   <meta charset="UTF-8"/>
-  <meta name="description" content="This section is an overview of Abell Documentation and will help you navigate to the page you need."/>
+  <meta name="description" content="{{ meta.description }}"/>
   <link rel="shortcut icon" href="{{ $root }}/favicon.ico" type="image/x-icon" />
 
   {{ 
@@ -36,9 +36,9 @@
   }}
   <!-- OPEN GRAPH -->
   <meta name="og:title" content="{{ meta.title }}"/>
-  <meta name="og:description" content="This section is an overview of Abell Documentation and will help you navigate to the page you need."/>
+  <meta name="og:description" content="{{ meta.description }}"/>
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Abell Documentation" />
+  <meta property="og:title" content="{{ meta.title }} | Abell.js - a JavaScript based Static-Site-Generator to Create Simple and Fast Static-Sites." />
   <meta property="og:url" content="https://abelljs.org" />
   
   <meta name="twitter:card" content="summary_large_image"></meta>
@@ -49,7 +49,7 @@
   <meta property="og:image:width" content="600" />
   <meta property="og:image:height" content="300" />
   <meta property="og:image:alt" content="OG image of Abell Docs that shows the title of page" />
-  <meta property="og:description" content="This section is an overview of Abell Documentation and will help you navigate to the page you need." />
+  <meta property="og:description" content="{{ meta.description }}" />
   <meta property="og:site_name" content="abelljs.org"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 
