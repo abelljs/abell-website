@@ -8,13 +8,25 @@
     <h3>Gold Sponsors</h3>
     <div class="gold-sponsors">
     {{
-      sponsors.map(sponsor => /* html */`
+      sponsors.gold.map(sponsor => /* html */`
         <a class="sponsor-main" href="${sponsor.url}" target="_blank" rel="noopener">
           <img alt="Logo of ${sponsor.name}" src="${sponsor.logo}"/>
           <span class="sponsor-name text-center text-m">${sponsor.name}</span>
         </a>
       `)
     }}
+    </div>
+    <div class="backers">
+      <h3>Backers</h3>
+      {{
+        sponsors.backers
+          .filter(sponsor => sponsor.role === 'BACKER')
+          .map(sponsor => /* html */`
+            <a class="sponsor-main backer-dp" href="${sponsor.twitter || sponsor.github}" target="_blank" rel="noopener">
+              <img alt="Logo of ${sponsor.name}" src="${sponsor.image}"/>
+            </a>
+          `)
+      }}
     </div>
     <a href="become-a-sponsor" class="button-secondary">Become a Sponsor</a>
   </section>
@@ -28,9 +40,6 @@
   h2 { font-size: 2.5rem; }
   h3 { font-size: 1.3rem; font-weight: normal; }
 
-  .gold-sponsors {
-    padding: 1rem 2rem 2rem 2rem;
-  }
 
   .sponsor-main {
     display: inline-block;
@@ -39,6 +48,15 @@
   .sponsor-name {
     display: block;
     padding: 1rem;
+  }
+
+  .backers {
+    padding: 1rem 1rem 2rem;
+  }
+
+  .backer-dp img {
+    width: 56px;
+    border-radius: 100%;
   }
 </style>
 </AbellComponent>

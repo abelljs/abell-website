@@ -45,8 +45,3 @@ Get your company's name on the documentation website by becoming a Platinum Spon
 <a href="https://opencollective.com/abelljs/contribute" target="_blank">
   <img src="https://opencollective.com/abelljs/contribute/button@2x.png?color=blue" width="280" />
 </a>
-
-
-### Patreon
-
-<a href="https://www.patreon.com/saurabhdaware"><img style="border-radius: 8px" src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" alt="Become a Patron" width="180"></a>
