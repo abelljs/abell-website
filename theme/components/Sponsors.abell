@@ -43,6 +43,7 @@
 
   .sponsor-main {
     display: inline-block;
+    margin: 0px 4px;
   }
 
   .sponsor-name {

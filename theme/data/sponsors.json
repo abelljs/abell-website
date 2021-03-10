@@ -7,6 +7,7 @@
     }
   ],
   "backers": [
-    {"MemberId":161978,"createdAt":"2021-01-23 17:59","type":"USER","role":"BACKER","isActive":true,"totalAmountDonated":5,"currency":"USD","lastTransactionAt":"2021-01-23 17:59","lastTransactionAmount":5,"profile":"https://opencollective.com/sid","name":"Sid","company":null,"description":null,"image":"https://avatars.githubusercontent.com/siddharthkp","email":null,"twitter":"https://twitter.com/siddharthkp","github":"https://github.com/siddharthkp","website":"https://sid.studio"}
+    {"MemberId":161978,"createdAt":"2021-01-23 17:59","type":"USER","role":"BACKER","isActive":true,"totalAmountDonated":5,"currency":"USD","lastTransactionAt":"2021-01-23 17:59","lastTransactionAmount":5,"profile":"https://opencollective.com/sid","name":"Sid","company":null,"description":null,"image":"https://avatars.githubusercontent.com/siddharthkp","email":null,"twitter":"https://twitter.com/siddharthkp","github":"https://github.com/siddharthkp","website":"https://sid.studio"},
+    {"MemberId":177026,"createdAt":"2021-03-08 13:47","type":"USER","role":"BACKER","isActive":true,"totalAmountDonated":5,"currency":"USD","lastTransactionAt":"2021-03-08 13:47","lastTransactionAmount":5,"profile":"https://opencollective.com/santosh-yadav","name":"Santosh Yadav","company":null,"description":"GDE Angular and Web Technologies, Author/Writer @dotnettricks, Writer @AngularInDepth ","image":"https://www.gravatar.com/avatar/0f2bcabe9963edd738f1e9d854d34af2?default=404","email":null,"twitter":"https://twitter.com/SantoshYadavDev","github":"https://github.com/santoshyadavdev","website":"https://www.santoshyadav.dev"}
   ]
 }
