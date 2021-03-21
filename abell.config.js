@@ -2,7 +2,7 @@ module.exports = {
   globalMeta: {
     siteName: 'Abell',
     name: 'Hoomans of Abell Land',
-    version: '0.9',
+    version: '0.10',
     twitter: 'AbellLand',
     domain: 'https://abelljs.org/',
     navMenuOrder: [
@@ -31,6 +31,6 @@ module.exports = {
       }
     ]
   },
-  plugins: ['abell-sitemap-plugin', 'plugins/generate-icon-font.js'],
+  plugins: ['abell-sitemap-plugin', 'abell-a11y-plugin', 'plugins/generate-icon-font.js'],
   ignoreInOutput: ['icons/abell-i']
 }
