@@ -85,7 +85,7 @@ For example, if we don't have any CSS and script in the code, this is what the o
 
 ### Control Over Bundling!
 
-Have a critical CSS/JS that needs to load as soon as user visits the page? With Abell you can inline a CSS or JavaScript from component!
+Have critical CSS/JS that needs to load as soon as user visits the page? With Abell you can inline a CSS or JavaScript from component!
 
 <div class="tabbed-editor">
   <div class="menu">
