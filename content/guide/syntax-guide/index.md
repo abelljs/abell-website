@@ -91,6 +91,7 @@ As we mentioned, you can write any Node.js code inside curly brackets including 
 </main>
 ```
 
+If the conditions are nested, writing a ternary operator is not ideal, it's recommended to create a separate function, return the value from the function and call that function inside double curly brackets.
 
 
 **Why `/* html */` before the strings?**
