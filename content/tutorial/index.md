@@ -6,7 +6,6 @@ If you are someone who prefers to stare at the code till it explains itself, you
 
 ---
 - [Tutorial](#tutorial)
-  - [- Dynamic Page Generation](#--dynamic-page-generation)
   - [What is Abell?](#what-is-abell)
   - [Installation and Setup](#installation-and-setup)
   - [Setting Up Our Portfolio](#setting-up-our-portfolio)
