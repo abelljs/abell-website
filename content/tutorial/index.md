@@ -13,7 +13,6 @@ If you are someone who prefers to stare at the code till it explains itself, you
   - [Adding CSS to Our Project](#adding-css-to-our-project)
   - [Require JSON to Abell Files](#require-json-to-abell-files)
   - [Building Your First Abell Component!](#building-your-first-abell-component)
-  - [- Add JavaScript to Components](#--add-javascript-to-components)
     - [Let's Build a Footer for Our Portfolio!](#lets-build-a-footer-for-our-portfolio)
     - [Passing Props to Components](#passing-props-to-components)
     - [Add JavaScript to Components](#add-javascript-to-components)
