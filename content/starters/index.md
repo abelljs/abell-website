@@ -27,7 +27,7 @@
     - [meta.json](#metajson)
 ---
 
-## Setting Up A Project Locally
+## Setting Up a Project Locally
 
 - `git clone <new-repository-url>` (You can skip this if you've created project locally with `create-abell-app`)
 - `cd <project-name>` 
