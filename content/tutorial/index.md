@@ -5,17 +5,16 @@ This tutorial is intended to explain the concepts of Abell while building a simp
 If you are someone who prefers to stare at the code till it explains itself, you can get started with [Abell Starters](../starters/)
 
 ---
-- [Tutorial](#tutorial)
-  - [What is Abell?](#what-is-abell)
-  - [Installation and Setup](#installation-and-setup)
-  - [Setting Up Our Portfolio](#setting-up-our-portfolio)
-  - [Adding CSS to Our Project](#adding-css-to-our-project)
-  - [Require JSON to Abell Files](#require-json-to-abell-files)
-  - [Building Your First Abell Component!](#building-your-first-abell-component)
-    - [Let's Build a Footer for Our Portfolio!](#lets-build-a-footer-for-our-portfolio)
-    - [Passing Props to Components](#passing-props-to-components)
-    - [Add JavaScript to Components](#add-javascript-to-components)
-  - [Dynamic Page Generation](#dynamic-page-generation)
+- [What is Abell?](#what-is-abell)
+- [Installation and Setup](#installation-and-setup)
+- [Setting Up Our Portfolio](#setting-up-our-portfolio)
+- [Adding CSS to Our Project](#adding-css-to-our-project)
+- [Require JSON to Abell Files](#require-json-to-abell-files)
+- [Building Your First Abell Component!](#building-your-first-abell-component)
+  - [Let's Build a Footer for Our Portfolio!](#lets-build-a-footer-for-our-portfolio)
+  - [Passing Props to Components](#passing-props-to-components)
+  - [Add JavaScript to Components](#add-javascript-to-components)
+- [Dynamic Page Generation](#dynamic-page-generation)
 ---
 
 ## What is Abell?
