@@ -17,14 +17,9 @@
 ---
 ## Table of Contents
 
-- [{{ meta.title }}](#-metatitle-)
-  - [Starters](#starters)
-  - [Table of Contents](#table-of-contents)
-  - [Setting Up A Project Locally](#setting-up-a-project-locally)
-  - [Folder Structure](#folder-structure)
-  - [Edit/Create/Update Post](#editcreateupdate-post)
-    - [index.md](#indexmd)
-    - [meta.json](#metajson)
+- [Setting Up Project Locally](#setting-up-project-locally)
+- [Folder Structure](#folder-structure)
+- [Edit/Create/Update Post](#editcreateupdate-post)
 ---
 
 ## Setting Up a Project Locally
