@@ -162,7 +162,7 @@ If you want something to be printed as it is, you can escape double curly bracke
 
 ### 7. Require JavaScript, NPM Packages, and JSON files
 
-With Abell, you can use `require()` to use modules which exist in external files! So, you can use JavaScript files, JSON files, and NPM Packages with `.abell` files.
+With Abell, you can use `require()` to use JSON files, modules from other JavaScript files and NPM Packages with `.abell` files.
 
 ```abell
 \{{
