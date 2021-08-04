@@ -1,6 +1,6 @@
 # Abell API Reference
 
-This section is a Reference point for all variables that Abell object provides. This includes guide on how to read content data, and get meta data of blogs.
+This section is a Reference point for all variables that an Abell object provides. This includes a guide on how to read content data, and get meta data of blogs.
 
 
 All `.abell` pages have an access to `Abell` object. They can be accessed with `Abell.<method>`. 
@@ -15,13 +15,13 @@ For Example, the `$root` variable can be accessed from abell pages with
 </html>
 ```
 
-To know what all is there in your `Abell` variable, you can also console log the variable with `\{{ console.log(Abell) }}` This will print all the values in your terminal.
+To know what all's there in your `Abell` variable, you can also console log the variable with `\{{ console.log(Abell) }}`. This will print all the values in your terminal.
 
 
 *Note that `Abell` object is not accessible from Abell Components. if you want to use it inside component, you have to pass it on as a prop. Check out [Passing values to Component Guide](#passing-values-to-component)*
 
 ---
-## Table of Content
+## Table of Contents
 - [Abell.$root `<string>`](#abellroot-ltstringgt)
 - [Abell.$path `<string>`](#abellpath-ltstringgt)
 - [Abell.globalMeta `<any>`](#abellglobalmeta-ltanygt)
@@ -57,7 +57,7 @@ It is a good practice to use it when you are sourcing links in images, styleshee
 
 `Abell.$path` has value to the current path.
 
-In `theme/foobar/example.abell`, `Abell.$path` will have value `foobar/example.html`.
+In `theme/foobar/example.abell`, `Abell.$path` will have value the `foobar/example.html`.
 
 In `theme/[path]/index.abell`, `Abell.$path` is equal to the `Abell.meta.$path` which we will see in [Abell.meta.$path section](#abellmetapath-ltstringgt)
 
@@ -65,7 +65,7 @@ In `theme/[path]/index.abell`, `Abell.$path` is equal to the `Abell.meta.$path` 
 
 This is one of the most used Abell property. Abell lets us define a global object in `abell.config.js` file which can be accessed with `Abell.globalMeta`. We can use this to define title, author, and other global properties for our website.
 
-if we have these properties defined in `abell.config.js`,
+If we have these properties defined in `abell.config.js`,
 ```
 // abell.config.js
 module.exports = {
@@ -138,14 +138,14 @@ You would see this being used in starter templates in `theme/[path]/index.abell`
 
 For now, you only have to know that `Abell.meta.$path` variable changes for each iteration and has value of the path of the content.
 
-E.g. In content, if we have, `content/hello-world/index.md`, `content/foobar.index.md`, `meta.$path` will have value `hello-world` in one iteration and `foobar` in other iteration.
+E.g. In content, if we have, `content/hello-world/index.md`, `content/foobar.index.md`, `meta.$path` will have the value `hello-world` in one iteration and `foobar` in other iteration.
 
 We will learn more about `Abell.meta.$path` properties in [Abell.meta.$path Section](#abellmetapath-`<string>`) 
 
 
 ## Abell.meta &lt;MetaInfo&gt;
 
-**important!** This property is only defined in abell pages that are defined inside `[path]` directory. (E.g. `theme/[path]/index.abell`, `theme/[path]/example.abell`, etc.)
+**Important!** This property is only defined in abell pages that are defined inside `[path]` directory. (E.g. `theme/[path]/index.abell`, `theme/[path]/example.abell`, etc.)
 
 This property has different values in each iteration of `[path]`. 
 
@@ -155,7 +155,7 @@ We can add values to `Abell.meta` by defining them in `content/<blog-name>/meta.
 
 *Example*
 
-Say we have `content/hello-world/meta.json` with value
+Say we have `content/hello-world/meta.json` with the value,
 ```json
 {
   // other properties ...
@@ -204,7 +204,7 @@ Since `$createdAt` is of the JavaScript Date Object type, we can use date proper
 
 ### Abell.meta.$modifiedAt &lt;date&gt;
 
-This is exactly same as [Abell.meta.$createdAt](#abellmetacreatedat-ltdategt), except it represents date of modification of content. 
+This is identical to [Abell.meta.$createdAt](#abellmetacreatedat-ltdategt), except it represents date of modification of content. 
 
 ## Abell.contentArray &lt;MetaInfo&#91;&#93;&gt;
 
@@ -212,7 +212,7 @@ This is exactly same as [Abell.meta.$createdAt](#abellmetacreatedat-ltdategt), e
 
 This property is accessible from any Abell Page.
 
-In starter templates, You would see this being used to list blogs on the index page with,
+In starter templates, you'd see this being used to list blogs on the index page with,
 
 ```abell
 \{{ const { contentArray } = Abell; }}
@@ -248,7 +248,7 @@ and `content/foobar/meta.json` has,
 }
 ```
 
-Then `Abell.contentArray` will have value,
+Then `Abell.contentArray` will have the value,
 ```js
 [
   {
@@ -271,12 +271,12 @@ Then `Abell.contentArray` will have value,
 ]
 ```
 
-As you can see, it got values of `title`, and `foo` from respective meta.json file, It changed the value of `$createdAt`, and added additional values that we talked about in [Abell.meta Section](#abellmeta-ltmetainfogt)
+As you can see, it got values of `title`, and `foo` from the respective meta.json file, It changed the value of `$createdAt`, and added additional values that we talked about in [Abell.meta Section](#abellmeta-ltmetainfogt)
 
 
 ## Abell.contentObj {Object.&lt;string, MetaInfo&gt;}
 
-This is similar to `Abell.contentArray` but instead of array this values holds the object with slugs of blog as keys and Abell.meta values as values.
+This is similar to `Abell.contentArray`, but instead of an array, this value holds the object with slugs of blog as keys and Abell.meta values as values.
 
 ```abell
 \{{ Abell.contentObj['hello-world'].title }} <!-- Prints title of hello-world blog -->
