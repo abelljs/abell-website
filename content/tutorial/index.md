@@ -10,8 +10,8 @@ If you are someone who prefers to stare at the code till it explains itself, you
 - [Setting Up Our Portfolio](#setting-up-our-portfolio)
 - [Adding CSS to Our Project](#adding-css-to-our-project)
 - [Require JSON to Abell Files](#require-json-to-abell-files)
-- [Building Your First Abell Component](#building-your-first-abell-component)
-  - [Let's Build a Footer for Our Portfolio](#lets-build-a-footer-for-our-portfolio)
+- [Building Your First Abell Component!](#building-your-first-abell-component)
+  - [Let's Build a Footer for Our Portfolio!](#lets-build-a-footer-for-our-portfolio)
   - [Passing Props to Components](#passing-props-to-components)
   - [Add JavaScript to Components](#add-javascript-to-components)
 - [Dynamic Page Generation](#dynamic-page-generation)
@@ -48,18 +48,18 @@ Abell files are like HTML files except you can write JavaScript in double curly 
 
 ## Installation and Setup
 
-if you want to play around online, you can skip this installation section and [Start on CodeSandbox with Example Project](TODO)
+If you want to play around online, you can skip this installation section and [Start on CodeSandbox with an Example Project](TODO)
 
 *Make sure you have [Node.js v10+](https://nodejs.org) Installed*
 
-Let's start by creating a new abell project. We're naming it `my-cool-portfolio` you can replace it with any name you want.
+Let's start by creating a new abell project. We're naming it `my-cool-portfolio`, but you can use any name you'd like.
 
 1. Run this command in your terminal-
 ```sh
 npx create-abell-app my-cool-portfolio --template minimal --installer npm
 ```
 
-2. Change directory and run the dev server
+2. Change the directory and run the dev server
 ```sh
 cd my-cool-portfolio
 npm run dev
@@ -119,11 +119,11 @@ This will change the text on our website to **Hello, Saurabh!** 🥳
 
 All values defined inside globalMeta in `./abell.config.js` are accessible from any `.abell` file with `Abell.globalMeta.<key>`. 
 
-Thus `siteTitle` variable defined in `abell.config.js` can be used in `.abell` files with `\{{ Abell.globalMeta.siteTitle }}`
+Thus the `siteTitle` variable defined in the `abell.config.js` file can be used in `.abell` files with `\{{ Abell.globalMeta.siteTitle }}`
 
 ## Adding CSS to Our Project
 
-Fun fact! It's literally same as you do with HTML. 
+Fun fact! It's literally same process you'd do with HTML. 
 
 1. Create `theme/index.css`
 2. Add `<link>` to our `theme/index.abell` file.
@@ -510,12 +510,12 @@ So our directory structure will look like-
   - index.abell
 ```
 
-You can also access the information of all the content in `Abell.contentArray` variable from all `.abell` files. In above code, we're using this variable data to create a list of blogs on index page.
+You can also access the information of all the content in `Abell.contentArray` variable from all `.abell` files. In the above code, we're using this variable data to create a list of blogs on index page.
 
 You can modify the default meta values (title, date, etc)  from `meta.json` file in the blog folder. 
 
 1. Create `content/hello-world/meta.json` file
-2. Add following content
+2. Add the following content
 ```json
 {
   "title": "Hello, World!",
@@ -526,7 +526,7 @@ You can modify the default meta values (title, date, etc)  from `meta.json` file
 
 You can access these values in `Abell.meta` variable in `theme/[path]/index.abell`.
 
-Read more about them in [`Abell.meta` API Reference](http://localhost:5000/guide/api-reference/#abellmeta-ltmetainfogt)
+Read more about it in the [`Abell.meta` API Reference](http://localhost:5000/guide/api-reference/#abellmeta-ltmetainfogt)
 
 
-*Warning: We do feel there is a lot of abstraction here that makes things confusing. We are looking for new ways to handle dynamic routing in final Abell version. Have an idea? do drop it in the [GitHub Discussions of "Issues with Dynamic Routing in Abell"](https://github.com/abelljs/abell/discussions/111)*
+*Warning: We do feel there is a lot of abstraction here that makes things confusing. We're looking for new ways to handle dynamic routing in final Abell version. Have an idea? do drop it in the [GitHub Discussions of "Issues with Dynamic Routing in Abell"](https://github.com/abelljs/abell/discussions/111)*

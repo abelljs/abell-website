@@ -1,9 +1,9 @@
 # Syntax Guide
 
-This section covers some common concepts of Abell's syntax including examples of Loops, Conditions, and Abell Components.
+This section covers some common concepts of Abell's syntax, including examples of Loops, Conditions, and Abell Components.
 
 ---
-## Table of Content
+## Table of Contents
 
 - [Basic Syntax](#basic-syntax)
   - [1. Hello World in Abell](#1-hello-world-in-abell)
@@ -91,7 +91,7 @@ As we mentioned, you can write any Node.js code inside curly brackets including 
 </main>
 ```
 
-if the conditions are nested writing ternary operator is not ideal, it is recommended to create a separate function, return the value from function and call that function inside double curly brackets.
+If the conditions are nested, writing a ternary operator is not ideal, it's recommended to create a separate function, return the value from the function and call that function inside double curly brackets.
 
 
 **Why `/* html */` before the strings?**
@@ -100,11 +100,11 @@ Ans: Adding `/* html */` before the string, highlights the block as HTML content
 
 ### 4. Inlined Functions
 
-Don't like ternary operator for conditions? no issue!
+Don't like ternary operator for conditions? No problem!
 
-You can write a function that returns value and the value it returns is rendered in template.
+You can write a function that returns a value, and the value it returns is rendered in the template.
 
-The same example as above, can be written as-
+The same example from above, can be written as-
 ```abell
 \{{
   const isLink = true;
@@ -158,11 +158,11 @@ You can loop over content with Native JavaScript methods such as [.map()](https:
 
 ### 6. Escape Double Curly Brackets
 
-If you want something to be printed as it is, You can escape double curly brackets by adding forward slash before curly brackets \
+If you want something to be printed as it is, you can escape double curly brackets by adding a forward slash before curly brackets \
 
 ### 7. Require JavaScript, NPM Packages, and JSON files
 
-With Abell, you can `require()` whatever you can require with Node.js! So you can use JavaScript files, JSON files, and NPM Packages from `.abell` files.
+With Abell, you can use `require()` to use JSON files, modules from other JavaScript files and NPM Packages with `.abell` files.
 
 ```abell
 \{{
@@ -280,11 +280,11 @@ Lets use this component in Abell Page (index.abell)
 </html>
 ```
 
-*Imp: `<Footer></Footer>` is not currently valid! Self-closing tags (`<Footer/>`) are the only way to write components right now.*
+*Note: `<Footer></Footer>` is not currently valid! Self-closing tags (`<Footer/>`) are the only way to write components right now.*
 
 ### Passing values to component
 
-We can pass values to component using `props` attribute over component.
+We can pass values to a component using `props` attribute over the component.
 
 `theme/index.abell`
 ```abell
@@ -308,7 +308,7 @@ And we can access this value with `\{{ props.builtWith }}` in Footer Component.
 <!-- ... -->
 ```
 
-Note that this is only valid for `props` attribute so you cannot `<Footer foo={builtWith:  'Abell'} />` 🙅
+Note that this is only valid for `props` attribute so you can't do `<Footer foo={builtWith:  'Abell'} />` 🙅
 
 ## Bundling in Abell
 
