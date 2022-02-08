@@ -12,7 +12,7 @@
   >
     <a class="nav-item no-decoration" href="/">
       <img class="brand-logo" src="{{ props.$root }}/favicon.ico" alt="Abell Logo" />
-      <span class="brand-name"><strong>Abell</strong> <small>(v{{ props.version }})</small></span>
+      <span class="brand-name"><strong>Abell</strong> <small>v{{ props.version }}</small> <small class="v1-banner">&nbsp;(v1 is coming soon 🎉)</small></span>
     </a>
     <nav class="doc-dark-mode-button">
       <a class="nav-item no-decoration" href="{{ props.$root }}/getting-started/">Documentation</a>
@@ -41,9 +41,13 @@
     background-color: var(--background-primary);
     z-index: 99999;
   }
-  
+
   a {
     color: var(--color-primary);
+  }
+
+  .v1-banner {
+    opacity: .7;
   }
 
   nav,
@@ -82,6 +86,10 @@
       padding: 0px 12px;
       display: flex;
       white-space: nowrap;
+    }
+
+    .v1-banner {
+      display: none;
     }
 
     nav,
