@@ -7,6 +7,7 @@
         <a class="button-primary text-bold" href="{{ props.$root }}/getting-started/">Get Started</a>
         <a class="button-secondary m-2" href="https://github.com/abelljs/abell">GitHub</a>
       </div>
+      <p class="note m-2 text-md">Note: Abell v1 will be releasing soon and some of the things mentioned in these Abell v0 docs might be removed. So you might want to wait for Abell v1 before using Abell in production. If you're interested in trying out Abell v1, you can try it out here- <a href="https://stackblitz.com/edit/vitejs-vite-riynxn?file=index.abell">Abell v1 Example</a></p>
     </div>
 
     <div style="padding: 4rem 0rem">
@@ -19,6 +20,10 @@
 <style bundle="index.css">
   pre {
     overflow-x: visible;
+  }
+
+  p.note {
+    opacity: 0.8;
   }
 
   .component-hero {
