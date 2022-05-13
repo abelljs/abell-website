@@ -2,9 +2,10 @@
 
 This tutorial is intended to explain the concepts of Abell while building a simple portfolio.
 
-If you are someone who prefers to stare at the code till it explains itself, you can get started with [Abell Starters](../starters/)
+If you are someone who prefers to stare at the code until it explains itself, you can get started with [Abell Starters](../starters/)
 
 ---
+
 - [What is Abell?](#what-is-abell)
 - [Installation and Setup](#installation-and-setup)
 - [Setting Up Our Portfolio](#setting-up-our-portfolio)
@@ -15,17 +16,19 @@ If you are someone who prefers to stare at the code till it explains itself, you
   - [Passing Props to Components](#passing-props-to-components)
   - [Add JavaScript to Components](#add-javascript-to-components)
 - [Dynamic Page Generation](#dynamic-page-generation)
+
 ---
 
 ## What is Abell?
 
 Abell is a JavaScript-based Static-Site-Generator to help you build fast and scalable static websites. It is similar to tools like Jekyll, Eleventy, Hugo, and Hexo.
 
-Abell files are like HTML files except you can write JavaScript in double curly brackets which is executed to build you a static page.
+Abell files are like HTML files except you can write JavaScript in double curly brackets which is then executed to build your static page.
 
 **Input - `index.abell`**
+
 ```abell
-\{{ 
+\{{
   const a = 'Hello';
   const b = ', World 🌻';
 }}
@@ -36,7 +39,9 @@ Abell files are like HTML files except you can write JavaScript in double curly 
   </body>
 </html>
 ```
+
 **Output - `index.html`**
+
 ```html
 <!-- Output - index.html -->
 <html>
@@ -50,26 +55,29 @@ Abell files are like HTML files except you can write JavaScript in double curly 
 
 If you want to play around online, you can skip this installation section and [Start on CodeSandbox with an Example Project](TODO)
 
-*Make sure you have [Node.js v10+](https://nodejs.org) Installed*
+_Make sure you have [Node.js v10+](https://nodejs.org) Installed_
 
-Let's start by creating a new abell project. We're naming it `my-cool-portfolio`, but you can use any name you'd like.
+Let's start by creating a new Abell project. We're naming it `my-cool-portfolio`, but you can use any name you'd like.
 
 1. Run this command in your terminal-
+
 ```sh
 npx create-abell-app my-cool-portfolio --template minimal --installer npm
 ```
 
 2. Change the directory and run the dev server
+
 ```sh
 cd my-cool-portfolio
 npm run dev
 ```
-3. Tadaaaa 🎉<br/> Visit <a href="http://localhost:5000" target="_blank" rel="noopener">http://localhost:5000</a> in your browser and you should be able to see 'Hello, Abell Example!' on screen.
 
+3. Tadaaaa 🎉<br/> Visit <a href="http://localhost:5000" target="_blank" rel="noopener">http://localhost:5000</a> in your browser and you should be able to see 'Hello, Abell Example!' on screen.
 
 ## Setting Up Our Portfolio
 
 We have two important files that we need to care about-
+
 ```md
 - theme/
   |- index.abell
@@ -92,10 +100,10 @@ Let's start by changing **Abell Example** with your name.
 module.exports = {
   // ..
   globalMeta: {
-    siteTitle: 'Saurabh', // replace with your name
-  }
+    siteTitle: "Saurabh", // replace with your name
+  },
   //...
-}
+};
 ```
 
 </div>
@@ -117,23 +125,25 @@ module.exports = {
 
 This will change the text on our website to **Hello, Saurabh!** 🥳
 
-All values defined inside globalMeta in `./abell.config.js` are accessible from any `.abell` file with `Abell.globalMeta.<key>`. 
+All values defined inside globalMeta in `./abell.config.js` are accessible from any `.abell` file with `Abell.globalMeta.<key>`.
 
 Thus the `siteTitle` variable defined in the `abell.config.js` file can be used in `.abell` files with `\{{ Abell.globalMeta.siteTitle }}`
 
 ## Adding CSS to Our Project
 
-Fun fact! It's literally same process you'd do with HTML. 
+Fun fact! It's literally same process you'd do with HTML.
 
 1. Create `theme/index.css`
 2. Add `<link>` to our `theme/index.abell` file.
+
 ```abell
 <head>
   <link rel="stylesheet" href="./index.css" />
 </head>
 ```
-Though for this case it will work perfectly, It is recommended to use `Abell.$root` to make sure the path always points from root. 
-3. Add `\{{ Abell.$root }}` to href.
+
+Though for this case it will work perfectly, It is recommended to use `Abell.$root` to make sure the path always points from root. 3. Add `\{{ Abell.$root }}` to href.
+
 ```html
 <head>
   <link rel="stylesheet" href="\{{ Abell.$root }}/index.css" />
@@ -142,14 +152,13 @@ Though for this case it will work perfectly, It is recommended to use `Abell.$ro
 
 Abell.$root always points to the `theme` directory irrespective of which abell file it is built from. This is to avoid confusion of linking files from components or dynamic paths (we will learn these things later in this tutorial)
 
-
 ## Require JSON to Abell Files
 
 Next we will add Projects to our Portfolio.
 
-Normally in Plain HTML Website, we have to edit the whole HTML to add/remove/edit the project. 
+Normally in a Plain HTML Website, we have to edit the whole HTML to add/remove/edit the project.
 
-With Abell, we can create a `projects.json` and define our projects there and render it in our website. 
+With Abell, we can create a `projects.json` and define our projects there and render it in our website.
 
 1. Create `theme/data/projects.json`
 2. Require this JSON file in `theme/index.abell` with `require('./data/projects.json')`
@@ -208,19 +217,21 @@ With Abell, we can create a `projects.json` and define our projects there and re
 </div>
 </div>
 
-*Fun fact: We can use `require` to require NPM packages, Node Modules and everything that can be required from Node.js!*
+_Fun fact: We can use `require` to require NPM packages, Node Modules and everything that can be required from Node.js!_
 
 ## Building Your First Abell Component!
 
 ---
+
 - [Let's Build a Footer for Our Portfolio](TODO)
 - [Passing Props to Components](TODO)
 - [Add JavaScript to Components](TODO)
+
 ---
 
-Components allow you to group markup, styles, scripts that can be reused across pages (even across projects).
+Components allow you to group markup, styles and scripts that can be reused across pages (even across projects).
 
-This is how a syntax of Abell Components looks like-
+This is how a syntax of Abell Components looks-
 
 ```
 <AbellComponent>
@@ -245,7 +256,7 @@ Let's build a component for our portfolio
 This will be a simple Footer with year and your name on it.
 
 1. Create `theme/components/Footer.abell`. This will hold our Footer Component.
-2. We will add HTML and CSS for our component. 
+2. We will add HTML and CSS for our component.
 3. Require Footer in our index.abell and use the Footer element.
 
 <div class="tabbed-editor">
@@ -339,7 +350,7 @@ Currently we have our name statically mentioned inside the Footer component. Let
 </div>
 </div>
 
-*Note that `props` is the only possible attribute for Components. Any value that you want to pass, has to be inside the props attribute object.*
+_Note that `props` is the only possible attribute for Components. Any value that you want to pass, has to be inside the props attribute object._
 
 ### Add JavaScript to Components
 
@@ -387,7 +398,6 @@ Though this will work in this case, but we need a way to make sure we don't end 
 
 Thus in Abell Component scripts, it is recommended to use `scopedSelector()` and `scopedSelectorAll()` instead of `document.querySelector()` or `document.querySelectorAll()`
 
-
 ```abell
 <AbellComponent>
 <template>
@@ -406,16 +416,15 @@ This maintains the scope of the Component which will help you in maintaining sca
 
 ## Dynamic Page Generation
 
-Next up, we will be adding blogs to our portfolio. 
+Next up, we will be adding blogs to our portfolio.
 
-For blogs in our portfolio, we can't go on creating an Abell Page for every blog. So what we do instead is create one Abell Page as a layout to hold our blog content, and pass it in the markdown content of blog.
+For blogs in our portfolio, we can't go on creating an Abell Page for every blog. So what we do instead is create one Abell Page as a layout to hold our blog content, and pass it in the Markdown content of blog.
 
 We will be writing blogs in Markdown and that content should reflect in our website.
 
 1. Create `./content/hello-world/index.md` and add sample Blog Content
 2. Create `./theme/[path]/index.abell` file to hold layout for all our blogs.
 3. Add list of blogs in `./theme/index.abell`
-
 
 <div class="tabbed-editor">
   <div class="menu">
@@ -449,19 +458,14 @@ We will be writing blogs in Markdown and that content should reflect in our webs
 # Hello World!
 
 This text is coming from `content/hello-world/index.md`
-
-
-
-
-
 ```
 
 </div>
 <div id="dynamic-3">
 
 ```abell
-\{{ 
-  const { contentArray } = Abell; 
+\{{
+  const { contentArray } = Abell;
 }}
 
 <html>
@@ -512,10 +516,11 @@ So our directory structure will look like-
 
 You can also access the information of all the content in `Abell.contentArray` variable from all `.abell` files. In the above code, we're using this variable data to create a list of blogs on index page.
 
-You can modify the default meta values (title, date, etc)  from `meta.json` file in the blog folder. 
+You can modify the default meta values (title, date, etc) from `meta.json` file in the blog folder.
 
 1. Create `content/hello-world/meta.json` file
 2. Add the following content
+
 ```json
 {
   "title": "Hello, World!",
@@ -528,5 +533,4 @@ You can access these values in `Abell.meta` variable in `theme/[path]/index.abel
 
 Read more about it in the [`Abell.meta` API Reference](http://localhost:5000/guide/api-reference/#abellmeta-ltmetainfogt)
 
-
-*Warning: We do feel there is a lot of abstraction here that makes things confusing. We're looking for new ways to handle dynamic routing in final Abell version. Have an idea? do drop it in the [GitHub Discussions of "Issues with Dynamic Routing in Abell"](https://github.com/abelljs/abell/discussions/111)*
+_Warning: We do feel there is a lot of abstraction here that makes things confusing. We're looking for new ways to handle dynamic routing in final Abell version. Have an idea? do drop it in the [GitHub Discussions of "Issues with Dynamic Routing in Abell"](https://github.com/abelljs/abell/discussions/111)_

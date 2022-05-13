@@ -2,10 +2,9 @@
 
 This section takes you through all the concepts of Abell and the API reference.
 
-*Note: This section is an API reference. If you are looking for a step-by-step method to learn Abell, [Tutorial]({{Abell.$root}}/tutorial/create-portfolio) is the section you would want to check out.*
+_Note: This section is an API reference. If you are looking for a step-by-step method to learn Abell, [Tutorial]({{Abell.$root}}/tutorial/create-portfolio) is the section you would want to check out._
 
-
-## Table of Content
+## Table of Contents
 
 - [Installation and Setup](installation)
 - [Syntax Guide](syntax-guide)
