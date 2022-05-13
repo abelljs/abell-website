@@ -23,7 +23,7 @@ If you are someone who prefers to stare at the code until it explains itself, yo
 
 Abell is a JavaScript-based Static-Site-Generator to help you build fast and scalable static websites. It is similar to tools like Jekyll, Eleventy, Hugo, and Hexo.
 
-Abell files are like HTML files except you can write JavaScript in double curly brackets which is then executed to build your static page.
+Abell files are like HTML files except you can write JavaScript in double curly brackets which is executed to build you a static page.
 
 **Input - `index.abell`**
 
@@ -100,7 +100,7 @@ Let's start by changing **Abell Example** with your name.
 module.exports = {
   // ..
   globalMeta: {
-    siteTitle: "Saurabh", // replace with your name
+    siteTitle: 'Saurabh', // replace with your name
   },
   //...
 };
