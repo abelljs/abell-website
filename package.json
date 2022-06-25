@@ -17,7 +17,7 @@
     "abell-a11y-plugin": "^0.0.4",
     "abell-sitemap-plugin": "^0.0.8",
     "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "svgtofont": "^3.8.0"
   }
 }
