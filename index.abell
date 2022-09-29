@@ -1,0 +1,19 @@
+{{
+  import headMeta from './components/meta.abell';
+  import hero from './components/hero.abell';
+}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ 
+    headMeta({ 
+      title: 'Abell v1 - A Static Site Generator for JavaScript Developers' 
+    })
+  }}
+</head>
+<body>
+  {{ hero }}
+
+  <script src="./main.ts" type="module"></script>
+</body>
+</html>

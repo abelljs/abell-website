@@ -1,23 +1,26 @@
 {
-  "name": "abell-starter-minima",
+  "name": "abell-website",
   "version": "1.0.0",
   "description": "",
-  "main": "abell.config.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "abell build",
-    "dev": "abell serve",
-    "dev:fast": "abell serve --ignore-plugins"
+    "dev": "abell dev",
+    "generate": "abell generate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abelljs/abell-website.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "abell": "^0.10.3",
-    "abell-a11y-plugin": "^0.0.4",
-    "abell-sitemap-plugin": "^0.0.8",
-    "dotenv": "^8.2.0",
-    "node-fetch": "^2.6.1",
-    "svgtofont": "^3.8.0"
+  "bugs": {
+    "url": "https://github.com/abelljs/abell-website/issues"
+  },
+  "homepage": "https://github.com/abelljs/abell-website#readme",
+  "dependencies": {
+    "@fontsource/inter": "^4.5.12",
+    "abell": "^1.0.0-alpha.67"
   }
 }
