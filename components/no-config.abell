@@ -1,0 +1,58 @@
+<section>
+  <h2>Create Projects with Zero Config and Boilerplate</h2>
+  <div class="editor">
+    <div class="file-explorer">
+      <ul>
+        <li><button>index.abell</button></li>
+        <li><button>package.json</button></li>
+      </ul>
+    </div>
+    <div class="code-display">
+      <code class="language-abell">&lt;body&gt;\{{ 6 + 5 }}&lt;/body&gt;</code>
+    </div>
+    <div class="code-preview">
+      11
+    </div>
+  </div>
+</section>
+
+<style>
+section {
+  padding: 20px 120px;
+}
+
+.editor {
+  background-color: var(--blue-1);
+  display: flex;
+  color: var(--blue-9);
+  border: 1px solid var(--blue-2);
+}
+
+button {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  font-size: 1rem;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.file-explorer {
+  width: 200px;
+}
+.code-display {
+  background-color: var(--blue-2);
+  flex: 1;
+  padding: 24px;
+}
+.code-preview {
+  width: 200px;
+  background-color: #fff;
+  color: #111;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+</style>

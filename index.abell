@@ -1,6 +1,7 @@
 {{
   import headMeta from './components/meta.abell';
   import hero from './components/hero.abell';
+  import noConfig from './components/no-config.abell';
 }}
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,7 @@
 </head>
 <body>
   {{ hero }}
-
+  {{ noConfig }}
   <script src="./main.ts" type="module"></script>
 </body>
 </html>
