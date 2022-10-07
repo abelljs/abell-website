@@ -32,11 +32,12 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0px;
+  font-weight: 800;
 }
 
 p {
   font-size: 4rem;
-  font-weight: bold;
+  font-weight: 800;
   margin: 64px 0px;
   line-height: 5.2rem;
 }
