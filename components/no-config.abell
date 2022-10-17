@@ -16,7 +16,7 @@
         {
           "scripts": {
             "dev": "abell dev",
-            "generate": "abell generate",
+            "generate": "abell generate"
           },
           "devDependencies": {
             "abell": "^1.0.0"
@@ -34,6 +34,7 @@
 
 <section>
   <h2>Start Projects with Zero Configurations</h2>
+  <p>Don't like a lot of boilerplate code and configurations? Start with just 1 file with Abell 🎉</p>
   <div class="start-project-steps">
     <ol>
       <li><code>npm install --save-dev abell@next</code></li>
@@ -53,8 +54,12 @@ h2 {
   margin: 0px;
 }
 
-.start-project-steps {
+p {
   padding: 24px 0px;
+  font-size: 1.2rem;
+}
+.start-project-steps {
+  padding: 0px 0px 24px 0px;
 }
 
 ol {

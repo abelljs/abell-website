@@ -1,7 +1,5 @@
 {{
   import { md } from '../utils/md.ts';
-  import abellLogo from '../assets/abell.ico?url';
-  import npmLogo from '../assets/npm.svg?url';
 }}
 
 <div class="editor" style="min-height: {{ props.editorBuilder.minHeight ?? '400px' }}">
@@ -9,9 +7,9 @@
     <ul>
       {{
         Object.keys(props.editorBuilder.files).map((filename) => {
-          let languageLogo = { src: abellLogo, space: '&nbsp;', width: 20 };
+          let languageLogo = { src: '/icons/abell.ico', space: '&nbsp;', width: 20 };
           if (filename === 'package.json') {
-            languageLogo = { src: npmLogo, space: '&nbsp;&nbsp;', width: 15 };
+            languageLogo = { src: '/icons/npm.svg', space: '&nbsp;&nbsp;', width: 15 };
           }
 
           return /* html */`
