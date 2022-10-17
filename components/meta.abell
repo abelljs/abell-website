@@ -74,4 +74,13 @@ body {
   border: 1px solid var(--primary-hover);
   transition: all .1s ease;
 }
+
+code {
+  font-family: 'Menlo', Courier, monospace;
+  line-height: 1.5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
 </style>

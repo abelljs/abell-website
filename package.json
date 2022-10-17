@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "abell dev",
     "generate": "abell generate",
@@ -21,6 +22,10 @@
   "homepage": "https://github.com/abelljs/abell-website#readme",
   "dependencies": {
     "@fontsource/inter": "^4.5.12",
-    "abell": "^1.0.0-alpha.67"
+    "abell": "^1.0.0-alpha.72",
+    "vite-plugin-md-to-html": "^0.0.18"
+  },
+  "devDependencies": {
+    "highlight.js": "^11.6.0"
   }
 }
