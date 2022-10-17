@@ -4,55 +4,22 @@
   import npmLogo from '../assets/npm.svg?url';
 }}
 
-{{
-  // declarations
-  const editorBuilder = {
-    files: {
-      'index.abell': `
-        {{
-          // declarations
-          const a = 9;
-          const b = 2;
-        }}
-
-        <body>{{ a + b }}</body>
-        `,
-      'package.json': `
-        {
-          "scripts": {
-            "dev": "abell dev",
-            "generate": "abell generate",
-          },
-          "devDependencies": {
-            "abell": "^1.0.0"
-          }
-        }
-        `
-    },
-    output: {
-      screen: '11'
-    }
-  }
-
-  const explorerFiles = Object.keys(editorBuilder.files);
-}}
-
-<div class="editor">
+<div class="editor" style="min-height: {{ props.editorBuilder.minHeight ?? '400px' }}">
   <div class="file-explorer">
     <ul>
       {{
-        explorerFiles.map((filename) => {
-          let logo = { src: abellLogo, space: '&nbsp;', width: 20 };
+        Object.keys(props.editorBuilder.files).map((filename) => {
+          let languageLogo = { src: abellLogo, space: '&nbsp;', width: 20 };
           if (filename === 'package.json') {
-            logo = { src: npmLogo, space: '&nbsp;&nbsp;', width: 15 };
+            languageLogo = { src: npmLogo, space: '&nbsp;&nbsp;', width: 15 };
           }
 
           return /* html */`
           <li class="flex row">
-            <button class="flex row active" data-filename="${ filename.replace(/\./g, '-') }"><img width="${logo.width}" src="${ logo.src }" />${ logo.space }${ filename }</button>
+            <button class="flex row ${filename === 'index.abell' ? 'active' : ''}" data-filename="${ filename.replace(/\./g, '-') }"><img width="${languageLogo.width}" src="${ languageLogo.src }" />${ languageLogo.space }${ filename }</button>
           </li>
-          `)
-        });
+          `;
+        })
       }}
     </ul>
   </div>
@@ -60,16 +27,12 @@
     {{
       () => {
         let htmlCode = '';
-        for (const [filename, filecode] of Object.entries(editorBuilder.files)) {
-          const language = filename.slice(filename.indexOf('.'));
+        for (const [filename, filecode] of Object.entries(props.editorBuilder.files)) {
+          const language = filename.slice(filename.indexOf('.') + 1);
           htmlCode += /* html */ `
           <div class="file-${filename.replace(/\./g, '-')} ${filename === 'index.abell' ? 'show' : ''}">
             ${
-              md([`
-              ~~~${language}
-              ${filecode}
-              ~~~
-              `])
+              md([`~~~${language}\n${filecode}\n~~~`])
             }
           </div>
           `
@@ -80,7 +43,10 @@
     }}
   </div>
   <div class="code-preview">
-    {{ editorBuilder.output.screen }}
+    {{ props.editorBuilder.showURLBar ? /* html */ `<div class="url-bar">http://localhost:3000<span class="path">/</span></div>` : '' }}
+    <div class="screen">
+      {{ props.editorBuilder.output.screen }}
+    </div>
   </div>
 </div>
 
@@ -94,10 +60,6 @@
   flex-direction: row;
 }
 
-section {
-  padding: 20px 120px;
-}
-
 .editor {
   background-color: #f7f7f7;
   display: flex;
@@ -109,7 +71,6 @@ section {
               0 8px 16px rgba(0,0,0,0.07),
               0 16px 32px rgba(0,0,0,0.07), 
               0 32px 64px rgba(0,0,0,0.07);
-  min-height: 300px;
 }
 
 button {
@@ -124,9 +85,14 @@ button {
   opacity: 0.5;
 }
 
+button:hover {
+  background-color: #fff;
+  opacity: 0.6;
+}
+
 button.active {
   background-color: #fff;
-  border-left: 2px solid var(--blue-4);
+  border-left: 2px solid var(--blue-5);
   opacity: 1;
 }
 
@@ -147,12 +113,26 @@ button.active {
 }
 
 .code-preview {
-  width: 200px;
-  padding: 12px 24px;
+  width: 250px;
   background-color: #fff;
   color: #111;
   border-left: 3px solid #f7f7f7;
   font-size: 1rem;
+}
+
+.code-preview .url-bar {
+  padding: 8px 18px;
+  color: #aaa;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.009), 
+            0 2px 4px rgba(0,0,0,0.009), 
+            0 4px 8px rgba(0,0,0,0.009), 
+            0 8px 16px rgba(0,0,0,0.009),
+            0 16px 32px rgba(0,0,0,0.009), 
+            0 32px 64px rgba(0,0,0,0.009);
+}
+
+.code-preview .screen {
+  padding: 24px 24px;
 }
 
 ul {

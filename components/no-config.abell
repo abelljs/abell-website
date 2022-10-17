@@ -1,135 +1,64 @@
 {{
-  import { md } from '../utils/md.ts';
-  import abellLogo from '../assets/abell.ico?url';
-  import npmLogo from '../assets/npm.svg?url';
+  import editor from './editor.abell';
+
+   const editorBuilder = {
+    files: {
+      'index.abell': `
+        {{
+          // declarations
+          const a = 'Hello, ';
+          const b = 'World 🌻';
+        }}
+
+        <body>{{ a + b.toUpperCase() }}</body>
+        `,
+      'package.json': `
+        {
+          "scripts": {
+            "dev": "abell dev",
+            "generate": "abell generate",
+          },
+          "devDependencies": {
+            "abell": "^1.0.0"
+          }
+        }
+        `
+    },
+    minHeight: '400px',
+    showURLBar: false,
+    output: {
+      screen: 'Hello, WORLD 🌻'
+    }
+  }
 }}
 
 <section>
   <h2>Start Projects with Zero Configurations</h2>
-  <div class="editor">
-    <div class="file-explorer">
-      <ul>
-        <li class="flex row">
-          <button class="flex row active" data-filename="index-abell"><img width="20" src="{{ abellLogo }}" /> &nbsp;index.abell</button>
-        </li>
-        <li class="flex row">
-          <button class="flex row" data-filename="package-json"><img width="15" src="{{ npmLogo }}" /> &nbsp;&nbsp;package.json</button>
-        </li>
-      </ul>
-    </div>
-    <div class="code-display">
-      <div class="file-index-abell show">
-        {{
-          md`
-          ~~~abell
-          {{
-            // declarations
-            const a = 9;
-            const b = 2;
-          }}
-
-          <body>{{ a + b }}</body>
-          ~~~
-          `
-        }}
-      </div>
-      <div class="file-package-json">
-        {{
-          md`
-          ~~~json
-          {
-            "scripts": {
-              "dev": "abell dev",
-              "generate": "abell generate",
-            },
-            "devDependencies": {
-              "abell": "^1.0.0"
-            }
-          }
-          ~~~
-          `
-        }}
-      </div>
-    </div>
-    <div class="code-preview">
-      11
-    </div>
+  <div class="start-project-steps">
+    <ol>
+      <li><code>npm install --save-dev abell@next</code></li>
+      <li>Create <code>index.abell</code> on root</li>
+      <li><code>npx abell dev</code> and your dev-server will start running 🥳</li>
+    </ol>
   </div>
+  {{ editor({ editorBuilder }) }}
 </section>
 
 <style>
-.flex {
-  display: flex;
-  align-items: center;
-  align-self: center;
-}
-.flex.row {
-  flex-direction: row;
-}
-
 section {
   padding: 20px 120px;
 }
 
-.editor {
-  background-color: #f7f7f7;
-  display: flex;
-  color: var(--blue-1);
-  font-size: 1rem;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
-              0 2px 4px rgba(0,0,0,0.07), 
-              0 4px 8px rgba(0,0,0,0.07), 
-              0 8px 16px rgba(0,0,0,0.07),
-              0 16px 32px rgba(0,0,0,0.07), 
-              0 32px 64px rgba(0,0,0,0.07);
-  min-height: 300px;
+h2 {
+  margin: 0px;
 }
 
-button {
-  background-color: transparent;
-  color: inherit;
-  border: none;
-  font-size: 1rem;
-  padding: 8px 12px;
-  cursor: pointer;
-  display: block;
-  width: 100%;
-  opacity: 0.5;
+.start-project-steps {
+  padding: 24px 0px;
 }
 
-button.active {
-  background-color: #fff;
-  border-left: 2px solid var(--blue-4);
-  opacity: 1;
-}
-
-.file-explorer {
-  width: 200px;
-  padding: 12px 0px;
-}
-.code-display {
-  background-color: #fff;
-  flex: 1;
-  padding: 0px 24px;
-}
-.code-display > div {
-  display: none;
-}
-.code-display > div.show {
-  display: block;
-}
-
-.code-preview {
-  width: 200px;
-  padding: 12px 24px;
-  background-color: #fff;
-  color: #111;
-  border-left: 3px solid #f7f7f7;
-  font-size: 1rem;
-}
-
-ul {
-  list-style: none;
-  padding: 0px;
+ol {
+  font-size: 1.2rem;
+  line-height: 2.5rem;
 }
 </style>
