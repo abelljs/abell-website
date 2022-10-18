@@ -28,7 +28,9 @@
     showURLBar: false,
     activeFile: 'index.abell',
     output: {
-      screen: 'Hello, WORLD 🌻'
+      '/': {
+        screen: 'Hello, WORLD 🌻'
+      }
     }
   }
 }}
@@ -47,10 +49,6 @@
 </section>
 
 <style>
-section {
-  padding: 20px 120px;
-}
-
 h2 {
   margin: 0px;
 }

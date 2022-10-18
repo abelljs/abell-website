@@ -19,8 +19,8 @@
             {
               path: '/about',
               render: () => {
-                return '<body>We can return any HTML string here</body>'
-              },
+                return '<body>We can return any HTML string here</body>';
+              }
             }
           ]
         }
@@ -41,7 +41,12 @@
     minHeight: '600px',
     showURLBar: true,
     output: {
-      screen: 'Hello from Index Page!!'
+      '/': {
+        screen: 'Hello from Index Page!!'
+      },
+      '/about': {
+        screen: 'We can return any HTML string here'
+      }
     }
   }
 }}
@@ -53,10 +58,6 @@
 </section>
 
 <style>
-section {
-  padding: 20px 120px;
-}
-
 h2 {
   margin: 0px;
 }

@@ -97,4 +97,8 @@ pre > code {
 h2 {
   font-size: 3rem;
 }
+
+section {
+  padding: 100px 120px;
+}
 </style>

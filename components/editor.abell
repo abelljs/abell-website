@@ -42,18 +42,30 @@
     }}
   </div>
   <div class="code-preview">
-    {{ 
-      props.editorBuilder.showURLBar 
-      ? /* html */ `
-      <select class="url-bar">
-        <option>http://localhost:3000<span class="path">/</span></option>
-        <option>http://localhost:3000<span class="path">/about</span></option>
-      </select>
-      ` 
-      : '' 
+    {{
+      () => {
+        const outPaths = Object.keys(props.editorBuilder.output);
+        if (outPaths.length <= 1) {
+          return '';
+        }
+
+        return /* html */`
+        <div class="url-bar">
+          <select>
+          ${outPaths.map((outPath) => /* html */`
+            <option>http://localhost:3000<span class="path">${outPath}</span></option>
+          `)}
+          </select>
+        </div>
+        `
+      }
     }}
     <div class="screen">
-      {{ props.editorBuilder.output.screen }}
+      {{ 
+        Object.entries(props.editorBuilder.output).map(([outPath, outObject]) => /* html */ `
+          <div class="path-${outPath.replace(/\//g, '-')} ${outPath === '/' ? 'show' : ''}">${outObject.screen}</div>
+        `) 
+      }}      
     </div>
   </div>
 </div>
@@ -130,11 +142,7 @@ button.active {
 }
 
 .code-preview .url-bar {
-  padding: 8px 4px;
-  color: #aaa;
-  display: block;
-  width: 100%;
-  border: none;
+  padding: 0px 8px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.009), 
             0 2px 4px rgba(0,0,0,0.009), 
             0 4px 8px rgba(0,0,0,0.009), 
@@ -143,8 +151,24 @@ button.active {
             0 32px 64px rgba(0,0,0,0.009);
 }
 
+.code-preview .url-bar > select {
+  padding: 8px 0px;
+  font-size: 0.9rem;
+  display: block;
+  width: 100%;
+  border: none;
+  color: #444;
+}
+
 .code-preview .screen {
   padding: 24px 24px;
+}
+
+.code-preview .screen > div {
+  display: none;
+}
+.code-preview .screen > div.show {
+  display: block;
 }
 
 ul {

@@ -13,6 +13,17 @@ editors.forEach((editor) => {
       editor.querySelector('.code-display div.show')?.classList.remove('show');
       editor.querySelector(`.code-display div.file-${filename}`)?.classList.add('show');
     })
-  })
+  });
 
-})
+  const urlBar: HTMLSelectElement | null = editor.querySelector('.url-bar > select');
+
+  if (urlBar) {
+    urlBar.addEventListener('change', (e) => {
+      const path = urlBar?.value.slice(urlBar.value.lastIndexOf('/'));
+      const previewClassName = `path-${path.replace(/\//g, '-')}`;
+      const codePreviewScreen = editor.querySelector(`.code-preview .screen > div.${previewClassName}`);
+      editor.querySelector(`.code-preview .screen > div.show`)?.classList.remove('show');
+      codePreviewScreen?.classList.add('show');
+    })
+  }
+});
