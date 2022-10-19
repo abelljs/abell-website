@@ -3,6 +3,7 @@
   import hero from './components/hero.abell';
   import noConfig from './components/no-config.abell';
   import diyRouting from './components/diy-routing.abell';
+  import allVite from './components/all-vite.abell';
 }}
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +18,7 @@
   {{ hero }}
   {{ noConfig }}
   {{ diyRouting }}
+  {{ allVite }}
   <script src="./client/main.ts" type="module"></script>
 </body>
 </html>

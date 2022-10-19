@@ -14,6 +14,7 @@
           return [
             {
               path: '/',
+              // abell components are functions that return HTML string
               render: () => index()
             },
             {
@@ -64,14 +65,5 @@ h2 {
 
 p {
   padding: 24px 0px;
-  font-size: 1.2rem;
-}
-.start-project-steps {
-  padding: 0px 0px 24px 0px;
-}
-
-ol {
-  font-size: 1.2rem;
-  line-height: 2.5rem;
 }
 </style>

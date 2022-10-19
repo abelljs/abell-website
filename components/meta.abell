@@ -42,6 +42,8 @@
 body {
   font-family: 'Inter', sans-serif;
   color: #111;
+  font-size: 1.2rem;
+  line-height: 2rem;
 }
 
 [class^="button"] {

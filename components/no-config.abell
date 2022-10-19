@@ -54,8 +54,7 @@ h2 {
 }
 
 p {
-  padding: 24px 0px;
-  font-size: 1.2rem;
+  padding: 24px 0px 12px;
 }
 .start-project-steps {
   padding: 0px 0px 24px 0px;

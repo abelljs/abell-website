@@ -1,5 +1,16 @@
 {{
   import { md } from '../utils/md.ts';
+
+  const getLanguageExtension = (extension) => {
+    switch (extension) {
+      case 'ts':
+        return 'typescript';
+      case 'mdx':
+        return 'md';
+      default:
+        return extension;
+    }
+  }
 }}
 
 <div class="editor" style="min-height: {{ props.editorBuilder.minHeight ?? '400px' }}">
@@ -10,11 +21,15 @@
           let languageLogo = { src: '/icons/abell.ico', space: '&nbsp;', width: 20 };
           if (filename === 'package.json') {
             languageLogo = { src: '/icons/npm.svg', space: '&nbsp;&nbsp;', width: 15 };
+          } else if (filename === 'vite.config.ts') {
+            languageLogo = { src: '/icons/vite.png', space: '&nbsp;', width: 20 }
+          } else if (filename.endsWith('.mdx')) {
+            languageLogo = { src: '/icons/mdx.png', space: '&nbsp;', width: 20 }
           }
 
           return /* html */`
           <li class="flex row">
-            <button class="flex row ${filename === props.editorBuilder.activeFile ? 'active' : ''}" data-filename="${ filename.replace(/\./g, '-') }"><img width="${languageLogo.width}" src="${ languageLogo.src }" />${ languageLogo.space }${ filename }</button>
+            <button class="flex row ${filename === props.editorBuilder.activeFile ? 'active' : ''}" data-filename="${ filename.replace(/\./g, '-') }"><img loading="lazy" width="${languageLogo.width}" src="${ languageLogo.src }" />${ languageLogo.space }${ filename }</button>
           </li>
           `;
         })
@@ -27,7 +42,7 @@
         let htmlCode = '';
         for (const [filename, filecode] of Object.entries(props.editorBuilder.files)) {
           const extension = filename.slice(filename.lastIndexOf('.') + 1);
-          const language = extension === 'ts' ? 'typescript' : extension;
+          const language = getLanguageExtension(extension);
           htmlCode += /* html */ `
           <div class="file-${filename.replace(/\./g, '-')} ${filename === props.editorBuilder.activeFile ? 'show' : ''}">
             ${
@@ -158,6 +173,11 @@ button.active {
   width: 100%;
   border: none;
   color: #444;
+}
+
+.code-preview .screen p {
+  padding-bottom: 0px 0px;
+  margin: 0px;
 }
 
 .code-preview .screen {
