@@ -1,3 +1,7 @@
+> **Warning**
+>
+> The code from this repo has been moved to the main monorepo of abell https://github.com/abelljs/abell/tree/main/packages/docs/. This repo will be marked archived after abell v1 release. 
+
 # abelljs.org
 
 
@@ -20,18 +24,6 @@ cd abell-website
 npm install
 npm run dev
 ```
-
-### GitHub Token
-
-This is only needed if you want to contribute to `/issue-finder` page. 
-1. Go to https://github.com/settings/tokens/new.
-2. Select `public_repo` scope amd click Generate Token button.
-3. Create `.env` file in project root with
-```
-GITHUB_TOKEN=<Your Personal Access Token>
-```
-
-Run dev server `npm run dev`
 
 ---
 
