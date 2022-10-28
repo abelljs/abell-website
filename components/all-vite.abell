@@ -23,6 +23,7 @@
       import vitePluginMdxToHTML from "vite-plugin-mdx-to-html";
 
       export default defineConfig({
+        // Vite Configs
         plugins: [vitePluginMdxToHTML()]
       })
         `,
@@ -51,7 +52,7 @@
 
 <section>
   <h2>It's all just Vite <img src="/icons/vite.png" width="40" /></h2>
-  <p>Abell is built with a very little abstraction on top of Vite so it supports almost all Vite plugins. There is no <code>abell.config.ts</code>, we just use <code>vite.config.ts</code></p>
+  <p>Abell is built with a very little abstraction on top of Vite so it supports almost all Vite plugins. There is no <code>abell.config.ts</code>, we just use <code>vite.config.ts</code> 🤗</p>
   {{ editor({ editorBuilder }) }}
 </section>
 

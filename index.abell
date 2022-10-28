@@ -1,6 +1,7 @@
 {{
   import headMeta from './components/meta.abell';
   import hero from './components/hero.abell';
+  import gettingStarted from './components/getting-started.abell';
   import noConfig from './components/no-config.abell';
   import diyRouting from './components/diy-routing.abell';
   import allVite from './components/all-vite.abell';
@@ -16,6 +17,7 @@
 </head>
 <body>
   {{ hero }}
+  {{ gettingStarted }}
   {{ noConfig }}
   {{ diyRouting }}
   {{ allVite }}

@@ -1,5 +1,6 @@
 import '@fontsource/inter/variable.css';
 import 'highlight.js/styles/github.css';
+import './global.css';
 
 const editors: NodeListOf<HTMLDivElement> = document.querySelectorAll('.editor');
 editors.forEach((editor) => {
